@@ -105,7 +105,8 @@
   "compareTitle": "Compare deux armes",
   "compareBtn": "Comparer",
   "better": "Meilleure",
-  "vs": "vs"
+  "vs": "vs",
+  "report": "Signaler un chiffre faux"
  },
  "pitch": {
   "summon": "Invoque de l'aide ou te soutient directement. {extra}.",

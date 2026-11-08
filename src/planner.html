@@ -127,7 +127,7 @@
     const badges = [S(it).guardBreak != null ? `<span class="badge on">${T.ui.badgeGuard}</span>` : "", S(it).status != null ? `<span class="badge on">${T.ui.badgeStatus}</span>` : "",
       `<span class="badge">${it.kind === "edge" ? T.ui.badgeSecondary : T.ui.badgeMain}</span>`].join("");
     const st = stateOf(it);
-    const src = Object.entries(it.check.sources).map(([n, v]) => `${n} : ` + G.stats.filter((s) => v[s] != null).map((s) => `${T.stats[s].toLowerCase()} ${fmt(v[s])}`).join(", ")).join(" · ");
+    const src = Object.entries(it.check.sources).filter(([, v]) => G.stats.some((s) => v[s] != null)).map(([n, v]) => `${n} : ` + G.stats.filter((s) => v[s] != null).map((s) => `${T.stats[s].toLowerCase()} ${fmt(v[s])}`).join(", ")).join(" · ");
     const slots = G.slots.map((s, i) => [s, i]).filter(([s]) => s.kind === it.kind);
     $("sheet").innerHTML = `
       <div class="meta"><span>${T.kinds[it.kind]}</span><span>${T.types[it.type]}</span>${it.rarity ? `<span class="rar-${it.rarity}">${T.rarity[it.rarity]}</span>` : ""}</div>

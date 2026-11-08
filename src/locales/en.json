@@ -105,7 +105,8 @@
   "compareTitle": "Compare two weapons",
   "compareBtn": "Compare",
   "better": "Better",
-  "vs": "vs"
+  "vs": "vs",
+  "report": "Report a wrong number"
  },
  "pitch": {
   "summon": "Summons help or supports you directly. {extra}.",

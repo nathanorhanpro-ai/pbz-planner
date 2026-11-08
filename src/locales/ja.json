@@ -105,7 +105,8 @@
   "compareTitle": "2つの武器を比べる",
   "compareBtn": "比較する",
   "better": "優勢",
-  "vs": "vs"
+  "vs": "vs",
+  "report": "数値の誤りを報告"
  },
  "pitch": {
   "summon": "援軍を呼ぶ、または直接あなたを支援する。{extra}。",

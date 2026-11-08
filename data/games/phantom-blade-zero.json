@@ -663,60 +663,6 @@
    }
   },
   {
-   "id": "the-fanatics-drunken-sword",
-   "name": "The Fanatic's Drunken Sword",
-   "kind": "blade",
-   "type": "One-Handed",
-   "rarity": null,
-   "extra": null,
-   "image": null,
-   "stats": {
-    "base": {
-     "damage": null,
-     "guardBreak": null,
-     "status": null
-    },
-    "max": {
-     "damage": null,
-     "guardBreak": null,
-     "status": null
-    }
-   },
-   "check": {
-    "state": "missing",
-    "verified": false,
-    "agreeing": 0,
-    "sources": {}
-   }
-  },
-  {
-   "id": "tianmiao-wild-oriole-sword",
-   "name": "Tianmiao Wild Oriole Sword",
-   "kind": "blade",
-   "type": "One-Handed",
-   "rarity": null,
-   "extra": null,
-   "image": null,
-   "stats": {
-    "base": {
-     "damage": null,
-     "guardBreak": null,
-     "status": null
-    },
-    "max": {
-     "damage": null,
-     "guardBreak": null,
-     "status": null
-    }
-   },
-   "check": {
-    "state": "missing",
-    "verified": false,
-    "agreeing": 0,
-    "sources": {}
-   }
-  },
-  {
    "id": "tianxuan-bronze-sword",
    "name": "Tianxuan Bronze Sword",
    "kind": "blade",
@@ -1981,10 +1927,16 @@
     }
    },
    "check": {
-    "state": "missing",
+    "state": "single",
     "verified": false,
-    "agreeing": 0,
-    "sources": {}
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": null,
+      "guardBreak": null,
+      "status": null
+     }
+    }
    }
   },
   {
@@ -2017,10 +1969,16 @@
     }
    },
    "check": {
-    "state": "missing",
+    "state": "single",
     "verified": false,
-    "agreeing": 0,
-    "sources": {}
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": null,
+      "guardBreak": null,
+      "status": null
+     }
+    }
    }
   },
   {
@@ -2053,10 +2011,16 @@
     }
    },
    "check": {
-    "state": "missing",
+    "state": "single",
     "verified": false,
-    "agreeing": 0,
-    "sources": {}
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": null,
+      "guardBreak": null,
+      "status": null
+     }
+    }
    }
   },
   {
@@ -2089,10 +2053,16 @@
     }
    },
    "check": {
-    "state": "missing",
+    "state": "single",
     "verified": false,
-    "agreeing": 0,
-    "sources": {}
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": null,
+      "guardBreak": null,
+      "status": null
+     }
+    }
    }
   }
  ]

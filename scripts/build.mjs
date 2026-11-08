@@ -49,6 +49,10 @@ function ogTags(title, desc, img, rel, lang) {
     `<meta name="twitter:card" content="summary_large_image">`].join("\n");
 }
 
+// Données structurées (schema.org) : fil d'Ariane des armes et fiche de l'application.
+function jsonLd(o) { return SITE.siteUrl ? `<script type="application/ld+json">${json(o)}</script>` : ""; }
+const absUrl = (lang, rel) => `${(SITE.siteUrl || "").replace(/\/$/, "")}/${PREFIX[lang]}${rel.replace(/index\.html$/, "")}`;
+
 function headTags(rel, lang) {
   if (!SITE.siteUrl) return "";
   const url = (c) => `${SITE.siteUrl.replace(/\/$/, "")}/${PREFIX[c]}${rel.replace(/index\.html$/, "")}`;
@@ -64,9 +68,10 @@ function header(T, base, rel, plannerHref) {
   <small class="meta-line">${T.site.gameVersion} {{VERSION}} · ${T.site.dataFrom} {{UPDATED}} · ${T.site.fan}</small>
 </div></header>`;
 }
+const reportHref = (name, lang) => SITE.reportUrl ? `${SITE.reportUrl}?${new URLSearchParams({ title: name ? `Wrong stats: ${name}` : "Wrong stats", body: `Weapon: ${name || ""}\nPage language: ${lang}\nWhat is wrong (stat, level, value you see in game):\n\nScreenshot (optional):\n` })}` : "";
 const LEGAL = { en: read("src/legal/en.html"), fr: read("src/legal/fr.html") };
 const legalPath = (lang) => (LEGAL[lang] ? PREFIX[lang] : "") + "legal/index.html";
-const footer = (T, base = "") => `<footer class="band"><div class="inner"><p>${esc(T.footer.sources)}</p><p>${esc(T.footer.disclaimer)}</p><p><a href="${base}${legalPath(T.lang.code)}">${esc(T.footer.legal)}</a></p></div></footer>`;
+const footer = (T, base = "") => `<footer class="band"><div class="inner"><p>${esc(T.footer.sources)}</p><p>${esc(T.footer.disclaimer)}</p><p><a href="${base}${legalPath(T.lang.code)}">${esc(T.footer.legal)}</a>${SITE.reportUrl ? ` · <a href="${esc(reportHref("", T.lang.code))}" rel="noopener" target="_blank">${esc(T.ui.report)}</a>` : ""}</p></div></footer>`;
 const legalBody = (lang, updated) => LEGAL[lang]
   .replaceAll("{{UPDATED}}", esc(updated)).replaceAll("{{HOST_NAME}}", esc(SITE.host.name))
   .replaceAll("{{HOST_ADDRESS}}", esc(SITE.host.address)).replaceAll("{{HOST_URL}}", esc(SITE.host.url))
@@ -98,7 +103,7 @@ function weaponPage(g, T, L, it, base) {
   const card = (o) => `<a class="mini" href="${wHref(o)}">${img(o, "thumbs")}<span>${esc(o.name)}</span><small>${esc(T.types[o.type])}</small></a>`;
   const same = pool.filter((o) => o.type === it.type && o.id !== it.id);
   const pairs = L.pairs(it);
-  const src = Object.entries(it.check.sources).map(([n, v]) => `${n} : ` + g.stats.filter((s) => v[s] != null).map((s) => `${T.stats[s].toLowerCase()} ${fmt(v[s])}`).join(", ")).join(" · ");
+  const src = Object.entries(it.check.sources).filter(([, v]) => g.stats.some((s) => v[s] != null)).map(([n, v]) => `${n} : ` + g.stats.filter((s) => v[s] != null).map((s) => `${T.stats[s].toLowerCase()} ${fmt(v[s])}`).join(", ")).join(" · ");
   const st = L.stateOf(it);
   return `<nav class="crumbs band"><div class="inner"><a href="${planner}">${esc(T.ui.home)}</a> / ${esc(T.kindsPlural[it.kind])} / ${esc(T.types[it.type])}</div></nav>
 <main>
@@ -110,7 +115,7 @@ function weaponPage(g, T, L, it, base) {
     <p class="pitch">${esc(L.pitch(it, "base"))}</p>
     ${rows ? `<table class="stat-table"><thead><tr><th>${esc(T.ui.statsTitle)}</th><th class="r">${esc(T.levels.base)}</th><th class="r">${esc(T.levels.max)}</th></tr></thead><tbody>${rows}</tbody></table>` : `<p class="trust">${esc(T.ui.noStats)}</p>`}
     <p class="trust ${st}"><b>${esc(L.trust(it))}</b>${src ? ` · ${esc(T.ui.sourcesAt1)}${esc(src)}` : ""}</p>
-    <div class="equip"><a class="btn" href="${planner}#W-${it.id}">${esc(T.ui.openInPlanner)}</a></div>
+    <div class="equip"><a class="btn" href="${planner}#W-${it.id}">${esc(T.ui.openInPlanner)}</a>${SITE.reportUrl ? `<a class="btn ghost" href="${esc(reportHref(it.name, T.lang.code))}" rel="noopener" target="_blank">${esc(T.ui.report)}</a>` : ""}</div>
   </div>
 </div></section>
 ${ranks ? `<section class="wsec band"><div class="inner"><h2>${esc(T.ui.ranksTitle)}</h2><ul class="advice">${ranks}</ul></div></section>` : ""}
@@ -139,7 +144,7 @@ for (const f of games) {
     const plannerBody = PLANNER
       .replace(/\{\{t\.(\w+)\.(\w+)\}\}/g, (_, a, b) => esc(T[a][b]))
       .replace("{{TITLE}}", esc(meta(T.meta.plannerTitle))).replace("{{DESCRIPTION}}", esc(meta(T.meta.plannerDesc)))
-      .replace("{{HEAD}}", () => headTags("index.html", lang) + "\n" + ogTags(meta(T.meta.plannerTitle), meta(T.meta.plannerDesc), "planner.jpg", "index.html", lang))
+      .replace("{{HEAD}}", () => headTags("index.html", lang) + "\n" + jsonLd({ "@context": "https://schema.org", "@type": "WebApplication", name: "Phantom Blade Zero Build Planner", url: absUrl(lang, "index.html"), applicationCategory: "GameApplication", operatingSystem: "Any", inLanguage: T.lang.locale, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, description: meta(T.meta.plannerDesc) }) + "\n" + ogTags(meta(T.meta.plannerTitle), meta(T.meta.plannerDesc), "planner.jpg", "index.html", lang))
       .replace("{{CSS}}", () => CSS)
       .replace("{{HEADER}}", () => sub(header(T, pBase, "index.html", `${pBase}${P}index.html`)))
       .replace("{{INDEX}}", () => indexHtml(g, T, (i) => `weapons/${i.id}/index.html`))
@@ -158,6 +163,7 @@ for (const f of games) {
       const desc = fill(T.meta.weaponDesc, { name: it.name, game: g.name, kind: T.kinds[it.kind].toLowerCase(), type: T.types[it.type].toLowerCase(), damage: s.damage != null ? `${L.fmt(s.damage)} → ${L.fmt(it.stats.max.damage)}` : "?" });
       const hd = `<title>${esc(title)}</title>\n<meta name="description" content="${esc(desc)}">\n${headTags(`weapons/${it.id}/index.html`, lang)}\n` +
         ogTags(title, desc, `${it.id}.jpg`, `weapons/${it.id}/index.html`, lang) + "\n" +
+        jsonLd({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [[T.ui.home, absUrl(lang, "index.html")], [it.name, absUrl(lang, `weapons/${it.id}/index.html`)]].map(([name, item], i) => ({ "@type": "ListItem", position: i + 1, name, item })) }) + "\n" +
         `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">\n<style>\n${CSS}</style>\n`;
       put(path, page(T.lang.locale, hd, sub(header(T, base, `weapons/${it.id}/index.html`, `${base}${P}index.html`)) + weaponPage(g, T, L, it, base) + footer(T, base)));
     }

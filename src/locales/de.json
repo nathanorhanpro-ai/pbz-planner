@@ -105,7 +105,8 @@
   "compareTitle": "Zwei Waffen vergleichen",
   "compareBtn": "Vergleichen",
   "better": "Besser",
-  "vs": "vs"
+  "vs": "vs",
+  "report": "Falschen Wert melden"
  },
  "pitch": {
   "summon": "Ruft Hilfe herbei oder unterstützt dich direkt. {extra}.",

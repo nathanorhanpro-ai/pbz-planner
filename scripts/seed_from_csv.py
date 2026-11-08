@@ -19,9 +19,9 @@ EXTRA = {  # stats propres aux invocations, d'après pbz.gg (niveau 1 → max)
     "Swordsman's Summon": {"summonHealth": [1400, 57315], "summonDamage": [20, 179]},
     "Inanis' Radiant Fan": {"hpRecovery": [342, 2360], "shaChiRecovery": [207, 1428]},
 }
-FEXTRA_ONLY = [("blade", "The Fanatic's Drunken Sword", "One-Handed"),
-               ("blade", "Tianmiao Wild Oriole Sword", "One-Handed"),
-               ("blade", "Shadowless Edge", "Dual-Wield")]
+# "The Fanatic's Drunken Sword" et "Tianmiao Wild Oriole Sword" (noms Fextralife) étaient des doublons
+# de "The Fanatic's Broken Blade" et "Wild Oriole Sword" (vérifié sur pbz.gg le 2026-11-08) : retirés.
+FEXTRA_ONLY = [("blade", "Shadowless Edge", "Dual-Wield")]
 
 n = lambda v: int(v) if v and v.strip() else None
 slug = lambda s: re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
@@ -43,10 +43,11 @@ for r in csv.DictReader((D / "pbz-gg-2026-11-08.csv").open(encoding="utf-8")):
     base = {"damage": n(r["dmg_base"]), "guardBreak": n(r["gb_base"]), "status": n(r["st_base"])}
     mx = {"damage": n(r["dmg_max"]), "guardBreak": n(r["gb_max"]), "status": n(r["st_max"])}
     srcs = {"pbz.gg": base, **others.get(r["name"], {})}
-    has = any(v is not None for v in base.values())
+    ext = EXTRA.get(r["name"])
+    has = any(v is not None for v in base.values()) or bool(ext)  # les invocations n'ont que des stats propres
     # Même jeu de chiffres = accord, même si la source range le brise-garde dans la colonne statut
     nums = lambda v: sorted(x for x in v.values() if x is not None)
-    match = [s for s, v in srcs.items() if s != "pbz.gg" and nums(v) == nums(base)]
+    match = [s for s, v in srcs.items() if s != "pbz.gg" and nums(v) == nums(base) and nums(base)]
     diff = [s for s, v in srcs.items() if s != "pbz.gg" and nums(v) != nums(base)]
     if not has:
         state = "missing"

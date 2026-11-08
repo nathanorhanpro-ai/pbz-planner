@@ -105,7 +105,8 @@
   "compareTitle": "두 무기 비교",
   "compareBtn": "비교하기",
   "better": "우세",
-  "vs": "vs"
+  "vs": "vs",
+  "report": "잘못된 수치 신고"
  },
  "pitch": {
   "summon": "지원군을 부르거나 직접 지원합니다. {extra}.",
