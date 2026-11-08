@@ -199,3 +199,4 @@ a.btn { text-decoration: none; display: inline-block; }
 .legal a { color: var(--gold); }
 .legal.nf { min-height: 50vh; align-content: center; }
 footer a { color: var(--gold); }
+.legal a.btn { color: #fff; text-decoration: none; }
