@@ -1,0 +1,148 @@
+{
+ "lang": {
+  "code": "ja",
+  "locale": "ja-JP",
+  "name": "日本語"
+ },
+ "site": {
+  "brand": "Build Planner",
+  "fan": "ファンサイト",
+  "gameVersion": "ゲームバージョン",
+  "dataFrom": "データ更新日"
+ },
+ "kinds": {
+  "blade": "ブレード",
+  "edge": "ファントムエッジ"
+ },
+ "kindsPlural": {
+  "blade": "ブレード",
+  "edge": "ファントムエッジ"
+ },
+ "types": {
+  "One-Handed": "片手",
+  "Dual-Wield": "双剣",
+  "Two-Handed": "両手",
+  "Artifice": "機巧",
+  "Destructive": "破壊",
+  "Martial": "武技",
+  "Ranged": "遠距離",
+  "Summoning": "召喚"
+ },
+ "stats": {
+  "damage": "ダメージ",
+  "guardBreak": "ガードブレイク",
+  "status": "状態異常"
+ },
+ "extra": {
+  "summonHealth": "召喚体の体力",
+  "summonDamage": "召喚体のダメージ",
+  "hpRecovery": "HP回復",
+  "shaChiRecovery": "殺気回復"
+ },
+ "levels": {
+  "base": "レベル1",
+  "max": "最大レベル"
+ },
+ "slots": {
+  "b1": "メインブレード",
+  "b2": "サブブレード",
+  "e1": "ファントムエッジ 1",
+  "e2": "ファントムエッジ 2"
+ },
+ "rarity": {
+  "Common": "コモン",
+  "Rare": "レア",
+  "Epic": "エピック"
+ },
+ "trust": {
+  "verified": "ゲーム内で確認済み",
+  "agree": "{n}つのソースで照合済み",
+  "single": "ソースは1つのみ",
+  "conflict": "ソースが一致しない",
+  "missing": "データなし"
+ },
+ "ui": {
+  "arsenalKicker": "ARSENAL",
+  "arsenalTitle": "武器を選ぼう",
+  "all": "すべて",
+  "prev": "前の武器",
+  "next": "次の武器",
+  "noImage": "この武器の画像はまだありません",
+  "railLabel": "このカテゴリの武器",
+  "badgeGuard": "ガードブレイク",
+  "badgeStatus": "状態異常",
+  "badgeMain": "メイン武器",
+  "badgeSecondary": "サブ武器",
+  "levelLabel": "強化レベル",
+  "showSources": "ソースを見る",
+  "hideSources": "ソースを隠す",
+  "sourcesAt1": "レベル1：",
+  "equipIn": "{slot}に装備",
+  "alreadyIn": "{slot}に装備中",
+  "equipped": "装備中",
+  "noStats": "データなし。",
+  "loadoutKicker": "LOADOUT",
+  "loadoutTitle": "あなたの装備",
+  "totBladeDmg": "ブレードのダメージ",
+  "totEdgeDmg": "エッジのダメージ",
+  "totGuard": "ガードブレイク",
+  "totStatus": "状態異常",
+  "share": "この装備を共有",
+  "recommended": "おすすめ装備",
+  "copied": "リンクをコピーしました",
+  "allWeapons": "全武器",
+  "allWeaponsKicker": "INDEX",
+  "openInPlanner": "プランナーで開く",
+  "statsTitle": "ステータス",
+  "howTo": "使い方",
+  "pairs": "相性のいい武器",
+  "sameType": "ほかの{type}武器",
+  "sources": "数値の出典",
+  "home": "プランナー",
+  "rankLine": "{stat}：{kinds}{n}本中{k}位",
+  "ranksTitle": "ランキング",
+  "compareKicker": "比較",
+  "compareTitle": "2つの武器を比べる",
+  "compareBtn": "比較する",
+  "better": "優勢",
+  "vs": "vs"
+ },
+ "pitch": {
+  "summon": "援軍を呼ぶ、または直接あなたを支援する。{extra}。",
+  "unknown": "データなし。持っている方はぜひ情報提供を。",
+  "dmgHigh": "カテゴリ内でトップクラスの火力。",
+  "dmgMid": "過不足のない安定したダメージ。",
+  "dmgLow": "素の火力は低め。強みは別のところにある。",
+  "gbHigh": "ガードを砕く：盾持ちの天敵。",
+  "gbMid": "ガードをそこそこ削れる。",
+  "gbLow": "ガードする敵には苦戦する。",
+  "stHigh": "状態異常の蓄積が速く、長期戦向き。",
+  "stLow": "攻撃を重ねると状態異常を付与する。"
+ },
+ "advice": {
+  "noGuard": "ガードを崩せるブレードがない。どちらかを替えないと盾持ちに止められる。",
+  "guard1": "{names}はガードを崩せる。敵が防御したらすぐに持ち替えよう。",
+  "guardN": "{names}はガードを崩せる。敵が防御したらすぐに持ち替えよう。",
+  "sameStyle": "2本とも{type}。別のスタイルを入れて戦闘中にリズムを変えよう。",
+  "twoStyles": "2種類のスタイル（{types}）。敵に合わせて切り替えよう。",
+  "edgeGuard": "ガードブレイク最強クラスのエッジ。ボスへの反撃用に取っておこう。",
+  "noStatus": "状態異常なし。長期戦で詰まったら1本加えよう。",
+  "unsure": "{names}の数値は未確認。合計は目安として見てください。"
+ },
+ "footer": {
+  "sources": "数値は pbz.gg、ofzenandcomputing、thegameswiki で照合しています。「照合済み」は複数のソースがまったく同じ値を示していることを意味します。間違いを見つけたら教えてください。",
+  "disclaimer": "非公式ファンサイトです。S-GAME とは関係ありません。『Phantom Blade Zero』の名称とアートワークは S-GAME に帰属します。",
+  "legal": "法的情報とプライバシー"
+ },
+ "meta": {
+  "plannerTitle": "{game} ビルドプランナー：武器・ステータス・装備",
+  "plannerDesc": "{game} の全武器とファントムエッジをレベル1と最大レベルで比較し、装備を組んで共有しよう。",
+  "weaponTitle": "{name}：{game} の{kind}ステータス（レベル1と最大）",
+  "weaponDesc": "{game} の {name}（{type}・{kind}）：ダメージ {damage}、レベル1と最大レベルのガードブレイクと状態異常、相性のいい装備。"
+ },
+ "notFound": {
+  "title": "ページが見つかりません",
+  "text": "このページは存在しないか、移動しました。",
+  "back": "プランナーに戻る"
+ }
+}

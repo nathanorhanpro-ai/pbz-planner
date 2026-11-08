@@ -1,0 +1,148 @@
+{
+ "lang": {
+  "code": "zh",
+  "locale": "zh-CN",
+  "name": "简体中文"
+ },
+ "site": {
+  "brand": "Build Planner",
+  "fan": "粉丝站",
+  "gameVersion": "游戏版本",
+  "dataFrom": "数据更新于"
+ },
+ "kinds": {
+  "blade": "刀",
+  "edge": "魅影兵器"
+ },
+ "kindsPlural": {
+  "blade": "刀",
+  "edge": "魅影兵器"
+ },
+ "types": {
+  "One-Handed": "单手",
+  "Dual-Wield": "双持",
+  "Two-Handed": "双手",
+  "Artifice": "机巧",
+  "Destructive": "破坏",
+  "Martial": "武技",
+  "Ranged": "远程",
+  "Summoning": "召唤"
+ },
+ "stats": {
+  "damage": "伤害",
+  "guardBreak": "破防",
+  "status": "异常状态"
+ },
+ "extra": {
+  "summonHealth": "召唤物生命",
+  "summonDamage": "召唤物伤害",
+  "hpRecovery": "生命回复",
+  "shaChiRecovery": "煞气回复"
+ },
+ "levels": {
+  "base": "1级",
+  "max": "满级"
+ },
+ "slots": {
+  "b1": "主武器",
+  "b2": "副武器",
+  "e1": "魅影兵器 1",
+  "e2": "魅影兵器 2"
+ },
+ "rarity": {
+  "Common": "普通",
+  "Rare": "稀有",
+  "Epic": "史诗"
+ },
+ "trust": {
+  "verified": "游戏内已验证",
+  "agree": "{n} 个来源交叉验证",
+  "single": "仅一个来源",
+  "conflict": "来源不一致",
+  "missing": "暂无数据"
+ },
+ "ui": {
+  "arsenalKicker": "ARSENAL",
+  "arsenalTitle": "挑选你的武器",
+  "all": "全部",
+  "prev": "上一把",
+  "next": "下一把",
+  "noImage": "暂无该武器图片",
+  "railLabel": "本类武器",
+  "badgeGuard": "破防",
+  "badgeStatus": "异常状态",
+  "badgeMain": "主武器",
+  "badgeSecondary": "副武器",
+  "levelLabel": "强化等级",
+  "showSources": "查看来源",
+  "hideSources": "隐藏来源",
+  "sourcesAt1": "1级时：",
+  "equipIn": "装备为{slot}",
+  "alreadyIn": "已是{slot}",
+  "equipped": "已装备",
+  "noStats": "暂无数据。",
+  "loadoutKicker": "LOADOUT",
+  "loadoutTitle": "你的配装",
+  "totBladeDmg": "主武器伤害",
+  "totEdgeDmg": "魅影兵器伤害",
+  "totGuard": "破防",
+  "totStatus": "异常状态",
+  "share": "分享此配装",
+  "recommended": "推荐配装",
+  "copied": "链接已复制",
+  "allWeapons": "全部武器",
+  "allWeaponsKicker": "INDEX",
+  "openInPlanner": "在配装器中打开",
+  "statsTitle": "属性",
+  "howTo": "使用方法",
+  "pairs": "推荐搭配",
+  "sameType": "其他{type}武器",
+  "sources": "数据来源",
+  "home": "配装器",
+  "rankLine": "{stat}：{n} 把{kinds}中排第 {k}",
+  "ranksTitle": "排名",
+  "compareKicker": "对比",
+  "compareTitle": "对比两把武器",
+  "compareBtn": "对比",
+  "better": "更强",
+  "vs": "vs"
+ },
+ "pitch": {
+  "summon": "可召唤援手或直接为你提供支援。{extra}。",
+  "unknown": "暂无数据。如果你有这把武器，欢迎帮我们补充。",
+  "dmgHigh": "同类中伤害最高之一。",
+  "dmgMid": "伤害扎实，不偏不倚。",
+  "dmgLow": "基础伤害较低，强项在别处。",
+  "gbHigh": "破防利器：专克盾牌。",
+  "gbMid": "破防能力尚可。",
+  "gbLow": "面对格挡的敌人较吃力。",
+  "stHigh": "异常状态积累很快，适合持久战。",
+  "stLow": "持续攻击可附加异常状态。"
+ },
+ "advice": {
+  "noGuard": "没有一把主武器能破防。换掉一把，否则盾牌会让你寸步难行。",
+  "guard1": "{names} 可以破防。敌人一格挡就换上它。",
+  "guardN": "{names} 都可以破防。敌人一格挡就换上它们。",
+  "sameStyle": "两把主武器同为{type}。换一种风格，战斗中才能切换节奏。",
+  "twoStyles": "两种主武器风格（{types}）。根据敌人切换。",
+  "edgeGuard": "破防最强的魅影兵器之一。留着惩罚 Boss。",
+  "noStatus": "没有异常状态。持久战吃力时可以加一把。",
+  "unsure": "{names} 的数据尚未确认。总数仅供参考。"
+ },
+ "footer": {
+  "sources": "数据在 pbz.gg、ofzenandcomputing 和 thegameswiki 之间交叉验证。“交叉验证”指多个来源给出完全相同的数值。发现错误？告诉我们，我们会修正。",
+  "disclaimer": "非官方粉丝站，与 S-GAME 无关。《影之刃零》及其名称和美术素材归 S-GAME 所有。",
+  "legal": "法律声明与隐私"
+ },
+ "meta": {
+  "plannerTitle": "{game} 配装器：武器、属性与配装",
+  "plannerDesc": "对比 {game} 所有武器和魅影兵器在 1 级与满级的属性，搭配并分享你的配装。",
+  "weaponTitle": "{name}：{game} {kind}属性（1 级与满级）",
+  "weaponDesc": "{game} 中的 {name}（{type}{kind}）：伤害 {damage}，1 级与满级的破防和异常状态，以及适合的配装。"
+ },
+ "notFound": {
+  "title": "页面未找到",
+  "text": "此页面不存在或已移动。",
+  "back": "返回配装器"
+ }
+}

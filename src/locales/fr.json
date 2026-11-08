@@ -1,0 +1,148 @@
+{
+ "lang": {
+  "code": "fr",
+  "locale": "fr-FR",
+  "name": "Français"
+ },
+ "site": {
+  "brand": "Build Planner",
+  "fan": "site de fan",
+  "gameVersion": "Version du jeu",
+  "dataFrom": "données du"
+ },
+ "kinds": {
+  "blade": "Lame",
+  "edge": "Phantom Edge"
+ },
+ "kindsPlural": {
+  "blade": "Lames",
+  "edge": "Phantom Edges"
+ },
+ "types": {
+  "One-Handed": "Une main",
+  "Dual-Wield": "Double",
+  "Two-Handed": "Deux mains",
+  "Artifice": "Artifice",
+  "Destructive": "Destruction",
+  "Martial": "Martial",
+  "Ranged": "Distance",
+  "Summoning": "Invocation"
+ },
+ "stats": {
+  "damage": "Dégâts",
+  "guardBreak": "Brise-garde",
+  "status": "Effets de statut"
+ },
+ "extra": {
+  "summonHealth": "PV de l'invocation",
+  "summonDamage": "Dégâts de l'invocation",
+  "hpRecovery": "Soin",
+  "shaChiRecovery": "Récupération de Sha-Chi"
+ },
+ "levels": {
+  "base": "Niveau 1",
+  "max": "Niveau max"
+ },
+ "slots": {
+  "b1": "Lame principale",
+  "b2": "Lame secondaire",
+  "e1": "Phantom Edge 1",
+  "e2": "Phantom Edge 2"
+ },
+ "rarity": {
+  "Common": "Commune",
+  "Rare": "Rare",
+  "Epic": "Épique"
+ },
+ "trust": {
+  "verified": "Vérifié en jeu",
+  "agree": "Recoupé par {n} sources",
+  "single": "Une seule source",
+  "conflict": "Sources en désaccord",
+  "missing": "Chiffres inconnus"
+ },
+ "ui": {
+  "arsenalKicker": "ARSENAL",
+  "arsenalTitle": "Choisis tes armes",
+  "all": "Toutes",
+  "prev": "Arme précédente",
+  "next": "Arme suivante",
+  "noImage": "Pas encore d'image pour cette arme",
+  "railLabel": "Armes de cette catégorie",
+  "badgeGuard": "Brise-garde",
+  "badgeStatus": "Effets de statut",
+  "badgeMain": "Arme principale",
+  "badgeSecondary": "Arme secondaire",
+  "levelLabel": "Niveau d'amélioration",
+  "showSources": "voir les sources",
+  "hideSources": "masquer les sources",
+  "sourcesAt1": "Au niveau 1 : ",
+  "equipIn": "Équiper en {slot}",
+  "alreadyIn": "Déjà en {slot}",
+  "equipped": "ÉQUIPÉE",
+  "noStats": "Pas encore de chiffres.",
+  "loadoutKicker": "LOADOUT",
+  "loadoutTitle": "Ton équipement",
+  "totBladeDmg": "Dégâts des lames",
+  "totEdgeDmg": "Dégâts des Edges",
+  "totGuard": "Brise-garde",
+  "totStatus": "Effets de statut",
+  "share": "Partager ce loadout",
+  "recommended": "Loadout conseillé",
+  "copied": "Lien copié",
+  "allWeapons": "Toutes les armes",
+  "allWeaponsKicker": "INDEX",
+  "openInPlanner": "Ouvrir dans le planner",
+  "statsTitle": "Stats",
+  "howTo": "Comment la jouer",
+  "pairs": "Se marie bien avec",
+  "sameType": "Autres armes : {type}",
+  "sources": "D'où viennent les chiffres",
+  "home": "Planner",
+  "rankLine": "{stat} : n°{k} sur {n} {kinds}",
+  "ranksTitle": "Son classement",
+  "compareKicker": "FACE À FACE",
+  "compareTitle": "Compare deux armes",
+  "compareBtn": "Comparer",
+  "better": "Meilleure",
+  "vs": "vs"
+ },
+ "pitch": {
+  "summon": "Invoque de l'aide ou te soutient directement. {extra}.",
+  "unknown": "Chiffres encore inconnus. Si tu l'as en main, aide-nous à la documenter.",
+  "dmgHigh": "Frappe parmi les plus fortes de sa catégorie.",
+  "dmgMid": "Dégâts solides, sans excès.",
+  "dmgLow": "Peu de dégâts bruts, elle se joue sur autre chose.",
+  "gbHigh": "Défonce les gardes : idéale contre les boucliers.",
+  "gbMid": "Entame correctement les gardes.",
+  "gbLow": "Peine contre les ennemis qui bloquent.",
+  "stHigh": "Accumule vite les effets de statut, parfaite pour les combats longs.",
+  "stLow": "Applique des effets de statut au fil des coups."
+ },
+ "advice": {
+  "noGuard": "Aucune lame ne brise les gardes. Remplaces-en une, sinon les boucliers vont te bloquer.",
+  "guard1": "{names} brise les gardes. Sors-la dès qu'un ennemi bloque.",
+  "guardN": "{names} brisent les gardes. Sors-les dès qu'un ennemi bloque.",
+  "sameStyle": "Deux lames du même style ({type}). Prends un second style pour changer de rythme en plein combat.",
+  "twoStyles": "Deux styles de lame ({types}). Alterne selon l'ennemi.",
+  "edgeGuard": "Un Phantom Edge parmi les meilleurs en brise-garde. Garde-le pour punir les boss.",
+  "noStatus": "Pas d'effet de statut. Ajoute-en un si tu bloques sur un combat long.",
+  "unsure": "Chiffres non confirmés pour {names}. Les totaux sont indicatifs."
+ },
+ "footer": {
+  "sources": "Chiffres recoupés entre pbz.gg, ofzenandcomputing et thegameswiki. « Recoupé » veut dire que plusieurs sources donnent exactement les mêmes valeurs. Une valeur fausse ? Signale-la, on corrige.",
+  "disclaimer": "Site de fan non officiel, sans lien avec S-GAME. Phantom Blade Zero, ses noms et ses visuels appartiennent à S-GAME.",
+  "legal": "Mentions légales et confidentialité"
+ },
+ "meta": {
+  "plannerTitle": "{game} Build Planner : armes, stats et loadouts",
+  "plannerDesc": "Compare toutes les armes et Phantom Edges de {game} au niveau 1 et au niveau max, compose ton loadout et partage-le.",
+  "weaponTitle": "{name} : stats de la {kind} de {game} (niveau 1 et max)",
+  "weaponDesc": "{name} ({kind}, {type}) dans {game} : dégâts {damage}, brise-garde et statut au niveau 1 et au niveau max, et les loadouts où elle brille."
+ },
+ "notFound": {
+  "title": "Page introuvable",
+  "text": "Cette page n’existe pas, ou elle a changé d’adresse.",
+  "back": "Retour au planner"
+ }
+}

@@ -1,0 +1,148 @@
+{
+ "lang": {
+  "code": "en",
+  "locale": "en-US",
+  "name": "English"
+ },
+ "site": {
+  "brand": "Build Planner",
+  "fan": "fan site",
+  "gameVersion": "Game version",
+  "dataFrom": "data from"
+ },
+ "kinds": {
+  "blade": "Blade",
+  "edge": "Phantom Edge"
+ },
+ "kindsPlural": {
+  "blade": "Blades",
+  "edge": "Phantom Edges"
+ },
+ "types": {
+  "One-Handed": "One-handed",
+  "Dual-Wield": "Dual-wield",
+  "Two-Handed": "Two-handed",
+  "Artifice": "Artifice",
+  "Destructive": "Destructive",
+  "Martial": "Martial",
+  "Ranged": "Ranged",
+  "Summoning": "Summoning"
+ },
+ "stats": {
+  "damage": "Damage",
+  "guardBreak": "Guard break",
+  "status": "Status effects"
+ },
+ "extra": {
+  "summonHealth": "Summon health",
+  "summonDamage": "Summon damage",
+  "hpRecovery": "HP recovery",
+  "shaChiRecovery": "Sha-Chi recovery"
+ },
+ "levels": {
+  "base": "Level 1",
+  "max": "Max level"
+ },
+ "slots": {
+  "b1": "Main blade",
+  "b2": "Second blade",
+  "e1": "Phantom Edge 1",
+  "e2": "Phantom Edge 2"
+ },
+ "rarity": {
+  "Common": "Common",
+  "Rare": "Rare",
+  "Epic": "Epic"
+ },
+ "trust": {
+  "verified": "Verified in game",
+  "agree": "Cross-checked by {n} sources",
+  "single": "Single source",
+  "conflict": "Sources disagree",
+  "missing": "No numbers yet"
+ },
+ "ui": {
+  "arsenalKicker": "ARSENAL",
+  "arsenalTitle": "Pick your weapons",
+  "all": "All",
+  "prev": "Previous weapon",
+  "next": "Next weapon",
+  "noImage": "No image for this weapon yet",
+  "railLabel": "Weapons in this category",
+  "badgeGuard": "Guard break",
+  "badgeStatus": "Status effects",
+  "badgeMain": "Main weapon",
+  "badgeSecondary": "Secondary weapon",
+  "levelLabel": "Upgrade level",
+  "showSources": "show sources",
+  "hideSources": "hide sources",
+  "sourcesAt1": "At level 1: ",
+  "equipIn": "Equip as {slot}",
+  "alreadyIn": "Already {slot}",
+  "equipped": "EQUIPPED",
+  "noStats": "No numbers yet.",
+  "loadoutKicker": "LOADOUT",
+  "loadoutTitle": "Your gear",
+  "totBladeDmg": "Blade damage",
+  "totEdgeDmg": "Phantom Edge damage",
+  "totGuard": "Guard break",
+  "totStatus": "Status effects",
+  "share": "Share this loadout",
+  "recommended": "Recommended loadout",
+  "copied": "Link copied",
+  "allWeapons": "Every weapon",
+  "allWeaponsKicker": "INDEX",
+  "openInPlanner": "Open in the planner",
+  "statsTitle": "Stats",
+  "howTo": "How to use it",
+  "pairs": "Pairs well with",
+  "sameType": "Other {type} weapons",
+  "sources": "Where the numbers come from",
+  "home": "Planner",
+  "rankLine": "{stat}: #{k} of {n} {kinds}",
+  "ranksTitle": "Where it ranks",
+  "compareKicker": "HEAD TO HEAD",
+  "compareTitle": "Compare two weapons",
+  "compareBtn": "Compare",
+  "better": "Better",
+  "vs": "vs"
+ },
+ "pitch": {
+  "summon": "Summons help or supports you directly. {extra}.",
+  "unknown": "No numbers yet. If you have it, help us document it.",
+  "dmgHigh": "Hits among the hardest in its category.",
+  "dmgMid": "Solid damage without going overboard.",
+  "dmgLow": "Low raw damage, it earns its place elsewhere.",
+  "gbHigh": "Smashes guards: the answer to shields.",
+  "gbMid": "Chips at guards decently.",
+  "gbLow": "Struggles against enemies who block.",
+  "stHigh": "Builds status effects fast, great for long fights.",
+  "stLow": "Applies status effects as you keep hitting."
+ },
+ "advice": {
+  "noGuard": "No blade breaks guards. Swap one, or shields will stop you cold.",
+  "guard1": "{names} breaks guards. Bring it out as soon as an enemy blocks.",
+  "guardN": "{names} break guards. Bring them out as soon as an enemy blocks.",
+  "sameStyle": "Both blades are {type}. Take a second style to change rhythm mid-fight.",
+  "twoStyles": "Two blade styles ({types}). Switch depending on the enemy.",
+  "edgeGuard": "One of the best Phantom Edges for guard break. Save it to punish bosses.",
+  "noStatus": "No status effects. Add one if a long fight is giving you trouble.",
+  "unsure": "Numbers not confirmed yet for {names}. Treat the totals as estimates."
+ },
+ "footer": {
+  "sources": "Numbers are cross-checked between pbz.gg, ofzenandcomputing and thegameswiki. “Cross-checked” means several sources give exactly the same values. Spotted a wrong value? Report it and we’ll fix it.",
+  "disclaimer": "Unofficial fan site, not affiliated with S-GAME. Phantom Blade Zero, its names and its artwork belong to S-GAME.",
+  "legal": "Legal notice & privacy"
+ },
+ "meta": {
+  "plannerTitle": "{game} Build Planner: weapons, stats and loadouts",
+  "plannerDesc": "Compare every {game} weapon and Phantom Edge at level 1 and max level, build your loadout and share it.",
+  "weaponTitle": "{name}: {game} {kind} stats at level 1 and max",
+  "weaponDesc": "{name} ({type} {kind}) in {game}: damage {damage}, guard break and status at level 1 and max level, plus loadouts it fits."
+ },
+ "notFound": {
+  "title": "Page not found",
+  "text": "This page doesn’t exist, or it moved.",
+  "back": "Back to the planner"
+ }
+}

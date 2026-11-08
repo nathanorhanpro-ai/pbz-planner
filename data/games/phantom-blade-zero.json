@@ -1,0 +1,2099 @@
+{
+ "id": "phantom-blade-zero",
+ "name": "Phantom Blade Zero",
+ "version": "1.0",
+ "updated": "2026-11-08",
+ "kinds": [
+  "blade",
+  "edge"
+ ],
+ "levels": [
+  "base",
+  "max"
+ ],
+ "slots": [
+  {
+   "id": "b1",
+   "kind": "blade"
+  },
+  {
+   "id": "b2",
+   "kind": "blade"
+  },
+  {
+   "id": "e1",
+   "kind": "edge"
+  },
+  {
+   "id": "e2",
+   "kind": "edge"
+  }
+ ],
+ "stats": [
+  "damage",
+  "guardBreak",
+  "status"
+ ],
+ "items": [
+  {
+   "id": "baishan-stormswords",
+   "name": "Baishan Stormswords",
+   "kind": "blade",
+   "type": "Dual-Wield",
+   "rarity": "Epic",
+   "extra": null,
+   "image": "baishan-stormswords.webp",
+   "stats": {
+    "base": {
+     "damage": 312,
+     "guardBreak": null,
+     "status": 142
+    },
+    "max": {
+     "damage": 2153,
+     "guardBreak": null,
+     "status": 978
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 3,
+    "sources": {
+     "pbz.gg": {
+      "damage": 312,
+      "guardBreak": null,
+      "status": 142
+     },
+     "ofzenandcomputing": {
+      "damage": 312,
+      "guardBreak": 142,
+      "status": null
+     },
+     "thegameswiki": {
+      "damage": 312,
+      "guardBreak": null,
+      "status": 142
+     }
+    }
+   }
+  },
+  {
+   "id": "fiend-saws",
+   "name": "Fiend Saws",
+   "kind": "blade",
+   "type": "Dual-Wield",
+   "rarity": "Common",
+   "extra": null,
+   "image": "fiend-saws.webp",
+   "stats": {
+    "base": {
+     "damage": 302,
+     "guardBreak": 120,
+     "status": null
+    },
+    "max": {
+     "damage": 2087,
+     "guardBreak": 827,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 302,
+      "guardBreak": 120,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 1179,
+      "guardBreak": 468,
+      "status": null
+     },
+     "thegameswiki": {
+      "damage": 302,
+      "guardBreak": 120,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "parting-hooks",
+   "name": "Parting Hooks",
+   "kind": "blade",
+   "type": "Dual-Wield",
+   "rarity": "Common",
+   "extra": null,
+   "image": "parting-hooks.webp",
+   "stats": {
+    "base": {
+     "damage": 288,
+     "guardBreak": 118,
+     "status": null
+    },
+    "max": {
+     "damage": 1987,
+     "guardBreak": 812,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 288,
+      "guardBreak": 118,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 288,
+      "guardBreak": 118,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "sanguine-twin",
+   "name": "Sanguine Twin",
+   "kind": "blade",
+   "type": "Dual-Wield",
+   "rarity": "Common",
+   "extra": null,
+   "image": "sanguine-twin.webp",
+   "stats": {
+    "base": {
+     "damage": 200,
+     "guardBreak": 100,
+     "status": null
+    },
+    "max": {
+     "damage": 1380,
+     "guardBreak": 690,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 200,
+      "guardBreak": 100,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 200,
+      "guardBreak": 100,
+      "status": null
+     },
+     "thegameswiki": {
+      "damage": 223,
+      "guardBreak": 117,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "seamless-death",
+   "name": "Seamless Death",
+   "kind": "blade",
+   "type": "Dual-Wield",
+   "rarity": "Epic",
+   "extra": null,
+   "image": "seamless-death.webp",
+   "stats": {
+    "base": {
+     "damage": 288,
+     "guardBreak": 114,
+     "status": null
+    },
+    "max": {
+     "damage": 1987,
+     "guardBreak": 788,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 288,
+      "guardBreak": 114,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 288,
+      "guardBreak": 114,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "shadowless-edge",
+   "name": "Shadowless Edge",
+   "kind": "blade",
+   "type": "Dual-Wield",
+   "rarity": null,
+   "extra": null,
+   "image": null,
+   "stats": {
+    "base": {
+     "damage": null,
+     "guardBreak": null,
+     "status": null
+    },
+    "max": {
+     "damage": null,
+     "guardBreak": null,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "missing",
+    "verified": false,
+    "agreeing": 0,
+    "sources": {}
+   }
+  },
+  {
+   "id": "sundering-dual-axes",
+   "name": "Sundering Dual Axes",
+   "kind": "blade",
+   "type": "Dual-Wield",
+   "rarity": "Common",
+   "extra": null,
+   "image": "sundering-dual-axes.webp",
+   "stats": {
+    "base": {
+     "damage": 312,
+     "guardBreak": 118,
+     "status": null
+    },
+    "max": {
+     "damage": 2153,
+     "guardBreak": 815,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 312,
+      "guardBreak": 118,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 312,
+      "guardBreak": 118,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "the-ladys-fan",
+   "name": "The Lady's Fan",
+   "kind": "blade",
+   "type": "Dual-Wield",
+   "rarity": "Common",
+   "extra": null,
+   "image": "the-ladys-fan.webp",
+   "stats": {
+    "base": {
+     "damage": 340,
+     "guardBreak": 126,
+     "status": null
+    },
+    "max": {
+     "damage": 2347,
+     "guardBreak": 869,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 340,
+      "guardBreak": 126,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 340,
+      "guardBreak": 126,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "white-serpent-and-crimson-viper",
+   "name": "White Serpent & Crimson Viper",
+   "kind": "blade",
+   "type": "Dual-Wield",
+   "rarity": "Epic",
+   "extra": null,
+   "image": "white-serpent-and-crimson-viper.webp",
+   "stats": {
+    "base": {
+     "damage": 260,
+     "guardBreak": 110,
+     "status": null
+    },
+    "max": {
+     "damage": 1794,
+     "guardBreak": 757,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 260,
+      "guardBreak": 110,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 260,
+      "guardBreak": 110,
+      "status": null
+     },
+     "thegameswiki": {
+      "damage": 312,
+      "guardBreak": 164,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "aureate",
+   "name": "Aureate",
+   "kind": "blade",
+   "type": "One-Handed",
+   "rarity": "Common",
+   "extra": null,
+   "image": "aureate.webp",
+   "stats": {
+    "base": {
+     "damage": 324,
+     "guardBreak": 120,
+     "status": null
+    },
+    "max": {
+     "damage": 2236,
+     "guardBreak": 828,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 324,
+      "guardBreak": 120,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 324,
+      "guardBreak": 120,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "freezing-chaos",
+   "name": "Freezing Chaos",
+   "kind": "blade",
+   "type": "One-Handed",
+   "rarity": "Common",
+   "extra": null,
+   "image": "freezing-chaos.webp",
+   "stats": {
+    "base": {
+     "damage": 324,
+     "guardBreak": null,
+     "status": 144
+    },
+    "max": {
+     "damage": 2236,
+     "guardBreak": null,
+     "status": 994
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 324,
+      "guardBreak": null,
+      "status": 144
+     },
+     "ofzenandcomputing": {
+      "damage": 324,
+      "guardBreak": null,
+      "status": 144
+     }
+    }
+   }
+  },
+  {
+   "id": "infernal-rouge",
+   "name": "Infernal Rouge",
+   "kind": "blade",
+   "type": "One-Handed",
+   "rarity": "Common",
+   "extra": null,
+   "image": "infernal-rouge.webp",
+   "stats": {
+    "base": {
+     "damage": 324,
+     "guardBreak": 120,
+     "status": null
+    },
+    "max": {
+     "damage": 2236,
+     "guardBreak": 828,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "single",
+    "verified": false,
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": 324,
+      "guardBreak": 120,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "jagged-steel",
+   "name": "Jagged Steel",
+   "kind": "blade",
+   "type": "One-Handed",
+   "rarity": "Rare",
+   "extra": null,
+   "image": "jagged-steel.webp",
+   "stats": {
+    "base": {
+     "damage": 240,
+     "guardBreak": null,
+     "status": 124
+    },
+    "max": {
+     "damage": 1656,
+     "guardBreak": null,
+     "status": 853
+    }
+   },
+   "check": {
+    "state": "conflict",
+    "verified": false,
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": 240,
+      "guardBreak": null,
+      "status": 124
+     },
+     "ofzenandcomputing": {
+      "damage": 936,
+      "guardBreak": null,
+      "status": 482
+     },
+     "thegameswiki": {
+      "damage": 272,
+      "guardBreak": null,
+      "status": 103
+     }
+    }
+   }
+  },
+  {
+   "id": "sanguine",
+   "name": "Sanguine",
+   "kind": "blade",
+   "type": "One-Handed",
+   "rarity": "Common",
+   "extra": null,
+   "image": "sanguine.webp",
+   "stats": {
+    "base": {
+     "damage": 200,
+     "guardBreak": 100,
+     "status": null
+    },
+    "max": {
+     "damage": 1380,
+     "guardBreak": 690,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "conflict",
+    "verified": false,
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": 200,
+      "guardBreak": 100,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 227,
+      "guardBreak": 119,
+      "status": null
+     },
+     "thegameswiki": {
+      "damage": 227,
+      "guardBreak": 119,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "soft-snake-sword",
+   "name": "Soft Snake Sword",
+   "kind": "blade",
+   "type": "One-Handed",
+   "rarity": "Epic",
+   "extra": null,
+   "image": "soft-snake-sword.webp",
+   "stats": {
+    "base": {
+     "damage": 288,
+     "guardBreak": 118,
+     "status": null
+    },
+    "max": {
+     "damage": 1987,
+     "guardBreak": 812,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 288,
+      "guardBreak": 118,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 288,
+      "guardBreak": 118,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "the-fanatics-broken-blade",
+   "name": "The Fanatic's Broken Blade",
+   "kind": "blade",
+   "type": "One-Handed",
+   "rarity": "Common",
+   "extra": null,
+   "image": "the-fanatics-broken-blade.webp",
+   "stats": {
+    "base": {
+     "damage": 228,
+     "guardBreak": 96,
+     "status": null
+    },
+    "max": {
+     "damage": 1573,
+     "guardBreak": 661,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 228,
+      "guardBreak": 96,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 228,
+      "guardBreak": 96,
+      "status": null
+     },
+     "thegameswiki": {
+      "damage": 272,
+      "guardBreak": 142,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "the-fanatics-drunken-sword",
+   "name": "The Fanatic's Drunken Sword",
+   "kind": "blade",
+   "type": "One-Handed",
+   "rarity": null,
+   "extra": null,
+   "image": null,
+   "stats": {
+    "base": {
+     "damage": null,
+     "guardBreak": null,
+     "status": null
+    },
+    "max": {
+     "damage": null,
+     "guardBreak": null,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "missing",
+    "verified": false,
+    "agreeing": 0,
+    "sources": {}
+   }
+  },
+  {
+   "id": "tianmiao-wild-oriole-sword",
+   "name": "Tianmiao Wild Oriole Sword",
+   "kind": "blade",
+   "type": "One-Handed",
+   "rarity": null,
+   "extra": null,
+   "image": null,
+   "stats": {
+    "base": {
+     "damage": null,
+     "guardBreak": null,
+     "status": null
+    },
+    "max": {
+     "damage": null,
+     "guardBreak": null,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "missing",
+    "verified": false,
+    "agreeing": 0,
+    "sources": {}
+   }
+  },
+  {
+   "id": "tianxuan-bronze-sword",
+   "name": "Tianxuan Bronze Sword",
+   "kind": "blade",
+   "type": "One-Handed",
+   "rarity": "Common",
+   "extra": null,
+   "image": "tianxuan-bronze-sword.webp",
+   "stats": {
+    "base": {
+     "damage": 240,
+     "guardBreak": 106,
+     "status": null
+    },
+    "max": {
+     "damage": 1656,
+     "guardBreak": 735,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 3,
+    "sources": {
+     "pbz.gg": {
+      "damage": 240,
+      "guardBreak": 106,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 240,
+      "guardBreak": 106,
+      "status": null
+     },
+     "thegameswiki": {
+      "damage": 240,
+      "guardBreak": 106,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "wild-oriole-sword",
+   "name": "Wild Oriole Sword",
+   "kind": "blade",
+   "type": "One-Handed",
+   "rarity": "Common",
+   "extra": null,
+   "image": "wild-oriole-sword.webp",
+   "stats": {
+    "base": {
+     "damage": 295,
+     "guardBreak": 104,
+     "status": null
+    },
+    "max": {
+     "damage": 2034,
+     "guardBreak": 719,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 295,
+      "guardBreak": 104,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 560,
+      "guardBreak": 198,
+      "status": null
+     },
+     "thegameswiki": {
+      "damage": 295,
+      "guardBreak": 104,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "wooden-sanguine",
+   "name": "Wooden Sanguine",
+   "kind": "blade",
+   "type": "One-Handed",
+   "rarity": "Common",
+   "extra": null,
+   "image": "wooden-sanguine.webp",
+   "stats": {
+    "base": {
+     "damage": 160,
+     "guardBreak": 80,
+     "status": null
+    },
+    "max": {
+     "damage": 1104,
+     "guardBreak": 552,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "conflict",
+    "verified": false,
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": 160,
+      "guardBreak": 80,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 161,
+      "guardBreak": 188,
+      "status": null
+     },
+     "thegameswiki": {
+      "damage": 161,
+      "guardBreak": null,
+      "status": 188
+     }
+    }
+   }
+  },
+  {
+   "id": "armybreaker",
+   "name": "Armybreaker",
+   "kind": "blade",
+   "type": "Two-Handed",
+   "rarity": "Common",
+   "extra": null,
+   "image": "armybreaker.webp",
+   "stats": {
+    "base": {
+     "damage": 288,
+     "guardBreak": 114,
+     "status": null
+    },
+    "max": {
+     "damage": 1987,
+     "guardBreak": 788,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 288,
+      "guardBreak": 114,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 288,
+      "guardBreak": 114,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "blazing-edge",
+   "name": "Blazing Edge",
+   "kind": "blade",
+   "type": "Two-Handed",
+   "rarity": "Common",
+   "extra": null,
+   "image": "blazing-edge.webp",
+   "stats": {
+    "base": {
+     "damage": null,
+     "guardBreak": null,
+     "status": null
+    },
+    "max": {
+     "damage": null,
+     "guardBreak": null,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "missing",
+    "verified": false,
+    "agreeing": 0,
+    "sources": {}
+   }
+  },
+  {
+   "id": "bonesaw",
+   "name": "Bonesaw",
+   "kind": "blade",
+   "type": "Two-Handed",
+   "rarity": "Common",
+   "extra": null,
+   "image": "bonesaw.webp",
+   "stats": {
+    "base": {
+     "damage": 312,
+     "guardBreak": null,
+     "status": 142
+    },
+    "max": {
+     "damage": 2153,
+     "guardBreak": null,
+     "status": 978
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 312,
+      "guardBreak": null,
+      "status": 142
+     },
+     "ofzenandcomputing": {
+      "damage": 312,
+      "guardBreak": 142,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "crescent-blade",
+   "name": "Crescent Blade",
+   "kind": "blade",
+   "type": "Two-Handed",
+   "rarity": "Common",
+   "extra": null,
+   "image": "crescent-blade.webp",
+   "stats": {
+    "base": {
+     "damage": 312,
+     "guardBreak": 118,
+     "status": null
+    },
+    "max": {
+     "damage": 2153,
+     "guardBreak": 815,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "conflict",
+    "verified": false,
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": 312,
+      "guardBreak": 118,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 288,
+      "guardBreak": 118,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "juggernaut",
+   "name": "Juggernaut",
+   "kind": "blade",
+   "type": "Two-Handed",
+   "rarity": "Rare",
+   "extra": null,
+   "image": "juggernaut.webp",
+   "stats": {
+    "base": {
+     "damage": 288,
+     "guardBreak": 114,
+     "status": null
+    },
+    "max": {
+     "damage": 1987,
+     "guardBreak": 788,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 288,
+      "guardBreak": 114,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 288,
+      "guardBreak": 114,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "outlaw-warblade",
+   "name": "Outlaw Warblade",
+   "kind": "blade",
+   "type": "Two-Handed",
+   "rarity": "Common",
+   "extra": null,
+   "image": "outlaw-warblade.webp",
+   "stats": {
+    "base": {
+     "damage": 240,
+     "guardBreak": 106,
+     "status": null
+    },
+    "max": {
+     "damage": 1656,
+     "guardBreak": 735,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 3,
+    "sources": {
+     "pbz.gg": {
+      "damage": 240,
+      "guardBreak": 106,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 240,
+      "guardBreak": 106,
+      "status": null
+     },
+     "thegameswiki": {
+      "damage": 240,
+      "guardBreak": 106,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "sanguine-reach",
+   "name": "Sanguine Reach",
+   "kind": "blade",
+   "type": "Two-Handed",
+   "rarity": "Common",
+   "extra": null,
+   "image": "sanguine-reach.webp",
+   "stats": {
+    "base": {
+     "damage": 200,
+     "guardBreak": 100,
+     "status": null
+    },
+    "max": {
+     "damage": 1380,
+     "guardBreak": 690,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 200,
+      "guardBreak": 100,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 200,
+      "guardBreak": 100,
+      "status": null
+     },
+     "thegameswiki": {
+      "damage": 206,
+      "guardBreak": 108,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "scarlet-wraithblade",
+   "name": "Scarlet Wraithblade",
+   "kind": "blade",
+   "type": "Two-Handed",
+   "rarity": "Epic",
+   "extra": null,
+   "image": "scarlet-wraithblade.webp",
+   "stats": {
+    "base": {
+     "damage": 240,
+     "guardBreak": 117,
+     "status": null
+    },
+    "max": {
+     "damage": 1656,
+     "guardBreak": 808,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "conflict",
+    "verified": false,
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": 240,
+      "guardBreak": 117,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 936,
+      "guardBreak": 457,
+      "status": null
+     },
+     "thegameswiki": {
+      "damage": 247,
+      "guardBreak": 129,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "whiteshadow",
+   "name": "Whiteshadow",
+   "kind": "blade",
+   "type": "Two-Handed",
+   "rarity": "Common",
+   "extra": null,
+   "image": "whiteshadow.webp",
+   "stats": {
+    "base": {
+     "damage": 308,
+     "guardBreak": null,
+     "status": 144
+    },
+    "max": {
+     "damage": 2124,
+     "guardBreak": null,
+     "status": 994
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 308,
+      "guardBreak": null,
+      "status": 144
+     },
+     "ofzenandcomputing": {
+      "damage": 308,
+      "guardBreak": 144,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "bastion",
+   "name": "Bastion",
+   "kind": "edge",
+   "type": "Artifice",
+   "rarity": "Rare",
+   "extra": null,
+   "image": "bastion.webp",
+   "stats": {
+    "base": {
+     "damage": 226,
+     "guardBreak": 198,
+     "status": null
+    },
+    "max": {
+     "damage": 1559,
+     "guardBreak": 1366,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 226,
+      "guardBreak": 198,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 226,
+      "guardBreak": 198,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "flaming-mane",
+   "name": "Flaming Mane",
+   "kind": "edge",
+   "type": "Artifice",
+   "rarity": "Rare",
+   "extra": null,
+   "image": "flaming-mane.webp",
+   "stats": {
+    "base": {
+     "damage": 248,
+     "guardBreak": null,
+     "status": 178
+    },
+    "max": {
+     "damage": 1711,
+     "guardBreak": null,
+     "status": 1228
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 248,
+      "guardBreak": null,
+      "status": 178
+     },
+     "ofzenandcomputing": {
+      "damage": 248,
+      "guardBreak": 178,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "flying-guillotine",
+   "name": "Flying Guillotine",
+   "kind": "edge",
+   "type": "Artifice",
+   "rarity": "Common",
+   "extra": null,
+   "image": "flying-guillotine.webp",
+   "stats": {
+    "base": {
+     "damage": 380,
+     "guardBreak": 309,
+     "status": null
+    },
+    "max": {
+     "damage": 2622,
+     "guardBreak": 2132,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 380,
+      "guardBreak": 309,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 380,
+      "guardBreak": 309,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "heartrend-pipa",
+   "name": "Heartrend Pipa",
+   "kind": "edge",
+   "type": "Artifice",
+   "rarity": "Common",
+   "extra": null,
+   "image": "heartrend-pipa.webp",
+   "stats": {
+    "base": {
+     "damage": 276,
+     "guardBreak": 234,
+     "status": null
+    },
+    "max": {
+     "damage": 1904,
+     "guardBreak": 1615,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 276,
+      "guardBreak": 234,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 276,
+      "guardBreak": 234,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "you-loongs-deluge",
+   "name": "You Loong's Deluge",
+   "kind": "edge",
+   "type": "Artifice",
+   "rarity": "Common",
+   "extra": null,
+   "image": "you-loongs-deluge.webp",
+   "stats": {
+    "base": {
+     "damage": 201,
+     "guardBreak": 180,
+     "status": null
+    },
+    "max": {
+     "damage": 1387,
+     "guardBreak": 1242,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "conflict",
+    "verified": false,
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": 201,
+      "guardBreak": 180,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 382,
+      "guardBreak": 342,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "bashpole",
+   "name": "Bashpole",
+   "kind": "edge",
+   "type": "Destructive",
+   "rarity": "Rare",
+   "extra": null,
+   "image": "bashpole.webp",
+   "stats": {
+    "base": {
+     "damage": 221,
+     "guardBreak": 237,
+     "status": null
+    },
+    "max": {
+     "damage": 1525,
+     "guardBreak": 1635,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "conflict",
+    "verified": false,
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": 221,
+      "guardBreak": 237,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 380,
+      "guardBreak": 309,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "dread-axe",
+   "name": "Dread Axe",
+   "kind": "edge",
+   "type": "Destructive",
+   "rarity": "Rare",
+   "extra": null,
+   "image": "dread-axe.webp",
+   "stats": {
+    "base": {
+     "damage": 309,
+     "guardBreak": 208,
+     "status": null
+    },
+    "max": {
+     "damage": 2132,
+     "guardBreak": 1435,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "conflict",
+    "verified": false,
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": 309,
+      "guardBreak": 208,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 963,
+      "guardBreak": 831,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "tiger-cannon",
+   "name": "Tiger Cannon",
+   "kind": "edge",
+   "type": "Destructive",
+   "rarity": "Epic",
+   "extra": null,
+   "image": "tiger-cannon.webp",
+   "stats": {
+    "base": {
+     "damage": 310,
+     "guardBreak": null,
+     "status": 208
+    },
+    "max": {
+     "damage": 2139,
+     "guardBreak": null,
+     "status": 1435
+    }
+   },
+   "check": {
+    "state": "conflict",
+    "verified": false,
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": 310,
+      "guardBreak": null,
+      "status": 208
+     },
+     "ofzenandcomputing": {
+      "damage": 400,
+      "guardBreak": 324,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "war-wagon",
+   "name": "War Wagon",
+   "kind": "edge",
+   "type": "Destructive",
+   "rarity": "Rare",
+   "extra": null,
+   "image": "war-wagon.webp",
+   "stats": {
+    "base": {
+     "damage": 310,
+     "guardBreak": 208,
+     "status": null
+    },
+    "max": {
+     "damage": 2139,
+     "guardBreak": 1435,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "conflict",
+    "verified": false,
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": 310,
+      "guardBreak": 208,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 1018,
+      "guardBreak": 870,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "wolfjaw",
+   "name": "Wolfjaw",
+   "kind": "edge",
+   "type": "Destructive",
+   "rarity": "Rare",
+   "extra": null,
+   "image": "wolfjaw.webp",
+   "stats": {
+    "base": {
+     "damage": 261,
+     "guardBreak": 280,
+     "status": null
+    },
+    "max": {
+     "damage": 1801,
+     "guardBreak": 1932,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "conflict",
+    "verified": false,
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": 261,
+      "guardBreak": 280,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 450,
+      "guardBreak": 360,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "fire-meteor",
+   "name": "Fire Meteor",
+   "kind": "edge",
+   "type": "Martial",
+   "rarity": "Rare",
+   "extra": null,
+   "image": "fire-meteor.webp",
+   "stats": {
+    "base": {
+     "damage": 380,
+     "guardBreak": null,
+     "status": 309
+    },
+    "max": {
+     "damage": 2622,
+     "guardBreak": null,
+     "status": 2132
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 380,
+      "guardBreak": null,
+      "status": 309
+     },
+     "ofzenandcomputing": {
+      "damage": 380,
+      "guardBreak": 309,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "hunters-chain-sickle",
+   "name": "Hunter's Chain Sickle",
+   "kind": "edge",
+   "type": "Martial",
+   "rarity": "Rare",
+   "extra": null,
+   "image": "hunters-chain-sickle.webp",
+   "stats": {
+    "base": {
+     "damage": 247,
+     "guardBreak": 213,
+     "status": null
+    },
+    "max": {
+     "damage": 1704,
+     "guardBreak": 1470,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "conflict",
+    "verified": false,
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": 247,
+      "guardBreak": 213,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 963,
+      "guardBreak": 831,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "ink-cut",
+   "name": "Ink Cut",
+   "kind": "edge",
+   "type": "Martial",
+   "rarity": "Rare",
+   "extra": null,
+   "image": "ink-cut.webp",
+   "stats": {
+    "base": {
+     "damage": 400,
+     "guardBreak": 324,
+     "status": null
+    },
+    "max": {
+     "damage": 2760,
+     "guardBreak": 2236,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 400,
+      "guardBreak": 324,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 400,
+      "guardBreak": 324,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "iron-gauntlets",
+   "name": "Iron Gauntlets",
+   "kind": "edge",
+   "type": "Martial",
+   "rarity": "Rare",
+   "extra": null,
+   "image": "iron-gauntlets.webp",
+   "stats": {
+    "base": {
+     "damage": 261,
+     "guardBreak": 223,
+     "status": null
+    },
+    "max": {
+     "damage": 1801,
+     "guardBreak": 1539,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "conflict",
+    "verified": false,
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": 261,
+      "guardBreak": 223,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 1018,
+      "guardBreak": 870,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "thunder-spear",
+   "name": "Thunder Spear",
+   "kind": "edge",
+   "type": "Martial",
+   "rarity": "Common",
+   "extra": null,
+   "image": "thunder-spear.webp",
+   "stats": {
+    "base": {
+     "damage": 450,
+     "guardBreak": null,
+     "status": 360
+    },
+    "max": {
+     "damage": 3105,
+     "guardBreak": null,
+     "status": 2484
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 450,
+      "guardBreak": null,
+      "status": 360
+     },
+     "ofzenandcomputing": {
+      "damage": 450,
+      "guardBreak": 360,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "feather-bow",
+   "name": "Feather Bow",
+   "kind": "edge",
+   "type": "Ranged",
+   "rarity": "Rare",
+   "extra": null,
+   "image": "feather-bow.webp",
+   "stats": {
+    "base": {
+     "damage": 180,
+     "guardBreak": 164,
+     "status": null
+    },
+    "max": {
+     "damage": 1242,
+     "guardBreak": 1132,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "conflict",
+    "verified": false,
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": 180,
+      "guardBreak": 164,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 309,
+      "guardBreak": 208,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "flying-dagger",
+   "name": "Flying Dagger",
+   "kind": "edge",
+   "type": "Ranged",
+   "rarity": "Rare",
+   "extra": null,
+   "image": "flying-dagger.webp",
+   "stats": {
+    "base": {
+     "damage": 251,
+     "guardBreak": 216,
+     "status": null
+    },
+    "max": {
+     "damage": 1732,
+     "guardBreak": 1490,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 251,
+      "guardBreak": 216,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 251,
+      "guardBreak": 216,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "goldblaze",
+   "name": "Goldblaze",
+   "kind": "edge",
+   "type": "Ranged",
+   "rarity": "Rare",
+   "extra": null,
+   "image": "goldblaze.webp",
+   "stats": {
+    "base": {
+     "damage": 281,
+     "guardBreak": 151,
+     "status": null
+    },
+    "max": {
+     "damage": 1939,
+     "guardBreak": 1042,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "conflict",
+    "verified": false,
+    "agreeing": 1,
+    "sources": {
+     "pbz.gg": {
+      "damage": 281,
+      "guardBreak": 151,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 843,
+      "guardBreak": 453,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "loong-trident",
+   "name": "Loong Trident",
+   "kind": "edge",
+   "type": "Ranged",
+   "rarity": "Rare",
+   "extra": null,
+   "image": "loong-trident.webp",
+   "stats": {
+    "base": {
+     "damage": 195,
+     "guardBreak": 175,
+     "status": null
+    },
+    "max": {
+     "damage": 1346,
+     "guardBreak": 1208,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 195,
+      "guardBreak": 175,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 195,
+      "guardBreak": 175,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "one-eyed-bow",
+   "name": "One-Eyed Bow",
+   "kind": "edge",
+   "type": "Ranged",
+   "rarity": "Rare",
+   "extra": null,
+   "image": "one-eyed-bow.webp",
+   "stats": {
+    "base": {
+     "damage": 214,
+     "guardBreak": 162,
+     "status": null
+    },
+    "max": {
+     "damage": 1477,
+     "guardBreak": 1118,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "agree",
+    "verified": false,
+    "agreeing": 2,
+    "sources": {
+     "pbz.gg": {
+      "damage": 214,
+      "guardBreak": 162,
+      "status": null
+     },
+     "ofzenandcomputing": {
+      "damage": 214,
+      "guardBreak": 162,
+      "status": null
+     }
+    }
+   }
+  },
+  {
+   "id": "inanis-radiant-fan",
+   "name": "Inanis' Radiant Fan",
+   "kind": "edge",
+   "type": "Summoning",
+   "rarity": "Rare",
+   "extra": {
+    "hpRecovery": [
+     342,
+     2360
+    ],
+    "shaChiRecovery": [
+     207,
+     1428
+    ]
+   },
+   "image": "inanis-radiant-fan.webp",
+   "stats": {
+    "base": {
+     "damage": null,
+     "guardBreak": null,
+     "status": null
+    },
+    "max": {
+     "damage": null,
+     "guardBreak": null,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "missing",
+    "verified": false,
+    "agreeing": 0,
+    "sources": {}
+   }
+  },
+  {
+   "id": "kuye-temple-prayer-beads",
+   "name": "Kuye Temple Prayer Beads",
+   "kind": "edge",
+   "type": "Summoning",
+   "rarity": "Rare",
+   "extra": {
+    "summonHealth": [
+     1100,
+     45033
+    ],
+    "summonDamage": [
+     20,
+     179
+    ]
+   },
+   "image": "kuye-temple-prayer-beads.webp",
+   "stats": {
+    "base": {
+     "damage": null,
+     "guardBreak": null,
+     "status": null
+    },
+    "max": {
+     "damage": null,
+     "guardBreak": null,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "missing",
+    "verified": false,
+    "agreeing": 0,
+    "sources": {}
+   }
+  },
+  {
+   "id": "puppeteers-bell",
+   "name": "Puppeteer's Bell",
+   "kind": "edge",
+   "type": "Summoning",
+   "rarity": "Rare",
+   "extra": {
+    "summonHealth": [
+     1700,
+     69597
+    ],
+    "summonDamage": [
+     20,
+     179
+    ]
+   },
+   "image": "puppeteers-bell.webp",
+   "stats": {
+    "base": {
+     "damage": null,
+     "guardBreak": null,
+     "status": null
+    },
+    "max": {
+     "damage": null,
+     "guardBreak": null,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "missing",
+    "verified": false,
+    "agreeing": 0,
+    "sources": {}
+   }
+  },
+  {
+   "id": "swordsmans-summon",
+   "name": "Swordsman's Summon",
+   "kind": "edge",
+   "type": "Summoning",
+   "rarity": "Rare",
+   "extra": {
+    "summonHealth": [
+     1400,
+     57315
+    ],
+    "summonDamage": [
+     20,
+     179
+    ]
+   },
+   "image": "swordsmans-summon.webp",
+   "stats": {
+    "base": {
+     "damage": null,
+     "guardBreak": null,
+     "status": null
+    },
+    "max": {
+     "damage": null,
+     "guardBreak": null,
+     "status": null
+    }
+   },
+   "check": {
+    "state": "missing",
+    "verified": false,
+    "agreeing": 0,
+    "sources": {}
+   }
+  }
+ ]
+}

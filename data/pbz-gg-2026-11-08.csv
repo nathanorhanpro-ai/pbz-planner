@@ -1,0 +1,52 @@
+kind,name,type,dmg_base,dmg_max,gb_base,gb_max,st_base,st_max,rarity
+blade,Wooden Sanguine,One-Handed,160,1104,80,552,,,Common
+blade,Sanguine,One-Handed,200,1380,100,690,,,Common
+blade,Jagged Steel,One-Handed,240,1656,,,124,853,Rare
+blade,The Fanatic's Broken Blade,One-Handed,228,1573,96,661,,,Common
+blade,Tianxuan Bronze Sword,One-Handed,240,1656,106,735,,,Common
+blade,Soft Snake Sword,One-Handed,288,1987,118,812,,,Epic
+blade,Freezing Chaos,One-Handed,324,2236,,,144,994,Common
+blade,Aureate,One-Handed,324,2236,120,828,,,Common
+blade,Wild Oriole Sword,One-Handed,295,2034,104,719,,,Common
+blade,Infernal Rouge,One-Handed,324,2236,120,828,,,Common
+blade,Sanguine Twin,Dual-Wield,200,1380,100,690,,,Common
+blade,White Serpent & Crimson Viper,Dual-Wield,260,1794,110,757,,,Epic
+blade,Parting Hooks,Dual-Wield,288,1987,118,812,,,Common
+blade,Sundering Dual Axes,Dual-Wield,312,2153,118,815,,,Common
+blade,Baishan Stormswords,Dual-Wield,312,2153,,,142,978,Epic
+blade,Seamless Death,Dual-Wield,288,1987,114,788,,,Epic
+blade,Fiend Saws,Dual-Wield,302,2087,120,827,,,Common
+blade,The Lady's Fan,Dual-Wield,340,2347,126,869,,,Common
+blade,Sanguine Reach,Two-Handed,200,1380,100,690,,,Common
+blade,Scarlet Wraithblade,Two-Handed,240,1656,117,808,,,Epic
+blade,Outlaw Warblade,Two-Handed,240,1656,106,735,,,Common
+blade,Armybreaker,Two-Handed,288,1987,114,788,,,Common
+blade,Juggernaut,Two-Handed,288,1987,114,788,,,Rare
+blade,Blazing Edge,Two-Handed,,,,,,,Common
+blade,Bonesaw,Two-Handed,312,2153,,,142,978,Common
+blade,Crescent Blade,Two-Handed,312,2153,118,815,,,Common
+blade,Whiteshadow,Two-Handed,308,2124,,,144,994,Common
+edge,Dread Axe,Destructive,309,2132,208,1435,,,Rare
+edge,Bashpole,Destructive,221,1525,237,1635,,,Rare
+edge,Wolfjaw,Destructive,261,1801,280,1932,,,Rare
+edge,Tiger Cannon,Destructive,310,2139,,,208,1435,Epic
+edge,War Wagon,Destructive,310,2139,208,1435,,,Rare
+edge,Feather Bow,Ranged,180,1242,164,1132,,,Rare
+edge,Flying Dagger,Ranged,251,1732,216,1490,,,Rare
+edge,One-Eyed Bow,Ranged,214,1477,162,1118,,,Rare
+edge,Loong Trident,Ranged,195,1346,175,1208,,,Rare
+edge,Goldblaze,Ranged,281,1939,151,1042,,,Rare
+edge,Hunter's Chain Sickle,Martial,247,1704,213,1470,,,Rare
+edge,Iron Gauntlets,Martial,261,1801,223,1539,,,Rare
+edge,Ink Cut,Martial,400,2760,324,2236,,,Rare
+edge,Thunder Spear,Martial,450,3105,,,360,2484,Common
+edge,Fire Meteor,Martial,380,2622,,,309,2132,Rare
+edge,Bastion,Artifice,226,1559,198,1366,,,Rare
+edge,Heartrend Pipa,Artifice,276,1904,234,1615,,,Common
+edge,Flaming Mane,Artifice,248,1711,,,178,1228,Rare
+edge,You Loong's Deluge,Artifice,201,1387,180,1242,,,Common
+edge,Flying Guillotine,Artifice,380,2622,309,2132,,,Common
+edge,Kuye Temple Prayer Beads,Summoning,,,,,,,Rare
+edge,Puppeteer's Bell,Summoning,,,,,,,Rare
+edge,Inanis' Radiant Fan,Summoning,,,,,,,Rare
+edge,Swordsman's Summon,Summoning,,,,,,,Rare

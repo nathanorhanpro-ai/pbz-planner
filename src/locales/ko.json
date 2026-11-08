@@ -1,0 +1,148 @@
+{
+ "lang": {
+  "code": "ko",
+  "locale": "ko-KR",
+  "name": "한국어"
+ },
+ "site": {
+  "brand": "Build Planner",
+  "fan": "팬 사이트",
+  "gameVersion": "게임 버전",
+  "dataFrom": "데이터 기준일"
+ },
+ "kinds": {
+  "blade": "블레이드",
+  "edge": "팬텀 엣지"
+ },
+ "kindsPlural": {
+  "blade": "블레이드",
+  "edge": "팬텀 엣지"
+ },
+ "types": {
+  "One-Handed": "한손",
+  "Dual-Wield": "쌍수",
+  "Two-Handed": "양손",
+  "Artifice": "기교",
+  "Destructive": "파괴",
+  "Martial": "무술",
+  "Ranged": "원거리",
+  "Summoning": "소환"
+ },
+ "stats": {
+  "damage": "피해",
+  "guardBreak": "가드 브레이크",
+  "status": "상태 이상"
+ },
+ "extra": {
+  "summonHealth": "소환수 체력",
+  "summonDamage": "소환수 피해",
+  "hpRecovery": "HP 회복",
+  "shaChiRecovery": "살기 회복"
+ },
+ "levels": {
+  "base": "레벨 1",
+  "max": "최대 레벨"
+ },
+ "slots": {
+  "b1": "주 블레이드",
+  "b2": "보조 블레이드",
+  "e1": "팬텀 엣지 1",
+  "e2": "팬텀 엣지 2"
+ },
+ "rarity": {
+  "Common": "일반",
+  "Rare": "희귀",
+  "Epic": "영웅"
+ },
+ "trust": {
+  "verified": "게임에서 확인됨",
+  "agree": "출처 {n}곳 교차 확인",
+  "single": "출처 1곳뿐",
+  "conflict": "출처 불일치",
+  "missing": "수치 없음"
+ },
+ "ui": {
+  "arsenalKicker": "ARSENAL",
+  "arsenalTitle": "무기를 고르세요",
+  "all": "전체",
+  "prev": "이전 무기",
+  "next": "다음 무기",
+  "noImage": "아직 이 무기의 이미지가 없습니다",
+  "railLabel": "이 분류의 무기",
+  "badgeGuard": "가드 브레이크",
+  "badgeStatus": "상태 이상",
+  "badgeMain": "주 무기",
+  "badgeSecondary": "보조 무기",
+  "levelLabel": "강화 레벨",
+  "showSources": "출처 보기",
+  "hideSources": "출처 숨기기",
+  "sourcesAt1": "레벨 1 기준: ",
+  "equipIn": "{slot}(으)로 장착",
+  "alreadyIn": "이미 {slot}",
+  "equipped": "장착 중",
+  "noStats": "수치 없음.",
+  "loadoutKicker": "LOADOUT",
+  "loadoutTitle": "내 장비",
+  "totBladeDmg": "블레이드 피해",
+  "totEdgeDmg": "엣지 피해",
+  "totGuard": "가드 브레이크",
+  "totStatus": "상태 이상",
+  "share": "이 장비 공유하기",
+  "recommended": "추천 장비",
+  "copied": "링크 복사됨",
+  "allWeapons": "전체 무기",
+  "allWeaponsKicker": "INDEX",
+  "openInPlanner": "플래너에서 열기",
+  "statsTitle": "능력치",
+  "howTo": "사용법",
+  "pairs": "잘 어울리는 무기",
+  "sameType": "다른 {type} 무기",
+  "sources": "수치 출처",
+  "home": "플래너",
+  "rankLine": "{stat}: {kinds} {n}개 중 {k}위",
+  "ranksTitle": "순위",
+  "compareKicker": "비교",
+  "compareTitle": "두 무기 비교",
+  "compareBtn": "비교하기",
+  "better": "우세",
+  "vs": "vs"
+ },
+ "pitch": {
+  "summon": "지원군을 부르거나 직접 지원합니다. {extra}.",
+  "unknown": "아직 수치가 없습니다. 갖고 있다면 정보를 알려 주세요.",
+  "dmgHigh": "같은 분류에서 최상위권 피해.",
+  "dmgMid": "과하지 않은 안정적인 피해.",
+  "dmgLow": "기본 피해는 낮지만 다른 강점이 있습니다.",
+  "gbHigh": "가드를 부숩니다: 방패의 천적.",
+  "gbMid": "가드를 적당히 깎습니다.",
+  "gbLow": "막는 적에게 약합니다.",
+  "stHigh": "상태 이상이 빠르게 쌓여 장기전에 좋습니다.",
+  "stLow": "계속 때리면 상태 이상을 겁니다."
+ },
+ "advice": {
+  "noGuard": "가드를 깨는 블레이드가 없습니다. 하나를 바꾸지 않으면 방패에 막힙니다.",
+  "guard1": "{names}은(는) 가드를 깹니다. 적이 막으면 바로 꺼내세요.",
+  "guardN": "{names}은(는) 가드를 깹니다. 적이 막으면 바로 꺼내세요.",
+  "sameStyle": "두 블레이드가 모두 {type}입니다. 다른 스타일을 넣어 전투 중 리듬을 바꾸세요.",
+  "twoStyles": "두 가지 블레이드 스타일({types}). 적에 따라 바꾸세요.",
+  "edgeGuard": "가드 브레이크 최상위 팬텀 엣지. 보스 반격용으로 아껴 두세요.",
+  "noStatus": "상태 이상이 없습니다. 장기전이 어렵다면 하나 추가하세요.",
+  "unsure": "{names}의 수치는 아직 확인되지 않았습니다. 합계는 참고용입니다."
+ },
+ "footer": {
+  "sources": "수치는 pbz.gg, ofzenandcomputing, thegameswiki를 교차 확인한 것입니다. '교차 확인'은 여러 출처가 정확히 같은 값을 준다는 뜻입니다. 틀린 값을 발견하면 알려 주세요.",
+  "disclaimer": "비공식 팬 사이트이며 S-GAME과 관련이 없습니다. Phantom Blade Zero의 명칭과 아트워크는 S-GAME에 귀속됩니다.",
+  "legal": "법적 고지 및 개인정보"
+ },
+ "meta": {
+  "plannerTitle": "{game} 빌드 플래너: 무기, 능력치, 장비",
+  "plannerDesc": "{game}의 모든 무기와 팬텀 엣지를 레벨 1과 최대 레벨에서 비교하고 장비를 짜서 공유하세요.",
+  "weaponTitle": "{name}: {game} {kind} 능력치 (레벨 1 및 최대)",
+  "weaponDesc": "{game}의 {name}({type} {kind}): 피해 {damage}, 레벨 1과 최대 레벨의 가드 브레이크와 상태 이상, 어울리는 장비."
+ },
+ "notFound": {
+  "title": "페이지를 찾을 수 없습니다",
+  "text": "이 페이지는 존재하지 않거나 이동되었습니다.",
+  "back": "플래너로 돌아가기"
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "buildCommand": "node scripts/build.mjs",
+ "outputDirectory": "dist/phantom-blade-zero",
+ "installCommand": "echo no-install",
+ "framework": null,
+ "headers": [
+  {
+   "source": "/assets/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=604800, stale-while-revalidate=86400"
+    }
+   ]
+  }
+ ]
+}

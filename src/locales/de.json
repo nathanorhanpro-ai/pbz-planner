@@ -1,0 +1,148 @@
+{
+ "lang": {
+  "code": "de",
+  "locale": "de-DE",
+  "name": "Deutsch"
+ },
+ "site": {
+  "brand": "Build Planner",
+  "fan": "Fanseite",
+  "gameVersion": "Spielversion",
+  "dataFrom": "Daten vom"
+ },
+ "kinds": {
+  "blade": "Klinge",
+  "edge": "Phantom Edge"
+ },
+ "kindsPlural": {
+  "blade": "Klingen",
+  "edge": "Phantom Edges"
+ },
+ "types": {
+  "One-Handed": "Einhändig",
+  "Dual-Wield": "Beidhändig",
+  "Two-Handed": "Zweihändig",
+  "Artifice": "Kunstfertigkeit",
+  "Destructive": "Zerstörung",
+  "Martial": "Kampfkunst",
+  "Ranged": "Fernkampf",
+  "Summoning": "Beschwörung"
+ },
+ "stats": {
+  "damage": "Schaden",
+  "guardBreak": "Deckungsbruch",
+  "status": "Statuseffekte"
+ },
+ "extra": {
+  "summonHealth": "Leben der Beschwörung",
+  "summonDamage": "Schaden der Beschwörung",
+  "hpRecovery": "LP-Regeneration",
+  "shaChiRecovery": "Sha-Chi-Regeneration"
+ },
+ "levels": {
+  "base": "Stufe 1",
+  "max": "Max. Stufe"
+ },
+ "slots": {
+  "b1": "Hauptklinge",
+  "b2": "Zweitklinge",
+  "e1": "Phantom Edge 1",
+  "e2": "Phantom Edge 2"
+ },
+ "rarity": {
+  "Common": "Gewöhnlich",
+  "Rare": "Selten",
+  "Epic": "Episch"
+ },
+ "trust": {
+  "verified": "Im Spiel geprüft",
+  "agree": "Von {n} Quellen bestätigt",
+  "single": "Nur eine Quelle",
+  "conflict": "Quellen widersprechen sich",
+  "missing": "Noch keine Werte"
+ },
+ "ui": {
+  "arsenalKicker": "ARSENAL",
+  "arsenalTitle": "Wähle deine Waffen",
+  "all": "Alle",
+  "prev": "Vorherige Waffe",
+  "next": "Nächste Waffe",
+  "noImage": "Noch kein Bild für diese Waffe",
+  "railLabel": "Waffen dieser Kategorie",
+  "badgeGuard": "Deckungsbruch",
+  "badgeStatus": "Statuseffekte",
+  "badgeMain": "Hauptwaffe",
+  "badgeSecondary": "Zweitwaffe",
+  "levelLabel": "Ausbaustufe",
+  "showSources": "Quellen zeigen",
+  "hideSources": "Quellen ausblenden",
+  "sourcesAt1": "Auf Stufe 1: ",
+  "equipIn": "Als {slot} ausrüsten",
+  "alreadyIn": "Bereits {slot}",
+  "equipped": "AUSGERÜSTET",
+  "noStats": "Noch keine Werte.",
+  "loadoutKicker": "LOADOUT",
+  "loadoutTitle": "Deine Ausrüstung",
+  "totBladeDmg": "Klingenschaden",
+  "totEdgeDmg": "Edge-Schaden",
+  "totGuard": "Deckungsbruch",
+  "totStatus": "Statuseffekte",
+  "share": "Loadout teilen",
+  "recommended": "Empfohlenes Loadout",
+  "copied": "Link kopiert",
+  "allWeapons": "Alle Waffen",
+  "allWeaponsKicker": "INDEX",
+  "openInPlanner": "Im Planner öffnen",
+  "statsTitle": "Werte",
+  "howTo": "So spielst du sie",
+  "pairs": "Passt gut zu",
+  "sameType": "Weitere Waffen: {type}",
+  "sources": "Woher die Zahlen kommen",
+  "home": "Planner",
+  "rankLine": "{stat}: Platz {k} von {n} {kinds}",
+  "ranksTitle": "Rangliste",
+  "compareKicker": "DIREKTVERGLEICH",
+  "compareTitle": "Zwei Waffen vergleichen",
+  "compareBtn": "Vergleichen",
+  "better": "Besser",
+  "vs": "vs"
+ },
+ "pitch": {
+  "summon": "Ruft Hilfe herbei oder unterstützt dich direkt. {extra}.",
+  "unknown": "Noch keine Werte. Wenn du sie hast, hilf uns beim Erfassen.",
+  "dmgHigh": "Schlägt mit am härtesten in ihrer Kategorie zu.",
+  "dmgMid": "Solider Schaden ohne Übertreibung.",
+  "dmgLow": "Wenig Rohschaden, ihre Stärke liegt woanders.",
+  "gbHigh": "Zertrümmert Deckungen: die Antwort auf Schilde.",
+  "gbMid": "Knabbert ordentlich an Deckungen.",
+  "gbLow": "Tut sich gegen blockende Gegner schwer.",
+  "stHigh": "Baut Statuseffekte schnell auf, ideal für lange Kämpfe.",
+  "stLow": "Verursacht Statuseffekte, wenn du dranbleibst."
+ },
+ "advice": {
+  "noGuard": "Keine Klinge bricht Deckungen. Tausche eine aus, sonst stoppen dich Schilde.",
+  "guard1": "{names} bricht Deckungen. Zieh sie, sobald ein Gegner blockt.",
+  "guardN": "{names} brechen Deckungen. Zieh sie, sobald ein Gegner blockt.",
+  "sameStyle": "Beide Klingen sind {type}. Nimm einen zweiten Stil, um im Kampf den Rhythmus zu wechseln.",
+  "twoStyles": "Zwei Klingenstile ({types}). Wechsle je nach Gegner.",
+  "edgeGuard": "Eine der besten Phantom Edges für Deckungsbruch. Heb sie dir für Bosse auf.",
+  "noStatus": "Keine Statuseffekte. Nimm einen dazu, wenn dir ein langer Kampf zu schaffen macht.",
+  "unsure": "Werte für {names} noch nicht bestätigt. Die Summen sind Schätzungen."
+ },
+ "footer": {
+  "sources": "Die Werte werden zwischen pbz.gg, ofzenandcomputing und thegameswiki abgeglichen. „Bestätigt“ heißt, dass mehrere Quellen genau dieselben Werte nennen. Fehler gefunden? Melde ihn, wir korrigieren.",
+  "disclaimer": "Inoffizielle Fanseite ohne Verbindung zu S-GAME. Phantom Blade Zero, seine Namen und Grafiken gehören S-GAME.",
+  "legal": "Impressum & Datenschutz"
+ },
+ "meta": {
+  "plannerTitle": "{game} Build Planner: Waffen, Werte und Loadouts",
+  "plannerDesc": "Vergleiche alle Waffen und Phantom Edges aus {game} auf Stufe 1 und Maximalstufe, stell dein Loadout zusammen und teile es.",
+  "weaponTitle": "{name}: Werte der {game}-{kind} auf Stufe 1 und Max",
+  "weaponDesc": "{name} ({type}, {kind}) in {game}: Schaden {damage}, Deckungsbruch und Status auf Stufe 1 und Maximalstufe, dazu passende Loadouts."
+ },
+ "notFound": {
+  "title": "Seite nicht gefunden",
+  "text": "Diese Seite existiert nicht oder wurde verschoben.",
+  "back": "Zurück zum Planer"
+ }
+}

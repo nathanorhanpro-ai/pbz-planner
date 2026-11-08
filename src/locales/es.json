@@ -1,0 +1,148 @@
+{
+ "lang": {
+  "code": "es",
+  "locale": "es-ES",
+  "name": "Español"
+ },
+ "site": {
+  "brand": "Build Planner",
+  "fan": "web de fans",
+  "gameVersion": "Versión del juego",
+  "dataFrom": "datos del"
+ },
+ "kinds": {
+  "blade": "Hoja",
+  "edge": "Phantom Edge"
+ },
+ "kindsPlural": {
+  "blade": "Hojas",
+  "edge": "Phantom Edges"
+ },
+ "types": {
+  "One-Handed": "Una mano",
+  "Dual-Wield": "Doble",
+  "Two-Handed": "Dos manos",
+  "Artifice": "Artificio",
+  "Destructive": "Destrucción",
+  "Martial": "Marcial",
+  "Ranged": "A distancia",
+  "Summoning": "Invocación"
+ },
+ "stats": {
+  "damage": "Daño",
+  "guardBreak": "Rotura de guardia",
+  "status": "Efectos de estado"
+ },
+ "extra": {
+  "summonHealth": "Vida de la invocación",
+  "summonDamage": "Daño de la invocación",
+  "hpRecovery": "Recuperación de PS",
+  "shaChiRecovery": "Recuperación de Sha-Chi"
+ },
+ "levels": {
+  "base": "Nivel 1",
+  "max": "Nivel máximo"
+ },
+ "slots": {
+  "b1": "Hoja principal",
+  "b2": "Hoja secundaria",
+  "e1": "Phantom Edge 1",
+  "e2": "Phantom Edge 2"
+ },
+ "rarity": {
+  "Common": "Común",
+  "Rare": "Rara",
+  "Epic": "Épica"
+ },
+ "trust": {
+  "verified": "Verificado en el juego",
+  "agree": "Contrastado por {n} fuentes",
+  "single": "Una sola fuente",
+  "conflict": "Las fuentes no coinciden",
+  "missing": "Sin datos aún"
+ },
+ "ui": {
+  "arsenalKicker": "ARSENAL",
+  "arsenalTitle": "Elige tus armas",
+  "all": "Todas",
+  "prev": "Arma anterior",
+  "next": "Arma siguiente",
+  "noImage": "Aún no hay imagen de esta arma",
+  "railLabel": "Armas de esta categoría",
+  "badgeGuard": "Rotura de guardia",
+  "badgeStatus": "Efectos de estado",
+  "badgeMain": "Arma principal",
+  "badgeSecondary": "Arma secundaria",
+  "levelLabel": "Nivel de mejora",
+  "showSources": "ver fuentes",
+  "hideSources": "ocultar fuentes",
+  "sourcesAt1": "En nivel 1: ",
+  "equipIn": "Equipar como {slot}",
+  "alreadyIn": "Ya es {slot}",
+  "equipped": "EQUIPADA",
+  "noStats": "Sin datos aún.",
+  "loadoutKicker": "LOADOUT",
+  "loadoutTitle": "Tu equipo",
+  "totBladeDmg": "Daño de las hojas",
+  "totEdgeDmg": "Daño de los Edges",
+  "totGuard": "Rotura de guardia",
+  "totStatus": "Efectos de estado",
+  "share": "Compartir este equipo",
+  "recommended": "Equipo recomendado",
+  "copied": "Enlace copiado",
+  "allWeapons": "Todas las armas",
+  "allWeaponsKicker": "ÍNDICE",
+  "openInPlanner": "Abrir en el planificador",
+  "statsTitle": "Estadísticas",
+  "howTo": "Cómo usarla",
+  "pairs": "Combina bien con",
+  "sameType": "Otras armas: {type}",
+  "sources": "De dónde salen los datos",
+  "home": "Planificador",
+  "rankLine": "{stat}: n.º {k} de {n} {kinds}",
+  "ranksTitle": "Clasificación",
+  "compareKicker": "CARA A CARA",
+  "compareTitle": "Compara dos armas",
+  "compareBtn": "Comparar",
+  "better": "Mejor",
+  "vs": "vs"
+ },
+ "pitch": {
+  "summon": "Invoca ayuda o te apoya directamente. {extra}.",
+  "unknown": "Sin datos aún. Si la tienes, ayúdanos a documentarla.",
+  "dmgHigh": "Golpea entre las más fuertes de su categoría.",
+  "dmgMid": "Daño sólido, sin pasarse.",
+  "dmgLow": "Poco daño bruto: destaca en otra cosa.",
+  "gbHigh": "Revienta guardias: la respuesta a los escudos.",
+  "gbMid": "Desgasta guardias de forma decente.",
+  "gbLow": "Sufre contra enemigos que bloquean.",
+  "stHigh": "Acumula estados rápido, ideal para combates largos.",
+  "stLow": "Aplica estados a medida que sigues golpeando."
+ },
+ "advice": {
+  "noGuard": "Ninguna hoja rompe guardias. Cambia una o los escudos te frenarán.",
+  "guard1": "{names} rompe guardias. Sácala en cuanto un enemigo bloquee.",
+  "guardN": "{names} rompen guardias. Sácalas en cuanto un enemigo bloquee.",
+  "sameStyle": "Las dos hojas son de tipo {type}. Añade otro estilo para cambiar de ritmo en pleno combate.",
+  "twoStyles": "Dos estilos de hoja ({types}). Alterna según el enemigo.",
+  "edgeGuard": "Uno de los mejores Phantom Edges en rotura de guardia. Guárdalo para castigar a los jefes.",
+  "noStatus": "Sin efectos de estado. Añade uno si un combate largo se te atraganta.",
+  "unsure": "Datos aún sin confirmar para {names}. Los totales son orientativos."
+ },
+ "footer": {
+  "sources": "Los datos se contrastan entre pbz.gg, ofzenandcomputing y thegameswiki. «Contrastado» significa que varias fuentes dan exactamente los mismos valores. ¿Ves un dato erróneo? Avísanos y lo corregimos.",
+  "disclaimer": "Web de fans no oficial, sin relación con S-GAME. Phantom Blade Zero, sus nombres y sus imágenes pertenecen a S-GAME.",
+  "legal": "Aviso legal y privacidad"
+ },
+ "meta": {
+  "plannerTitle": "Planificador de builds de {game}: armas, estadísticas y equipos",
+  "plannerDesc": "Compara todas las armas y Phantom Edges de {game} en nivel 1 y nivel máximo, arma tu equipo y compártelo.",
+  "weaponTitle": "{name}: estadísticas de {kind} en {game} (nivel 1 y máximo)",
+  "weaponDesc": "{name} ({kind}, {type}) en {game}: daño {damage}, rotura de guardia y estados en nivel 1 y máximo, y los equipos donde encaja."
+ },
+ "notFound": {
+  "title": "Página no encontrada",
+  "text": "Esta página no existe o ha cambiado de dirección.",
+  "back": "Volver al planificador"
+ }
+}
