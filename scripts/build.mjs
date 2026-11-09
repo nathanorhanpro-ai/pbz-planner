@@ -35,7 +35,7 @@ function validate(g) {
 }
 
 const ICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0b0d'/%3E%3Cpath d='M32 6 L40 32 L32 58 L24 32 Z' fill='%23c0313a'/%3E%3Cpath d='M32 6 L32 58' stroke='%23c9a45c' stroke-width='2'/%3E%3C/svg%3E";
-const page = (lang, head, body) => `<!doctype html>\n<html lang="${lang}">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n<meta name="theme-color" content="#0b0b0d">\n<link rel="icon" href="${ICON}">\n<link rel="apple-touch-icon" href="/apple-touch-icon.png">\n${head}</head>\n<body>\n${body}\n</body>\n</html>\n`;
+const page = (lang, head, body) => `<!doctype html>\n<html lang="${lang}">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n<meta name="theme-color" content="#0b0b0d">\n<link rel="icon" href="${ICON}">\n<link rel="apple-touch-icon" href="/apple-touch-icon.png">\n<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>\n<script defer src="/_vercel/insights/script.js"></script>\n${head}</head>\n<body>\n${body}\n</body>\n</html>\n`;
 
 // rel : chemin de la page sans préfixe de langue (ex. "index.html", "weapons/x/index.html")
 // Balises de partage (Discord, Reddit, X). Les URL absolues exigent siteUrl.
