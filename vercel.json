@@ -1,0 +1,8 @@
+{
+  "framework": null,
+  "installCommand": "",
+  "buildCommand": "python3 src/build.py",
+  "outputDirectory": "dist",
+  "trailingSlash": true,
+  "headers": [{"source": "/(.*)\\.(js|css|svg|png|webp)", "headers": [{"key": "Cache-Control", "value": "public, max-age=86400"}]}]
+}
