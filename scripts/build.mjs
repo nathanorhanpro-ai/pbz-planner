@@ -12,6 +12,7 @@ const CSS = read("src/style.css"), PLANNER = read("src/planner.html"), LOGIC = r
 const SITE = JSON.parse(read("data/site.json"));
 // Sur Vercel, l'adresse de production est fournie au build : pas besoin de la coder en dur.
 if (!SITE.siteUrl && process.env.VERCEL_PROJECT_PRODUCTION_URL) SITE.siteUrl = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+if (!SITE.siteUrl && process.env.CF_PAGES && SITE.pagesUrl) SITE.siteUrl = SITE.pagesUrl; // Cloudflare Pages : adresse de production fixe
 // Mesure d'audience sans cookie selon l'hébergeur : Vercel Web Analytics, ou Cloudflare Web Analytics (jeton dans site.json).
 const ANALYTICS = process.env.CF_PAGES
   ? (SITE.cfBeacon ? `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"${SITE.cfBeacon}"}'></script>\n` : "")
