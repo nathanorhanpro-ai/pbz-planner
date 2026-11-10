@@ -37,7 +37,7 @@
       <span class="kicker">{{t.ui.loadoutKicker}}</span>
       <h2 id="h-loadout">{{t.ui.loadoutTitle}}</h2>
     </div>
-    <div class="slots" id="slots"><div class="fig" id="fig"></div></div>
+    <div class="slots" id="slots"></div>
     <div class="verdict">
       <div class="totals" id="totals"></div>
       <div style="display:grid;gap:16px;align-content:start">
@@ -198,38 +198,10 @@
   $("duel").addEventListener("change", (e) => { const sel = e.target.closest("select"); if (sel) { cmp[+sel.dataset.i] = sel.value; renderDuel(); } });
   $("duel").addEventListener("click", (e) => { const lv = e.target.closest("[data-l]"); if (lv) { lvl = lv.dataset.l; renderStage(); renderDuel(); renderLoadout(); } });
 
-  const FIG_SUN = `<svg class="sun" viewBox="0 0 240 420" aria-hidden="true"><defs><radialGradient id="fsun"><stop offset="0" stop-color="#b3262f"/><stop offset=".7" stop-color="#8e1c25"/><stop offset="1" stop-color="#5c1219"/></radialGradient><filter id="frough"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="7"/><feDisplacementMap in="SourceGraphic" scale="9"/></filter></defs><circle cx="120" cy="170" r="104" fill="url(#fsun)" filter="url(#frough)" opacity=".9"/><ellipse cx="118" cy="398" rx="78" ry="7" fill="#000" opacity=".55"/></svg>`;
-  const FIG_BODY = `<svg class="body" viewBox="0 0 240 420" aria-hidden="true"><g fill="#0a0a0c" stroke="#2a2a31" stroke-width=".8" stroke-linejoin="round"><path d="M108 80C84 84 46 92 8 118C30 112 56 108 80 108C52 122 26 146 12 178C40 150 74 124 110 98Z"/><path d="M106 36C96 34 86 40 78 48C66 58 52 62 36 60C52 70 70 70 84 62C92 56 98 50 104 48Z"/><ellipse cx="111" cy="31" rx="7" ry="5.5"/><path d="M102 37C112 33 124 38 124 53C124 65 119 74 112 77C104 78 98 71 98 59C97 49 98 41 102 37Z"/><path d="M99 316L112 318L110 386L118 398L92 398L97 386Z"/><path d="M124 316L138 314L144 386L154 398L128 398L130 386Z"/><path d="M105 74L116 74L118 83C134 85 150 89 158 99C160 122 154 150 148 168L142 178C150 212 162 262 176 312C166 318 150 322 138 322L134 296L128 322C118 323 106 323 98 322L100 290C90 300 76 316 60 324C46 330 30 332 14 328C36 316 54 296 66 270C76 238 80 206 84 178L80 168C74 150 70 124 72 99C80 90 94 85 105 83Z"/><path d="M76 96C62 112 56 138 54 160C48 178 34 196 16 208C36 214 58 204 70 186C76 170 80 150 86 132Z"/></g><path d="M82 167C100 172 124 172 148 165L147 176C124 183 100 183 83 178Z" fill="#c9a45c"/><path d="M90 179C74 194 56 204 36 211C56 210 76 202 93 187Z" fill="#c9a45c" opacity=".75"/></svg>`;
-  const FIG_ARM = `<svg class="arm" viewBox="0 0 240 420" aria-hidden="true"><g fill="#0a0a0c" stroke="#2a2a31" stroke-width=".8"><path d="M150 94C164 104 172 128 174 152C176 172 182 186 188 198L178 206C168 190 160 172 156 152C152 136 148 118 142 106Z"/><ellipse cx="184" cy="205" rx="7.5" ry="8.5"/></g></svg>`;
-  const figure = (items) => {
-    const w = (it, c) => it.image ? `<div class="w ${c}"><img src="${big(it)}" alt="" loading="lazy"></div>` : "";
-    const g = items[0].grip, held = items[0].image && g ? `<div class="held"><img src="${big(items[0])}" alt="" loading="lazy" style="height:${(g[2] > .8 ? 62 / g[2] : 80).toFixed(1)}cqw;transform-origin:${g[0] * 100}% ${g[1] * 100}%;transform:translate(-${g[0] * 100}%,-${g[1] * 100}%) rotate(-6deg)"></div>` : "";
-    return `${FIG_SUN}${w(items[1], "back")}${FIG_BODY}${held}${FIG_ARM}${w(items[2], "ph ph1")}${w(items[3], "ph ph2")}`;
-  };
-  // Personnage 3D original, chargé seulement si WebGL marche et quand la section approche de l'écran. Sinon : silhouette 2D.
-  let fig3d = null, want3d = (() => { try { return !!document.createElement("canvas").getContext("webgl2"); } catch { return false; } })() && "IntersectionObserver" in window;
-  const toFig = (items) => items.map((it) => (it.image ? { url: big(it), grip: it.grip } : null));
-  function drawFigure(items) {
-    const f = $("fig"); f.setAttribute("role", "img"); f.setAttribute("aria-label", items.map((i) => i.name).join(", "));
-    if (fig3d) return fig3d.update(toFig(items));
-    f.innerHTML = figure(items);
-    if (!want3d) return;
-    want3d = false;
-    const io = new IntersectionObserver(([en]) => {
-      if (!en.isIntersecting) return; io.disconnect();
-      import(`${BASE}assets/js/figure3d.js`).then((m) => {
-        f.innerHTML = FIG_SUN + `<span class="hint">${T.ui.rotateHint}</span>`; f.classList.add("is3d");
-        fig3d = m.mount(f); fig3d.update(toFig(loadout.map((id) => byId[id])));
-      }).catch(() => {});
-    }, { rootMargin: "400px" });
-    io.observe(f);
-  }
   function renderLoadout() {
     const items = loadout.map((id) => byId[id]);
-    $("slots").querySelectorAll(".slot").forEach((n) => n.remove());
-    $("slots").insertAdjacentHTML("afterbegin", G.slots.map((s, i) => { const it = items[i];
-      return `<button type="button" class="slot s${i}" data-i="${i}"><span class="lbl">${T.slots[s.id]}</span>${it.image ? `<img src="${thumb(it)}" alt="">` : `<span style="height:120px"></span>`}<span class="nm">${esc(it.name)}</span><span class="sm">${T.types[it.type]}</span></button>`; }).join(""));
-    drawFigure(items);
+    $("slots").innerHTML = G.slots.map((s, i) => { const it = items[i];
+      return `<button type="button" class="slot" data-i="${i}"><span class="lbl">${T.slots[s.id]}</span>${it.image ? `<img src="${thumb(it)}" alt="">` : `<span style="height:120px"></span>`}<span class="nm">${esc(it.name)}</span><span class="sm">${T.types[it.type]}</span></button>`; }).join("");
     const blades = items.filter((i) => i.kind === "blade"), edges = items.filter((i) => i.kind === "edge");
     const sum = (arr, k) => arr.reduce((a, i) => a + (S(i)[k] || 0), 0);
     $("totals").innerHTML = [[T.ui.totBladeDmg, sum(blades, "damage")], [T.ui.totEdgeDmg, sum(edges, "damage")], [T.ui.totGuard, sum(items, "guardBreak")], [T.ui.totStatus, sum(items, "status")]]

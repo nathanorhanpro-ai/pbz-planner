@@ -106,8 +106,7 @@
   "compareBtn": "Vergleichen",
   "better": "Besser",
   "vs": "vs",
-  "report": "Falschen Wert melden",
-  "rotateHint": "↔ Zum Drehen ziehen"
+  "report": "Falschen Wert melden"
  },
  "pitch": {
   "summon": "Ruft Hilfe herbei oder unterstützt dich direkt. {extra}.",

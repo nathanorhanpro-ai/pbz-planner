@@ -6,7 +6,7 @@ Site statique bilingue : un planner de loadout + une page par arme, en anglais (
 - `data/games/<jeu>.json` : données du jeu (générées par `scripts/seed_from_csv.py` depuis les CSV de sources).
 - `data/site.json` : `siteUrl` (à remplir une fois le domaine choisi, active canonical, hreflang, og:image, sitemap.xml et robots.txt).
 - `src/planner.html`, `src/style.css`, `src/logic.js` (logique partagée navigateur/Node), `src/locales/en.json` et `fr.json` (tous les textes).
-- `assets/weapons` (rendus officiels, © S-GAME, récupérés sur pbz.gg ; Shadowless Edge vient du wiki Fextralife), `assets/thumbs` (miniatures 180 px), `assets/ui` (icônes de types et de stats), `assets/js/figure3d.js` (personnage 3D original du loadout, three.js 0.160 MIT dans `assets/vendor`).
+- `assets/weapons` (rendus officiels, © S-GAME, récupérés sur pbz.gg ; Shadowless Edge vient du wiki Fextralife), `assets/thumbs` (miniatures 180 px), `assets/ui` (icônes de types et de stats).
 - `scripts/build.mjs` : génère `dist/<jeu>/` (site à déployer) et `dist/preview/` (aperçu).
 - `scripts/og_images.py` : une image de partage par arme + une pour le planner (polices libres OFL dans `scripts/fonts`). Les balises og:image ne sortent qu'une fois `siteUrl` rempli.
 - `scripts/diff.mjs ancien.json nouveau.json` : changelog d'un patch en Markdown.

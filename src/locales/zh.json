@@ -106,8 +106,7 @@
   "compareBtn": "对比",
   "better": "更强",
   "vs": "vs",
-  "report": "报告错误数值",
-  "rotateHint": "↔ 拖动旋转"
+  "report": "报告错误数值"
  },
  "pitch": {
   "summon": "可召唤援手或直接为你提供支援。{extra}。",

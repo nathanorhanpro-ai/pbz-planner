@@ -106,8 +106,7 @@
   "compareBtn": "Comparar",
   "better": "Melhor",
   "vs": "vs",
-  "report": "Reportar um número errado",
-  "rotateHint": "↔ Arraste para girar"
+  "report": "Reportar um número errado"
  },
  "pitch": {
   "summon": "Invoca ajuda ou te apoia diretamente. {extra}.",

@@ -69,23 +69,6 @@ for kind, name, typ in FEXTRA_ONLY:
                   "stats": {"base": dict(empty), "max": dict(empty)},
                   "check": {"state": "missing", "verified": False, "agreeing": 0, "sources": {}}})
 
-def grip(f):
-    """Point de prise de l'arme (fractions x, y de l'image) et ratio largeur/hauteur, pour la poser dans la main du personnage.
-    On prend le pixel opaque le plus haut (pommeau) et on descend de 10 % vers le centre de masse."""
-    from PIL import Image
-    a = Image.open(IMG / f).getchannel("A").point(lambda v: 255 if v > 60 else 0)
-    w, h = a.size
-    bx0, by0, bx1, by1 = a.getbbox()
-    row = [x for x in range(w) if a.getpixel((x, by0 + 2))]
-    px, py = sum(row) / len(row), by0
-    px_ = a.resize((w // 8, h // 8)).load()
-    pts = [(x * 8, y * 8) for y in range(h // 8) for x in range(w // 8) if px_[x, y]]
-    cx, cy = sum(p[0] for p in pts) / len(pts), sum(p[1] for p in pts) / len(pts)
-    gx, gy = px + .1 * (cx - px), py + .1 * (cy - py)
-    return [round(gx / w, 3), round(gy / h, 3), round(w / h, 3)]
-
-for it in items:
-    if it["image"]: it["grip"] = grip(it["image"])
 items.sort(key=lambda x: (x["kind"], x["type"], x["name"]))
 game = {
     "id": "phantom-blade-zero", "name": "Phantom Blade Zero",

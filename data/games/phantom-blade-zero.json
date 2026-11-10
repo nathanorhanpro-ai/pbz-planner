@@ -76,12 +76,7 @@
       "status": 142
      }
     }
-   },
-   "grip": [
-    0.855,
-    0.074,
-    0.474
-   ]
+   }
   },
   {
    "id": "fiend-saws",
@@ -124,12 +119,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.661,
-    0.07,
-    0.783
-   ]
+   }
   },
   {
    "id": "parting-hooks",
@@ -167,12 +157,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.787,
-    0.075,
-    0.599
-   ]
+   }
   },
   {
    "id": "sanguine-twin",
@@ -215,12 +200,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.701,
-    0.077,
-    0.773
-   ]
+   }
   },
   {
    "id": "seamless-death",
@@ -258,12 +238,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.601,
-    0.074,
-    0.972
-   ]
+   }
   },
   {
    "id": "shadowless-edge",
@@ -290,12 +265,7 @@
     "verified": false,
     "agreeing": 0,
     "sources": {}
-   },
-   "grip": [
-    0.721,
-    0.051,
-    0.749
-   ]
+   }
   },
   {
    "id": "sundering-dual-axes",
@@ -333,12 +303,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.491,
-    0.069,
-    0.972
-   ]
+   }
   },
   {
    "id": "the-ladys-fan",
@@ -376,12 +341,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.445,
-    0.073,
-    1.174
-   ]
+   }
   },
   {
    "id": "white-serpent-and-crimson-viper",
@@ -424,12 +384,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.756,
-    0.069,
-    0.556
-   ]
+   }
   },
   {
    "id": "aureate",
@@ -467,12 +422,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.874,
-    0.077,
-    0.534
-   ]
+   }
   },
   {
    "id": "freezing-chaos",
@@ -510,12 +460,7 @@
       "status": 144
      }
     }
-   },
-   "grip": [
-    0.883,
-    0.075,
-    0.594
-   ]
+   }
   },
   {
    "id": "infernal-rouge",
@@ -548,12 +493,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.871,
-    0.072,
-    0.838
-   ]
+   }
   },
   {
    "id": "jagged-steel",
@@ -596,12 +536,7 @@
       "status": 103
      }
     }
-   },
-   "grip": [
-    0.834,
-    0.077,
-    0.686
-   ]
+   }
   },
   {
    "id": "sanguine",
@@ -644,12 +579,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.794,
-    0.079,
-    0.556
-   ]
+   }
   },
   {
    "id": "soft-snake-sword",
@@ -687,12 +617,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.86,
-    0.075,
-    0.533
-   ]
+   }
   },
   {
    "id": "the-fanatics-broken-blade",
@@ -735,12 +660,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.855,
-    0.075,
-    0.519
-   ]
+   }
   },
   {
    "id": "tianxuan-bronze-sword",
@@ -783,12 +703,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.823,
-    0.075,
-    0.505
-   ]
+   }
   },
   {
    "id": "wild-oriole-sword",
@@ -831,12 +746,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.846,
-    0.076,
-    0.525
-   ]
+   }
   },
   {
    "id": "wooden-sanguine",
@@ -879,12 +789,7 @@
       "status": 188
      }
     }
-   },
-   "grip": [
-    0.875,
-    0.076,
-    0.516
-   ]
+   }
   },
   {
    "id": "armybreaker",
@@ -922,12 +827,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.857,
-    0.084,
-    0.509
-   ]
+   }
   },
   {
    "id": "blazing-edge",
@@ -954,12 +854,7 @@
     "verified": false,
     "agreeing": 0,
     "sources": {}
-   },
-   "grip": [
-    0.858,
-    0.073,
-    0.829
-   ]
+   }
   },
   {
    "id": "bonesaw",
@@ -997,12 +892,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.86,
-    0.083,
-    0.527
-   ]
+   }
   },
   {
    "id": "crescent-blade",
@@ -1040,12 +930,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.875,
-    0.062,
-    0.693
-   ]
+   }
   },
   {
    "id": "juggernaut",
@@ -1083,12 +968,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.881,
-    0.088,
-    0.644
-   ]
+   }
   },
   {
    "id": "outlaw-warblade",
@@ -1131,12 +1011,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.829,
-    0.081,
-    0.599
-   ]
+   }
   },
   {
    "id": "sanguine-reach",
@@ -1179,12 +1054,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.873,
-    0.079,
-    0.523
-   ]
+   }
   },
   {
    "id": "scarlet-wraithblade",
@@ -1227,12 +1097,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.882,
-    0.086,
-    0.669
-   ]
+   }
   },
   {
    "id": "whiteshadow",
@@ -1270,12 +1135,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.871,
-    0.072,
-    0.527
-   ]
+   }
   },
   {
    "id": "bastion",
@@ -1313,12 +1173,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.521,
-    0.073,
-    0.699
-   ]
+   }
   },
   {
    "id": "flaming-mane",
@@ -1356,12 +1211,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.32,
-    0.09,
-    0.932
-   ]
+   }
   },
   {
    "id": "flying-guillotine",
@@ -1399,12 +1249,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.884,
-    0.09,
-    0.683
-   ]
+   }
   },
   {
    "id": "heartrend-pipa",
@@ -1442,12 +1287,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.807,
-    0.085,
-    0.574
-   ]
+   }
   },
   {
    "id": "you-loongs-deluge",
@@ -1485,12 +1325,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.347,
-    0.078,
-    0.932
-   ]
+   }
   },
   {
    "id": "bashpole",
@@ -1528,12 +1363,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.874,
-    0.089,
-    0.584
-   ]
+   }
   },
   {
    "id": "dread-axe",
@@ -1571,12 +1401,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.826,
-    0.089,
-    0.508
-   ]
+   }
   },
   {
    "id": "tiger-cannon",
@@ -1614,12 +1439,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.794,
-    0.072,
-    0.949
-   ]
+   }
   },
   {
    "id": "war-wagon",
@@ -1657,12 +1477,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.571,
-    0.095,
-    1.951
-   ]
+   }
   },
   {
    "id": "wolfjaw",
@@ -1700,12 +1515,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.786,
-    0.087,
-    0.547
-   ]
+   }
   },
   {
    "id": "fire-meteor",
@@ -1743,12 +1553,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.809,
-    0.073,
-    1.004
-   ]
+   }
   },
   {
    "id": "hunters-chain-sickle",
@@ -1786,12 +1591,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.539,
-    0.063,
-    0.719
-   ]
+   }
   },
   {
    "id": "ink-cut",
@@ -1829,12 +1629,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.849,
-    0.072,
-    0.492
-   ]
+   }
   },
   {
    "id": "iron-gauntlets",
@@ -1872,12 +1667,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.633,
-    0.076,
-    0.697
-   ]
+   }
   },
   {
    "id": "thunder-spear",
@@ -1915,12 +1705,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.87,
-    0.054,
-    0.502
-   ]
+   }
   },
   {
    "id": "feather-bow",
@@ -1958,12 +1743,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.852,
-    0.073,
-    0.5
-   ]
+   }
   },
   {
    "id": "flying-dagger",
@@ -2001,12 +1781,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.886,
-    0.08,
-    0.656
-   ]
+   }
   },
   {
    "id": "goldblaze",
@@ -2044,12 +1819,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.788,
-    0.068,
-    0.605
-   ]
+   }
   },
   {
    "id": "loong-trident",
@@ -2087,12 +1857,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.871,
-    0.06,
-    0.523
-   ]
+   }
   },
   {
    "id": "one-eyed-bow",
@@ -2130,12 +1895,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.838,
-    0.072,
-    0.496
-   ]
+   }
   },
   {
    "id": "inanis-radiant-fan",
@@ -2177,12 +1937,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.459,
-    0.07,
-    1.079
-   ]
+   }
   },
   {
    "id": "kuye-temple-prayer-beads",
@@ -2224,12 +1979,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.361,
-    0.084,
-    0.735
-   ]
+   }
   },
   {
    "id": "puppeteers-bell",
@@ -2271,12 +2021,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.726,
-    0.083,
-    0.8
-   ]
+   }
   },
   {
    "id": "swordsmans-summon",
@@ -2318,12 +2063,7 @@
       "status": null
      }
     }
-   },
-   "grip": [
-    0.754,
-    0.068,
-    0.556
-   ]
+   }
   }
  ]
 }
