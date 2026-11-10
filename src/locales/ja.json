@@ -106,7 +106,8 @@
   "compareBtn": "比較する",
   "better": "優勢",
   "vs": "vs",
-  "report": "数値の誤りを報告"
+  "report": "数値の誤りを報告",
+  "rotateHint": "↔ ドラッグで回転"
  },
  "pitch": {
   "summon": "援軍を呼ぶ、または直接あなたを支援する。{extra}。",

@@ -37,7 +37,7 @@
       <span class="kicker">{{t.ui.loadoutKicker}}</span>
       <h2 id="h-loadout">{{t.ui.loadoutTitle}}</h2>
     </div>
-    <div class="slots" id="slots"></div>
+    <div class="slots" id="slots"><div class="fig" id="fig"></div></div>
     <div class="verdict">
       <div class="totals" id="totals"></div>
       <div style="display:grid;gap:16px;align-content:start">
@@ -204,12 +204,32 @@
   const figure = (items) => {
     const w = (it, c) => it.image ? `<div class="w ${c}"><img src="${big(it)}" alt="" loading="lazy"></div>` : "";
     const g = items[0].grip, held = items[0].image && g ? `<div class="held"><img src="${big(items[0])}" alt="" loading="lazy" style="height:${(g[2] > .8 ? 62 / g[2] : 80).toFixed(1)}cqw;transform-origin:${g[0] * 100}% ${g[1] * 100}%;transform:translate(-${g[0] * 100}%,-${g[1] * 100}%) rotate(-6deg)"></div>` : "";
-    return `<div class="fig" role="img" aria-label="${esc(items.map((i) => i.name).join(", "))}">${FIG_SUN}${w(items[1], "back")}${FIG_BODY}${held}${FIG_ARM}${w(items[2], "ph ph1")}${w(items[3], "ph ph2")}</div>`;
+    return `${FIG_SUN}${w(items[1], "back")}${FIG_BODY}${held}${FIG_ARM}${w(items[2], "ph ph1")}${w(items[3], "ph ph2")}`;
   };
+  // Personnage 3D original, chargé seulement si WebGL marche et quand la section approche de l'écran. Sinon : silhouette 2D.
+  let fig3d = null, want3d = (() => { try { return !!document.createElement("canvas").getContext("webgl2"); } catch { return false; } })() && "IntersectionObserver" in window;
+  const toFig = (items) => items.map((it) => (it.image ? { url: big(it), grip: it.grip } : null));
+  function drawFigure(items) {
+    const f = $("fig"); f.setAttribute("role", "img"); f.setAttribute("aria-label", items.map((i) => i.name).join(", "));
+    if (fig3d) return fig3d.update(toFig(items));
+    f.innerHTML = figure(items);
+    if (!want3d) return;
+    want3d = false;
+    const io = new IntersectionObserver(([en]) => {
+      if (!en.isIntersecting) return; io.disconnect();
+      import(`${BASE}assets/js/figure3d.js`).then((m) => {
+        f.innerHTML = FIG_SUN + `<span class="hint">${T.ui.rotateHint}</span>`; f.classList.add("is3d");
+        fig3d = m.mount(f); fig3d.update(toFig(loadout.map((id) => byId[id])));
+      }).catch(() => {});
+    }, { rootMargin: "400px" });
+    io.observe(f);
+  }
   function renderLoadout() {
     const items = loadout.map((id) => byId[id]);
-    $("slots").innerHTML = G.slots.map((s, i) => { const it = items[i];
-      return `<button type="button" class="slot s${i}" data-i="${i}"><span class="lbl">${T.slots[s.id]}</span>${it.image ? `<img src="${thumb(it)}" alt="">` : `<span style="height:120px"></span>`}<span class="nm">${esc(it.name)}</span><span class="sm">${T.types[it.type]}</span></button>`; }).join("") + figure(items);
+    $("slots").querySelectorAll(".slot").forEach((n) => n.remove());
+    $("slots").insertAdjacentHTML("afterbegin", G.slots.map((s, i) => { const it = items[i];
+      return `<button type="button" class="slot s${i}" data-i="${i}"><span class="lbl">${T.slots[s.id]}</span>${it.image ? `<img src="${thumb(it)}" alt="">` : `<span style="height:120px"></span>`}<span class="nm">${esc(it.name)}</span><span class="sm">${T.types[it.type]}</span></button>`; }).join(""));
+    drawFigure(items);
     const blades = items.filter((i) => i.kind === "blade"), edges = items.filter((i) => i.kind === "edge");
     const sum = (arr, k) => arr.reduce((a, i) => a + (S(i)[k] || 0), 0);
     $("totals").innerHTML = [[T.ui.totBladeDmg, sum(blades, "damage")], [T.ui.totEdgeDmg, sum(edges, "damage")], [T.ui.totGuard, sum(items, "guardBreak")], [T.ui.totStatus, sum(items, "status")]]

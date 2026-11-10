@@ -106,7 +106,8 @@
   "compareBtn": "Compare",
   "better": "Better",
   "vs": "vs",
-  "report": "Report a wrong number"
+  "report": "Report a wrong number",
+  "rotateHint": "↔ Drag to rotate"
  },
  "pitch": {
   "summon": "Summons help or supports you directly. {extra}.",
