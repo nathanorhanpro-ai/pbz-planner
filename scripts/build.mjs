@@ -76,7 +76,7 @@ function header(T, base, rel, plannerHref) {
 const reportHref = (name, lang) => SITE.reportUrl ? `${SITE.reportUrl}?${new URLSearchParams({ title: name ? `Wrong stats: ${name}` : "Wrong stats", body: `Weapon: ${name || ""}\nPage language: ${lang}\nWhat is wrong (stat, level, value you see in game):\n\nScreenshot (optional):\n` })}` : "";
 const LEGAL = { en: read("src/legal/en.html"), fr: read("src/legal/fr.html") };
 const legalPath = (lang) => (LEGAL[lang] ? PREFIX[lang] : "") + "legal/index.html";
-const footer = (T, base = "") => `<footer class="band"><div class="inner"><p>${esc(T.footer.sources)}</p><p>${esc(T.footer.disclaimer)}</p><p><a href="${base}${legalPath(T.lang.code)}">${esc(T.footer.legal)}</a>${SITE.reportUrl ? ` · <a href="${esc(reportHref("", T.lang.code))}" rel="noopener" target="_blank">${esc(T.ui.report)}</a>` : ""}${SITE.support ? ` · <a href="${esc(SITE.support)}" rel="noopener" target="_blank">${esc(T.ui.support)}</a>` : ""}</p></div></footer>`;
+const footer = (T, base = "") => `<footer class="band"><div class="inner"><p>${esc(T.footer.sources)}</p><p>${esc(T.footer.disclaimer)}</p><p><a href="${base}${legalPath(T.lang.code)}">${esc(T.footer.legal)}</a>${SITE.reportUrl ? ` · <a href="${esc(reportHref("", T.lang.code))}" rel="noopener" target="_blank">${esc(T.ui.report)}</a>` : ""}${SITE.support ? ` · <a href="${esc(SITE.support)}" rel="noopener" target="_blank">${esc(T.ui.support)}</a>` : ""}${SITE.affiliate ? ` · <a href="${esc(SITE.affiliate)}" rel="sponsored noopener" target="_blank">${esc(T.ui.buyGame)}</a> <small>(${esc(T.ui.affiliate)})</small>` : ""}</p></div></footer>`;
 const legalBody = (lang, updated) => LEGAL[lang]
   .replaceAll("{{UPDATED}}", esc(updated)).replaceAll("{{HOST_NAME}}", esc(SITE.host.name))
   .replaceAll("{{HOST_ADDRESS}}", esc(SITE.host.address)).replaceAll("{{HOST_URL}}", esc(SITE.host.url))
@@ -154,7 +154,7 @@ for (const f of games) {
       .replace("{{HEADER}}", () => sub(header(T, pBase, "index.html", `${pBase}${P}index.html`)))
       .replace("{{INDEX}}", () => indexHtml(g, T, (i) => `weapons/${i.id}/index.html`))
       .replace("{{FOOTER}}", () => footer(T, pBase))
-      .replace("{{SUPPORT}}", () => SITE.support ? `<a class="btn ghost" href="${esc(SITE.support)}" rel="noopener" target="_blank">${esc(T.ui.support)}</a>` : "")
+      .replace("{{SUPPORT}}", () => (SITE.support ? `<a class="btn ghost" href="${esc(SITE.support)}" rel="noopener" target="_blank">${esc(T.ui.support)}</a>` : "") + (SITE.affiliate ? `<a class="btn ghost" href="${esc(SITE.affiliate)}" rel="sponsored noopener" target="_blank">${esc(T.ui.buyGame)} <small class="aff">${esc(T.ui.affiliate)}</small></a>` : ""))
       .replace("{{DATA}}", () => json(g)).replace("{{T}}", () => json(T)).replace("{{LOGIC}}", () => LOGIC)
       .replaceAll("{{BASE}}", pBase);
     const cut = plannerBody.indexOf("<header");

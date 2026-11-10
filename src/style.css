@@ -201,3 +201,4 @@ a.btn { text-decoration: none; display: inline-block; }
 .legal.nf { min-height: 50vh; align-content: center; }
 footer a { color: var(--gold); }
 .legal a.btn { color: #fff; text-decoration: none; }
+.btn .aff { font-weight: 400; font-size: 11px; opacity: .7; margin-left: 4px; }
