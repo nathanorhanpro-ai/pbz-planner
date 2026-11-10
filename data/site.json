@@ -11,5 +11,15 @@
  "support": "https://ko-fi.com/phantombladezerofan",
  "cfBeacon": "",
  "pagesUrl": "https://pbz-planner.pages.dev",
- "affiliate": "https://www.instant-gaming.com/en/search/?q=phantom%20blade%20zero&igr=gamer-28b9d03"
+ "affiliate": "https://www.instant-gaming.com/en/search/?q=phantom%20blade%20zero&igr=gamer-28b9d03",
+ "affiliateGames": [
+  "Black Myth: Wukong",
+  "Sekiro: Shadows Die Twice",
+  "Wo Long: Fallen Dynasty",
+  "Lies of P",
+  "Nioh 2",
+  "Elden Ring",
+  "Stellar Blade",
+  "Rise of the Ronin"
+ ]
 }

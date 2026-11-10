@@ -109,7 +109,9 @@
   "report": "Report a wrong number",
   "support": "☕ Support the site",
   "buyGame": "🎮 Phantom Blade Zero for less",
-  "affiliate": "affiliate link"
+  "affiliate": "affiliate link",
+  "similarTitle": "Games like this one",
+  "seePrice": "See price"
  },
  "pitch": {
   "summon": "Summons help or supports you directly. {extra}.",

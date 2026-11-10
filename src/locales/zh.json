@@ -109,7 +109,9 @@
   "report": "报告错误数值",
   "support": "☕ 支持本站",
   "buyGame": "🎮 更便宜购买 Phantom Blade Zero",
-  "affiliate": "联盟链接"
+  "affiliate": "联盟链接",
+  "similarTitle": "同类游戏",
+  "seePrice": "查看价格"
  },
  "pitch": {
   "summon": "可召唤援手或直接为你提供支援。{extra}。",

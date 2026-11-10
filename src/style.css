@@ -202,3 +202,13 @@ a.btn { text-decoration: none; display: inline-block; }
 footer a { color: var(--gold); }
 .legal a.btn { color: #fff; text-decoration: none; }
 .btn .aff { font-weight: 400; font-size: 11px; opacity: .7; margin-left: 4px; }
+/* Bandeau affilié */
+.promo { border-top: 1px solid var(--line); padding-block: 22px 26px; }
+.promo .inner { display: grid; gap: 12px; }
+.promo-head { display: flex; align-items: baseline; gap: 12px; }
+.promo-head small { font-size: 11px; color: var(--muted); }
+.promo-row { display: flex; gap: 10px; overflow-x: auto; scrollbar-width: thin; padding-bottom: 4px; }
+.promo-card { flex: 0 0 auto; min-width: 150px; display: grid; gap: 6px; padding: 12px 14px; background: var(--bg); border: 1px solid var(--line); border-left: 2px solid var(--crimson); border-radius: 2px; color: var(--ink); text-decoration: none; }
+.promo-card b { font-family: var(--f-display); font-weight: 400; font-size: 15px; letter-spacing: .03em; white-space: nowrap; }
+.promo-card span { font-size: 12px; color: var(--gold); }
+.promo-card:hover { border-color: var(--muted); border-left-color: var(--crimson); }

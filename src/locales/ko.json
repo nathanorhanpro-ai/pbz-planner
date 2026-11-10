@@ -109,7 +109,9 @@
   "report": "잘못된 수치 신고",
   "support": "☕ 사이트 후원하기",
   "buyGame": "🎮 Phantom Blade Zero 더 싸게",
-  "affiliate": "제휴 링크"
+  "affiliate": "제휴 링크",
+  "similarTitle": "비슷한 게임",
+  "seePrice": "가격 보기"
  },
  "pitch": {
   "summon": "지원군을 부르거나 직접 지원합니다. {extra}.",

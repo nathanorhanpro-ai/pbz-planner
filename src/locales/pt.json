@@ -109,7 +109,9 @@
   "report": "Reportar um número errado",
   "support": "☕ Apoiar o site",
   "buyGame": "🎮 Phantom Blade Zero mais barato",
-  "affiliate": "link de afiliado"
+  "affiliate": "link de afiliado",
+  "similarTitle": "Jogos do mesmo estilo",
+  "seePrice": "Ver preço"
  },
  "pitch": {
   "summon": "Invoca ajuda ou te apoia diretamente. {extra}.",
