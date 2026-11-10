@@ -204,7 +204,8 @@ footer a { color: var(--gold); }
 .btn .aff { font-weight: 400; font-size: 11px; opacity: .7; margin-left: 4px; }
 /* Bandeau affilié */
 .promo { border-top: 1px solid var(--line); padding-block: 22px 26px; }
-.promo .inner { display: grid; gap: 12px; }
+.promo-block { display: grid; gap: 12px; }
+.loadout .promo-block { border-top: 1px solid var(--line); padding-top: 22px; }
 .promo-head { display: flex; align-items: baseline; gap: 12px; }
 .promo-head small { font-size: 11px; color: var(--muted); }
 .promo-row { display: flex; gap: 10px; overflow-x: auto; scrollbar-width: thin; padding-bottom: 4px; }

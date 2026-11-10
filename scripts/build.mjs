@@ -77,11 +77,12 @@ const reportHref = (name, lang) => SITE.reportUrl ? `${SITE.reportUrl}?${new URL
 const LEGAL = { en: read("src/legal/en.html"), fr: read("src/legal/fr.html") };
 const legalPath = (lang) => (LEGAL[lang] ? PREFIX[lang] : "") + "legal/index.html";
 // Bandeau affilié : jeux du même genre, liens de recherche Instant Gaming avec le code d'affiliation.
-const promo = (T, banner = true) => {
+const promoBlock = (T) => {
   if (!SITE.affiliate || !SITE.affiliateGames?.length) return "";
   const u = new URL(SITE.affiliate), link = (q) => { u.searchParams.set("q", q); return u.toString(); };
-  return `<aside class="promo band" aria-label="${esc(T.ui.similarTitle)}"><div class="inner"><div class="promo-head"><span class="kicker">${esc(T.ui.similarTitle)}</span><small>${esc(T.ui.affiliate)}</small></div><div class="promo-row">${SITE.affiliateGames.map((n) => `<a class="promo-card" href="${esc(link(n))}" rel="sponsored noopener" target="_blank"><b>${esc(n)}</b><span>${esc(T.ui.seePrice)} →</span></a>`).join("")}</div>${banner ? igBanner(T) : ""}</div></aside>`;
+  return `<div class="promo-block">${igBanner(T)}<div class="promo-head"><span class="kicker">${esc(T.ui.similarTitle)}</span><small>${esc(T.ui.affiliate)}</small></div><div class="promo-row">${SITE.affiliateGames.map((n) => `<a class="promo-card" href="${esc(link(n))}" rel="sponsored noopener" target="_blank"><b>${esc(n)}</b><span>${esc(T.ui.seePrice)} →</span></a>`).join("")}</div></div>`;
 };
+const promo = (T) => { const b = promoBlock(T); return b ? `<aside class="promo band" aria-label="${esc(T.ui.similarTitle)}"><div class="inner">${b}</div></aside>` : ""; };
 // Bannière dynamique officielle Instant Gaming (prix mis à jour par eux). Langues gérées : fr en de es pt, sinon en.
 const IG_LANGS = ["fr", "en", "de", "es", "pt"];
 const igBanner = (T) => {
@@ -167,8 +168,8 @@ for (const f of games) {
       .replace("{{CSS}}", () => CSS)
       .replace("{{HEADER}}", () => sub(header(T, pBase, "index.html", `${pBase}${P}index.html`)))
       .replace("{{INDEX}}", () => indexHtml(g, T, (i) => `weapons/${i.id}/index.html`))
-      .replace("{{FOOTER}}", () => promo(T, false) + footer(T, pBase))
-      .replace("{{IGBANNER}}", () => igBanner(T))
+      .replace("{{FOOTER}}", () => footer(T, pBase))
+      .replace("{{PROMO}}", () => promoBlock(T))
       .replace("{{SUPPORT}}", () => (SITE.support ? `<a class="btn ghost" href="${esc(SITE.support)}" rel="noopener" target="_blank">${esc(T.ui.support)}</a>` : "") + "")
       .replace("{{DATA}}", () => json(g)).replace("{{T}}", () => json(T)).replace("{{LOGIC}}", () => LOGIC)
       .replaceAll("{{BASE}}", pBase);
