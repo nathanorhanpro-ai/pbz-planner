@@ -77,10 +77,10 @@ const reportHref = (name, lang) => SITE.reportUrl ? `${SITE.reportUrl}?${new URL
 const LEGAL = { en: read("src/legal/en.html"), fr: read("src/legal/fr.html") };
 const legalPath = (lang) => (LEGAL[lang] ? PREFIX[lang] : "") + "legal/index.html";
 // Bandeau affilié : jeux du même genre, liens de recherche Instant Gaming avec le code d'affiliation.
-const promo = (T) => {
+const promo = (T, banner = true) => {
   if (!SITE.affiliate || !SITE.affiliateGames?.length) return "";
   const u = new URL(SITE.affiliate), link = (q) => { u.searchParams.set("q", q); return u.toString(); };
-  return `<aside class="promo band" aria-label="${esc(T.ui.similarTitle)}"><div class="inner"><div class="promo-head"><span class="kicker">${esc(T.ui.similarTitle)}</span><small>${esc(T.ui.affiliate)}</small></div><div class="promo-row">${SITE.affiliateGames.map((n) => `<a class="promo-card" href="${esc(link(n))}" rel="sponsored noopener" target="_blank"><b>${esc(n)}</b><span>${esc(T.ui.seePrice)} →</span></a>`).join("")}</div>${igBanner(T)}</div></aside>`;
+  return `<aside class="promo band" aria-label="${esc(T.ui.similarTitle)}"><div class="inner"><div class="promo-head"><span class="kicker">${esc(T.ui.similarTitle)}</span><small>${esc(T.ui.affiliate)}</small></div><div class="promo-row">${SITE.affiliateGames.map((n) => `<a class="promo-card" href="${esc(link(n))}" rel="sponsored noopener" target="_blank"><b>${esc(n)}</b><span>${esc(T.ui.seePrice)} →</span></a>`).join("")}</div>${banner ? igBanner(T) : ""}</div></aside>`;
 };
 // Bannière dynamique officielle Instant Gaming (prix mis à jour par eux). Langues gérées : fr en de es pt, sinon en.
 const IG_LANGS = ["fr", "en", "de", "es", "pt"];
@@ -88,7 +88,7 @@ const igBanner = (T) => {
   const igr = SITE.affiliate && new URL(SITE.affiliate).searchParams.get("igr");
   if (!igr || !SITE.igBanner) return "";
   const lang = IG_LANGS.includes(T.lang.code) ? T.lang.code : "en";
-  return `<div class="ig-banner"></div><script>window.igBannerConfig = { lang: ${JSON.stringify(lang)}, igr: ${JSON.stringify(igr)}, banners: ["ig-banner"] };</script><script src="https://www.instant-gaming.com/api/banner/partner/loader.js" defer></script>`;
+  return `<div class="ig-wrap"><small class="aff">${esc(T.ui.affiliate)}</small><div class="ig-banner"></div></div><script>window.igBannerConfig = { lang: ${JSON.stringify(lang)}, igr: ${JSON.stringify(igr)}, banners: ["ig-banner"] };</script><script src="https://www.instant-gaming.com/api/banner/partner/loader.js" defer></script>`;
 };
 const footer = (T, base = "") => `<footer class="band"><div class="inner"><p>${esc(T.footer.sources)}</p><p>${esc(T.footer.disclaimer)}</p><p><a href="${base}${legalPath(T.lang.code)}">${esc(T.footer.legal)}</a>${SITE.reportUrl ? ` · <a href="${esc(reportHref("", T.lang.code))}" rel="noopener" target="_blank">${esc(T.ui.report)}</a>` : ""}${SITE.support ? ` · <a href="${esc(SITE.support)}" rel="noopener" target="_blank">${esc(T.ui.support)}</a>` : ""}${SITE.affiliate ? ` · <a href="${esc(SITE.affiliate)}" rel="sponsored noopener" target="_blank">${esc(T.ui.buyGame)}</a> <small>(${esc(T.ui.affiliate)})</small>` : ""}</p></div></footer>`;
 const legalBody = (lang, updated) => LEGAL[lang]
@@ -167,8 +167,9 @@ for (const f of games) {
       .replace("{{CSS}}", () => CSS)
       .replace("{{HEADER}}", () => sub(header(T, pBase, "index.html", `${pBase}${P}index.html`)))
       .replace("{{INDEX}}", () => indexHtml(g, T, (i) => `weapons/${i.id}/index.html`))
-      .replace("{{FOOTER}}", () => promo(T) + footer(T, pBase))
-      .replace("{{SUPPORT}}", () => (SITE.support ? `<a class="btn ghost" href="${esc(SITE.support)}" rel="noopener" target="_blank">${esc(T.ui.support)}</a>` : "") + (SITE.affiliate ? `<a class="btn ghost" href="${esc(SITE.affiliate)}" rel="sponsored noopener" target="_blank">${esc(T.ui.buyGame)} <small class="aff">${esc(T.ui.affiliate)}</small></a>` : ""))
+      .replace("{{FOOTER}}", () => promo(T, false) + footer(T, pBase))
+      .replace("{{IGBANNER}}", () => igBanner(T))
+      .replace("{{SUPPORT}}", () => (SITE.support ? `<a class="btn ghost" href="${esc(SITE.support)}" rel="noopener" target="_blank">${esc(T.ui.support)}</a>` : "") + "")
       .replace("{{DATA}}", () => json(g)).replace("{{T}}", () => json(T)).replace("{{LOGIC}}", () => LOGIC)
       .replaceAll("{{BASE}}", pBase);
     const cut = plannerBody.indexOf("<header");
