@@ -12,6 +12,10 @@ const CSS = read("src/style.css"), PLANNER = read("src/planner.html"), LOGIC = r
 const SITE = JSON.parse(read("data/site.json"));
 // Sur Vercel, l'adresse de production est fournie au build : pas besoin de la coder en dur.
 if (!SITE.siteUrl && process.env.VERCEL_PROJECT_PRODUCTION_URL) SITE.siteUrl = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+// Mesure d'audience sans cookie selon l'hébergeur : Vercel Web Analytics, ou Cloudflare Web Analytics (jeton dans site.json).
+const ANALYTICS = process.env.CF_PAGES
+  ? (SITE.cfBeacon ? `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"${SITE.cfBeacon}"}'></script>\n` : "")
+  : `<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>\n<script defer src="/_vercel/insights/script.js"></script>\n`;
 const ORDER = ["en", "fr", "zh", "ja", "ko", "de", "es", "pt", "ru"];
 const LANGS = Object.fromEntries(ORDER.filter((c) => existsSync(join(root, `src/locales/${c}.json`))).map((c) => [c, JSON.parse(read(`src/locales/${c}.json`))]));
 const PREFIX = Object.fromEntries(Object.keys(LANGS).map((c) => [c, c === "en" ? "" : `${c}/`]));
@@ -35,7 +39,7 @@ function validate(g) {
 }
 
 const ICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0b0d'/%3E%3Cpath d='M32 6 L40 32 L32 58 L24 32 Z' fill='%23c0313a'/%3E%3Cpath d='M32 6 L32 58' stroke='%23c9a45c' stroke-width='2'/%3E%3C/svg%3E";
-const page = (lang, head, body) => `<!doctype html>\n<html lang="${lang}">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n<meta name="theme-color" content="#0b0b0d">\n<link rel="icon" href="${ICON}">\n<link rel="apple-touch-icon" href="/apple-touch-icon.png">\n<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>\n<script defer src="/_vercel/insights/script.js"></script>\n${head}</head>\n<body>\n${body}\n</body>\n</html>\n`;
+const page = (lang, head, body) => `<!doctype html>\n<html lang="${lang}">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n<meta name="theme-color" content="#0b0b0d">\n<link rel="icon" href="${ICON}">\n<link rel="apple-touch-icon" href="/apple-touch-icon.png">\n${ANALYTICS}${head}</head>\n<body>\n${body}\n</body>\n</html>\n`;
 
 // rel : chemin de la page sans préfixe de langue (ex. "index.html", "weapons/x/index.html")
 // Balises de partage (Discord, Reddit, X). Les URL absolues exigent siteUrl.
@@ -71,7 +75,7 @@ function header(T, base, rel, plannerHref) {
 const reportHref = (name, lang) => SITE.reportUrl ? `${SITE.reportUrl}?${new URLSearchParams({ title: name ? `Wrong stats: ${name}` : "Wrong stats", body: `Weapon: ${name || ""}\nPage language: ${lang}\nWhat is wrong (stat, level, value you see in game):\n\nScreenshot (optional):\n` })}` : "";
 const LEGAL = { en: read("src/legal/en.html"), fr: read("src/legal/fr.html") };
 const legalPath = (lang) => (LEGAL[lang] ? PREFIX[lang] : "") + "legal/index.html";
-const footer = (T, base = "") => `<footer class="band"><div class="inner"><p>${esc(T.footer.sources)}</p><p>${esc(T.footer.disclaimer)}</p><p><a href="${base}${legalPath(T.lang.code)}">${esc(T.footer.legal)}</a>${SITE.reportUrl ? ` · <a href="${esc(reportHref("", T.lang.code))}" rel="noopener" target="_blank">${esc(T.ui.report)}</a>` : ""}</p></div></footer>`;
+const footer = (T, base = "") => `<footer class="band"><div class="inner"><p>${esc(T.footer.sources)}</p><p>${esc(T.footer.disclaimer)}</p><p><a href="${base}${legalPath(T.lang.code)}">${esc(T.footer.legal)}</a>${SITE.reportUrl ? ` · <a href="${esc(reportHref("", T.lang.code))}" rel="noopener" target="_blank">${esc(T.ui.report)}</a>` : ""}${SITE.support ? ` · <a href="${esc(SITE.support)}" rel="noopener" target="_blank">${esc(T.ui.support)}</a>` : ""}</p></div></footer>`;
 const legalBody = (lang, updated) => LEGAL[lang]
   .replaceAll("{{UPDATED}}", esc(updated)).replaceAll("{{HOST_NAME}}", esc(SITE.host.name))
   .replaceAll("{{HOST_ADDRESS}}", esc(SITE.host.address)).replaceAll("{{HOST_URL}}", esc(SITE.host.url))
@@ -149,6 +153,7 @@ for (const f of games) {
       .replace("{{HEADER}}", () => sub(header(T, pBase, "index.html", `${pBase}${P}index.html`)))
       .replace("{{INDEX}}", () => indexHtml(g, T, (i) => `weapons/${i.id}/index.html`))
       .replace("{{FOOTER}}", () => footer(T, pBase))
+      .replace("{{SUPPORT}}", () => SITE.support ? `<a class="btn ghost" href="${esc(SITE.support)}" rel="noopener" target="_blank">${esc(T.ui.support)}</a>` : "")
       .replace("{{DATA}}", () => json(g)).replace("{{T}}", () => json(T)).replace("{{LOGIC}}", () => LOGIC)
       .replaceAll("{{BASE}}", pBase);
     const cut = plannerBody.indexOf("<header");

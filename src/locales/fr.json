@@ -106,7 +106,8 @@
   "compareBtn": "Comparer",
   "better": "Meilleure",
   "vs": "vs",
-  "report": "Signaler un chiffre faux"
+  "report": "Signaler un chiffre faux",
+  "support": "☕ Soutenir le site"
  },
  "pitch": {
   "summon": "Invoque de l'aide ou te soutient directement. {extra}.",
