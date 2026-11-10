@@ -80,7 +80,15 @@ const legalPath = (lang) => (LEGAL[lang] ? PREFIX[lang] : "") + "legal/index.htm
 const promo = (T) => {
   if (!SITE.affiliate || !SITE.affiliateGames?.length) return "";
   const u = new URL(SITE.affiliate), link = (q) => { u.searchParams.set("q", q); return u.toString(); };
-  return `<aside class="promo band" aria-label="${esc(T.ui.similarTitle)}"><div class="inner"><div class="promo-head"><span class="kicker">${esc(T.ui.similarTitle)}</span><small>${esc(T.ui.affiliate)}</small></div><div class="promo-row">${SITE.affiliateGames.map((n) => `<a class="promo-card" href="${esc(link(n))}" rel="sponsored noopener" target="_blank"><b>${esc(n)}</b><span>${esc(T.ui.seePrice)} →</span></a>`).join("")}</div></div></aside>`;
+  return `<aside class="promo band" aria-label="${esc(T.ui.similarTitle)}"><div class="inner"><div class="promo-head"><span class="kicker">${esc(T.ui.similarTitle)}</span><small>${esc(T.ui.affiliate)}</small></div><div class="promo-row">${SITE.affiliateGames.map((n) => `<a class="promo-card" href="${esc(link(n))}" rel="sponsored noopener" target="_blank"><b>${esc(n)}</b><span>${esc(T.ui.seePrice)} →</span></a>`).join("")}</div>${igBanner(T)}</div></aside>`;
+};
+// Bannière dynamique officielle Instant Gaming (prix mis à jour par eux). Langues gérées : fr en de es pt, sinon en.
+const IG_LANGS = ["fr", "en", "de", "es", "pt"];
+const igBanner = (T) => {
+  const igr = SITE.affiliate && new URL(SITE.affiliate).searchParams.get("igr");
+  if (!igr || !SITE.igBanner) return "";
+  const lang = IG_LANGS.includes(T.lang.code) ? T.lang.code : "en";
+  return `<div class="ig-banner"></div><script>window.igBannerConfig = { lang: ${JSON.stringify(lang)}, igr: ${JSON.stringify(igr)}, banners: ["ig-banner"] };</script><script src="https://www.instant-gaming.com/api/banner/partner/loader.js" defer></script>`;
 };
 const footer = (T, base = "") => `<footer class="band"><div class="inner"><p>${esc(T.footer.sources)}</p><p>${esc(T.footer.disclaimer)}</p><p><a href="${base}${legalPath(T.lang.code)}">${esc(T.footer.legal)}</a>${SITE.reportUrl ? ` · <a href="${esc(reportHref("", T.lang.code))}" rel="noopener" target="_blank">${esc(T.ui.report)}</a>` : ""}${SITE.support ? ` · <a href="${esc(SITE.support)}" rel="noopener" target="_blank">${esc(T.ui.support)}</a>` : ""}${SITE.affiliate ? ` · <a href="${esc(SITE.affiliate)}" rel="sponsored noopener" target="_blank">${esc(T.ui.buyGame)}</a> <small>(${esc(T.ui.affiliate)})</small>` : ""}</p></div></footer>`;
 const legalBody = (lang, updated) => LEGAL[lang]
