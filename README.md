@@ -1,4 +1,4 @@
-# PBZ Arsenal
+# PBZ Codex
 
 Site d'astuces non officiel pour Phantom Blade Zero (FR/EN) avec planificateur de build et emplacements publicitaires Google AdSense. Les astuces sont dans `src/tips.py`.
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Génère le site statique PBZ Arsenal dans ../dist à partir de data.json et config.json."""
+"""Génère le site statique PBZ Codex dans ../dist à partir de data.json et config.json."""
 import json, shutil, html, pathlib, datetime, sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from tips import GUIDES, CATS, SRC as TSRC, LEVELS
@@ -23,10 +23,10 @@ L = {
   rarity={"Common": "Common", "Rare": "Rare", "Epic": "Epic", None: "Unknown rarity"},
   stats={"damage": "Damage", "guardBreak": "Guard break", "status": "Status", "summonHealth": "Summon HP", "summonDamage": "Summon damage", "hpRecovery": "HP recovery", "shaChiRecovery": "Sha-Chi recovery"},
   trust={"agree": "Sources agree", "verified": "Verified in game", "conflict": "Sources disagree: treat as estimates", "single": "Single source", "missing": "No data yet"},
-  title="Phantom Blade Zero Build Planner, Tier List & Weapon Stats | PBZ Arsenal",
+  title="Phantom Blade Zero Build Planner, Tier List & Weapon Stats | PBZ Codex",
   desc="Plan your Phantom Blade Zero build: all 52 blades and Phantom Edges with base and max stats, an auto tier list, a 4-weapon comparator and shareable builds.",
   nav=[("", "Tips"), ("#guides", "Guides"), ("planner/", "Build planner"), ("planner/#tiers", "Tier list")],
-  search="Search", ad="Advertisement",
+  search="Search", ad="Advertisement", support="☕ Support the site", aff="affiliate link", buy="🎮 Phantom Blade Zero for less", similar="Games like this one", see_price="See price", report="Report a mistake",
   h1="Plan your Phantom Blade Zero build", h1_html="Forge your <em>Phantom Blade</em> build.", cta1="Build my loadout", cta2="See the tier list", podium="Current S-tier", f_w="weapons", f_s="sources", f_t="tier lists", lead="Pick two blades and two Phantom Edges, get a score and tips, then share the link. Every weapon, every stat, base and max level.",
   weapons="weapons", sourcesN="sources cross-checked", updated="Data updated",
   k_build="Loadout", h_build="Your build", save="Save build", share="Copy link", text="Copy as text", reset="Recommended", random="Random", saved="My builds",
@@ -38,7 +38,7 @@ L = {
    ("Where do the stats come from?", "Values are cross-checked between several public community sources. Each weapon shows whether sources agree, disagree or are missing."),
    ("Can I share my build?", "Yes: the address bar always holds your build. Use “Copy link” or “Copy as text” for Discord or Reddit."),
   ],
-  disclaimer="PBZ Arsenal is an unofficial fan site. It is not affiliated with, endorsed or sponsored by S-GAME. Phantom Blade Zero and all related names are trademarks of their respective owners. Stats come from community sources and may change with game updates.",
+  disclaimer="PBZ Codex is an unofficial fan site. It is not affiliated with, endorsed or sponsored by S-GAME. Phantom Blade Zero and all related names are trademarks of their respective owners. Stats come from community sources and may change with game updates.",
   credit="Weapon renders © S-GAME, used for identification only.", privacy="Privacy & cookies", legal="Legal notice", data_from="Game data", back="← Back to the planner",
   w_title="{name} stats, tier & best build | Phantom Blade Zero",
   w_desc="{name} in Phantom Blade Zero: {type} {kind}, {rarity}. Damage {dmg} at max level, tier {tier}. Base and max stats, sources and best pairings.",
@@ -57,10 +57,10 @@ L = {
   rarity={"Common": "Commune", "Rare": "Rare", "Epic": "Épique", None: "Rareté inconnue"},
   stats={"damage": "Dégâts", "guardBreak": "Brise-garde", "status": "Altération", "summonHealth": "PV invocation", "summonDamage": "Dégâts invocation", "hpRecovery": "Soin PV", "shaChiRecovery": "Récup. Sha-Chi"},
   trust={"agree": "Sources concordantes", "verified": "Vérifié en jeu", "conflict": "Sources en désaccord : valeurs estimées", "single": "Source unique", "missing": "Pas encore de données"},
-  title="Phantom Blade Zero : planificateur de build, tier list et stats des armes | PBZ Arsenal",
+  title="Phantom Blade Zero : planificateur de build, tier list et stats des armes | PBZ Codex",
   desc="Créez votre build Phantom Blade Zero : les 52 lames et lames fantômes avec stats de base et max, tier list automatique, comparateur 4 armes et builds partageables.",
   nav=[("", "Astuces"), ("#guides", "Guides"), ("planner/", "Planificateur"), ("planner/#tiers", "Tier list")],
-  search="Rechercher", ad="Publicité",
+  search="Rechercher", ad="Publicité", support="☕ Soutenir le site", aff="lien affilié", buy="🎮 Phantom Blade Zero moins cher", similar="Jeux du même genre", see_price="Voir le prix", report="Signaler une erreur",
   h1="Créez votre build Phantom Blade Zero", h1_html="Forgez votre build <em>Phantom Blade</em>.", cta1="Créer mon build", cta2="Voir la tier list", podium="Tier S du moment", f_w="armes", f_s="sources", f_t="tier lists", lead="Choisissez deux lames et deux lames fantômes, obtenez un score et des conseils, puis partagez le lien. Toutes les armes, toutes les stats, niveau de base et max.",
   weapons="armes", sourcesN="sources recoupées", updated="Données du",
   k_build="Équipement", h_build="Votre build", save="Sauvegarder", share="Copier le lien", text="Copier en texte", reset="Recommandé", random="Aléatoire", saved="Mes builds",
@@ -72,7 +72,7 @@ L = {
    ("D'où viennent les stats ?", "Les valeurs sont recoupées entre plusieurs sources communautaires publiques. Chaque arme indique si les sources concordent, divergent ou manquent."),
    ("Puis-je partager mon build ?", "Oui : la barre d'adresse contient toujours votre build. Utilisez « Copier le lien » ou « Copier en texte » pour Discord ou Reddit."),
   ],
-  disclaimer="PBZ Arsenal est un site de fan non officiel. Il n'est ni affilié, ni approuvé, ni sponsorisé par S-GAME. Phantom Blade Zero et les noms associés sont des marques de leurs propriétaires respectifs. Les stats viennent de sources communautaires et peuvent changer avec les mises à jour du jeu.",
+  disclaimer="PBZ Codex est un site de fan non officiel. Il n'est ni affilié, ni approuvé, ni sponsorisé par S-GAME. Phantom Blade Zero et les noms associés sont des marques de leurs propriétaires respectifs. Les stats viennent de sources communautaires et peuvent changer avec les mises à jour du jeu.",
   credit="Rendus des armes © S-GAME, utilisés uniquement pour identifier les armes.", privacy="Confidentialité et cookies", legal="Mentions légales", data_from="Données du jeu", back="← Retour au planificateur",
   w_title="{name} : stats, tier et meilleur build | Phantom Blade Zero",
   w_desc="{name} dans Phantom Blade Zero : {kind} {type}, {rarity}. {dmg} dégâts au niveau max, tier {tier}. Stats de base et max, sources et meilleures associations.",
@@ -157,6 +157,23 @@ def fmt(n, t):
 def ad(t, slot, cls, fmt_="auto"):
     return f'<div class="ad-box"><span class="ad-label">{t["ad"]}</span><div class="ad ph {cls}" data-ad="{slot}" data-format="{fmt_}"></div></div>'
 
+from urllib.parse import urlsplit, urlunsplit, parse_qs, urlencode
+def aff_link(q=None):
+    u = urlsplit(C["affiliate"]); qs = {k: v[0] for k, v in parse_qs(u.query).items()}
+    if q: qs["q"] = q
+    return urlunsplit((u.scheme, u.netloc, u.path, urlencode(qs), ""))
+def promo(t):
+    """Bandeau affilié repris du premier site : bannière Instant Gaming + jeux du même genre."""
+    if not C.get("affiliate"): return ""
+    igr = parse_qs(urlsplit(C["affiliate"]).query).get("igr", [""])[0]
+    banner = ""
+    if igr and C.get("igBanner"):
+        banner = (f'<div class="ig-wrap"><div class="ig-banner"></div></div><script>window.igBannerConfig = {{ lang: {json.dumps(t["code"])}, igr: {json.dumps(igr)}, banners: ["ig-banner"] }};</script>'
+                  '<script src="https://www.instant-gaming.com/api/banner/partner/loader.js" defer></script>')
+    cards = "".join(f'<a class="promo-card" href="{e(aff_link(n))}" rel="sponsored noopener" target="_blank"><b>{e(n)}</b><span>{t["see_price"]} →</span></a>' for n in C.get("affiliateGames", []))
+    return (f'<aside class="promo frame" aria-label="{t["similar"]}"><div class="promo-head"><span class="kick" style="margin:0"><i class="seal">市</i>{t["similar"]}</span><small>{t["aff"]}</small></div>'
+            f'{banner}<div class="promo-row">{cards}</div></aside>')
+
 def head(t, title, desc, path, alt_path, extra=""):
     url = SITE + path
     ads = ""
@@ -177,7 +194,7 @@ def head(t, title, desc, path, alt_path, extra=""):
 <link rel="alternate" hreflang="fr" href="{SITE}{fr_p}">
 <link rel="alternate" hreflang="x-default" href="{SITE}{en_p}">
 <meta name="theme-color" content="#0c0f11">
-<meta property="og:type" content="website"><meta property="og:site_name" content="PBZ Arsenal"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{SITE}/og.png"><meta property="og:locale" content="{t["locale"]}">
+<meta property="og:type" content="website"><meta property="og:site_name" content="PBZ Codex"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{SITE}/og.png"><meta property="og:locale" content="{t["locale"]}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -185,23 +202,32 @@ def head(t, title, desc, path, alt_path, extra=""):
 <link rel="stylesheet" href="/style.css?v={C["v"]}">
 <script>window.PBZ_IMG={json.dumps("/img/" if C.get("renders") else "")};window.ADS={json.dumps({"client": C.get("adsense_client", ""), "slots": C.get("slots", {})})};</script>
 {ads}{gtag}{extra}
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>window.va = window.va || function () {{ (window.vaq = window.vaq || []).push(arguments); }};</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="2.2"/></filter></svg>
 <header class="top"><div class="in">
-<a class="brand" href="{t["pfx"]}/">{LOGO}PBZ <b>Arsenal</b> <small>FAN</small></a>
+<a class="brand" href="{t["pfx"]}/">{LOGO}PBZ <b>Codex</b> <small>FAN</small></a>
 <nav class="nav">{"".join(f'<a href="{t["pfx"]}/{h}">{l}</a>' for h, l in t["nav"])}</nav>
 {{SEARCH}}
+{f'<a class="kofi" href="{e(C["support"])}" rel="noopener" target="_blank">{t["support"]}</a>' if C.get("support") else ""}
 <a class="lang" href="{alt_path}" hreflang="{t["other"]}" lang="{t["other"]}">{t["other_name"]}</a>
 </div></header>
 '''
 
 def foot(t):
     o = L["fr"] if t["code"] == "en" else L["en"]
+    extra = ""
+    if C.get("reportUrl"): extra += f'<a href="{e(C["reportUrl"])}" rel="noopener" target="_blank">{t["report"]}</a>'
+    if C.get("support"): extra += f'<a href="{e(C["support"])}" rel="noopener" target="_blank">{t["support"]}</a>'
+    if C.get("affiliate"): extra += f'<a href="{e(aff_link())}" rel="sponsored noopener" target="_blank">{t["buy"]}</a><small>({t["aff"]})</small>'
     return f'''<footer><div class="in">
+{promo(t)}
 {ad(t, "foot", "ad-foot")}
 <p class="disclaimer"><i class="seal">注</i><span>{e(t["disclaimer"])}{" " + e(t["credit"]) if C.get("renders") else ""}</span></p>
-<div class="links"><a href="{t["pfx"]}/">PBZ Arsenal</a><a href="{t["pfx"]}/privacy/">{t["privacy"]}</a><a href="{t["pfx"]}/legal/">{t["legal"]}</a><span>{t["data_from"]} : v{D["version"]} · {D["updated"]}</span></div>
+<div class="links"><a href="{t["pfx"]}/">PBZ Codex</a><a href="{t["pfx"]}/privacy/">{t["privacy"]}</a><a href="{t["pfx"]}/legal/">{t["legal"]}</a>{extra}<span>{t["data_from"]} : v{D["version"]} · {D["updated"]}</span></div>
 </div></footer>
 '''
 
@@ -223,7 +249,7 @@ def home(t):
     path, alt = t["pfx"] + "/planner/", other["pfx"] + "/planner/"
     nsrc = len({s for i in ITEMS for s in i["check"]["sources"]})
     ld = {"@context": "https://schema.org", "@graph": [
-        {"@type": "WebApplication", "name": "PBZ Arsenal", "url": SITE + path, "applicationCategory": "GameApplication", "operatingSystem": "Web", "inLanguage": t["code"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "description": t["desc"]},
+        {"@type": "WebApplication", "name": "PBZ Codex", "url": SITE + path, "applicationCategory": "GameApplication", "operatingSystem": "Web", "inLanguage": t["code"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "description": t["desc"]},
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in t["faq"]]}]}
     h = head(t, t["title"], t["desc"], path, alt, f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>')
     h = h.replace("{SEARCH}", f'<button type="button" class="searchbtn" id="searchbtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span>{t["search"]}</span><kbd>Ctrl K</kbd></button>')
@@ -348,12 +374,12 @@ def weapon(t, it):
         pair = [b1, b2, other_e]; b = [b1["id"], b2["id"], it["id"], other_e["id"]]
     plan = f'{t["pfx"]}/planner/#b={",".join(b)}&l=max&c={it["id"]}'
     ld = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "PBZ Arsenal", "item": SITE + t["pfx"] + "/"},
+        {"@type": "ListItem", "position": 1, "name": "PBZ Codex", "item": SITE + t["pfx"] + "/"},
         {"@type": "ListItem", "position": 2, "name": t["kindsPl"][it["kind"]], "item": SITE + t["pfx"] + "/#arsenal"},
         {"@type": "ListItem", "position": 3, "name": it["name"], "item": SITE + path}]}
     h = head(t, title, desc, path, alt, f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>').replace("{SEARCH}", '<span style="margin-left:auto"></span>')
     body = f'''<div class="wp-hero rar-{it["rarity"]}"><div class="bg" data-cjk="{"刃" if it["kind"] == "blade" else "影"}"></div>
-<div class="in" style="grid-template-columns:1fr;gap:0;padding-bottom:0"><div class="crumbs"><a href="{t["pfx"]}/">PBZ Arsenal</a> / <a href="{t["pfx"]}/planner/#arsenal">{t["kindsPl"][it["kind"]]}</a> / {e(it["name"])}</div></div>
+<div class="in" style="grid-template-columns:1fr;gap:0;padding-bottom:0"><div class="crumbs"><a href="{t["pfx"]}/">PBZ Codex</a> / <a href="{t["pfx"]}/planner/#arsenal">{t["kindsPl"][it["kind"]]}</a> / {e(it["name"])}</div></div>
 <div class="in">{glyph(it, "tall")}<div><div class="meta"><span>{kl}</span><span>{tl}</span><span class="rtag rar-{it["rarity"]}">{rl}</span>{f'<span>{t["score"]} {sc}/100</span>' if tr else ""}</div>
 <h1 style="margin-top:12px;display:flex;align-items:center;gap:18px;flex-wrap:wrap">{e(it["name"])}{f' <span class="tbadge t-{tr}" style="width:52px;height:52px;font-size:32px">{tr}</span>' if tr else ""}</h1>
 <p class="lead">{" ".join(e(x) for x in paras)}</p>
@@ -377,7 +403,7 @@ def weapon(t, it):
 
 # ---------- site d'astuces ----------
 TT = {
- "en": dict(title="Phantom Blade Zero Tips & Tricks: combat, bosses, best ending | PBZ Arsenal",
+ "en": dict(title="Phantom Blade Zero Tips & Tricks: combat, bosses, best ending | PBZ Codex",
   desc="Clear Phantom Blade Zero tips: parry and dodge rules, Sha-Chi and guard break, bosses, upgrades, missable quests and the best ending. Plus a free build planner.",
   h1="Phantom Blade Zero tips, <em>straight to the point</em>.", lead="Short, checked tips to parry better, break guards, beat bosses and miss nothing. No filler, no story spoilers.",
   cta1="Start with the basics", cta2="All guides", first="Read these first", f_g="guides", f_t="tips", f_l="languages",
@@ -385,7 +411,7 @@ TT = {
   tips_n="tips", read="Read the guide", k_tool="Tool", h_tool="Build your loadout", tool_p="Compare all 52 weapons, get a build score out of 100 and an automatic tier list.", tool_cta="Open the build planner",
   unsure="Reported by other guides, not confirmed by several sources", sources="Sources checked for this guide", more="Keep reading", updated="Updated", home="Tips",
   g_title="{title} | Phantom Blade Zero tips", minutes="min read", note="", toc="In this guide"),
- "fr": dict(title="Astuces Phantom Blade Zero : combat, boss, meilleure fin | PBZ Arsenal",
+ "fr": dict(title="Astuces Phantom Blade Zero : combat, boss, meilleure fin | PBZ Codex",
   desc="Des astuces Phantom Blade Zero claires : règles de parade et d'esquive, Sha-Chi et brise-garde, boss, améliorations, quêtes manquables et meilleure fin. Avec un planificateur de build gratuit.",
   h1="Les astuces Phantom Blade Zero, <em>droit au but</em>.", lead="Des astuces courtes et vérifiées pour mieux parer, briser les gardes, battre les boss et ne rien rater. Sans blabla, sans spoiler sur l'histoire.",
   cta1="Commencer par les bases", cta2="Tous les guides", first="À lire en premier", f_g="guides", f_t="astuces", f_l="langues",
@@ -461,7 +487,7 @@ def guide(t, g):
     title = tt["g_title"].format(title=c["title"])
     words = sum(len((a + " " + b_).split()) for a, b_, _ in map(_tip, c["tips"]))
     ld = {"@context": "https://schema.org", "@graph": [
-        {"@type": "Article", "headline": c["title"], "description": c["intro"], "inLanguage": lg, "dateModified": TODAY, "datePublished": "2026-11-11", "mainEntityOfPage": SITE + path, "author": {"@type": "Organization", "name": "PBZ Arsenal"}, "publisher": {"@type": "Organization", "name": "PBZ Arsenal"}},
+        {"@type": "Article", "headline": c["title"], "description": c["intro"], "inLanguage": lg, "dateModified": TODAY, "datePublished": "2026-11-11", "mainEntityOfPage": SITE + path, "author": {"@type": "Organization", "name": "PBZ Codex"}, "publisher": {"@type": "Organization", "name": "PBZ Codex"}},
         {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": tt["home"], "item": SITE + t["pfx"] + "/"}, {"@type": "ListItem", "position": 2, "name": c["title"], "item": SITE + path}]}]}
     h = head(t, title, c["intro"], path, alt, f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>').replace("{SEARCH}", '<span style="margin-left:auto"></span>')
     items = []
@@ -495,28 +521,30 @@ def guide(t, g):
 LEGAL = {
  "en": {
   "privacy": ("Privacy & cookies", [
-   ("Who we are", "PBZ Arsenal is an unofficial, free fan tool for the game Phantom Blade Zero."),
+   ("Who we are", "PBZ Codex is an unofficial, free fan tool for the game Phantom Blade Zero."),
    ("What we store", "Your builds are saved only in your browser (localStorage). We have no account system and collect no personal data directly."),
    ("Advertising", "This site is funded by advertising served by Google AdSense. Google and its partners may use cookies or similar technologies to show ads based on your previous visits to this and other sites. In the EEA, the UK and Switzerland a consent banner (certified by Google) asks for your choice before any personalised ad is shown. You can change your choice at any time from that banner, and manage personalised ads at https://adssettings.google.com. More details: https://policies.google.com/technologies/ads"),
+   ("Affiliate links", "Links marked as affiliate links (Instant Gaming) may earn the site a commission when you buy, at no extra cost to you."),
    ("Audience measurement", "We may use anonymous audience statistics (pages viewed, country, device) to improve the site."),
    ("Contact", "For any request about your data, contact the site owner at the address given in the legal notice."),
   ]),
   "legal": ("Legal notice", [
-   ("Publisher", "PBZ Arsenal, a personal fan project. Contact: {contact}"),
+   ("Publisher", "PBZ Codex, a personal fan project. Contact: {contact}"),
    ("Hosting", "Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA."),
    ("Intellectual property", "Phantom Blade Zero, its names and its content belong to S-GAME and their respective owners. This site is not affiliated with them. The site's code, design and icons are original works. Weapon statistics are facts gathered from public community sources."),
   ]),
  },
  "fr": {
   "privacy": ("Confidentialité et cookies", [
-   ("Qui sommes-nous", "PBZ Arsenal est un outil de fan gratuit et non officiel pour le jeu Phantom Blade Zero."),
+   ("Qui sommes-nous", "PBZ Codex est un outil de fan gratuit et non officiel pour le jeu Phantom Blade Zero."),
    ("Ce que nous stockons", "Vos builds sont enregistrés uniquement dans votre navigateur (localStorage). Il n'y a pas de compte et nous ne collectons directement aucune donnée personnelle."),
    ("Publicité", "Ce site est financé par la publicité diffusée par Google AdSense. Google et ses partenaires peuvent utiliser des cookies ou technologies similaires pour afficher des annonces basées sur vos visites précédentes sur ce site et d'autres. Dans l'EEE, au Royaume-Uni et en Suisse, une bannière de consentement (certifiée par Google) recueille votre choix avant toute annonce personnalisée. Vous pouvez modifier ce choix à tout moment depuis cette bannière et gérer les annonces personnalisées sur https://adssettings.google.com. Plus d'informations : https://policies.google.com/technologies/ads"),
+   ("Liens affiliés", "Les liens signalés comme affiliés (Instant Gaming) peuvent rapporter une commission au site lors d'un achat, sans surcoût pour vous."),
    ("Mesure d'audience", "Nous pouvons utiliser des statistiques d'audience anonymes (pages vues, pays, appareil) pour améliorer le site."),
    ("Contact", "Pour toute demande concernant vos données, contactez l'éditeur à l'adresse indiquée dans les mentions légales."),
   ]),
   "legal": ("Mentions légales", [
-   ("Éditeur", "PBZ Arsenal, projet personnel de fan. Contact : {contact}"),
+   ("Éditeur", "PBZ Codex, projet personnel de fan. Contact : {contact}"),
    ("Hébergement", "Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis."),
    ("Propriété intellectuelle", "Phantom Blade Zero, ses noms et son contenu appartiennent à S-GAME et à leurs propriétaires respectifs. Ce site n'y est pas affilié. Le code, le design et les icônes du site sont des créations originales. Les statistiques des armes sont des faits recueillis dans des sources communautaires publiques."),
   ]),
@@ -526,7 +554,7 @@ def legal(t, key):
     other = L[t["other"]]
     title, secs = LEGAL[t["code"]][key]
     path, alt = f'{t["pfx"]}/{key}/', f'{other["pfx"]}/{key}/'
-    h = head(t, f"{title} | PBZ Arsenal", title, path, alt).replace("{SEARCH}", '<span style="margin-left:auto"></span>')
+    h = head(t, f"{title} | PBZ Codex", title, path, alt).replace("{SEARCH}", '<span style="margin-left:auto"></span>')
     body = f'''<div class="wrap single"><main class="prose" style="padding:30px 0">
 <h1>{title}</h1>{"".join(f"<h2>{e(a)}</h2><p>{e(b.format(contact=C.get('contact', '—')))}</p>" for a, b in secs)}
 <p><a href="{t["pfx"]}/">{t["back"]}</a></p></main></div>{foot(t)}{scripts("ads.js")}</body></html>'''
@@ -538,6 +566,7 @@ def main():
     for f in ("style.css", "common.js", "app.js", "ads.js", "tips.js"): shutil.copy(SRC / f, OUT / f)
     (OUT / "data.js").write_text("window.PBZ=" + json.dumps(D, ensure_ascii=False, separators=(",", ":")) + ";")
     (OUT / "favicon.svg").write_text(FAVICON)
+    for f in (SRC / "static").iterdir(): shutil.copy(f, OUT / f.name)
     if C.get("renders"):
         for d in ("weapons", "m"): shutil.copytree(SRC / "assets" / d, OUT / "img" / d)
     if (SRC / "og.png").exists(): shutil.copy(SRC / "og.png", OUT / "og.png")
@@ -554,8 +583,8 @@ def main():
     pub = C.get("adsense_client", "").replace("ca-pub-", "pub-")
     if pub: (OUT / "ads.txt").write_text(f"google.com, {pub}, DIRECT, f08c47fec0942fa0\n")
     (OUT / "vercel.json").write_text(json.dumps({"trailingSlash": True, "headers": [{"source": "/(.*)\\.(js|css|svg|png|webp)", "headers": [{"key": "Cache-Control", "value": "public, max-age=86400"}]}]}, indent=1))
-    (OUT / "404.html").write_text(head(L["en"], "Not found | PBZ Arsenal", "Page not found", "/404.html", "/fr/").replace("{SEARCH}", "") +
-        '<div class="wrap single"><main style="padding:60px 0"><h1>404</h1><p class="lead">Page not found · Page introuvable</p><p><a class="btn" href="/">PBZ Arsenal →</a></p></main></div></body></html>')
+    (OUT / "404.html").write_text(head(L["en"], "Not found | PBZ Codex", "Page not found", "/404.html", "/fr/").replace("{SEARCH}", "") +
+        '<div class="wrap single"><main style="padding:60px 0"><h1>404</h1><p class="lead">Page not found · Page introuvable</p><p><a class="btn" href="/">PBZ Codex →</a></p></main></div></body></html>')
     print(f"{len(urls)} pages -> {OUT}")
 
 main()

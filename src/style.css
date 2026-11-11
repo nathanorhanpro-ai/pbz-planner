@@ -432,3 +432,17 @@ td .art{width:34px;height:34px}
 .tip .unsure{font-size:12.5px;color:var(--warn);margin-top:12px}
 @media (max-width:540px){.tip{grid-template-columns:1fr;gap:8px;padding:18px}.tip .tnum{font-size:30px}.ggrid{grid-template-columns:1fr}}
 @media (max-width:960px){.top .in{flex-wrap:wrap;row-gap:6px}.nav{display:flex;order:5;width:100%;overflow-x:auto;scrollbar-width:none;margin:0 -4px}.nav a{white-space:nowrap;padding:5px 10px;font-size:13px}html{scroll-padding-top:110px}.tip{scroll-margin-top:120px}}
+
+/* ---------- affiliate promo + support ---------- */
+.kofi{color:var(--gold);text-decoration:none;font-weight:700;font-size:12.5px;border:1px solid rgba(217,180,106,.4);border-radius:99px;padding:7px 12px;white-space:nowrap}
+.kofi:hover{background:rgba(217,180,106,.1)}
+@media (max-width:640px){.kofi{display:none}}
+.promo{display:grid;gap:14px;padding:20px}
+.promo-head{display:flex;align-items:center;gap:12px;justify-content:space-between}
+.promo-head small,footer .links small{font-size:11px;color:var(--dim)}
+.promo-row{display:flex;gap:10px;overflow-x:auto;scrollbar-width:thin;padding-bottom:4px}
+.promo-card{flex:0 0 auto;min-width:160px;display:grid;gap:6px;padding:12px 14px;background:rgba(7,8,11,.5);border:1px solid var(--line2);border-left:2px solid var(--verm);border-radius:10px;color:var(--paper);text-decoration:none;transition:border-color .2s,transform .2s var(--ease)}
+.promo-card b{font:700 18px/1.1 var(--head);white-space:nowrap}
+.promo-card span{font-size:12px;color:var(--gold);font-weight:700}
+.promo-card:hover{border-color:var(--gold);border-left-color:var(--verm);transform:translateY(-2px)}
+.ig-banner:empty{display:none}

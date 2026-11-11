@@ -1,6 +1,6 @@
 {
- "site": "https://pbz-arsenal.vercel.app",
- "v": "3",
+ "site": "https://pbz-codex.vercel.app",
+ "v": "4",
  "adsense_client": "",
  "slots": {
   "top": "",
@@ -12,6 +12,21 @@
   "page": ""
  },
  "ga4_id": "",
- "contact": "\u2014",
- "renders": true
+ "contact": "—",
+ "renders": true,
+ "support": "https://ko-fi.com/phantombladezerofan",
+ "affiliate": "https://www.instant-gaming.com/en/search/?q=phantom%20blade%20zero&igr=gamer-28b9d03",
+ "affiliateGames": [
+  "Black Myth: Wukong",
+  "Sekiro: Shadows Die Twice",
+  "Wo Long: Fallen Dynasty",
+  "Lies of P",
+  "Nioh 2",
+  "Elden Ring",
+  "Stellar Blade",
+  "Rise of the Ronin"
+ ],
+ "igBanner": true,
+ "reportUrl": "https://github.com/nathanorhanpro-ai/pbz-planner/issues/new",
+ "indexNowKey": "bf10314209878e6557ad25fb927b9f41"
 }
