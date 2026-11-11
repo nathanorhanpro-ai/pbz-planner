@@ -108,7 +108,7 @@ for stage, focus, ids in PRESETS:
 items.sort(key=lambda x: (x["kind"], x["type"], x["name"]))
 game = {
     "id": "phantom-blade-zero", "name": "Phantom Blade Zero",
-    "version": "1.0", "updated": "2026-11-08",
+    "version": "1.0", "updated": "2026-11-11",
     "kinds": ["blade", "edge"],
     "levels": ["base", "max"],
     "slots": [{"id": "b1", "kind": "blade"}, {"id": "b2", "kind": "blade"},

@@ -92,7 +92,7 @@ const legalPath = (lang) => (LEGAL[lang] ? PREFIX[lang] : "") + "legal/index.htm
 const promoBlock = (T) => {
   if (!SITE.affiliate || !SITE.affiliateGames?.length) return "";
   const u = new URL(SITE.affiliate), link = (q) => { u.searchParams.set("q", q); return u.toString(); };
-  return `<div class="promo-block">${igBanner(T)}<div class="promo-head"><span class="kicker">${esc(T.ui.similarTitle)}</span><small>${esc(T.ui.affiliate)}</small></div><div class="promo-row">${SITE.affiliateGames.map((n) => `<a class="promo-card" href="${esc(link(n))}" rel="sponsored noopener" target="_blank"><b>${esc(n)}</b><span>${esc(T.ui.seePrice)} →</span></a>`).join("")}</div></div>`;
+  return `<div class="promo-block">${igBanner(T)}<div class="promo-head"><span class="kicker">${esc(T.ui.similarTitle)}</span>${SITE.igBanner ? "" : `<small>${esc(T.ui.affiliate)}</small>`}</div><div class="promo-row">${SITE.affiliateGames.map((n) => `<a class="promo-card" href="${esc(link(n))}" rel="sponsored noopener" target="_blank"><b>${esc(n)}</b><span>${esc(T.ui.seePrice)} →</span></a>`).join("")}</div></div>`;
 };
 const promo = (T) => { const b = promoBlock(T); return b ? `<aside class="promo band" aria-label="${esc(T.ui.similarTitle)}"><div class="inner">${b}</div></aside>` : ""; };
 // Bannière dynamique officielle Instant Gaming (prix mis à jour par eux). Langues gérées : fr en de es pt, sinon en.
@@ -179,7 +179,7 @@ for (const f of games) {
       .replace("{{HEAD}}", () => headTags("index.html", lang) + "\n" + jsonLd({ "@context": "https://schema.org", "@type": "WebApplication", name: "Phantom Blade Zero Build Planner", url: absUrl(lang, "index.html"), applicationCategory: "GameApplication", operatingSystem: "Any", inLanguage: T.lang.locale, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, description: meta(T.meta.plannerDesc) }) + "\n" + ogTags(meta(T.meta.plannerTitle), meta(T.meta.plannerDesc), "planner.jpg", "index.html", lang))
       .replace("{{CSS}}", () => CSS)
       .replace("{{HEADER}}", () => sub(header(T, pBase, "index.html", `${pBase}${P}index.html`, g)))
-      .replace("{{INDEX}}", () => indexHtml(g, T, (i) => `weapons/${i.id}/index.html`) + (g.presets ? `<p class="guide-links"><b>${esc(T.pg.guides)} :</b> ${[...new Set(g.presets.map((p) => p.stage))].map((s) => `<a href="builds/${s}/index.html">${esc(fill(T.pg.buildH1, { stage: T.pg.lower === "1" ? T.stages[s].toLowerCase() : T.stages[s] }))}</a>`).join(" · ")} · <a href="locations/index.html">${esc(T.pg.locH1)}</a> · <a href="tier-list/index.html">${esc(T.pg.tierH1)}</a></p>` : ""))
+      .replace("{{INDEX}}", () => indexHtml(g, T, (i) => `weapons/${i.id}/index.html`))
       .replace("{{FOOTER}}", () => footer(T, pBase))
       .replace("{{PROMO}}", () => promoBlock(T))
       .replace("{{SUPPORT}}", () => (SITE.support ? `<a class="btn ghost" href="${esc(SITE.support)}" rel="noopener" target="_blank">${esc(T.ui.support)}</a>` : "") + "")
