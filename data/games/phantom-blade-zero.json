@@ -34,6 +34,68 @@
   "guardBreak",
   "status"
  ],
+ "presets": [
+  {
+   "stage": "early",
+   "focus": "start",
+   "ids": [
+    "sanguine-twin",
+    "sanguine-reach",
+    "dread-axe",
+    "hunters-chain-sickle"
+   ]
+  },
+  {
+   "stage": "early",
+   "focus": "power",
+   "ids": [
+    "fiend-saws",
+    "wild-oriole-sword",
+    "flying-dagger",
+    "bastion"
+   ]
+  },
+  {
+   "stage": "mid",
+   "focus": "power",
+   "ids": [
+    "sundering-dual-axes",
+    "soft-snake-sword",
+    "thunder-spear",
+    "heartrend-pipa"
+   ]
+  },
+  {
+   "stage": "mid",
+   "focus": "status",
+   "ids": [
+    "baishan-stormswords",
+    "armybreaker",
+    "fire-meteor",
+    "wolfjaw"
+   ]
+  },
+  {
+   "stage": "late",
+   "focus": "power",
+   "ids": [
+    "the-ladys-fan",
+    "aureate",
+    "ink-cut",
+    "flying-guillotine"
+   ]
+  },
+  {
+   "stage": "late",
+   "focus": "status",
+   "ids": [
+    "freezing-chaos",
+    "bonesaw",
+    "flying-guillotine",
+    "tiger-cannon"
+   ]
+  }
+ ],
  "items": [
   {
    "id": "baishan-stormswords",
@@ -76,7 +138,9 @@
       "status": 142
      }
     }
-   }
+   },
+   "zone": "Mandate Encampment",
+   "stage": "mid"
   },
   {
    "id": "fiend-saws",
@@ -119,7 +183,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Village of Lu",
+   "stage": "early"
   },
   {
    "id": "parting-hooks",
@@ -157,7 +223,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Pangzhen",
+   "stage": "mid"
   },
   {
    "id": "sanguine-twin",
@@ -200,7 +268,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Weeping Creek Valley",
+   "stage": "early"
   },
   {
    "id": "seamless-death",
@@ -238,7 +308,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Mountain of Imprisonment",
+   "stage": "late"
   },
   {
    "id": "shadowless-edge",
@@ -265,7 +337,9 @@
     "verified": false,
     "agreeing": 0,
     "sources": {}
-   }
+   },
+   "zone": null,
+   "stage": null
   },
   {
    "id": "sundering-dual-axes",
@@ -303,7 +377,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Meigu Lake",
+   "stage": "mid"
   },
   {
    "id": "the-ladys-fan",
@@ -341,7 +417,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Mount Soulrend",
+   "stage": "late"
   },
   {
    "id": "white-serpent-and-crimson-viper",
@@ -384,7 +462,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Crimson Forest",
+   "stage": "early"
   },
   {
    "id": "aureate",
@@ -422,7 +502,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Mount Soulrend",
+   "stage": "late"
   },
   {
    "id": "freezing-chaos",
@@ -460,7 +542,9 @@
       "status": 144
      }
     }
-   }
+   },
+   "zone": "Mirage Estate",
+   "stage": "late"
   },
   {
    "id": "infernal-rouge",
@@ -493,7 +577,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": null,
+   "stage": null
   },
   {
    "id": "jagged-steel",
@@ -536,7 +622,9 @@
       "status": 103
      }
     }
-   }
+   },
+   "zone": "Weeping Creek Valley",
+   "stage": "early"
   },
   {
    "id": "sanguine",
@@ -579,7 +667,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": null,
+   "stage": "early"
   },
   {
    "id": "soft-snake-sword",
@@ -617,7 +707,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Mandate Encampment",
+   "stage": "mid"
   },
   {
    "id": "the-fanatics-broken-blade",
@@ -660,7 +752,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Crimson Forest",
+   "stage": "early"
   },
   {
    "id": "tianxuan-bronze-sword",
@@ -703,7 +797,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Village of Lu",
+   "stage": "early"
   },
   {
    "id": "wild-oriole-sword",
@@ -746,7 +842,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Village of Lu",
+   "stage": "early"
   },
   {
    "id": "wooden-sanguine",
@@ -789,7 +887,9 @@
       "status": 188
      }
     }
-   }
+   },
+   "zone": null,
+   "stage": "early"
   },
   {
    "id": "armybreaker",
@@ -827,7 +927,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Pangzhen",
+   "stage": "mid"
   },
   {
    "id": "blazing-edge",
@@ -854,7 +956,9 @@
     "verified": false,
     "agreeing": 0,
     "sources": {}
-   }
+   },
+   "zone": null,
+   "stage": null
   },
   {
    "id": "bonesaw",
@@ -892,7 +996,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Mount Soulrend",
+   "stage": "late"
   },
   {
    "id": "crescent-blade",
@@ -930,7 +1036,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Mirage Estate",
+   "stage": "late"
   },
   {
    "id": "juggernaut",
@@ -968,7 +1076,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Mountain of Imprisonment",
+   "stage": "late"
   },
   {
    "id": "outlaw-warblade",
@@ -1011,7 +1121,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Crimson Forest",
+   "stage": "early"
   },
   {
    "id": "sanguine-reach",
@@ -1054,7 +1166,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Weeping Creek Valley",
+   "stage": "early"
   },
   {
    "id": "scarlet-wraithblade",
@@ -1097,7 +1211,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Weeping Creek Valley",
+   "stage": "early"
   },
   {
    "id": "whiteshadow",
@@ -1135,7 +1251,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Mountain of Imprisonment",
+   "stage": "late"
   },
   {
    "id": "bastion",
@@ -1173,7 +1291,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Village of Lu",
+   "stage": "early"
   },
   {
    "id": "flaming-mane",
@@ -1211,7 +1331,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Pangzhen",
+   "stage": "mid"
   },
   {
    "id": "flying-guillotine",
@@ -1249,7 +1371,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Mountain of Imprisonment",
+   "stage": "late"
   },
   {
    "id": "heartrend-pipa",
@@ -1287,7 +1411,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Pangzhen",
+   "stage": "mid"
   },
   {
    "id": "you-loongs-deluge",
@@ -1325,7 +1451,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Pangzhen",
+   "stage": "mid"
   },
   {
    "id": "bashpole",
@@ -1363,7 +1491,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Mandate Encampment",
+   "stage": "mid"
   },
   {
    "id": "dread-axe",
@@ -1401,7 +1531,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Weeping Creek Valley",
+   "stage": "early"
   },
   {
    "id": "tiger-cannon",
@@ -1439,7 +1571,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Mirage Estate",
+   "stage": "late"
   },
   {
    "id": "war-wagon",
@@ -1477,7 +1611,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Meigu Lake",
+   "stage": "mid"
   },
   {
    "id": "wolfjaw",
@@ -1515,7 +1651,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Pangzhen",
+   "stage": "mid"
   },
   {
    "id": "fire-meteor",
@@ -1553,7 +1691,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Pangzhen",
+   "stage": "mid"
   },
   {
    "id": "hunters-chain-sickle",
@@ -1591,7 +1731,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Weeping Creek Valley",
+   "stage": "early"
   },
   {
    "id": "ink-cut",
@@ -1629,7 +1771,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Mountain of Imprisonment",
+   "stage": "late"
   },
   {
    "id": "iron-gauntlets",
@@ -1667,7 +1811,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Crimson Forest",
+   "stage": "early"
   },
   {
    "id": "thunder-spear",
@@ -1705,7 +1851,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Pangzhen",
+   "stage": "mid"
   },
   {
    "id": "feather-bow",
@@ -1743,7 +1891,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Weeping Creek Valley",
+   "stage": "early"
   },
   {
    "id": "flying-dagger",
@@ -1781,7 +1931,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Crimson Forest",
+   "stage": "early"
   },
   {
    "id": "goldblaze",
@@ -1819,7 +1971,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Pangzhen",
+   "stage": "mid"
   },
   {
    "id": "loong-trident",
@@ -1857,7 +2011,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Meigu Lake",
+   "stage": "mid"
   },
   {
    "id": "one-eyed-bow",
@@ -1895,7 +2051,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Meigu Lake",
+   "stage": "mid"
   },
   {
    "id": "inanis-radiant-fan",
@@ -1937,7 +2095,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Mountain of Imprisonment",
+   "stage": "late"
   },
   {
    "id": "kuye-temple-prayer-beads",
@@ -1979,7 +2139,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Village of Lu",
+   "stage": "early"
   },
   {
    "id": "puppeteers-bell",
@@ -2021,7 +2183,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Village of Lu",
+   "stage": "early"
   },
   {
    "id": "swordsmans-summon",
@@ -2063,7 +2227,9 @@
       "status": null
      }
     }
-   }
+   },
+   "zone": "Mandate Encampment",
+   "stage": "mid"
   }
  ]
 }

@@ -37,6 +37,7 @@
       <span class="kicker">{{t.ui.loadoutKicker}}</span>
       <h2 id="h-loadout">{{t.ui.loadoutTitle}}</h2>
     </div>
+    <div class="presets" id="presets" role="group" aria-label="{{t.ui.presetsTitle}}"></div>
     <div class="slots" id="slots"></div>
     <div class="verdict">
       <div class="totals" id="totals"></div>
@@ -219,6 +220,7 @@
     const unsure = items.filter((i) => !["agree", "verified"].includes(stateOf(i)));
     if (unsure.length) say.push(["warn", fill(A.unsure, { names: unsure.map((i) => i.name).join(", ") })]);
     $("advice").innerHTML = say.map(([c, t]) => `<li class="${c}">${esc(t)}</li>`).join("");
+    renderPresets();
     history.replaceState(null, "", hashOf());
   }
   $("slots").addEventListener("click", (e) => {
@@ -232,6 +234,18 @@
     const url = location.href.split("#")[0] + hashOf();
     const done = (msg) => { $("toast").textContent = msg; setTimeout(() => ($("toast").textContent = ""), 2500); };
     if (navigator.clipboard) navigator.clipboard.writeText(url).then(() => done(T.ui.copied), () => done(url)); else done(url);
+  });
+  // Loadouts conseillés par étape du jeu (début, milieu, fin)
+  const same = (a, b) => a.every((x, i) => x === b[i]);
+  function renderPresets() {
+    const stages = [...new Set((G.presets || []).map((p) => p.stage))];
+    $("presets").innerHTML = !stages.length ? "" : `<div class="presets-head"><b>${T.ui.presetsTitle}</b><small>${T.ui.presetsHint}</small></div><div class="presets-row">` + stages.map((s) =>
+      `<div class="preset-group"><span class="lbl">${T.stages[s]}</span>${G.presets.map((p, i) => p.stage !== s ? "" : `<button type="button" class="preset" data-p="${i}" aria-pressed="${same(p.ids, loadout)}" title="${esc(p.ids.map((id) => byId[id].name).join(" · "))}">${T.focus[p.focus]}</button>`).join("")}</div>`).join("") + `</div>`;
+  }
+  $("presets").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-p]"); if (!b) return;
+    loadout = G.presets[+b.dataset.p].ids.slice(); current = loadout[0]; filter = { kind: byId[current].kind, type: "" }; showSrc = false;
+    renderTypes(); renderStage(); renderRail(); renderLoadout();
   });
   $("reset").addEventListener("click", () => { loadout = DEFAULT.slice(); renderStage(); renderRail(); renderLoadout(); });
   window.addEventListener("hashchange", () => { const h = readHash(); if (h) { loadout = h; renderStage(); renderRail(); renderLoadout(); } });

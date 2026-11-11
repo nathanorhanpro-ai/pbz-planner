@@ -111,7 +111,10 @@
   "buyGame": "🎮 Phantom Blade Zero 더 싸게",
   "affiliate": "제휴 링크",
   "similarTitle": "비슷한 게임",
-  "seePrice": "가격 보기"
+  "seePrice": "가격 보기",
+  "presetsTitle": "진행 단계별 로드아웃",
+  "presetsHint": "해당 단계에서 얻을 수 있는 무기입니다. 클릭해서 불러오기.",
+  "whereToFind": "획득 장소"
  },
  "pitch": {
   "summon": "지원군을 부르거나 직접 지원합니다. {extra}.",
@@ -150,5 +153,15 @@
   "title": "페이지를 찾을 수 없습니다",
   "text": "이 페이지는 존재하지 않거나 이동되었습니다.",
   "back": "플래너로 돌아가기"
+ },
+ "stages": {
+  "early": "초반",
+  "mid": "중반",
+  "late": "후반"
+ },
+ "focus": {
+  "start": "극초반",
+  "power": "피해",
+  "status": "상태 이상"
  }
 }

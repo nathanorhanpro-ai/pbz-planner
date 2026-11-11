@@ -111,7 +111,10 @@
   "buyGame": "🎮 Phantom Blade Zero for less",
   "affiliate": "affiliate link",
   "similarTitle": "Games like this one",
-  "seePrice": "See price"
+  "seePrice": "See price",
+  "presetsTitle": "Loadouts by game stage",
+  "presetsHint": "Weapons you can own at that stage. Click to load.",
+  "whereToFind": "Where to find"
  },
  "pitch": {
   "summon": "Summons help or supports you directly. {extra}.",
@@ -150,5 +153,15 @@
   "title": "Page not found",
   "text": "This page doesn’t exist, or it moved.",
   "back": "Back to the planner"
+ },
+ "stages": {
+  "early": "Early",
+  "mid": "Mid",
+  "late": "Late"
+ },
+ "focus": {
+  "start": "First hours",
+  "power": "Damage",
+  "status": "Status"
  }
 }

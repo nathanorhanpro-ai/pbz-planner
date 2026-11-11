@@ -111,7 +111,10 @@
   "buyGame": "🎮 Phantom Blade Zero mais barato",
   "affiliate": "link de afiliado",
   "similarTitle": "Jogos do mesmo estilo",
-  "seePrice": "Ver preço"
+  "seePrice": "Ver preço",
+  "presetsTitle": "Loadouts por fase do jogo",
+  "presetsHint": "Armas que você pode ter nessa fase. Clique para carregar.",
+  "whereToFind": "Onde encontrar"
  },
  "pitch": {
   "summon": "Invoca ajuda ou te apoia diretamente. {extra}.",
@@ -150,5 +153,15 @@
   "title": "Página não encontrada",
   "text": "Esta página não existe ou mudou de endereço.",
   "back": "Voltar ao planejador"
+ },
+ "stages": {
+  "early": "Início",
+  "mid": "Meio",
+  "late": "Fim"
+ },
+ "focus": {
+  "start": "Primeiras horas",
+  "power": "Dano",
+  "status": "Status"
  }
 }

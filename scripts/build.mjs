@@ -132,7 +132,7 @@ function weaponPage(g, T, L, it, base) {
   <div class="sheet">
     <div class="meta"><span>${esc(T.kinds[it.kind])}</span><span>${esc(T.types[it.type])}</span>${it.rarity ? `<span class="rar-${it.rarity}">${esc(T.rarity[it.rarity])}</span>` : ""}</div>
     <h1 style="font-size:clamp(32px,5vw,52px)">${esc(it.name)}</h1>
-    <p class="pitch">${esc(L.pitch(it, "base"))}</p>
+    <p class="pitch">${esc(L.pitch(it, "base"))}</p>${it.zone ? `\n    <p class="where"><b>${esc(T.ui.whereToFind)} :</b> ${esc(it.zone)} · ${esc(T.stages[it.stage])}</p>` : ""}
     ${rows ? `<table class="stat-table"><thead><tr><th>${esc(T.ui.statsTitle)}</th><th class="r">${esc(T.levels.base)}</th><th class="r">${esc(T.levels.max)}</th></tr></thead><tbody>${rows}</tbody></table>` : `<p class="trust">${esc(T.ui.noStats)}</p>`}
     <p class="trust ${st}"><b>${esc(L.trust(it))}</b>${src ? ` · ${esc(T.ui.sourcesAt1)}${esc(src)}` : ""}</p>
     <div class="equip"><a class="btn" href="${planner}#W-${it.id}">${esc(T.ui.openInPlanner)}</a>${SITE.reportUrl ? `<a class="btn ghost" href="${esc(reportHref(it.name, T.lang.code))}" rel="noopener" target="_blank">${esc(T.ui.report)}</a>` : ""}</div>

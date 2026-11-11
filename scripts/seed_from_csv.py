@@ -69,6 +69,25 @@ for kind, name, typ in FEXTRA_ONLY:
                   "stats": {"base": dict(empty), "max": dict(empty)},
                   "check": {"state": "missing", "verified": False, "agreeing": 0, "sources": {}}})
 
+# Zone d'obtention et étape du jeu (début / milieu / fin), relevées sur le wiki Fextralife.
+LOC = json.loads((D / "locations-2026-11-11.json").read_text(encoding="utf-8"))
+for it in items:
+    z = LOC["zones"].get(it["id"])
+    it["zone"] = None if z == "start" else z
+    it["stage"] = "early" if z == "start" else LOC["stages"].get(z)
+# Loadouts conseillés par étape : uniquement des armes obtenables à cette étape, deux styles de lame, chiffres recoupés en priorité.
+PRESETS = [
+    ("early", "start", ["sanguine-twin", "sanguine-reach", "dread-axe", "hunters-chain-sickle"]),
+    ("early", "power", ["fiend-saws", "wild-oriole-sword", "flying-dagger", "bastion"]),
+    ("mid", "power", ["sundering-dual-axes", "soft-snake-sword", "thunder-spear", "heartrend-pipa"]),
+    ("mid", "status", ["baishan-stormswords", "armybreaker", "fire-meteor", "wolfjaw"]),
+    ("late", "power", ["the-ladys-fan", "aureate", "ink-cut", "flying-guillotine"]),
+    ("late", "status", ["freezing-chaos", "bonesaw", "flying-guillotine", "tiger-cannon"]),
+]
+ORDER = ["early", "mid", "late"]
+by = {i["id"]: i for i in items}
+for stage, focus, ids in PRESETS:
+    for i in ids: assert by[i]["stage"] and ORDER.index(by[i]["stage"]) <= ORDER.index(stage), (stage, i)
 items.sort(key=lambda x: (x["kind"], x["type"], x["name"]))
 game = {
     "id": "phantom-blade-zero", "name": "Phantom Blade Zero",
@@ -78,6 +97,7 @@ game = {
     "slots": [{"id": "b1", "kind": "blade"}, {"id": "b2", "kind": "blade"},
               {"id": "e1", "kind": "edge"}, {"id": "e2", "kind": "edge"}],
     "stats": ["damage", "guardBreak", "status"],
+    "presets": [{"stage": a, "focus": b, "ids": c} for a, b, c in PRESETS],
     "items": items,
 }
 (D / "games" / "phantom-blade-zero.json").write_text(json.dumps(game, ensure_ascii=False, indent=1), encoding="utf-8")

@@ -111,7 +111,10 @@
   "buyGame": "🎮 更便宜购买 Phantom Blade Zero",
   "affiliate": "联盟链接",
   "similarTitle": "同类游戏",
-  "seePrice": "查看价格"
+  "seePrice": "查看价格",
+  "presetsTitle": "按游戏阶段的配装",
+  "presetsHint": "该阶段可获得的武器。点击加载。",
+  "whereToFind": "获取地点"
  },
  "pitch": {
   "summon": "可召唤援手或直接为你提供支援。{extra}。",
@@ -150,5 +153,15 @@
   "title": "页面未找到",
   "text": "此页面不存在或已移动。",
   "back": "返回配装器"
+ },
+ "stages": {
+  "early": "前期",
+  "mid": "中期",
+  "late": "后期"
+ },
+ "focus": {
+  "start": "开局",
+  "power": "伤害",
+  "status": "状态"
  }
 }

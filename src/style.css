@@ -217,3 +217,16 @@ footer a { color: var(--gold); }
 .ig-wrap .aff { font-size: 11px; color: var(--muted); }
 .ig-banner { min-height: 0; }
 .ig-banner:empty { display: none; }
+/* Loadouts par étape */
+.presets { display: grid; gap: 10px; }
+.presets:empty { display: none; }
+.presets-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.presets-head b { font-family: var(--f-display); font-weight: 400; letter-spacing: .08em; font-size: 16px; }
+.presets-head small { color: var(--muted); font-size: 13px; }
+.presets-row { display: flex; flex-wrap: wrap; gap: 10px 22px; }
+.preset-group { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.preset-group .lbl { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); min-width: 3.5em; }
+.preset { border: 1px solid var(--line); background: var(--bg); color: var(--ink); padding: 8px 14px; min-height: 36px; cursor: pointer; border-radius: 2px; font-size: 14px; }
+.preset:hover { border-color: var(--muted); }
+.preset[aria-pressed="true"] { border-color: var(--crimson); background: var(--bg-3); }
+.where { margin: 0; font-size: 14px; color: var(--muted); } .where b { color: var(--ink); font-weight: 400; }

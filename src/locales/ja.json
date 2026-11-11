@@ -111,7 +111,10 @@
   "buyGame": "🎮 Phantom Blade Zeroをお得に",
   "affiliate": "アフィリエイトリンク",
   "similarTitle": "同ジャンルのゲーム",
-  "seePrice": "価格を見る"
+  "seePrice": "価格を見る",
+  "presetsTitle": "進行度別ロードアウト",
+  "presetsHint": "その段階で入手できる武器です。クリックで読み込み。",
+  "whereToFind": "入手場所"
  },
  "pitch": {
   "summon": "援軍を呼ぶ、または直接あなたを支援する。{extra}。",
@@ -150,5 +153,15 @@
   "title": "ページが見つかりません",
   "text": "このページは存在しないか、移動しました。",
   "back": "プランナーに戻る"
+ },
+ "stages": {
+  "early": "序盤",
+  "mid": "中盤",
+  "late": "終盤"
+ },
+ "focus": {
+  "start": "最序盤",
+  "power": "ダメージ",
+  "status": "状態異常"
  }
 }
