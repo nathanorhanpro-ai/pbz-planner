@@ -163,5 +163,21 @@
   "start": "Tout début",
   "power": "Dégâts",
   "status": "Statut"
+ },
+ "pg": {
+  "buildH1": "Build {stage} de jeu",
+  "buildTitle": "{h1} sur {game} : meilleures armes et Phantom Edges",
+  "buildDesc": "{h1} pour {game} : des loadouts composés uniquement d'armes obtenables à ce moment, où trouver chacune, et un clic pour les ouvrir dans le planner.",
+  "buildIntro": "Ces loadouts n'utilisent que des armes que tu peux obtenir à cette étape de l'histoire ({zones}). Ils sont choisis d'après les stats et les lieux d'obtention, pas d'après des données d'utilisation des joueurs. Si tu joues mieux, dis-le-nous.",
+  "available": "Toutes les armes obtenables à cette étape",
+  "otherStages": "Autres étapes",
+  "locH1": "Où trouver chaque arme",
+  "locTitle": "Où trouver chaque arme de {game} : toutes les lames et Phantom Edges par zone",
+  "locDesc": "Emplacement de chaque lame et Phantom Edge de {game}, zone par zone, dans l'ordre de l'histoire.",
+  "locIntro": "Les zones sont dans l'ordre de l'histoire. {n} armes n'ont pas encore d'emplacement confirmé.",
+  "unknown": "Emplacement non confirmé",
+  "start": "Armes de départ",
+  "guides": "Guides",
+  "lower": "1"
  }
 }

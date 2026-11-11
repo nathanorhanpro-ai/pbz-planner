@@ -163,5 +163,21 @@
   "start": "극초반",
   "power": "피해",
   "status": "상태 이상"
+ },
+ "pg": {
+  "buildH1": "{stage} 빌드",
+  "buildTitle": "{game} {h1}: 추천 무기와 Phantom Edge",
+  "buildDesc": "{game} {h1}. 그 시점에 얻을 수 있는 무기로만 구성한 로드아웃, 획득 장소, 클릭 한 번으로 플래너에서 열기.",
+  "buildIntro": "이 로드아웃은 스토리의 이 단계까지 얻을 수 있는 무기만 사용합니다 ({zones}). 능력치와 획득 장소를 기준으로 고른 것이며, 플레이어 사용 데이터는 아닙니다. 더 좋은 조합이 있다면 알려 주세요.",
+  "available": "이 단계에서 얻을 수 있는 모든 무기",
+  "otherStages": "다른 단계",
+  "locH1": "모든 무기 획득 장소",
+  "locTitle": "{game} 모든 무기 획득 장소: 블레이드와 Phantom Edge 지역별 정리",
+  "locDesc": "{game}의 모든 블레이드와 Phantom Edge 획득 장소를 스토리 순서대로 지역별로 정리했습니다.",
+  "locIntro": "지역은 스토리 순서입니다. 무기 {n}개는 획득 장소가 아직 확인되지 않았습니다.",
+  "unknown": "획득 장소 미확인",
+  "start": "시작 무기",
+  "guides": "가이드",
+  "lower": "0"
  }
 }

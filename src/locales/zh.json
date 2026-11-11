@@ -163,5 +163,21 @@
   "start": "开局",
   "power": "伤害",
   "status": "状态"
+ },
+ "pg": {
+  "buildH1": "{stage}配装",
+  "buildTitle": "{game} {h1}：推荐武器与Phantom Edge",
+  "buildDesc": "{game}{h1}：只使用该阶段能获得的武器，附获取地点，一键在配装器中打开。",
+  "buildIntro": "这些配装只使用剧情到该阶段可获得的武器（{zones}）。它们依据属性和获取地点挑选，并非玩家使用数据。如果你有更好的搭配，请告诉我们。",
+  "available": "该阶段可获得的全部武器",
+  "otherStages": "其他阶段",
+  "locH1": "全部武器获取地点",
+  "locTitle": "{game} 全部武器获取地点：按区域整理所有刀剑与Phantom Edge",
+  "locDesc": "{game}所有刀剑与Phantom Edge的获取地点，按剧情顺序分区域整理。",
+  "locIntro": "区域按剧情顺序排列。有{n}件武器的获取地点尚未确认。",
+  "unknown": "获取地点未确认",
+  "start": "初始武器",
+  "guides": "指南",
+  "lower": "0"
  }
 }

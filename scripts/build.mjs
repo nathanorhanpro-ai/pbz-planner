@@ -132,7 +132,7 @@ function weaponPage(g, T, L, it, base) {
   <div class="sheet">
     <div class="meta"><span>${esc(T.kinds[it.kind])}</span><span>${esc(T.types[it.type])}</span>${it.rarity ? `<span class="rar-${it.rarity}">${esc(T.rarity[it.rarity])}</span>` : ""}</div>
     <h1 style="font-size:clamp(32px,5vw,52px)">${esc(it.name)}</h1>
-    <p class="pitch">${esc(L.pitch(it, "base"))}</p>${it.zone ? `\n    <p class="where"><b>${esc(T.ui.whereToFind)} :</b> ${esc(it.zone)} · ${esc(T.stages[it.stage])}</p>` : ""}
+    <p class="pitch">${esc(L.pitch(it, "base"))}</p>${it.zone ? `\n    <p class="where"><b>${esc(T.ui.whereToFind)} :</b> <a href="${base}${P}locations/index.html#${it.zone.toLowerCase().replace(/[^a-z0-9]+/g, "-")}">${esc(it.zone)}</a> · <a href="${base}${P}builds/${it.stage}/index.html">${esc(T.stages[it.stage])}</a></p>` : ""}
     ${rows ? `<table class="stat-table"><thead><tr><th>${esc(T.ui.statsTitle)}</th><th class="r">${esc(T.levels.base)}</th><th class="r">${esc(T.levels.max)}</th></tr></thead><tbody>${rows}</tbody></table>` : `<p class="trust">${esc(T.ui.noStats)}</p>`}
     <p class="trust ${st}"><b>${esc(L.trust(it))}</b>${src ? ` · ${esc(T.ui.sourcesAt1)}${esc(src)}` : ""}</p>
     <div class="equip"><a class="btn" href="${planner}#W-${it.id}">${esc(T.ui.openInPlanner)}</a>${SITE.reportUrl ? `<a class="btn ghost" href="${esc(reportHref(it.name, T.lang.code))}" rel="noopener" target="_blank">${esc(T.ui.report)}</a>` : ""}</div>
@@ -167,7 +167,7 @@ for (const f of games) {
       .replace("{{HEAD}}", () => headTags("index.html", lang) + "\n" + jsonLd({ "@context": "https://schema.org", "@type": "WebApplication", name: "Phantom Blade Zero Build Planner", url: absUrl(lang, "index.html"), applicationCategory: "GameApplication", operatingSystem: "Any", inLanguage: T.lang.locale, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, description: meta(T.meta.plannerDesc) }) + "\n" + ogTags(meta(T.meta.plannerTitle), meta(T.meta.plannerDesc), "planner.jpg", "index.html", lang))
       .replace("{{CSS}}", () => CSS)
       .replace("{{HEADER}}", () => sub(header(T, pBase, "index.html", `${pBase}${P}index.html`)))
-      .replace("{{INDEX}}", () => indexHtml(g, T, (i) => `weapons/${i.id}/index.html`))
+      .replace("{{INDEX}}", () => indexHtml(g, T, (i) => `weapons/${i.id}/index.html`) + (g.presets ? `<p class="guide-links"><b>${esc(T.pg.guides)} :</b> ${[...new Set(g.presets.map((p) => p.stage))].map((s) => `<a href="builds/${s}/index.html">${esc(fill(T.pg.buildH1, { stage: T.pg.lower === "1" ? T.stages[s].toLowerCase() : T.stages[s] }))}</a>`).join(" · ")} · <a href="locations/index.html">${esc(T.pg.locH1)}</a></p>` : ""))
       .replace("{{FOOTER}}", () => footer(T, pBase))
       .replace("{{PROMO}}", () => promoBlock(T))
       .replace("{{SUPPORT}}", () => (SITE.support ? `<a class="btn ghost" href="${esc(SITE.support)}" rel="noopener" target="_blank">${esc(T.ui.support)}</a>` : "") + "")
@@ -189,6 +189,48 @@ for (const f of games) {
         `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">\n<style>\n${CSS}</style>\n`;
       put(path, page(T.lang.locale, hd, sub(header(T, base, `weapons/${it.id}/index.html`, `${base}${P}index.html`)) + weaponPage(g, T, L, it, base) + promo(T) + footer(T, base)));
     }
+
+    // Guides : une page par étape du jeu (loadouts conseillés) et une page « où trouver chaque arme ».
+    const STAGES = [...new Set((g.presets || []).map((p) => p.stage))];
+    const FONT_CSS = `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">\n<style>\n${CSS}</style>\n`;
+    const stageName = (s) => (T.pg.lower === "1" ? T.stages[s].toLowerCase() : T.stages[s]);
+    const buildH1 = (s) => fill(T.pg.buildH1, { stage: stageName(s) });
+    const byId = Object.fromEntries(g.items.map((i) => [i.id, i]));
+    const guide = (rel, title, desc, crumb, body) => {
+      const path = `${P}${rel}`, base = depthBase(path);
+      const hd = `<title>${esc(title)}</title>\n<meta name="description" content="${esc(desc)}">\n${headTags(rel, lang)}\n` + ogTags(title, desc, "planner.jpg", rel, lang) + "\n" +
+        jsonLd({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [[T.ui.home, absUrl(lang, "index.html")], [crumb, absUrl(lang, rel)]].map(([name, item], i) => ({ "@type": "ListItem", position: i + 1, name, item })) }) + "\n" + FONT_CSS;
+      put(path, page(T.lang.locale, hd, sub(header(T, base, rel, `${base}${P}index.html`)) +
+        `<nav class="crumbs band"><div class="inner"><a href="${base}${P}index.html">${esc(T.ui.home)}</a> / ${esc(T.pg.guides)} / ${esc(crumb)}</div></nav>\n<main>${body(base)}</main>` + promo(T) + footer(T, base)));
+    };
+    const cardOf = (base) => (o) => `<a class="mini" href="${base}${P}weapons/${o.id}/index.html">${o.image ? `<img src="${base}assets/thumbs/${o.image}" alt="${esc(o.name)}" loading="lazy">` : ""}<span>${esc(o.name)}</span><small>${esc(T.types[o.type])}${o.zone ? ` · ${esc(o.zone)}` : ""}</small></a>`;
+    const guideLinks = (base, skip) => `<p class="guide-links">${STAGES.filter((s) => s !== skip).map((s) => `<a href="${base}${P}builds/${s}/index.html">${esc(buildH1(s))}</a>`).join(" · ")}${skip === "loc" ? "" : ` · <a href="${base}${P}locations/index.html">${esc(T.pg.locH1)}</a>`}</p>`;
+    for (const s of STAGES) {
+      const h1 = buildH1(s), zones = g.zoneOrder.filter((z) => g.items.some((i) => i.zone === z && i.stage === s));
+      const upTo = STAGES.slice(0, STAGES.indexOf(s) + 1);
+      guide(`builds/${s}/index.html`, fill(T.pg.buildTitle, { h1, stage: stageName(s), game: g.name }), fill(T.pg.buildDesc, { h1, stage: stageName(s), game: g.name }), h1, (base) => {
+        const card = cardOf(base);
+        const sum = (ids, k) => ids.reduce((a, id) => a + (byId[id].stats.base[k] || 0), 0);
+        const sets = g.presets.filter((p) => p.stage === s).map((p) => `<section class="wsec band"><div class="inner"><h2>${esc(T.stages[s])} · ${esc(T.focus[p.focus])}</h2>
+<div class="cards">${p.ids.map((id) => card(byId[id])).join("")}</div>
+<p class="trust">${esc(T.stats.damage)} ${L.fmt(sum(p.ids, "damage"))} · ${esc(T.stats.guardBreak)} ${L.fmt(sum(p.ids, "guardBreak"))} · ${esc(T.stats.status)} ${L.fmt(sum(p.ids, "status"))} <small>(${esc(T.levels.base)})</small></p>
+<div class="equip"><a class="btn" href="${base}${P}index.html${L.hashOf(p.ids, g.levels[0])}">${esc(T.ui.openInPlanner)}</a></div></div></section>`).join("\n");
+        const avail = g.items.filter((i) => i.stage === s);
+        return `<section class="band ghead"><div class="inner"><span class="kicker">${esc(T.pg.guides)}</span><h1>${esc(h1)}</h1><p>${esc(fill(T.pg.buildIntro, { zones: zones.join(", ") }))}</p></div></section>
+${sets}
+<section class="wsec band"><div class="inner"><h2>${esc(T.pg.available)}</h2><div class="cards">${avail.map(card).join("")}</div></div></section>
+<section class="wsec band"><div class="inner"><h2>${esc(T.pg.otherStages)}</h2>${guideLinks(base, s)}</div></section>`;
+      });
+    }
+    if (g.zoneOrder) guide("locations/index.html", fill(T.pg.locTitle, { game: g.name }), fill(T.pg.locDesc, { game: g.name }), T.pg.locH1, (base) => {
+      const card = cardOf(base), sec = (id, title, sub, items) => items.length ? `<section class="wsec band" id="${id}"><div class="inner"><h2>${esc(title)}${sub ? ` <small class="zstage">${esc(sub)}</small>` : ""}</h2><div class="cards">${items.map(card).join("")}</div></div></section>` : "";
+      const slugOf = (z) => z.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+      const unknown = g.items.filter((i) => !i.stage);
+      return `<section class="band ghead"><div class="inner"><span class="kicker">${esc(T.pg.guides)}</span><h1>${esc(T.pg.locH1)}</h1><p>${esc(fill(T.pg.locIntro, { n: unknown.length }))}</p>${guideLinks(base, "loc")}</div></section>
+${sec("start", T.pg.start, T.stages.early, g.items.filter((i) => i.stage && !i.zone))}
+${g.zoneOrder.map((z) => { const xs = g.items.filter((i) => i.zone === z); return sec(slugOf(z), z, xs[0] ? T.stages[xs[0].stage] : "", xs); }).join("\n")}
+${sec("unknown", T.pg.unknown, "", unknown)}`;
+    });
   }
   const FONTS = `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">\n<style>\n${CSS}</style>\n`;
   for (const lang of Object.keys(LEGAL)) {

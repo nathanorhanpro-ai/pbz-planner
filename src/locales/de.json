@@ -163,5 +163,21 @@
   "start": "Erste Stunden",
   "power": "Schaden",
   "status": "Status"
+ },
+ "pg": {
+  "buildH1": "Build: {stage}",
+  "buildTitle": "{game} Build ({stage}): beste Waffen und Phantom Edges",
+  "buildDesc": "Build für {game} ({stage}): Loadouts nur aus Waffen, die du zu diesem Zeitpunkt besitzen kannst, mit Fundorten und einem Klick zum Öffnen im Planner.",
+  "buildIntro": "Diese Loadouts nutzen nur Waffen, die du in dieser Phase der Story bekommen kannst ({zones}). Sie beruhen auf Werten und Fundorten, nicht auf Nutzungsdaten von Spielern. Wenn du etwas Besseres spielst, sag es uns.",
+  "available": "Alle Waffen, die du in dieser Phase besitzen kannst",
+  "otherStages": "Andere Phasen",
+  "locH1": "Fundorte aller Waffen",
+  "locTitle": "Fundorte aller Waffen in {game}: alle Klingen und Phantom Edges nach Gebiet",
+  "locDesc": "Fundort jeder Klinge und jedes Phantom Edge in {game}, Gebiet für Gebiet, in Story-Reihenfolge.",
+  "locIntro": "Die Gebiete stehen in Story-Reihenfolge. Für {n} Waffen ist der Fundort noch nicht bestätigt.",
+  "unknown": "Fundort nicht bestätigt",
+  "start": "Startwaffen",
+  "guides": "Guides",
+  "lower": "0"
  }
 }

@@ -163,5 +163,21 @@
   "start": "Primeiras horas",
   "power": "Dano",
   "status": "Status"
+ },
+ "pg": {
+  "buildH1": "Build de {stage} do jogo",
+  "buildTitle": "{h1} em {game}: melhores armas e Phantom Edges",
+  "buildDesc": "{h1} para {game}: loadouts feitos só com armas que você pode ter nesse momento, onde encontrar cada uma e um clique para abrir no planner.",
+  "buildIntro": "Estes loadouts usam apenas armas que você consegue obter nesta fase da história ({zones}). São escolhidos por atributos e locais, não por dados de uso dos jogadores. Se você usa algo melhor, conte para nós.",
+  "available": "Todas as armas que você pode ter nesta fase",
+  "otherStages": "Outras fases",
+  "locH1": "Onde encontrar cada arma",
+  "locTitle": "Onde encontrar cada arma de {game}: todas as lâminas e Phantom Edges por área",
+  "locDesc": "Localização de cada lâmina e Phantom Edge de {game}, área por área, na ordem da história.",
+  "locIntro": "As áreas estão na ordem da história. {n} armas ainda não têm localização confirmada.",
+  "unknown": "Localização não confirmada",
+  "start": "Armas iniciais",
+  "guides": "Guias",
+  "lower": "1"
  }
 }

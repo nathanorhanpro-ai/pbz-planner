@@ -163,5 +163,21 @@
   "start": "First hours",
   "power": "Damage",
   "status": "Status"
+ },
+ "pg": {
+  "buildH1": "{stage} game build",
+  "buildTitle": "{h1} in {game}: best weapons and Phantom Edges",
+  "buildDesc": "{h1} for {game}: loadouts built only from weapons you can own at that point, where to find each one, and one click to open them in the planner.",
+  "buildIntro": "These loadouts only use weapons you can pick up by this stage of the story ({zones}). They are picked from stats and drop locations, not from player usage data. If you run something better, tell us.",
+  "available": "Every weapon you can own at this stage",
+  "otherStages": "Other stages",
+  "locH1": "Where to find every weapon",
+  "locTitle": "Where to find every weapon in {game}: all Blades and Phantom Edges by zone",
+  "locDesc": "Location of every Blade and Phantom Edge in {game}, zone by zone, in story order.",
+  "locIntro": "Zones are listed in story order. {n} weapons have no confirmed location yet.",
+  "unknown": "Location not confirmed",
+  "start": "Starting weapons",
+  "guides": "Guides",
+  "lower": "0"
  }
 }

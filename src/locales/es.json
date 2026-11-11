@@ -163,5 +163,21 @@
   "start": "Primeras horas",
   "power": "Daño",
   "status": "Estado"
+ },
+ "pg": {
+  "buildH1": "Build de {stage} del juego",
+  "buildTitle": "{h1} en {game}: mejores armas y Phantom Edges",
+  "buildDesc": "{h1} para {game}: loadouts hechos solo con armas que puedes tener en ese momento, dónde encontrar cada una y un clic para abrirlos en el planner.",
+  "buildIntro": "Estos loadouts solo usan armas que puedes conseguir en esta etapa de la historia ({zones}). Se eligen por estadísticas y ubicación, no por datos de uso de los jugadores. Si usas algo mejor, cuéntanoslo.",
+  "available": "Todas las armas que puedes tener en esta etapa",
+  "otherStages": "Otras etapas",
+  "locH1": "Dónde encontrar cada arma",
+  "locTitle": "Dónde encontrar cada arma de {game}: todas las hojas y Phantom Edges por zona",
+  "locDesc": "Ubicación de cada hoja y Phantom Edge de {game}, zona por zona, en el orden de la historia.",
+  "locIntro": "Las zonas están en el orden de la historia. {n} armas aún no tienen ubicación confirmada.",
+  "unknown": "Ubicación sin confirmar",
+  "start": "Armas iniciales",
+  "guides": "Guías",
+  "lower": "1"
  }
 }

@@ -230,3 +230,9 @@ footer a { color: var(--gold); }
 .preset:hover { border-color: var(--muted); }
 .preset[aria-pressed="true"] { border-color: var(--crimson); background: var(--bg-3); }
 .where { margin: 0; font-size: 14px; color: var(--muted); } .where b { color: var(--ink); font-weight: 400; }
+/* Guides */
+.ghead { padding-block: 18px 30px; } .ghead .inner { display: grid; gap: 12px; } .ghead p { margin: 0; max-width: 70ch; color: var(--muted); }
+.ghead h1 { font-size: clamp(32px, 5vw, 52px); margin: 0; }
+.guide-links { margin: 0; font-size: 15px; line-height: 1.9; } .guide-links a, .where a { color: var(--gold); }
+.zstage { font-family: var(--f-body, inherit); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-left: 8px; }
+.index .guide-links { margin-top: 18px; }

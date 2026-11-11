@@ -97,6 +97,7 @@ game = {
     "slots": [{"id": "b1", "kind": "blade"}, {"id": "b2", "kind": "blade"},
               {"id": "e1", "kind": "edge"}, {"id": "e2", "kind": "edge"}],
     "stats": ["damage", "guardBreak", "status"],
+    "zoneOrder": list(LOC["stages"]),
     "presets": [{"stage": a, "focus": b, "ids": c} for a, b, c in PRESETS],
     "items": items,
 }
