@@ -15,6 +15,7 @@
     <div style="display:grid;gap:6px;padding-top:30px">
       <span class="kicker">{{t.ui.arsenalKicker}}</span>
       <h1 id="h-arsenal">{{t.ui.arsenalTitle}}</h1>
+      <p class="lede">{{LEDE}}</p>
     </div>
     <div class="types" id="types"></div>
     <div class="stage">
@@ -62,6 +63,8 @@
     {{INDEX}}
   </div></section>
 </main>
+
+<a class="dock" id="dock" href="#h-loadout" aria-label="{{t.ui.loadoutTitle}}" hidden></a>
 
 {{FOOTER}}
 
@@ -207,6 +210,7 @@
     const items = loadout.map((id) => byId[id]);
     $("slots").innerHTML = G.slots.map((s, i) => { const it = items[i];
       return `<button type="button" class="slot" data-i="${i}"><span class="lbl">${T.slots[s.id]}</span>${it.image ? `<img src="${thumb(it)}" alt="">` : `<span style="height:120px"></span>`}<span class="nm">${esc(it.name)}</span><span class="sm">${T.types[it.type]}</span></button>`; }).join("");
+    $("dock").innerHTML = `<span class="dock-lbl">${T.ui.loadoutTitle}</span>` + items.map((it) => `<span class="dock-slot" title="${esc(it.name)}">${it.image ? `<img src="${thumb(it)}" alt="${esc(it.name)}">` : ""}</span>`).join("") + `<span class="dock-go" aria-hidden="true">↓</span>`;
     const blades = items.filter((i) => i.kind === "blade"), edges = items.filter((i) => i.kind === "edge");
     const sum = (arr, k) => arr.reduce((a, i) => a + (S(i)[k] || 0), 0);
     $("totals").innerHTML = [[T.ui.totBladeDmg, sum(blades, "damage")], [T.ui.totEdgeDmg, sum(edges, "damage")], [T.ui.totGuard, sum(items, "guardBreak")], [T.ui.totStatus, sum(items, "status")]]
@@ -251,6 +255,10 @@
     renderTypes(); renderStage(); renderRail(); renderLoadout();
   });
   $("reset").addEventListener("click", () => { loadout = DEFAULT.slice(); renderStage(); renderRail(); renderLoadout(); });
+  // Barre de loadout : visible tant que la section « équipement » n'est pas à l'écran.
+  const dock = $("dock"), loadSec = document.querySelector(".loadout");
+  if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => { dock.hidden = e.isIntersecting; }, { rootMargin: "-80px 0px" }).observe(loadSec);
+  dock.addEventListener("click", (e) => { e.preventDefault(); loadSec.scrollIntoView({ behavior: "smooth" }); });
   window.addEventListener("hashchange", () => { const h = readHash(); if (h) { loadout = h; renderStage(); renderRail(); renderLoadout(); } });
 
   renderTypes(); renderStage(); renderRail(); renderDuel(); renderLoadout();

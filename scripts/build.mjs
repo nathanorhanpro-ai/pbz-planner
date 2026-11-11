@@ -109,11 +109,22 @@ const legalBody = (lang, updated) => LEGAL[lang]
   .replaceAll("{{HOST_ADDRESS}}", esc(SITE.host.address)).replaceAll("{{HOST_URL}}", esc(SITE.host.url))
   .replaceAll("{{CONTACT}}", SITE.contact ? `<p>Contact : <a href="${SITE.contact.includes("@") && !SITE.contact.startsWith("http") ? "mailto:" : ""}${esc(SITE.contact)}">${esc(SITE.contact.replace(/^mailto:/, ""))}</a></p>` : "");
 
+// Rang S à C par famille, d'après les dégâts au niveau max (les égalités partagent le rang). Sans dégâts : pas de rang.
+const TIER_CUTS = [["S", .15], ["A", .4], ["B", .75], ["C", 1]];
+function tierMap(g) {
+  const top = g.levels[g.levels.length - 1], dmg = (i) => (i.stats[top] || {}).damage, out = {};
+  for (const kind of g.kinds) {
+    const xs = g.items.filter((i) => i.kind === kind && dmg(i) != null).sort((a, b) => dmg(b) - dmg(a));
+    for (const i of xs) { const r = xs.findIndex((x) => dmg(x) === dmg(i)) + 1; out[i.id] = TIER_CUTS.find(([, c]) => r <= Math.ceil(c * xs.length))[0]; }
+  }
+  return out;
+}
 function indexHtml(g, T, weaponHref) {
+  const tiers = tierMap(g);
   const cols = [];
   for (const kind of g.kinds) for (const type of [...new Set(g.items.filter((i) => i.kind === kind).map((i) => i.type))]) {
     const items = g.items.filter((i) => i.kind === kind && i.type === type).sort((a, b) => a.name.localeCompare(b.name));
-    cols.push(`<div><h3>${esc(T.kindsPlural[kind])} · ${esc(T.types[type])}</h3><ul>${items.map((i) => `<li><a href="${weaponHref(i)}">${esc(i.name)}</a></li>`).join("")}</ul></div>`);
+    cols.push(`<div><h3>${esc(T.kindsPlural[kind])} · ${esc(T.types[type])}</h3><ul>${items.map((i) => `<li><a href="${weaponHref(i)}"><b class="tg tg-${(tiers[i.id] || "n").toLowerCase()}">${tiers[i.id] || "–"}</b>${esc(i.name)}</a></li>`).join("")}</ul></div>`);
   }
   return `<div class="index-cols">${cols.join("")}</div>`;
 }
@@ -175,7 +186,7 @@ for (const f of games) {
     const head = (title, desc, path, alt) => `<title>${esc(title)}</title>\n<meta name="description" content="${esc(desc)}">\n${headTags(g, path, alt, lang)}\n`;
     const plannerBody = PLANNER
       .replace(/\{\{t\.(\w+)\.(\w+)\}\}/g, (_, a, b) => esc(T[a][b]))
-      .replace("{{TITLE}}", esc(meta(T.meta.plannerTitle))).replace("{{DESCRIPTION}}", esc(meta(T.meta.plannerDesc)))
+      .replace("{{TITLE}}", esc(meta(T.meta.plannerTitle))).replace("{{DESCRIPTION}}", esc(meta(T.meta.plannerDesc))).replace("{{LEDE}}", esc(meta(T.meta.plannerDesc)))
       .replace("{{HEAD}}", () => headTags("index.html", lang) + "\n" + jsonLd({ "@context": "https://schema.org", "@type": "WebApplication", name: "Phantom Blade Zero Build Planner", url: absUrl(lang, "index.html"), applicationCategory: "GameApplication", operatingSystem: "Any", inLanguage: T.lang.locale, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, description: meta(T.meta.plannerDesc) }) + "\n" + ogTags(meta(T.meta.plannerTitle), meta(T.meta.plannerDesc), "planner.jpg", "index.html", lang))
       .replace("{{CSS}}", () => CSS)
       .replace("{{HEADER}}", () => sub(header(T, pBase, "index.html", `${pBase}${P}index.html`, g)))
@@ -251,10 +262,10 @@ ${sec("unknown", T.pg.unknown, "", unknown)}`;
     guide("tier-list/index.html", fill(T.pg.tierTitle, { game: g.name }), fill(T.pg.tierDesc, { game: g.name }), T.pg.tierH1, (base) => {
       const top = g.levels[g.levels.length - 1], dmg = (i) => (i.stats[top] || {}).damage;
       const card = (o) => `<a class="mini" href="${base}${P}weapons/${o.id}/index.html">${o.image ? `<img src="${base}assets/thumbs/${o.image}" alt="${esc(o.name)}" loading="lazy">` : ""}<span>${esc(o.name)}</span><small>${esc(T.types[o.type])}${dmg(o) != null ? ` · ${esc(T.stats.damage)} ${L.fmt(dmg(o))}` : ""}${o.stage ? ` · ${esc(T.stages[o.stage])}` : ""}</small></a>`;
-      const CUTS = [["S", .15], ["A", .4], ["B", .75], ["C", 1]];
+      const CUTS = TIER_CUTS, tiers = tierMap(g);
       const kindSec = (kind) => {
         const xs = g.items.filter((i) => i.kind === kind && dmg(i) != null).sort((a, b) => dmg(b) - dmg(a));
-        const tierOf = (i) => { const r = xs.findIndex((x) => dmg(x) === dmg(i)) + 1; return CUTS.find(([, c]) => r <= Math.ceil(c * xs.length))[0]; };
+        const tierOf = (i) => tiers[i.id];
         const rest = g.items.filter((i) => i.kind === kind && dmg(i) == null);
         return `<section class="wsec band" id="${kind}"><div class="inner"><h2>${esc(T.kindsPlural[kind])}</h2>${CUTS.map(([t]) => { const ys = xs.filter((i) => tierOf(i) === t); return ys.length ? `<div class="tier tier-${t.toLowerCase()}"><b class="tier-tag">${t}</b><div class="cards">${ys.map(card).join("")}</div></div>` : ""; }).join("")}${rest.length ? `<div class="tier"><b class="tier-tag tier-none">–</b><div class="cards">${rest.map(card).join("")}</div></div><p class="tier-note">${esc(T.pg.tierUnranked)}</p>` : ""}</div></section>`;
       };
