@@ -167,7 +167,7 @@ for (const f of games) {
       .replace("{{HEAD}}", () => headTags("index.html", lang) + "\n" + jsonLd({ "@context": "https://schema.org", "@type": "WebApplication", name: "Phantom Blade Zero Build Planner", url: absUrl(lang, "index.html"), applicationCategory: "GameApplication", operatingSystem: "Any", inLanguage: T.lang.locale, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, description: meta(T.meta.plannerDesc) }) + "\n" + ogTags(meta(T.meta.plannerTitle), meta(T.meta.plannerDesc), "planner.jpg", "index.html", lang))
       .replace("{{CSS}}", () => CSS)
       .replace("{{HEADER}}", () => sub(header(T, pBase, "index.html", `${pBase}${P}index.html`)))
-      .replace("{{INDEX}}", () => indexHtml(g, T, (i) => `weapons/${i.id}/index.html`) + (g.presets ? `<p class="guide-links"><b>${esc(T.pg.guides)} :</b> ${[...new Set(g.presets.map((p) => p.stage))].map((s) => `<a href="builds/${s}/index.html">${esc(fill(T.pg.buildH1, { stage: T.pg.lower === "1" ? T.stages[s].toLowerCase() : T.stages[s] }))}</a>`).join(" · ")} · <a href="locations/index.html">${esc(T.pg.locH1)}</a></p>` : ""))
+      .replace("{{INDEX}}", () => indexHtml(g, T, (i) => `weapons/${i.id}/index.html`) + (g.presets ? `<p class="guide-links"><b>${esc(T.pg.guides)} :</b> ${[...new Set(g.presets.map((p) => p.stage))].map((s) => `<a href="builds/${s}/index.html">${esc(fill(T.pg.buildH1, { stage: T.pg.lower === "1" ? T.stages[s].toLowerCase() : T.stages[s] }))}</a>`).join(" · ")} · <a href="locations/index.html">${esc(T.pg.locH1)}</a> · <a href="tier-list/index.html">${esc(T.pg.tierH1)}</a></p>` : ""))
       .replace("{{FOOTER}}", () => footer(T, pBase))
       .replace("{{PROMO}}", () => promoBlock(T))
       .replace("{{SUPPORT}}", () => (SITE.support ? `<a class="btn ghost" href="${esc(SITE.support)}" rel="noopener" target="_blank">${esc(T.ui.support)}</a>` : "") + "")
@@ -204,7 +204,7 @@ for (const f of games) {
         `<nav class="crumbs band"><div class="inner"><a href="${base}${P}index.html">${esc(T.ui.home)}</a> / ${esc(T.pg.guides)} / ${esc(crumb)}</div></nav>\n<main>${body(base)}</main>` + promo(T) + footer(T, base)));
     };
     const cardOf = (base) => (o) => `<a class="mini" href="${base}${P}weapons/${o.id}/index.html">${o.image ? `<img src="${base}assets/thumbs/${o.image}" alt="${esc(o.name)}" loading="lazy">` : ""}<span>${esc(o.name)}</span><small>${esc(T.types[o.type])}${o.zone ? ` · ${esc(o.zone)}` : ""}</small></a>`;
-    const guideLinks = (base, skip) => `<p class="guide-links">${STAGES.filter((s) => s !== skip).map((s) => `<a href="${base}${P}builds/${s}/index.html">${esc(buildH1(s))}</a>`).join(" · ")}${skip === "loc" ? "" : ` · <a href="${base}${P}locations/index.html">${esc(T.pg.locH1)}</a>`}</p>`;
+    const guideLinks = (base, skip) => `<p class="guide-links">${STAGES.filter((s) => s !== skip).map((s) => `<a href="${base}${P}builds/${s}/index.html">${esc(buildH1(s))}</a>`).join(" · ")}${skip === "loc" ? "" : ` · <a href="${base}${P}locations/index.html">${esc(T.pg.locH1)}</a>`}${skip === "tier" ? "" : ` · <a href="${base}${P}tier-list/index.html">${esc(T.pg.tierH1)}</a>`}</p>`;
     for (const s of STAGES) {
       const h1 = buildH1(s), zones = g.zoneOrder.filter((z) => g.items.some((i) => i.zone === z && i.stage === s));
       const upTo = STAGES.slice(0, STAGES.indexOf(s) + 1);
@@ -230,6 +230,20 @@ ${sets}
 ${sec("start", T.pg.start, T.stages.early, g.items.filter((i) => i.stage && !i.zone))}
 ${g.zoneOrder.map((z) => { const xs = g.items.filter((i) => i.zone === z); return sec(slugOf(z), z, xs[0] ? T.stages[xs[0].stage] : "", xs); }).join("\n")}
 ${sec("unknown", T.pg.unknown, "", unknown)}`;
+    });
+    // Tier list : classement par dégâts au niveau max, par famille. Les égalités partagent le même rang.
+    guide("tier-list/index.html", fill(T.pg.tierTitle, { game: g.name }), fill(T.pg.tierDesc, { game: g.name }), T.pg.tierH1, (base) => {
+      const top = g.levels[g.levels.length - 1], dmg = (i) => (i.stats[top] || {}).damage;
+      const card = (o) => `<a class="mini" href="${base}${P}weapons/${o.id}/index.html">${o.image ? `<img src="${base}assets/thumbs/${o.image}" alt="${esc(o.name)}" loading="lazy">` : ""}<span>${esc(o.name)}</span><small>${esc(T.types[o.type])}${dmg(o) != null ? ` · ${esc(T.stats.damage)} ${L.fmt(dmg(o))}` : ""}${o.stage ? ` · ${esc(T.stages[o.stage])}` : ""}</small></a>`;
+      const CUTS = [["S", .15], ["A", .4], ["B", .75], ["C", 1]];
+      const kindSec = (kind) => {
+        const xs = g.items.filter((i) => i.kind === kind && dmg(i) != null).sort((a, b) => dmg(b) - dmg(a));
+        const tierOf = (i) => { const r = xs.findIndex((x) => dmg(x) === dmg(i)) + 1; return CUTS.find(([, c]) => r <= Math.ceil(c * xs.length))[0]; };
+        const rest = g.items.filter((i) => i.kind === kind && dmg(i) == null);
+        return `<section class="wsec band" id="${kind}"><div class="inner"><h2>${esc(T.kindsPlural[kind])}</h2>${CUTS.map(([t]) => { const ys = xs.filter((i) => tierOf(i) === t); return ys.length ? `<div class="tier tier-${t.toLowerCase()}"><b class="tier-tag">${t}</b><div class="cards">${ys.map(card).join("")}</div></div>` : ""; }).join("")}${rest.length ? `<div class="tier"><b class="tier-tag tier-none">–</b><div class="cards">${rest.map(card).join("")}</div></div><p class="tier-note">${esc(T.pg.tierUnranked)}</p>` : ""}</div></section>`;
+      };
+      return `<section class="band ghead"><div class="inner"><span class="kicker">${esc(T.pg.guides)}</span><h1>${esc(T.pg.tierH1)}</h1><p>${esc(T.pg.tierIntro)}</p>${guideLinks(base, "tier")}</div></section>
+${g.kinds.map(kindSec).join("\n")}`;
     });
   }
   const FONTS = `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">\n<style>\n${CSS}</style>\n`;

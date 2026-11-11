@@ -178,6 +178,11 @@
   "unknown": "Location not confirmed",
   "start": "Starting weapons",
   "guides": "Guides",
-  "lower": "0"
+  "lower": "0",
+  "tierH1": "Weapon tier list",
+  "tierTitle": "{game} tier list: best blades and Phantom Edges",
+  "tierDesc": "Tier list of every weapon in {game}, ranked S to C by max-level damage, with the game stage where you can get each one.",
+  "tierIntro": "The ranking follows max-level damage, with blades and Phantom Edges ranked separately. It ignores speed, reach and playstyle, so treat it as a reference point, not gospel. Tied weapons share the same tier.",
+  "tierUnranked": "Unranked: these weapons have no comparable damage stat."
  }
 }

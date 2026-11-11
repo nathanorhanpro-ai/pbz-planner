@@ -178,6 +178,11 @@
   "unknown": "Fundort nicht bestätigt",
   "start": "Startwaffen",
   "guides": "Guides",
-  "lower": "0"
+  "lower": "0",
+  "tierH1": "Waffen-Tier-List",
+  "tierTitle": "{game} Tier List: die besten Klingen und Phantom Edges",
+  "tierDesc": "Tier List aller Waffen in {game}, von S bis C nach Schaden auf Maximalstufe sortiert, mit dem Spielabschnitt, in dem du sie bekommst.",
+  "tierIntro": "Die Rangfolge richtet sich nach dem Schaden auf Maximalstufe, Klingen und Phantom Edges getrennt. Tempo, Reichweite und Spielstil bleiben unberücksichtigt: nimm sie als Orientierung, nicht als Gesetz. Waffen mit gleichem Wert teilen sich den Rang.",
+  "tierUnranked": "Nicht eingestuft: Diese Waffen haben keinen vergleichbaren Schadenswert."
  }
 }

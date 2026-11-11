@@ -236,3 +236,10 @@ footer a { color: var(--gold); }
 .guide-links { margin: 0; font-size: 15px; line-height: 1.9; } .guide-links a, .where a { color: var(--gold); }
 .zstage { font-family: var(--f-body, inherit); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-left: 8px; }
 .index .guide-links { margin-top: 18px; }
+.tier { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: stretch; margin-top: 12px; }
+.tier-tag { display: grid; place-items: center; font-family: var(--f-display, inherit); font-size: 30px; border: 1px solid var(--line); background: var(--bg-2); color: var(--muted); border-radius: 2px; }
+.tier-s .tier-tag { color: #fff; background: var(--crimson); border-color: transparent; }
+.tier-a .tier-tag { color: var(--gold); border-color: var(--gold); }
+.tier-b .tier-tag { color: var(--ink); }
+.tier-note { color: var(--muted); font-size: 13px; margin: 10px 0 0; }
+@media (max-width: 560px) { .tier { grid-template-columns: 34px 1fr; gap: 8px; } .tier-tag { font-size: 20px; } .tier .cards { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); } }

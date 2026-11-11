@@ -178,6 +178,11 @@
   "unknown": "Ubicación sin confirmar",
   "start": "Armas iniciales",
   "guides": "Guías",
-  "lower": "1"
+  "lower": "1",
+  "tierH1": "Tier list de armas",
+  "tierTitle": "Tier list de {game}: mejores hojas y Phantom Edges",
+  "tierDesc": "Tier list de todas las armas de {game}, clasificadas de S a C según su daño a nivel máximo, con la etapa del juego en la que puedes conseguirlas.",
+  "tierIntro": "La clasificación sigue el daño a nivel máximo, con hojas y Phantom Edges por separado. No tiene en cuenta la velocidad, el alcance ni el estilo de juego: úsala como referencia, no como verdad absoluta. Las armas empatadas comparten rango.",
+  "tierUnranked": "Sin clasificar: estas armas no tienen una estadística de daño comparable."
  }
 }

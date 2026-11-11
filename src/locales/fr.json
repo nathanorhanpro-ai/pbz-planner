@@ -178,6 +178,11 @@
   "unknown": "Emplacement non confirmé",
   "start": "Armes de départ",
   "guides": "Guides",
-  "lower": "1"
+  "lower": "1",
+  "tierH1": "Tier list des armes",
+  "tierTitle": "Tier list {game} : meilleures lames et Phantom Edges",
+  "tierDesc": "Tier list de toutes les armes de {game}, classées de S à C d'après leurs dégâts au niveau max, avec l'étape du jeu où tu peux les obtenir.",
+  "tierIntro": "Le classement suit les dégâts au niveau max, lames et Phantom Edges séparés. Il ne tient pas compte de la vitesse, de la portée ni du style de jeu : sers-t'en comme d'un repère, pas comme d'une vérité. Les armes à égalité partagent le même rang.",
+  "tierUnranked": "Non classées : ces armes n'ont pas de stat de dégâts comparable."
  }
 }

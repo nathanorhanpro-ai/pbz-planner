@@ -87,15 +87,17 @@
   let lvl = G.levels[0];
   const S = (it) => it.stats[lvl];
 
-  let loadout = readHash() || DEFAULT.slice();
+  // Sans lien partagé, on reprend le dernier loadout du visiteur (gardé dans son navigateur).
+  const saved = () => { try { return location.hash ? null : readHash(localStorage.getItem("pbz-loadout") || ""); } catch { return null; } };
+  let loadout = readHash() || saved() || DEFAULT.slice();
   let filter = { kind: "blade", type: "" };
   let current = loadout[0], showSrc = false;
   let cmp = [loadout[0], loadout[1]];
   const want = /^#W-([a-z0-9-]+)$/.exec(location.hash);
   if (want && byId[want[1]]) { current = want[1]; filter.kind = byId[current].kind; }
 
-  function readHash() {
-    const m = /^#L(\d|M)((?:-\d+){1,8})$/.exec(location.hash);
+  function readHash(h = location.hash) {
+    const m = /^#L(\d|M)((?:-\d+){1,8})$/.exec(h);
     if (!m) return null;
     lvl = m[1] === "M" ? G.levels[G.levels.length - 1] : G.levels[0];
     const ids = m[2].slice(1).split("-").map((n) => (G.items[+n] || {}).id);
@@ -222,6 +224,7 @@
     $("advice").innerHTML = say.map(([c, t]) => `<li class="${c}">${esc(t)}</li>`).join("");
     renderPresets();
     history.replaceState(null, "", hashOf());
+    try { localStorage.setItem("pbz-loadout", hashOf()); } catch {}
   }
   $("slots").addEventListener("click", (e) => {
     const b = e.target.closest("[data-i]"); if (!b) return;
