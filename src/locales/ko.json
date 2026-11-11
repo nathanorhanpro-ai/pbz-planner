@@ -139,7 +139,7 @@
   "unsure": "{names}의 수치는 아직 확인되지 않았습니다. 합계는 참고용입니다."
  },
  "footer": {
-  "sources": "수치는 pbz.gg, ofzenandcomputing, thegameswiki를 교차 확인한 것입니다. '교차 확인'은 여러 출처가 정확히 같은 값을 준다는 뜻입니다. 틀린 값을 발견하면 알려 주세요.",
+  "sources": "수치는 pbz.gg, Fextralife, ofzenandcomputing, thegameswiki를 교차 확인한 것입니다. '교차 확인'은 여러 출처가 정확히 같은 값을 준다는 뜻입니다. 틀린 값을 발견하면 알려 주세요.",
   "disclaimer": "비공식 팬 사이트이며 S-GAME과 관련이 없습니다. Phantom Blade Zero의 명칭과 아트워크는 S-GAME에 귀속됩니다.",
   "legal": "법적 고지 및 개인정보"
  },
@@ -174,7 +174,7 @@
   "locH1": "모든 무기 획득 장소",
   "locTitle": "{game} 모든 무기 획득 장소: 블레이드와 Phantom Edge 지역별 정리",
   "locDesc": "{game}의 모든 블레이드와 Phantom Edge 획득 장소를 스토리 순서대로 지역별로 정리했습니다.",
-  "locIntro": "지역은 스토리 순서입니다. 무기 {n}개는 획득 장소가 아직 확인되지 않았습니다.",
+  "locIntro": "지역은 스토리 순서입니다.",
   "unknown": "획득 장소 미확인",
   "start": "시작 무기",
   "guides": "가이드",
@@ -183,6 +183,8 @@
   "tierTitle": "{game} 티어 리스트: 최고의 검과 팬텀 엣지",
   "tierDesc": "{game}의 모든 무기를 최대 레벨 피해량 기준으로 S부터 C까지 분류하고, 획득 가능한 게임 단계도 함께 표시합니다.",
   "tierIntro": "순위는 최대 레벨 피해량을 따르며 검과 팬텀 엣지는 따로 매깁니다. 속도, 사거리, 플레이 스타일은 반영하지 않으니 절대적인 기준이 아닌 참고용으로 보세요. 수치가 같은 무기는 같은 등급입니다.",
-  "tierUnranked": "등급 없음: 이 무기들은 비교할 수 있는 피해량 수치가 없습니다."
+  "tierUnranked": "등급 없음: 이 무기들은 비교할 수 있는 피해량 수치가 없습니다.",
+  "tempered": "단련 무기",
+  "temperOf": "{name} 단련으로 획득"
  }
 }

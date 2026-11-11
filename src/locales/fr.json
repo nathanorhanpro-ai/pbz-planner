@@ -139,7 +139,7 @@
   "unsure": "Chiffres non confirmés pour {names}. Les totaux sont indicatifs."
  },
  "footer": {
-  "sources": "Chiffres recoupés entre pbz.gg, ofzenandcomputing et thegameswiki. « Recoupé » veut dire que plusieurs sources donnent exactement les mêmes valeurs. Une valeur fausse ? Signale-la, on corrige.",
+  "sources": "Chiffres recoupés entre pbz.gg, Fextralife, ofzenandcomputing et thegameswiki. « Recoupé » veut dire que plusieurs sources donnent exactement les mêmes valeurs. Une valeur fausse ? Signale-la, on corrige.",
   "disclaimer": "Site de fan non officiel, sans lien avec S-GAME. Phantom Blade Zero, ses noms et ses visuels appartiennent à S-GAME.",
   "legal": "Mentions légales et confidentialité"
  },
@@ -174,7 +174,7 @@
   "locH1": "Où trouver chaque arme",
   "locTitle": "Où trouver chaque arme de {game} : toutes les lames et Phantom Edges par zone",
   "locDesc": "Emplacement de chaque lame et Phantom Edge de {game}, zone par zone, dans l'ordre de l'histoire.",
-  "locIntro": "Les zones sont dans l'ordre de l'histoire. {n} armes n'ont pas encore d'emplacement confirmé.",
+  "locIntro": "Les zones sont dans l'ordre de l'histoire.",
   "unknown": "Emplacement non confirmé",
   "start": "Armes de départ",
   "guides": "Guides",
@@ -183,6 +183,8 @@
   "tierTitle": "Tier list {game} : meilleures lames et Phantom Edges",
   "tierDesc": "Tier list de toutes les armes de {game}, classées de S à C d'après leurs dégâts au niveau max, avec l'étape du jeu où tu peux les obtenir.",
   "tierIntro": "Le classement suit les dégâts au niveau max, lames et Phantom Edges séparés. Il ne tient pas compte de la vitesse, de la portée ni du style de jeu : sers-t'en comme d'un repère, pas comme d'une vérité. Les armes à égalité partagent le même rang.",
-  "tierUnranked": "Non classées : ces armes n'ont pas de stat de dégâts comparable."
+  "tierUnranked": "Non classées : ces armes n'ont pas de stat de dégâts comparable.",
+  "tempered": "Armes trempées",
+  "temperOf": "Obtenue en trempant {name}"
  }
 }

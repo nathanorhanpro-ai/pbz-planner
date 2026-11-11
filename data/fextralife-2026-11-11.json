@@ -1,0 +1,277 @@
+{
+ "source": "Fextralife wiki (phantombladezero.wiki.fextralife.com), pages read 2026-11-11. level = level stated on the page, null when the page does not say.",
+ "weapons": {
+  "armybreaker": {
+   "level": 1,
+   "damage": 288,
+   "guardBreak": 114,
+   "status": null
+  },
+  "aureate": {
+   "level": 1,
+   "damage": 324,
+   "guardBreak": 120,
+   "status": null
+  },
+  "baishan-stormswords": {
+   "level": 1,
+   "damage": 312,
+   "guardBreak": null,
+   "status": 142
+  },
+  "bashpole": {
+   "level": 1,
+   "damage": 221,
+   "guardBreak": 237,
+   "status": null
+  },
+  "bastion": {
+   "level": 1,
+   "damage": 226,
+   "guardBreak": 198,
+   "status": null
+  },
+  "blazing-edge": {
+   "level": 30,
+   "damage": 1217,
+   "guardBreak": 513,
+   "status": null,
+   "temperOf": "Sanguine Reach"
+  },
+  "bonesaw": {
+   "level": 1,
+   "damage": 312,
+   "guardBreak": null,
+   "status": 142
+  },
+  "crescent-blade": {
+   "level": 1,
+   "damage": 288,
+   "guardBreak": 118,
+   "status": null
+  },
+  "dread-axe": {
+   "level": null,
+   "damage": 309,
+   "guardBreak": 208,
+   "status": null
+  },
+  "feather-bow": {
+   "level": null,
+   "damage": 309,
+   "guardBreak": 208,
+   "status": null
+  },
+  "fiend-saws": {
+   "level": 30,
+   "damage": 1179,
+   "guardBreak": 468,
+   "status": null
+  },
+  "fire-meteor": {
+   "level": 1,
+   "damage": 380,
+   "guardBreak": null,
+   "status": 309
+  },
+  "flaming-mane": {
+   "level": 1,
+   "damage": 248,
+   "guardBreak": null,
+   "status": 178
+  },
+  "flying-dagger": {
+   "level": 1,
+   "damage": 251,
+   "guardBreak": 216,
+   "status": null
+  },
+  "flying-guillotine": {
+   "level": 1,
+   "damage": 380,
+   "guardBreak": 309,
+   "status": null
+  },
+  "freezing-chaos": {
+   "level": 1,
+   "damage": 324,
+   "guardBreak": null,
+   "status": 144
+  },
+  "goldblaze": {
+   "level": null,
+   "damage": 843,
+   "guardBreak": 453,
+   "status": null
+  },
+  "hunters-chain-sickle": {
+   "level": null,
+   "damage": 963,
+   "guardBreak": 831,
+   "status": null
+  },
+  "ink-cut": {
+   "level": 1,
+   "damage": 400,
+   "guardBreak": 324,
+   "status": null
+  },
+  "iron-gauntlets": {
+   "level": null,
+   "damage": 1018,
+   "guardBreak": 870,
+   "status": null
+  },
+  "jagged-steel": {
+   "level": 30,
+   "damage": 936,
+   "guardBreak": null,
+   "status": 482
+  },
+  "juggernaut": {
+   "level": 1,
+   "damage": 288,
+   "guardBreak": 114,
+   "status": null
+  },
+  "loong-trident": {
+   "level": null,
+   "damage": 195,
+   "guardBreak": 175,
+   "status": null
+  },
+  "one-eyed-bow": {
+   "level": 1,
+   "damage": 214,
+   "guardBreak": 162,
+   "status": null
+  },
+  "outlaw-warblade": {
+   "level": 1,
+   "damage": 240,
+   "guardBreak": 106,
+   "status": null
+  },
+  "parting-hooks": {
+   "level": 1,
+   "damage": 288,
+   "guardBreak": 118,
+   "status": null
+  },
+  "sanguine-reach": {
+   "level": 1,
+   "damage": 200,
+   "guardBreak": 100,
+   "status": null
+  },
+  "sanguine-twin": {
+   "level": 1,
+   "damage": 200,
+   "guardBreak": 100,
+   "status": null
+  },
+  "sanguine": {
+   "level": 1,
+   "damage": 227,
+   "guardBreak": 119,
+   "status": null
+  },
+  "scarlet-wraithblade": {
+   "level": 30,
+   "damage": 936,
+   "guardBreak": 457,
+   "status": null
+  },
+  "seamless-death": {
+   "level": 1,
+   "damage": 288,
+   "guardBreak": 114,
+   "status": null
+  },
+  "shadowless-edge": {
+   "level": 30,
+   "damage": 1264,
+   "guardBreak": 468,
+   "status": null,
+   "temperOf": "Sanguine Twin"
+  },
+  "soft-snake-sword": {
+   "level": 1,
+   "damage": 288,
+   "guardBreak": 118,
+   "status": null
+  },
+  "sundering-dual-axes": {
+   "level": 1,
+   "damage": 312,
+   "guardBreak": 118,
+   "status": null
+  },
+  "the-fanatics-broken-blade": {
+   "level": 1,
+   "damage": 228,
+   "guardBreak": 96,
+   "status": null
+  },
+  "the-ladys-fan": {
+   "level": 1,
+   "damage": 340,
+   "guardBreak": 126,
+   "status": null
+  },
+  "thunder-spear": {
+   "level": 1,
+   "damage": 450,
+   "guardBreak": null,
+   "status": 360
+  },
+  "tianxuan-bronze-sword": {
+   "level": 1,
+   "damage": 240,
+   "guardBreak": 106,
+   "status": null
+  },
+  "tiger-cannon": {
+   "level": 1,
+   "damage": 310,
+   "guardBreak": null,
+   "status": 208
+  },
+  "war-wagon": {
+   "level": 1,
+   "damage": 310,
+   "guardBreak": 208,
+   "status": null
+  },
+  "whiteshadow": {
+   "level": 1,
+   "damage": 308,
+   "guardBreak": null,
+   "status": 144
+  },
+  "wild-oriole-sword": {
+   "level": 10,
+   "damage": 560,
+   "guardBreak": 198,
+   "status": null
+  },
+  "wolfjaw": {
+   "level": 1,
+   "damage": 261,
+   "guardBreak": 280,
+   "status": null
+  },
+  "wooden-sanguine": {
+   "level": null,
+   "damage": 161,
+   "guardBreak": 188,
+   "status": null
+  },
+  "you-loongs-deluge": {
+   "level": null,
+   "damage": 382,
+   "guardBreak": 342,
+   "status": null
+  }
+ }
+}

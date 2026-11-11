@@ -139,7 +139,7 @@
   "unsure": "Números ainda não confirmados para {names}. Os totais são estimativas."
  },
  "footer": {
-  "sources": "Os números são cruzados entre pbz.gg, ofzenandcomputing e thegameswiki. “Confirmado” significa que várias fontes dão exatamente os mesmos valores. Viu um número errado? Avise e corrigimos.",
+  "sources": "Os números são cruzados entre pbz.gg, Fextralife, ofzenandcomputing e thegameswiki. “Confirmado” significa que várias fontes dão exatamente os mesmos valores. Viu um número errado? Avise e corrigimos.",
   "disclaimer": "Site de fã não oficial, sem vínculo com a S-GAME. Phantom Blade Zero, seus nomes e artes pertencem à S-GAME.",
   "legal": "Aviso legal e privacidade"
  },
@@ -174,7 +174,7 @@
   "locH1": "Onde encontrar cada arma",
   "locTitle": "Onde encontrar cada arma de {game}: todas as lâminas e Phantom Edges por área",
   "locDesc": "Localização de cada lâmina e Phantom Edge de {game}, área por área, na ordem da história.",
-  "locIntro": "As áreas estão na ordem da história. {n} armas ainda não têm localização confirmada.",
+  "locIntro": "As áreas estão na ordem da história.",
   "unknown": "Localização não confirmada",
   "start": "Armas iniciais",
   "guides": "Guias",
@@ -183,6 +183,8 @@
   "tierTitle": "Tier list de {game}: melhores lâminas e Phantom Edges",
   "tierDesc": "Tier list de todas as armas de {game}, classificadas de S a C pelo dano no nível máximo, com a etapa do jogo em que você pode obtê-las.",
   "tierIntro": "A classificação segue o dano no nível máximo, com lâminas e Phantom Edges separadas. Ela não considera velocidade, alcance nem estilo de jogo: use como referência, não como verdade absoluta. Armas empatadas dividem o mesmo rank.",
-  "tierUnranked": "Sem classificação: estas armas não têm um atributo de dano comparável."
+  "tierUnranked": "Sem classificação: estas armas não têm um atributo de dano comparável.",
+  "tempered": "Armas temperadas",
+  "temperOf": "Obtida ao temperar {name}"
  }
 }

@@ -132,7 +132,7 @@ function weaponPage(g, T, L, it, base) {
   <div class="sheet">
     <div class="meta"><span>${esc(T.kinds[it.kind])}</span><span>${esc(T.types[it.type])}</span>${it.rarity ? `<span class="rar-${it.rarity}">${esc(T.rarity[it.rarity])}</span>` : ""}</div>
     <h1 style="font-size:clamp(32px,5vw,52px)">${esc(it.name)}</h1>
-    <p class="pitch">${esc(L.pitch(it, "base"))}</p>${it.zone ? `\n    <p class="where"><b>${esc(T.ui.whereToFind)} :</b> <a href="${base}${P}locations/index.html#${it.zone.toLowerCase().replace(/[^a-z0-9]+/g, "-")}">${esc(it.zone)}</a> · <a href="${base}${P}builds/${it.stage}/index.html">${esc(T.stages[it.stage])}</a></p>` : ""}
+    <p class="pitch">${esc(L.pitch(it, "base"))}</p>${it.zone ? `\n    <p class="where"><b>${esc(T.ui.whereToFind)} :</b> <a href="${base}${P}locations/index.html#${it.zone.toLowerCase().replace(/[^a-z0-9]+/g, "-")}">${esc(it.zone)}</a> · <a href="${base}${P}builds/${it.stage}/index.html">${esc(T.stages[it.stage])}</a></p>` : ""}${it.temperOf ? `\n    <p class="where"><b>${esc(T.ui.whereToFind)} :</b> <a href="${base}${P}weapons/${it.temperOf}/index.html">${esc(fill(T.pg.temperOf, { name: g.items.find((x) => x.id === it.temperOf).name }))}</a></p>` : ""}
     ${rows ? `<table class="stat-table"><thead><tr><th>${esc(T.ui.statsTitle)}</th><th class="r">${esc(T.levels.base)}</th><th class="r">${esc(T.levels.max)}</th></tr></thead><tbody>${rows}</tbody></table>` : `<p class="trust">${esc(T.ui.noStats)}</p>`}
     <p class="trust ${st}"><b>${esc(L.trust(it))}</b>${src ? ` · ${esc(T.ui.sourcesAt1)}${esc(src)}` : ""}</p>
     <div class="equip"><a class="btn" href="${planner}#W-${it.id}">${esc(T.ui.openInPlanner)}</a>${SITE.reportUrl ? `<a class="btn ghost" href="${esc(reportHref(it.name, T.lang.code))}" rel="noopener" target="_blank">${esc(T.ui.report)}</a>` : ""}</div>
@@ -225,10 +225,11 @@ ${sets}
     if (g.zoneOrder) guide("locations/index.html", fill(T.pg.locTitle, { game: g.name }), fill(T.pg.locDesc, { game: g.name }), T.pg.locH1, (base) => {
       const card = cardOf(base), sec = (id, title, sub, items) => items.length ? `<section class="wsec band" id="${id}"><div class="inner"><h2>${esc(title)}${sub ? ` <small class="zstage">${esc(sub)}</small>` : ""}</h2><div class="cards">${items.map(card).join("")}</div></div></section>` : "";
       const slugOf = (z) => z.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-      const unknown = g.items.filter((i) => !i.stage);
+      const unknown = g.items.filter((i) => !i.stage && !i.temperOf), tempered = g.items.filter((i) => i.temperOf);
       return `<section class="band ghead"><div class="inner"><span class="kicker">${esc(T.pg.guides)}</span><h1>${esc(T.pg.locH1)}</h1><p>${esc(fill(T.pg.locIntro, { n: unknown.length }))}</p>${guideLinks(base, "loc")}</div></section>
 ${sec("start", T.pg.start, T.stages.early, g.items.filter((i) => i.stage && !i.zone))}
 ${g.zoneOrder.map((z) => { const xs = g.items.filter((i) => i.zone === z); return sec(slugOf(z), z, xs[0] ? T.stages[xs[0].stage] : "", xs); }).join("\n")}
+${tempered.length ? `<section class="wsec band" id="tempered"><div class="inner"><h2>${esc(T.pg.tempered)}</h2><div class="cards">${tempered.map((o) => `<a class="mini" href="${base}${P}weapons/${o.id}/index.html">${o.image ? `<img src="${base}assets/thumbs/${o.image}" alt="${esc(o.name)}" loading="lazy">` : ""}<span>${esc(o.name)}</span><small>${esc(fill(T.pg.temperOf, { name: byId[o.temperOf].name }))}</small></a>`).join("")}</div></div></section>` : ""}
 ${sec("unknown", T.pg.unknown, "", unknown)}`;
     });
     // Tier list : classement par dégâts au niveau max, par famille. Les égalités partagent le même rang.

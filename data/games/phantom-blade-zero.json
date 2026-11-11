@@ -131,7 +131,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 3,
+    "agreeing": 4,
     "sources": {
      "pbz.gg": {
       "damage": 312,
@@ -147,11 +147,17 @@
       "damage": 312,
       "guardBreak": null,
       "status": 142
+     },
+     "fextralife": {
+      "damage": 312,
+      "guardBreak": null,
+      "status": 142
      }
     }
    },
    "zone": "Mandate Encampment",
-   "stage": "mid"
+   "stage": "mid",
+   "temperOf": null
   },
   {
    "id": "fiend-saws",
@@ -183,11 +189,6 @@
       "guardBreak": 120,
       "status": null
      },
-     "ofzenandcomputing": {
-      "damage": 1179,
-      "guardBreak": 468,
-      "status": null
-     },
      "thegameswiki": {
       "damage": 302,
       "guardBreak": 120,
@@ -196,7 +197,8 @@
     }
    },
    "zone": "Village of Lu",
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "parting-hooks",
@@ -221,7 +223,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 288,
@@ -232,11 +234,17 @@
       "damage": 288,
       "guardBreak": 118,
       "status": null
+     },
+     "fextralife": {
+      "damage": 288,
+      "guardBreak": 118,
+      "status": null
      }
     }
    },
    "zone": "Pangzhen",
-   "stage": "mid"
+   "stage": "mid",
+   "temperOf": null
   },
   {
    "id": "sanguine-twin",
@@ -261,7 +269,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 200,
@@ -277,11 +285,17 @@
       "damage": 223,
       "guardBreak": 117,
       "status": null
+     },
+     "fextralife": {
+      "damage": 200,
+      "guardBreak": 100,
+      "status": null
      }
     }
    },
    "zone": "Weeping Creek Valley",
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "seamless-death",
@@ -306,7 +320,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 288,
@@ -317,11 +331,17 @@
       "damage": 288,
       "guardBreak": 114,
       "status": null
+     },
+     "fextralife": {
+      "damage": 288,
+      "guardBreak": 114,
+      "status": null
      }
     }
    },
    "zone": "Mountain of Imprisonment",
-   "stage": "late"
+   "stage": "late",
+   "temperOf": null
   },
   {
    "id": "shadowless-edge",
@@ -350,7 +370,8 @@
     "sources": {}
    },
    "zone": null,
-   "stage": null
+   "stage": null,
+   "temperOf": "sanguine-twin"
   },
   {
    "id": "sundering-dual-axes",
@@ -375,7 +396,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 312,
@@ -386,11 +407,17 @@
       "damage": 312,
       "guardBreak": 118,
       "status": null
+     },
+     "fextralife": {
+      "damage": 312,
+      "guardBreak": 118,
+      "status": null
      }
     }
    },
    "zone": "Meigu Lake",
-   "stage": "mid"
+   "stage": "mid",
+   "temperOf": null
   },
   {
    "id": "the-ladys-fan",
@@ -415,7 +442,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 340,
@@ -426,11 +453,17 @@
       "damage": 340,
       "guardBreak": 126,
       "status": null
+     },
+     "fextralife": {
+      "damage": 340,
+      "guardBreak": 126,
+      "status": null
      }
     }
    },
    "zone": "Mount Soulrend",
-   "stage": "late"
+   "stage": "late",
+   "temperOf": null
   },
   {
    "id": "white-serpent-and-crimson-viper",
@@ -475,7 +508,8 @@
     }
    },
    "zone": "Crimson Forest",
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "aureate",
@@ -500,7 +534,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 324,
@@ -511,11 +545,17 @@
       "damage": 324,
       "guardBreak": 120,
       "status": null
+     },
+     "fextralife": {
+      "damage": 324,
+      "guardBreak": 120,
+      "status": null
      }
     }
    },
    "zone": "Mount Soulrend",
-   "stage": "late"
+   "stage": "late",
+   "temperOf": null
   },
   {
    "id": "freezing-chaos",
@@ -540,7 +580,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 324,
@@ -551,11 +591,17 @@
       "damage": 324,
       "guardBreak": null,
       "status": 144
+     },
+     "fextralife": {
+      "damage": 324,
+      "guardBreak": null,
+      "status": 144
      }
     }
    },
    "zone": "Mirage Estate",
-   "stage": "late"
+   "stage": "late",
+   "temperOf": null
   },
   {
    "id": "infernal-rouge",
@@ -590,7 +636,8 @@
     }
    },
    "zone": null,
-   "stage": null
+   "stage": null,
+   "temperOf": null
   },
   {
    "id": "jagged-steel",
@@ -622,11 +669,6 @@
       "guardBreak": null,
       "status": 124
      },
-     "ofzenandcomputing": {
-      "damage": 936,
-      "guardBreak": null,
-      "status": 482
-     },
      "thegameswiki": {
       "damage": 272,
       "guardBreak": null,
@@ -635,7 +677,8 @@
     }
    },
    "zone": "Weeping Creek Valley",
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "sanguine",
@@ -676,11 +719,17 @@
       "damage": 227,
       "guardBreak": 119,
       "status": null
+     },
+     "fextralife": {
+      "damage": 227,
+      "guardBreak": 119,
+      "status": null
      }
     }
    },
    "zone": null,
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "soft-snake-sword",
@@ -705,7 +754,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 288,
@@ -716,11 +765,17 @@
       "damage": 288,
       "guardBreak": 118,
       "status": null
+     },
+     "fextralife": {
+      "damage": 288,
+      "guardBreak": 118,
+      "status": null
      }
     }
    },
    "zone": "Mandate Encampment",
-   "stage": "mid"
+   "stage": "mid",
+   "temperOf": null
   },
   {
    "id": "the-fanatics-broken-blade",
@@ -745,7 +800,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 228,
@@ -761,11 +816,17 @@
       "damage": 272,
       "guardBreak": 142,
       "status": null
+     },
+     "fextralife": {
+      "damage": 228,
+      "guardBreak": 96,
+      "status": null
      }
     }
    },
    "zone": "Crimson Forest",
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "tianxuan-bronze-sword",
@@ -790,7 +851,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 3,
+    "agreeing": 4,
     "sources": {
      "pbz.gg": {
       "damage": 240,
@@ -806,11 +867,17 @@
       "damage": 240,
       "guardBreak": 106,
       "status": null
+     },
+     "fextralife": {
+      "damage": 240,
+      "guardBreak": 106,
+      "status": null
      }
     }
    },
    "zone": "Village of Lu",
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "wild-oriole-sword",
@@ -842,11 +909,6 @@
       "guardBreak": 104,
       "status": null
      },
-     "ofzenandcomputing": {
-      "damage": 560,
-      "guardBreak": 198,
-      "status": null
-     },
      "thegameswiki": {
       "damage": 295,
       "guardBreak": 104,
@@ -855,7 +917,8 @@
     }
    },
    "zone": "Village of Lu",
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "wooden-sanguine",
@@ -900,7 +963,8 @@
     }
    },
    "zone": null,
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "armybreaker",
@@ -925,7 +989,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 288,
@@ -936,11 +1000,17 @@
       "damage": 288,
       "guardBreak": 114,
       "status": null
+     },
+     "fextralife": {
+      "damage": 288,
+      "guardBreak": 114,
+      "status": null
      }
     }
    },
    "zone": "Pangzhen",
-   "stage": "mid"
+   "stage": "mid",
+   "temperOf": null
   },
   {
    "id": "blazing-edge",
@@ -969,7 +1039,8 @@
     "sources": {}
    },
    "zone": null,
-   "stage": null
+   "stage": null,
+   "temperOf": "sanguine-reach"
   },
   {
    "id": "bonesaw",
@@ -994,7 +1065,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 312,
@@ -1005,11 +1076,17 @@
       "damage": 312,
       "guardBreak": 142,
       "status": null
+     },
+     "fextralife": {
+      "damage": 312,
+      "guardBreak": null,
+      "status": 142
      }
     }
    },
    "zone": "Mount Soulrend",
-   "stage": "late"
+   "stage": "late",
+   "temperOf": null
   },
   {
    "id": "crescent-blade",
@@ -1045,11 +1122,17 @@
       "damage": 288,
       "guardBreak": 118,
       "status": null
+     },
+     "fextralife": {
+      "damage": 288,
+      "guardBreak": 118,
+      "status": null
      }
     }
    },
    "zone": "Mirage Estate",
-   "stage": "late"
+   "stage": "late",
+   "temperOf": null
   },
   {
    "id": "juggernaut",
@@ -1074,7 +1157,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 288,
@@ -1085,11 +1168,17 @@
       "damage": 288,
       "guardBreak": 114,
       "status": null
+     },
+     "fextralife": {
+      "damage": 288,
+      "guardBreak": 114,
+      "status": null
      }
     }
    },
    "zone": "Mountain of Imprisonment",
-   "stage": "late"
+   "stage": "late",
+   "temperOf": null
   },
   {
    "id": "outlaw-warblade",
@@ -1114,7 +1203,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 3,
+    "agreeing": 4,
     "sources": {
      "pbz.gg": {
       "damage": 240,
@@ -1130,11 +1219,17 @@
       "damage": 240,
       "guardBreak": 106,
       "status": null
+     },
+     "fextralife": {
+      "damage": 240,
+      "guardBreak": 106,
+      "status": null
      }
     }
    },
    "zone": "Crimson Forest",
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "sanguine-reach",
@@ -1159,7 +1254,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 200,
@@ -1175,11 +1270,17 @@
       "damage": 206,
       "guardBreak": 108,
       "status": null
+     },
+     "fextralife": {
+      "damage": 200,
+      "guardBreak": 100,
+      "status": null
      }
     }
    },
    "zone": "Weeping Creek Valley",
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "scarlet-wraithblade",
@@ -1211,11 +1312,6 @@
       "guardBreak": 117,
       "status": null
      },
-     "ofzenandcomputing": {
-      "damage": 936,
-      "guardBreak": 457,
-      "status": null
-     },
      "thegameswiki": {
       "damage": 247,
       "guardBreak": 129,
@@ -1224,7 +1320,8 @@
     }
    },
    "zone": "Weeping Creek Valley",
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "whiteshadow",
@@ -1249,7 +1346,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 308,
@@ -1260,11 +1357,17 @@
       "damage": 308,
       "guardBreak": 144,
       "status": null
+     },
+     "fextralife": {
+      "damage": 308,
+      "guardBreak": null,
+      "status": 144
      }
     }
    },
    "zone": "Mountain of Imprisonment",
-   "stage": "late"
+   "stage": "late",
+   "temperOf": null
   },
   {
    "id": "bastion",
@@ -1289,7 +1392,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 226,
@@ -1300,11 +1403,17 @@
       "damage": 226,
       "guardBreak": 198,
       "status": null
+     },
+     "fextralife": {
+      "damage": 226,
+      "guardBreak": 198,
+      "status": null
      }
     }
    },
    "zone": "Village of Lu",
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "flaming-mane",
@@ -1329,7 +1438,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 248,
@@ -1340,11 +1449,17 @@
       "damage": 248,
       "guardBreak": 178,
       "status": null
+     },
+     "fextralife": {
+      "damage": 248,
+      "guardBreak": null,
+      "status": 178
      }
     }
    },
    "zone": "Pangzhen",
-   "stage": "mid"
+   "stage": "mid",
+   "temperOf": null
   },
   {
    "id": "flying-guillotine",
@@ -1369,7 +1484,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 380,
@@ -1380,11 +1495,17 @@
       "damage": 380,
       "guardBreak": 309,
       "status": null
+     },
+     "fextralife": {
+      "damage": 380,
+      "guardBreak": 309,
+      "status": null
      }
     }
    },
    "zone": "Mountain of Imprisonment",
-   "stage": "late"
+   "stage": "late",
+   "temperOf": null
   },
   {
    "id": "heartrend-pipa",
@@ -1424,7 +1545,8 @@
     }
    },
    "zone": "Pangzhen",
-   "stage": "mid"
+   "stage": "mid",
+   "temperOf": null
   },
   {
    "id": "you-loongs-deluge",
@@ -1464,7 +1586,8 @@
     }
    },
    "zone": "Pangzhen",
-   "stage": "mid"
+   "stage": "mid",
+   "temperOf": null
   },
   {
    "id": "bashpole",
@@ -1487,9 +1610,9 @@
     }
    },
    "check": {
-    "state": "conflict",
+    "state": "agree",
     "verified": false,
-    "agreeing": 1,
+    "agreeing": 2,
     "sources": {
      "pbz.gg": {
       "damage": 221,
@@ -1500,11 +1623,17 @@
       "damage": 380,
       "guardBreak": 309,
       "status": null
+     },
+     "fextralife": {
+      "damage": 221,
+      "guardBreak": 237,
+      "status": null
      }
     }
    },
    "zone": "Mandate Encampment",
-   "stage": "mid"
+   "stage": "mid",
+   "temperOf": null
   },
   {
    "id": "dread-axe",
@@ -1527,9 +1656,9 @@
     }
    },
    "check": {
-    "state": "conflict",
+    "state": "agree",
     "verified": false,
-    "agreeing": 1,
+    "agreeing": 2,
     "sources": {
      "pbz.gg": {
       "damage": 309,
@@ -1540,11 +1669,17 @@
       "damage": 963,
       "guardBreak": 831,
       "status": null
+     },
+     "fextralife": {
+      "damage": 309,
+      "guardBreak": 208,
+      "status": null
      }
     }
    },
    "zone": "Weeping Creek Valley",
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "tiger-cannon",
@@ -1567,9 +1702,9 @@
     }
    },
    "check": {
-    "state": "conflict",
+    "state": "agree",
     "verified": false,
-    "agreeing": 1,
+    "agreeing": 2,
     "sources": {
      "pbz.gg": {
       "damage": 310,
@@ -1580,11 +1715,17 @@
       "damage": 400,
       "guardBreak": 324,
       "status": null
+     },
+     "fextralife": {
+      "damage": 310,
+      "guardBreak": null,
+      "status": 208
      }
     }
    },
    "zone": "Mirage Estate",
-   "stage": "late"
+   "stage": "late",
+   "temperOf": null
   },
   {
    "id": "war-wagon",
@@ -1607,9 +1748,9 @@
     }
    },
    "check": {
-    "state": "conflict",
+    "state": "agree",
     "verified": false,
-    "agreeing": 1,
+    "agreeing": 2,
     "sources": {
      "pbz.gg": {
       "damage": 310,
@@ -1620,11 +1761,17 @@
       "damage": 1018,
       "guardBreak": 870,
       "status": null
+     },
+     "fextralife": {
+      "damage": 310,
+      "guardBreak": 208,
+      "status": null
      }
     }
    },
    "zone": "Meigu Lake",
-   "stage": "mid"
+   "stage": "mid",
+   "temperOf": null
   },
   {
    "id": "wolfjaw",
@@ -1647,9 +1794,9 @@
     }
    },
    "check": {
-    "state": "conflict",
+    "state": "agree",
     "verified": false,
-    "agreeing": 1,
+    "agreeing": 2,
     "sources": {
      "pbz.gg": {
       "damage": 261,
@@ -1660,11 +1807,17 @@
       "damage": 450,
       "guardBreak": 360,
       "status": null
+     },
+     "fextralife": {
+      "damage": 261,
+      "guardBreak": 280,
+      "status": null
      }
     }
    },
    "zone": "Pangzhen",
-   "stage": "mid"
+   "stage": "mid",
+   "temperOf": null
   },
   {
    "id": "fire-meteor",
@@ -1689,7 +1842,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 380,
@@ -1700,11 +1853,17 @@
       "damage": 380,
       "guardBreak": 309,
       "status": null
+     },
+     "fextralife": {
+      "damage": 380,
+      "guardBreak": null,
+      "status": 309
      }
     }
    },
    "zone": "Pangzhen",
-   "stage": "mid"
+   "stage": "mid",
+   "temperOf": null
   },
   {
    "id": "hunters-chain-sickle",
@@ -1744,7 +1903,8 @@
     }
    },
    "zone": "Weeping Creek Valley",
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "ink-cut",
@@ -1769,7 +1929,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 400,
@@ -1780,11 +1940,17 @@
       "damage": 400,
       "guardBreak": 324,
       "status": null
+     },
+     "fextralife": {
+      "damage": 400,
+      "guardBreak": 324,
+      "status": null
      }
     }
    },
    "zone": "Mountain of Imprisonment",
-   "stage": "late"
+   "stage": "late",
+   "temperOf": null
   },
   {
    "id": "iron-gauntlets",
@@ -1824,7 +1990,8 @@
     }
    },
    "zone": "Crimson Forest",
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "thunder-spear",
@@ -1849,7 +2016,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 450,
@@ -1860,11 +2027,17 @@
       "damage": 450,
       "guardBreak": 360,
       "status": null
+     },
+     "fextralife": {
+      "damage": 450,
+      "guardBreak": null,
+      "status": 360
      }
     }
    },
    "zone": "Pangzhen",
-   "stage": "mid"
+   "stage": "mid",
+   "temperOf": null
   },
   {
    "id": "feather-bow",
@@ -1904,7 +2077,8 @@
     }
    },
    "zone": "Weeping Creek Valley",
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "flying-dagger",
@@ -1929,7 +2103,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 251,
@@ -1940,11 +2114,17 @@
       "damage": 251,
       "guardBreak": 216,
       "status": null
+     },
+     "fextralife": {
+      "damage": 251,
+      "guardBreak": 216,
+      "status": null
      }
     }
    },
    "zone": "Crimson Forest",
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "goldblaze",
@@ -1984,7 +2164,8 @@
     }
    },
    "zone": "Pangzhen",
-   "stage": "mid"
+   "stage": "mid",
+   "temperOf": null
   },
   {
    "id": "loong-trident",
@@ -2009,7 +2190,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 195,
@@ -2020,11 +2201,17 @@
       "damage": 195,
       "guardBreak": 175,
       "status": null
+     },
+     "fextralife": {
+      "damage": 195,
+      "guardBreak": 175,
+      "status": null
      }
     }
    },
    "zone": "Meigu Lake",
-   "stage": "mid"
+   "stage": "mid",
+   "temperOf": null
   },
   {
    "id": "one-eyed-bow",
@@ -2049,7 +2236,7 @@
    "check": {
     "state": "agree",
     "verified": false,
-    "agreeing": 2,
+    "agreeing": 3,
     "sources": {
      "pbz.gg": {
       "damage": 214,
@@ -2060,11 +2247,17 @@
       "damage": 214,
       "guardBreak": 162,
       "status": null
+     },
+     "fextralife": {
+      "damage": 214,
+      "guardBreak": 162,
+      "status": null
      }
     }
    },
    "zone": "Meigu Lake",
-   "stage": "mid"
+   "stage": "mid",
+   "temperOf": null
   },
   {
    "id": "inanis-radiant-fan",
@@ -2108,7 +2301,8 @@
     }
    },
    "zone": "Mountain of Imprisonment",
-   "stage": "late"
+   "stage": "late",
+   "temperOf": null
   },
   {
    "id": "kuye-temple-prayer-beads",
@@ -2152,7 +2346,8 @@
     }
    },
    "zone": "Village of Lu",
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "puppeteers-bell",
@@ -2196,7 +2391,8 @@
     }
    },
    "zone": "Village of Lu",
-   "stage": "early"
+   "stage": "early",
+   "temperOf": null
   },
   {
    "id": "swordsmans-summon",
@@ -2240,7 +2436,8 @@
     }
    },
    "zone": "Mandate Encampment",
-   "stage": "mid"
+   "stage": "mid",
+   "temperOf": null
   }
  ]
 }

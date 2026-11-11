@@ -139,7 +139,7 @@
   "unsure": "Datos aún sin confirmar para {names}. Los totales son orientativos."
  },
  "footer": {
-  "sources": "Los datos se contrastan entre pbz.gg, ofzenandcomputing y thegameswiki. «Contrastado» significa que varias fuentes dan exactamente los mismos valores. ¿Ves un dato erróneo? Avísanos y lo corregimos.",
+  "sources": "Los datos se contrastan entre pbz.gg, Fextralife, ofzenandcomputing y thegameswiki. «Contrastado» significa que varias fuentes dan exactamente los mismos valores. ¿Ves un dato erróneo? Avísanos y lo corregimos.",
   "disclaimer": "Web de fans no oficial, sin relación con S-GAME. Phantom Blade Zero, sus nombres y sus imágenes pertenecen a S-GAME.",
   "legal": "Aviso legal y privacidad"
  },
@@ -174,7 +174,7 @@
   "locH1": "Dónde encontrar cada arma",
   "locTitle": "Dónde encontrar cada arma de {game}: todas las hojas y Phantom Edges por zona",
   "locDesc": "Ubicación de cada hoja y Phantom Edge de {game}, zona por zona, en el orden de la historia.",
-  "locIntro": "Las zonas están en el orden de la historia. {n} armas aún no tienen ubicación confirmada.",
+  "locIntro": "Las zonas están en el orden de la historia.",
   "unknown": "Ubicación sin confirmar",
   "start": "Armas iniciales",
   "guides": "Guías",
@@ -183,6 +183,8 @@
   "tierTitle": "Tier list de {game}: mejores hojas y Phantom Edges",
   "tierDesc": "Tier list de todas las armas de {game}, clasificadas de S a C según su daño a nivel máximo, con la etapa del juego en la que puedes conseguirlas.",
   "tierIntro": "La clasificación sigue el daño a nivel máximo, con hojas y Phantom Edges por separado. No tiene en cuenta la velocidad, el alcance ni el estilo de juego: úsala como referencia, no como verdad absoluta. Las armas empatadas comparten rango.",
-  "tierUnranked": "Sin clasificar: estas armas no tienen una estadística de daño comparable."
+  "tierUnranked": "Sin clasificar: estas armas no tienen una estadística de daño comparable.",
+  "tempered": "Armas templadas",
+  "temperOf": "Se obtiene templando {name}"
  }
 }

@@ -139,7 +139,7 @@
   "unsure": "Werte für {names} noch nicht bestätigt. Die Summen sind Schätzungen."
  },
  "footer": {
-  "sources": "Die Werte werden zwischen pbz.gg, ofzenandcomputing und thegameswiki abgeglichen. „Bestätigt“ heißt, dass mehrere Quellen genau dieselben Werte nennen. Fehler gefunden? Melde ihn, wir korrigieren.",
+  "sources": "Die Werte werden zwischen pbz.gg, Fextralife, ofzenandcomputing und thegameswiki abgeglichen. „Bestätigt“ heißt, dass mehrere Quellen genau dieselben Werte nennen. Fehler gefunden? Melde ihn, wir korrigieren.",
   "disclaimer": "Inoffizielle Fanseite ohne Verbindung zu S-GAME. Phantom Blade Zero, seine Namen und Grafiken gehören S-GAME.",
   "legal": "Impressum & Datenschutz"
  },
@@ -174,7 +174,7 @@
   "locH1": "Fundorte aller Waffen",
   "locTitle": "Fundorte aller Waffen in {game}: alle Klingen und Phantom Edges nach Gebiet",
   "locDesc": "Fundort jeder Klinge und jedes Phantom Edge in {game}, Gebiet für Gebiet, in Story-Reihenfolge.",
-  "locIntro": "Die Gebiete stehen in Story-Reihenfolge. Für {n} Waffen ist der Fundort noch nicht bestätigt.",
+  "locIntro": "Die Gebiete stehen in Story-Reihenfolge.",
   "unknown": "Fundort nicht bestätigt",
   "start": "Startwaffen",
   "guides": "Guides",
@@ -183,6 +183,8 @@
   "tierTitle": "{game} Tier List: die besten Klingen und Phantom Edges",
   "tierDesc": "Tier List aller Waffen in {game}, von S bis C nach Schaden auf Maximalstufe sortiert, mit dem Spielabschnitt, in dem du sie bekommst.",
   "tierIntro": "Die Rangfolge richtet sich nach dem Schaden auf Maximalstufe, Klingen und Phantom Edges getrennt. Tempo, Reichweite und Spielstil bleiben unberücksichtigt: nimm sie als Orientierung, nicht als Gesetz. Waffen mit gleichem Wert teilen sich den Rang.",
-  "tierUnranked": "Nicht eingestuft: Diese Waffen haben keinen vergleichbaren Schadenswert."
+  "tierUnranked": "Nicht eingestuft: Diese Waffen haben keinen vergleichbaren Schadenswert.",
+  "tempered": "Gehärtete Waffen",
+  "temperOf": "Durch Härten von {name} erhältlich"
  }
 }

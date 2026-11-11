@@ -38,15 +38,29 @@ for r in csv.DictReader((D / "sources-2026-11-08.csv").open(encoding="utf-8")):
     if any(v is not None for v in vals.values()):
         others.setdefault(name, {})[r["source"]] = vals
 
+# Wiki Fextralife : chaque page d'arme précise (ou non) le niveau de ses chiffres.
+FX = json.loads((D / "fextralife-2026-11-11.json").read_text(encoding="utf-8"))["weapons"]
+fxid = lambda name: slug(name.replace("&", "and").replace("'", ""))
+vals3 = lambda w: {k: w[k] for k in ("damage", "guardBreak", "status")}
+nums = lambda v: sorted(x for x in v.values() if x is not None)
+
 items = []
 for r in csv.DictReader((D / "pbz-gg-2026-11-08.csv").open(encoding="utf-8")):
     base = {"damage": n(r["dmg_base"]), "guardBreak": n(r["gb_base"]), "status": n(r["st_base"])}
     mx = {"damage": n(r["dmg_max"]), "guardBreak": n(r["gb_max"]), "status": n(r["st_max"])}
     srcs = {"pbz.gg": base, **others.get(r["name"], {})}
+    fx = FX.get(fxid(r["name"]))
+    if fx:
+        # Une source secondaire qui reprend un chiffre Fextralife relevé à un autre niveau
+        # ne dit rien sur le niveau 1 : on l'écarte de la comparaison.
+        fx_l1 = fx["level"] == 1 or (fx["level"] is None and nums(vals3(fx)) == nums(base))
+        if fx["level"] not in (1, None):
+            srcs = {k: v for k, v in srcs.items() if k == "pbz.gg" or nums(v) != nums(vals3(fx))}
+        elif fx_l1:
+            srcs["fextralife"] = vals3(fx)
     ext = EXTRA.get(r["name"])
     has = any(v is not None for v in base.values()) or bool(ext)  # les invocations n'ont que des stats propres
     # Même jeu de chiffres = accord, même si la source range le brise-garde dans la colonne statut
-    nums = lambda v: sorted(x for x in v.values() if x is not None)
     match = [s for s, v in srcs.items() if s != "pbz.gg" and nums(v) == nums(base) and nums(base)]
     diff = [s for s, v in srcs.items() if s != "pbz.gg" and nums(v) != nums(base)]
     if not has:
@@ -75,6 +89,9 @@ for it in items:
     z = LOC["zones"].get(it["id"])
     it["zone"] = None if z == "start" else z
     it["stage"] = "early" if z == "start" else LOC["stages"].get(z)
+    # Version trempée d'une arme de départ (Fextralife) : pas de zone, on indique l'arme d'origine.
+    t = (FX.get(it["id"]) or {}).get("temperOf")
+    it["temperOf"] = fxid(t) if t else None
 # Loadouts conseillés par étape : uniquement des armes obtenables à cette étape, deux styles de lame, chiffres recoupés en priorité.
 PRESETS = [
     ("early", "start", ["sanguine-twin", "sanguine-reach", "dread-axe", "hunters-chain-sickle"]),

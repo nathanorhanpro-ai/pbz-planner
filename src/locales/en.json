@@ -139,7 +139,7 @@
   "unsure": "Numbers not confirmed yet for {names}. Treat the totals as estimates."
  },
  "footer": {
-  "sources": "Numbers are cross-checked between pbz.gg, ofzenandcomputing and thegameswiki. “Cross-checked” means several sources give exactly the same values. Spotted a wrong value? Report it and we’ll fix it.",
+  "sources": "Numbers are cross-checked between pbz.gg, Fextralife, ofzenandcomputing and thegameswiki. “Cross-checked” means several sources give exactly the same values. Spotted a wrong value? Report it and we’ll fix it.",
   "disclaimer": "Unofficial fan site, not affiliated with S-GAME. Phantom Blade Zero, its names and its artwork belong to S-GAME.",
   "legal": "Legal notice & privacy"
  },
@@ -174,7 +174,7 @@
   "locH1": "Where to find every weapon",
   "locTitle": "Where to find every weapon in {game}: all Blades and Phantom Edges by zone",
   "locDesc": "Location of every Blade and Phantom Edge in {game}, zone by zone, in story order.",
-  "locIntro": "Zones are listed in story order. {n} weapons have no confirmed location yet.",
+  "locIntro": "Zones are listed in story order.",
   "unknown": "Location not confirmed",
   "start": "Starting weapons",
   "guides": "Guides",
@@ -183,6 +183,8 @@
   "tierTitle": "{game} tier list: best blades and Phantom Edges",
   "tierDesc": "Tier list of every weapon in {game}, ranked S to C by max-level damage, with the game stage where you can get each one.",
   "tierIntro": "The ranking follows max-level damage, with blades and Phantom Edges ranked separately. It ignores speed, reach and playstyle, so treat it as a reference point, not gospel. Tied weapons share the same tier.",
-  "tierUnranked": "Unranked: these weapons have no comparable damage stat."
+  "tierUnranked": "Unranked: these weapons have no comparable damage stat.",
+  "tempered": "Tempered weapons",
+  "temperOf": "Obtained by tempering {name}"
  }
 }
