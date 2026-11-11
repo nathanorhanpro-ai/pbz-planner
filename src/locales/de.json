@@ -185,6 +185,18 @@
   "tierIntro": "Die Rangfolge richtet sich nach dem Schaden auf Maximalstufe, Klingen und Phantom Edges getrennt. Tempo, Reichweite und Spielstil bleiben unberücksichtigt: nimm sie als Orientierung, nicht als Gesetz. Waffen mit gleichem Wert teilen sich den Rang.",
   "tierUnranked": "Nicht eingestuft: Diese Waffen haben keinen vergleichbaren Schadenswert.",
   "tempered": "Gehärtete Waffen",
-  "temperOf": "Durch Härten von {name} erhältlich"
+  "temperOf": "Durch Härten von {name} erhältlich",
+  "typeName": "{kinds}: {type}",
+  "typeTitle": "{name} in {game}: Liste, Werte und Fundorte",
+  "typeDesc": "Alle {n} Waffen der Kategorie „{name}“ in {game}: Schaden auf Stufe 1 und Maximalstufe, Blockbruch, Statuseffekte und Fundorte.",
+  "typeIntro": "Alle {n} Waffen dieses Typs, nach Schaden auf Maximalstufe sortiert.",
+  "byType": "Nach Waffentyp"
+ },
+ "nav": {
+  "label": "Navigation",
+  "builds": "Builds",
+  "tier": "Tier List",
+  "locations": "Fundorte",
+  "types": "Waffentypen"
  }
 }

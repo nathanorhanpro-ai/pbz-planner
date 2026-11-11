@@ -185,6 +185,18 @@
   "tierIntro": "La clasificación sigue el daño a nivel máximo, con hojas y Phantom Edges por separado. No tiene en cuenta la velocidad, el alcance ni el estilo de juego: úsala como referencia, no como verdad absoluta. Las armas empatadas comparten rango.",
   "tierUnranked": "Sin clasificar: estas armas no tienen una estadística de daño comparable.",
   "tempered": "Armas templadas",
-  "temperOf": "Se obtiene templando {name}"
+  "temperOf": "Se obtiene templando {name}",
+  "typeName": "{kinds}: {type}",
+  "typeTitle": "{name} en {game}: lista, estadísticas y ubicaciones",
+  "typeDesc": "Las {n} armas «{name}» de {game}: daño a nivel 1 y a nivel máximo, rotura de guardia, efectos de estado y dónde encontrarlas.",
+  "typeIntro": "Las {n} armas de este tipo, ordenadas por daño a nivel máximo.",
+  "byType": "Por tipo de arma"
+ },
+ "nav": {
+  "label": "Navegación",
+  "builds": "Builds",
+  "tier": "Tier list",
+  "locations": "Ubicaciones",
+  "types": "Tipos de arma"
  }
 }

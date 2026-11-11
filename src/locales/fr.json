@@ -185,6 +185,18 @@
   "tierIntro": "Le classement suit les dégâts au niveau max, lames et Phantom Edges séparés. Il ne tient pas compte de la vitesse, de la portée ni du style de jeu : sers-t'en comme d'un repère, pas comme d'une vérité. Les armes à égalité partagent le même rang.",
   "tierUnranked": "Non classées : ces armes n'ont pas de stat de dégâts comparable.",
   "tempered": "Armes trempées",
-  "temperOf": "Obtenue en trempant {name}"
+  "temperOf": "Obtenue en trempant {name}",
+  "typeName": "{kinds} : {type}",
+  "typeTitle": "{name} sur {game} : liste, stats et emplacements",
+  "typeDesc": "Les {n} armes « {name} » de {game} : dégâts au niveau 1 et au niveau max, brise-garde, effets de statut et où les trouver.",
+  "typeIntro": "Les {n} armes de ce type, classées par dégâts au niveau max.",
+  "byType": "Par type d'arme"
+ },
+ "nav": {
+  "label": "Navigation",
+  "builds": "Builds",
+  "tier": "Tier list",
+  "locations": "Emplacements",
+  "types": "Types d'armes"
  }
 }

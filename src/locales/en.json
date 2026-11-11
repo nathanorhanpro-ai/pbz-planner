@@ -185,6 +185,18 @@
   "tierIntro": "The ranking follows max-level damage, with blades and Phantom Edges ranked separately. It ignores speed, reach and playstyle, so treat it as a reference point, not gospel. Tied weapons share the same tier.",
   "tierUnranked": "Unranked: these weapons have no comparable damage stat.",
   "tempered": "Tempered weapons",
-  "temperOf": "Obtained by tempering {name}"
+  "temperOf": "Obtained by tempering {name}",
+  "typeName": "{type} {kinds}",
+  "typeTitle": "{name} in {game}: list, stats and locations",
+  "typeDesc": "All {n} {name} in {game}: damage at level 1 and max level, guard break, status effects and where to find each one.",
+  "typeIntro": "All {n} weapons of this type, sorted by max-level damage.",
+  "byType": "By weapon type"
+ },
+ "nav": {
+  "label": "Navigation",
+  "builds": "Builds",
+  "tier": "Tier list",
+  "locations": "Locations",
+  "types": "Weapon types"
  }
 }

@@ -185,6 +185,18 @@
   "tierIntro": "A classificação segue o dano no nível máximo, com lâminas e Phantom Edges separadas. Ela não considera velocidade, alcance nem estilo de jogo: use como referência, não como verdade absoluta. Armas empatadas dividem o mesmo rank.",
   "tierUnranked": "Sem classificação: estas armas não têm um atributo de dano comparável.",
   "tempered": "Armas temperadas",
-  "temperOf": "Obtida ao temperar {name}"
+  "temperOf": "Obtida ao temperar {name}",
+  "typeName": "{kinds}: {type}",
+  "typeTitle": "{name} em {game}: lista, atributos e localizações",
+  "typeDesc": "As {n} armas “{name}” de {game}: dano no nível 1 e no nível máximo, quebra de guarda, efeitos de status e onde encontrá-las.",
+  "typeIntro": "As {n} armas deste tipo, ordenadas pelo dano no nível máximo.",
+  "byType": "Por tipo de arma"
+ },
+ "nav": {
+  "label": "Navegação",
+  "builds": "Builds",
+  "tier": "Tier list",
+  "locations": "Localizações",
+  "types": "Tipos de arma"
  }
 }
