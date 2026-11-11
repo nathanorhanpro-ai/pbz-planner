@@ -1,6 +1,6 @@
 # PBZ Arsenal
 
-Planificateur de build non officiel pour Phantom Blade Zero (FR/EN), avec emplacements publicitaires Google AdSense.
+Site d'astuces non officiel pour Phantom Blade Zero (FR/EN) avec planificateur de build et emplacements publicitaires Google AdSense. Les astuces sont dans `src/tips.py`.
 
 ## Générer le site
     python3 src/build.py      # écrit dist/ (110 pages)

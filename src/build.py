@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Génère le site statique PBZ Arsenal dans ../dist à partir de data.json et config.json."""
-import json, shutil, html, pathlib
+import json, shutil, html, pathlib, datetime, sys
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from tips import GUIDES, CATS, SRC as TSRC, LEVELS
+TODAY = datetime.date.today().isoformat()
 
 SRC = pathlib.Path(__file__).resolve().parent
 OUT = SRC.parent / "dist"
@@ -22,7 +25,7 @@ L = {
   trust={"agree": "Sources agree", "verified": "Verified in game", "conflict": "Sources disagree: treat as estimates", "single": "Single source", "missing": "No data yet"},
   title="Phantom Blade Zero Build Planner, Tier List & Weapon Stats | PBZ Arsenal",
   desc="Plan your Phantom Blade Zero build: all 52 blades and Phantom Edges with base and max stats, an auto tier list, a 4-weapon comparator and shareable builds.",
-  nav=[("#build", "Build"), ("#arsenal", "Weapons"), ("#compare", "Compare"), ("#tiers", "Tier list")],
+  nav=[("", "Tips"), ("#guides", "Guides"), ("planner/", "Build planner"), ("planner/#tiers", "Tier list")],
   search="Search", ad="Advertisement",
   h1="Plan your Phantom Blade Zero build", h1_html="Forge your <em>Phantom Blade</em> build.", cta1="Build my loadout", cta2="See the tier list", podium="Current S-tier", f_w="weapons", f_s="sources", f_t="tier lists", lead="Pick two blades and two Phantom Edges, get a score and tips, then share the link. Every weapon, every stat, base and max level.",
   weapons="weapons", sourcesN="sources cross-checked", updated="Data updated",
@@ -56,7 +59,7 @@ L = {
   trust={"agree": "Sources concordantes", "verified": "Vérifié en jeu", "conflict": "Sources en désaccord : valeurs estimées", "single": "Source unique", "missing": "Pas encore de données"},
   title="Phantom Blade Zero : planificateur de build, tier list et stats des armes | PBZ Arsenal",
   desc="Créez votre build Phantom Blade Zero : les 52 lames et lames fantômes avec stats de base et max, tier list automatique, comparateur 4 armes et builds partageables.",
-  nav=[("#build", "Build"), ("#arsenal", "Armes"), ("#compare", "Comparer"), ("#tiers", "Tier list")],
+  nav=[("", "Astuces"), ("#guides", "Guides"), ("planner/", "Planificateur"), ("planner/#tiers", "Tier list")],
   search="Rechercher", ad="Publicité",
   h1="Créez votre build Phantom Blade Zero", h1_html="Forgez votre build <em>Phantom Blade</em>.", cta1="Créer mon build", cta2="Voir la tier list", podium="Tier S du moment", f_w="armes", f_s="sources", f_t="tier lists", lead="Choisissez deux lames et deux lames fantômes, obtenez un score et des conseils, puis partagez le lien. Toutes les armes, toutes les stats, niveau de base et max.",
   weapons="armes", sourcesN="sources recoupées", updated="Données du",
@@ -217,7 +220,7 @@ def scripts(*names): return "".join(f'<script src="/{n}?v={ASSET_V}"></script>' 
 # ---------- page planificateur ----------
 def home(t):
     other = L[t["other"]]
-    path, alt = t["pfx"] + "/", other["pfx"] + "/"
+    path, alt = t["pfx"] + "/planner/", other["pfx"] + "/planner/"
     nsrc = len({s for i in ITEMS for s in i["check"]["sources"]})
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "WebApplication", "name": "PBZ Arsenal", "url": SITE + path, "applicationCategory": "GameApplication", "operatingSystem": "Web", "inLanguage": t["code"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "description": t["desc"]},
@@ -343,18 +346,18 @@ def weapon(t, it):
         blades = best(pool("blade")); b1 = next(i for i in blades if i["stats"]["max"]["guardBreak"] is not None); b2 = next(i for i in blades if i["type"] != b1["type"])
         other_e = next(i for i in best(pool("edge")) if i is not it and i["type"] != it["type"])
         pair = [b1, b2, other_e]; b = [b1["id"], b2["id"], it["id"], other_e["id"]]
-    plan = f'{t["pfx"]}/#b={",".join(b)}&l=max&c={it["id"]}'
+    plan = f'{t["pfx"]}/planner/#b={",".join(b)}&l=max&c={it["id"]}'
     ld = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "PBZ Arsenal", "item": SITE + t["pfx"] + "/"},
         {"@type": "ListItem", "position": 2, "name": t["kindsPl"][it["kind"]], "item": SITE + t["pfx"] + "/#arsenal"},
         {"@type": "ListItem", "position": 3, "name": it["name"], "item": SITE + path}]}
     h = head(t, title, desc, path, alt, f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>').replace("{SEARCH}", '<span style="margin-left:auto"></span>')
     body = f'''<div class="wp-hero rar-{it["rarity"]}"><div class="bg" data-cjk="{"刃" if it["kind"] == "blade" else "影"}"></div>
-<div class="in" style="grid-template-columns:1fr;gap:0;padding-bottom:0"><div class="crumbs"><a href="{t["pfx"]}/">PBZ Arsenal</a> / <a href="{t["pfx"]}/#arsenal">{t["kindsPl"][it["kind"]]}</a> / {e(it["name"])}</div></div>
+<div class="in" style="grid-template-columns:1fr;gap:0;padding-bottom:0"><div class="crumbs"><a href="{t["pfx"]}/">PBZ Arsenal</a> / <a href="{t["pfx"]}/planner/#arsenal">{t["kindsPl"][it["kind"]]}</a> / {e(it["name"])}</div></div>
 <div class="in">{glyph(it, "tall")}<div><div class="meta"><span>{kl}</span><span>{tl}</span><span class="rtag rar-{it["rarity"]}">{rl}</span>{f'<span>{t["score"]} {sc}/100</span>' if tr else ""}</div>
 <h1 style="margin-top:12px;display:flex;align-items:center;gap:18px;flex-wrap:wrap">{e(it["name"])}{f' <span class="tbadge t-{tr}" style="width:52px;height:52px;font-size:32px">{tr}</span>' if tr else ""}</h1>
 <p class="lead">{" ".join(e(x) for x in paras)}</p>
-<div class="ctas" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px"><a class="btn lg" href="{plan}">{t["w_open"]} →</a><a class="btn ghost lg" href="{t["pfx"]}/#tiers">{t["tier"]} list</a></div></div></div></div>
+<div class="ctas" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px"><a class="btn lg" href="{plan}">{t["w_open"]} →</a><a class="btn ghost lg" href="{t["pfx"]}/planner/#tiers">{t["tier"]} list</a></div></div></div></div>
 <div class="ad-band">{ad(t, "top", "ad-top")}</div>
 <div class="wrap"><main>
 <section><span class="kick"><i class="seal">數</i>{t["w_stats"]}</span>
@@ -366,7 +369,123 @@ def weapon(t, it):
 <div><h2 style="margin-bottom:12px">{t["w_pair"]}</h2><div class="simlist">{"".join(link(i) for i in pair)}</div></div>
 <div><h2 style="margin-bottom:12px">{t["w_same"].format(**fmtd)}</h2><div class="simlist">{"".join(link(i) for i in same)}</div></div>
 </div></section>
-<p><a href="{t["pfx"]}/">{t["back"]}</a></p>
+<p><a href="{t["pfx"]}/planner/">{t["back"]}</a></p>
+</main>{sidebar(t)}</div>
+{foot(t)}{scripts("ads.js")}
+</body></html>'''
+    write(path, h + body)
+
+# ---------- site d'astuces ----------
+TT = {
+ "en": dict(title="Phantom Blade Zero Tips & Tricks: combat, bosses, best ending | PBZ Arsenal",
+  desc="Clear Phantom Blade Zero tips: parry and dodge rules, Sha-Chi and guard break, bosses, upgrades, missable quests and the best ending. Plus a free build planner.",
+  h1="Phantom Blade Zero tips, <em>straight to the point</em>.", lead="Short, checked tips to parry better, break guards, beat bosses and miss nothing. No filler, no story spoilers.",
+  cta1="Start with the basics", cta2="All guides", first="Read these first", f_g="guides", f_t="tips", f_l="languages",
+  k_guides="Guides", h_guides="Pick a subject", k_all="Every tip", h_all="Find a tip in seconds", search="Search a tip: parry, boss, healing…", all="All", none="No tip matches.",
+  tips_n="tips", read="Read the guide", k_tool="Tool", h_tool="Build your loadout", tool_p="Compare all 52 weapons, get a build score out of 100 and an automatic tier list.", tool_cta="Open the build planner",
+  unsure="Reported by other guides, not confirmed by several sources", sources="Sources checked for this guide", more="Keep reading", updated="Updated", home="Tips",
+  g_title="{title} | Phantom Blade Zero tips", minutes="min read", note="", toc="In this guide"),
+ "fr": dict(title="Astuces Phantom Blade Zero : combat, boss, meilleure fin | PBZ Arsenal",
+  desc="Des astuces Phantom Blade Zero claires : règles de parade et d'esquive, Sha-Chi et brise-garde, boss, améliorations, quêtes manquables et meilleure fin. Avec un planificateur de build gratuit.",
+  h1="Les astuces Phantom Blade Zero, <em>droit au but</em>.", lead="Des astuces courtes et vérifiées pour mieux parer, briser les gardes, battre les boss et ne rien rater. Sans blabla, sans spoiler sur l'histoire.",
+  cta1="Commencer par les bases", cta2="Tous les guides", first="À lire en premier", f_g="guides", f_t="astuces", f_l="langues",
+  k_guides="Guides", h_guides="Choisissez un sujet", k_all="Toutes les astuces", h_all="Trouvez une astuce en quelques secondes", search="Chercher une astuce : parade, boss, soins…", all="Toutes", none="Aucune astuce ne correspond.",
+  tips_n="astuces", read="Lire le guide", k_tool="Outil", h_tool="Composez votre équipement", tool_p="Comparez les 52 armes, obtenez un score de build sur 100 et une tier list automatique.", tool_cta="Ouvrir le planificateur",
+  unsure="Rapporté par d'autres guides, non confirmé par plusieurs sources", sources="Sources vérifiées pour ce guide", more="À lire ensuite", updated="Mis à jour le", home="Astuces",
+  g_title="{title} | Astuces Phantom Blade Zero", minutes="min de lecture", note="Les noms d'objets et d'aptitudes sont traduits librement : ils peuvent différer légèrement de la version française du jeu.", toc="Dans ce guide"),
+}
+def _tip(x): return (x[0], x[1], len(x) > 2 and x[2])
+N_TIPS = sum(len(g["en"]["tips"]) for g in GUIDES)
+SEARCH_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>'
+
+def gcard(t, g):
+    c = g[t["code"]]; tt = TT[t["code"]]
+    return (f'<a class="gcard frame" href="{t["pfx"]}/g/{g["slug"]}/"><span class="gseal">{g["seal"]}</span>'
+            f'<span class="gmeta"><span>{CATS[g["cat"]][1][t["code"]]}</span><span class="lv lv{g["level"]}">{LEVELS[t["code"]][g["level"]]}</span></span>'
+            f'<span class="gt">{e(c["title"])}</span><span class="gi">{e(c["intro"])}</span>'
+            f'<span class="gfoot"><span><b>{len(c["tips"])}</b> {tt["tips_n"]}</span><span class="go">{tt["read"]} →</span></span></a>')
+
+def toolband(t, art=True):
+    tt = TT[t["code"]]
+    arts = "".join(glyph(i, "banner") for i in sorted([x for x in pool("blade") if score(x) is not None], key=lambda x: -score(x))[:3])
+    return (f'<a class="toolband frame" href="{t["pfx"]}/planner/"><span><span class="kick"><i class="seal">甲</i>{tt["k_tool"]}</span><h2>{tt["h_tool"]}</h2>'
+            f'<p class="lead">{tt["tool_p"]}</p><span class="btn" style="margin-top:18px">{tt["tool_cta"]} →</span></span><span class="toolart">{arts}</span></a>')
+
+def tips_home(t):
+    other = L[t["other"]]; tt = TT[t["code"]]; lg = t["code"]
+    path, alt = t["pfx"] + "/", other["pfx"] + "/"
+    ld = {"@context": "https://schema.org", "@type": "ItemList", "name": tt["title"], "itemListElement": [
+        {"@type": "ListItem", "position": n + 1, "name": g[lg]["title"], "url": f'{SITE}{t["pfx"]}/g/{g["slug"]}/'} for n, g in enumerate(GUIDES)]}
+    h = head(t, tt["title"], tt["desc"], path, alt, f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>').replace("{SEARCH}", '<span style="margin-left:auto"></span>')
+    first = "".join(f'<a href="{t["pfx"]}/g/{g["slug"]}/"><span class="gseal sm">{g["seal"]}</span><span><span class="nm">{e(g[lg]["short"])}</span><br><small>{len(g[lg]["tips"])} {tt["tips_n"]} · {LEVELS[lg][g["level"]]}</small></span><span class="go">→</span></a>' for g in GUIDES[:4])
+    feed = []
+    for g in GUIDES:
+        for n, x in enumerate(g[lg]["tips"]):
+            ti, tx, un = _tip(x)
+            feed.append(f'<a class="tcard" data-cat="{g["cat"]}" href="{t["pfx"]}/g/{g["slug"]}/#t{n + 1}"><span class="tc"><span class="gseal xs">{g["seal"]}</span>{e(g[lg]["short"])}</span><span class="tt">{e(ti)}</span><span class="tx">{e(tx)}</span></a>')
+    chips = f'<button type="button" class="chip" data-c="" aria-pressed="true">{tt["all"]}</button>' + "".join(f'<button type="button" class="chip" data-c="{k}" aria-pressed="false">{v[1][lg]}</button>' for k, v in CATS.items())
+    body = f'''<div class="hero"><div class="scene">{SCENE}</div>
+<div class="in"><div>
+  <span class="kick"><i class="seal">訣</i>Phantom Blade Zero · {tt["home"]}</span>
+  <h1>{tt["h1"]}</h1>
+  <p class="lead">{e(tt["lead"])}</p>
+  <div class="ctas"><a class="btn lg" href="{t["pfx"]}/g/{GUIDES[0]["slug"]}/">{tt["cta1"]} →</a><a class="btn ghost lg" href="#guides">{tt["cta2"]}</a></div>
+  <div class="facts"><div><b>{len(GUIDES)}</b><span>{tt["f_g"]}</span></div><div><b>{N_TIPS}</b><span>{tt["f_t"]}</span></div><div><b>2</b><span>{tt["f_l"]}</span></div></div>
+</div>
+<div class="podium"><h3><i class="seal" style="width:24px;height:24px;font-size:16px">先</i>{tt["first"]}</h3>{first}</div>
+</div></div>
+<div class="ad-band">{ad(t, "top", "ad-top")}</div>
+<div class="wrap"><main>
+<section id="guides" aria-labelledby="h-guides">
+  <div class="shead"><div><span class="kick"><i class="seal">書</i>{tt["k_guides"]}</span><h2 id="h-guides">{tt["h_guides"]}</h2></div></div>
+  <div class="ggrid">{"".join(gcard(t, g) for g in GUIDES)}</div>
+</section>
+{ad(t, "infeed", "ad-infeed", "fluid")}
+<section id="tips" aria-labelledby="h-all">
+  <div class="shead"><div><span class="kick"><i class="seal">訣</i>{tt["k_all"]}</span><h2 id="h-all">{tt["h_all"]}</h2></div><span class="trust"><b class="num" id="tcount">{N_TIPS}</b> {tt["tips_n"]}</span></div>
+  <div class="toolbar"><div class="grow"><label class="sr" for="tq">{tt["search"]}</label>{SEARCH_ICON}<input type="search" id="tq" placeholder="{tt["search"]}" autocomplete="off"></div></div>
+  <div class="toolbar"><div class="chips" id="tcats">{chips}</div></div>
+  <div class="tgrid" id="tfeed">{"".join(feed)}</div>
+  <p class="trust" id="tnone" hidden>{tt["none"]}</p>
+</section>
+<section>{toolband(t)}</section>
+{ad(t, "infeed2", "ad-infeed", "fluid")}
+</main>{sidebar(t)}</div>
+{foot(t)}{scripts("tips.js", "ads.js")}
+</body></html>'''
+    write(path, h + body)
+
+def guide(t, g):
+    other = L[t["other"]]; tt = TT[t["code"]]; lg = t["code"]; c = g[lg]
+    path, alt = f'{t["pfx"]}/g/{g["slug"]}/', f'{other["pfx"]}/g/{g["slug"]}/'
+    title = tt["g_title"].format(title=c["title"])
+    words = sum(len((a + " " + b_).split()) for a, b_, _ in map(_tip, c["tips"]))
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "Article", "headline": c["title"], "description": c["intro"], "inLanguage": lg, "dateModified": TODAY, "datePublished": "2026-11-11", "mainEntityOfPage": SITE + path, "author": {"@type": "Organization", "name": "PBZ Arsenal"}, "publisher": {"@type": "Organization", "name": "PBZ Arsenal"}},
+        {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": tt["home"], "item": SITE + t["pfx"] + "/"}, {"@type": "ListItem", "position": 2, "name": c["title"], "item": SITE + path}]}]}
+    h = head(t, title, c["intro"], path, alt, f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>').replace("{SEARCH}", '<span style="margin-left:auto"></span>')
+    items = []
+    for n, x in enumerate(c["tips"]):
+        ti, tx, un = _tip(x)
+        warn = f'<p class="unsure">◆ {tt["unsure"]}</p>' if un else ""
+        items.append(f'<article class="tip frame" id="t{n + 1}"><span class="tnum">{n + 1:02d}</span><div><h2>{e(ti)}</h2><p>{e(tx)}</p>{warn}</div></article>')
+        if n == 2: items.append(ad(t, "page", "ad-infeed", "fluid"))
+    toc = "".join(f'<li><a href="#t{n + 1}">{e(_tip(x)[0])}</a></li>' for n, x in enumerate(c["tips"]))
+    idx = GUIDES.index(g); rest = [GUIDES[(idx + k) % len(GUIDES)] for k in (1, 2, 3)]
+    srcs = "".join(f'<li><a href="{TSRC[s][1]}" rel="nofollow noopener" target="_blank">{TSRC[s][0]}</a></li>' for s in g["src"])
+    note = f'<p class="trust" style="margin-top:18px">{tt["note"]}</p>' if tt["note"] else ""
+    body = f'''<div class="wp-hero ghero"><div class="bg" data-cjk="{g["seal"]}"></div>
+<div class="in" style="grid-template-columns:1fr;gap:0;padding-bottom:0"><div class="crumbs"><a href="{t["pfx"]}/">{tt["home"]}</a> / {CATS[g["cat"]][1][lg]} / {e(c["short"])}</div></div>
+<div class="in" style="grid-template-columns:1fr"><div><div class="meta"><span>{CATS[g["cat"]][1][lg]}</span><span class="lv lv{g["level"]}">{LEVELS[lg][g["level"]]}</span><span>{len(c["tips"])} {tt["tips_n"]}</span><span>{max(1, round(words / 160))} {tt["minutes"]}</span><span>{tt["updated"]} {TODAY}</span></div>
+<h1 style="margin-top:14px;max-width:18ch">{e(c["title"])}</h1><p class="lead">{e(c["intro"])}</p></div></div></div>
+<div class="ad-band">{ad(t, "top", "ad-top")}</div>
+<div class="wrap"><main>
+<nav class="toc frame" aria-label="{tt["toc"]}"><span class="kick" style="margin-bottom:8px">{tt["toc"]}</span><ol>{toc}</ol></nav>
+<div class="tips">{"".join(items)}</div>
+{note}
+<section><span class="kick"><i class="seal">續</i>{tt["more"]}</span><div class="ggrid">{"".join(gcard(t, x) for x in rest)}</div></section>
+<section>{toolband(t)}</section>
+<div class="src" style="margin-bottom:30px">{tt["sources"]}<ul style="margin:6px 0 0;padding-left:18px">{srcs}</ul></div>
 </main>{sidebar(t)}</div>
 {foot(t)}{scripts("ads.js")}
 </body></html>'''
@@ -416,7 +535,7 @@ def legal(t, key):
 def main():
     if OUT.exists(): shutil.rmtree(OUT)
     OUT.mkdir()
-    for f in ("style.css", "common.js", "app.js", "ads.js"): shutil.copy(SRC / f, OUT / f)
+    for f in ("style.css", "common.js", "app.js", "ads.js", "tips.js"): shutil.copy(SRC / f, OUT / f)
     (OUT / "data.js").write_text("window.PBZ=" + json.dumps(D, ensure_ascii=False, separators=(",", ":")) + ";")
     (OUT / "favicon.svg").write_text(FAVICON)
     if C.get("renders"):
@@ -424,11 +543,13 @@ def main():
     if (SRC / "og.png").exists(): shutil.copy(SRC / "og.png", OUT / "og.png")
     urls = []
     for t in L.values():
-        home(t); urls.append(t["pfx"] + "/")
+        home(t); urls.append(t["pfx"] + "/planner/")
+        tips_home(t); urls.append(t["pfx"] + "/")
+        for g in GUIDES: guide(t, g); urls.append(f'{t["pfx"]}/g/{g["slug"]}/')
         for it in ITEMS: weapon(t, it); urls.append(f'{t["pfx"]}/w/{it["id"]}/')
         for k in ("privacy", "legal"): legal(t, k); urls.append(f'{t["pfx"]}/{k}/')
     (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-        "".join(f"<url><loc>{SITE}{u}</loc><lastmod>{D['updated']}</lastmod></url>\n" for u in urls) + "</urlset>\n")
+        "".join(f"<url><loc>{SITE}{u}</loc><lastmod>{TODAY}</lastmod></url>\n" for u in urls) + "</urlset>\n")
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
     pub = C.get("adsense_client", "").replace("ca-pub-", "pub-")
     if pub: (OUT / "ads.txt").write_text(f"google.com, {pub}, DIRECT, f08c47fec0942fa0\n")
