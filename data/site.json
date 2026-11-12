@@ -7,7 +7,7 @@
   "url": "https://www.cloudflare.com"
  },
  "indexNowKey": "bf10314209878e6557ad25fb927b9f41",
- "reportUrl": "https://x.com/intent/post",
+ "reportUrl": "https://www.reddit.com/r/PhantomBladeZero/comments/1xs2eec/",
  "support": "https://ko-fi.com/phantombladezerofan",
  "cfBeacon": "",
  "pagesUrl": "https://pbz-planner.pages.dev",
@@ -22,6 +22,5 @@
   "Stellar Blade",
   "Rise of the Ronin"
  ],
- "igBanner": true,
- "reportHandle": "@PBZBuildPlaner"
+ "igBanner": true
 }

@@ -88,7 +88,7 @@ function header(T, base, rel, plannerHref, g, navRel = rel) {
   ${g ? navHtml(g, T, base, navRel) : ""}
 </div></header>`;
 }
-const reportHref = (name) => SITE.reportUrl ? `${SITE.reportUrl}?${new URLSearchParams({ text: `${SITE.reportHandle || ""} Wrong stats${name ? `: ${name}` : ""} - ` })}` : "";
+const reportHref = (name) => !SITE.reportUrl ? "" : SITE.reportHandle ? `${SITE.reportUrl}?${new URLSearchParams({ text: `${SITE.reportHandle} Wrong stats${name ? `: ${name}` : ""} - ` })}` : SITE.reportUrl; // sans reportHandle : simple lien (post Reddit)
 const LEGAL = { en: read("src/legal/en.html"), fr: read("src/legal/fr.html") };
 const legalPath = (lang) => (LEGAL[lang] ? PREFIX[lang] : "") + "legal/index.html";
 // Bandeau affilié : jeux du même genre, liens de recherche Instant Gaming avec le code d'affiliation.
