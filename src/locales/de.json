@@ -114,7 +114,10 @@
   "seePrice": "Preis ansehen",
   "presetsTitle": "Loadouts nach Spielphase",
   "presetsHint": "Waffen, die du in dieser Phase besitzen kannst. Klicken zum Laden.",
-  "whereToFind": "Fundort"
+  "whereToFind": "Fundort",
+  "search": "Waffe suchen",
+  "noResult": "Keine Waffe gefunden.",
+  "tier": "Rang {t}"
  },
  "pitch": {
   "summon": "Ruft Hilfe herbei oder unterstützt dich direkt. {extra}.",
@@ -198,5 +201,26 @@
   "tier": "Tier List",
   "locations": "Fundorte",
   "types": "Waffentypen"
+ },
+ "faq": {
+  "title": "Häufige Fragen",
+  "items": [
+   [
+    "Was ist die beste Waffe in {game}?",
+    "Nach Schaden auf Maximalstufe ist {blade} die beste Klinge und {edge} die beste Phantom Edge. Tempo und Spielstil bleiben dabei unberücksichtigt."
+   ],
+   [
+    "Welchen Build nehme ich am Anfang?",
+    "{w1}, {w2}, {w3} und {w4} findest du alle in den ersten Gebieten, zusammen ergeben sie ein solides Loadout."
+   ],
+   [
+    "Wie viele Waffen gibt es in {game}?",
+    "Der Planner führt {nb} Klingen und {ne} Phantom Edges, insgesamt {n} Waffen."
+   ],
+   [
+    "Woher stammen die Werte?",
+    "Sie werden zwischen mehreren öffentlichen Quellen abgeglichen. {ok} von {n} Waffen sind durch mindestens zwei Quellen bestätigt, die übrigen sind auf ihrer Seite markiert."
+   ]
+  ]
  }
 }

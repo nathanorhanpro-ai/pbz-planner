@@ -40,6 +40,9 @@ function validate(g) {
 }
 
 const ICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0b0d'/%3E%3Cpath d='M32 6 L40 32 L32 58 L24 32 Z' fill='%23c0313a'/%3E%3Cpath d='M32 6 L32 58' stroke='%23c9a45c' stroke-width='2'/%3E%3C/svg%3E";
+// Polices hébergées sur le site (OFL) : pas d'appel à Google Fonts.
+const FONT_FACES = read("src/fonts.css");
+const fontCss = (base) => `<style>\n${FONT_FACES.replaceAll("%BASE%", base)}</style>\n`;
 const page = (lang, head, body) => `<!doctype html>\n<html lang="${lang}">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n<meta name="theme-color" content="#0b0b0d">\n<link rel="icon" href="${ICON}">\n<link rel="apple-touch-icon" href="/apple-touch-icon.png">\n${ANALYTICS}${head}</head>\n<body>\n${body}\n</body>\n</html>\n`;
 
 // rel : chemin de la page sans préfixe de langue (ex. "index.html", "weapons/x/index.html")
@@ -85,7 +88,7 @@ function header(T, base, rel, plannerHref, g, navRel = rel) {
   ${g ? navHtml(g, T, base, navRel) : ""}
 </div></header>`;
 }
-const reportHref = (name, lang) => SITE.reportUrl ? `${SITE.reportUrl}?${new URLSearchParams({ title: name ? `Wrong stats: ${name}` : "Wrong stats", body: `Weapon: ${name || ""}\nPage language: ${lang}\nWhat is wrong (stat, level, value you see in game):\n\nScreenshot (optional):\n` })}` : "";
+const reportHref = (name) => SITE.reportUrl ? `${SITE.reportUrl}?${new URLSearchParams({ text: `${SITE.reportHandle || ""} Wrong stats${name ? `: ${name}` : ""} - ` })}` : "";
 const LEGAL = { en: read("src/legal/en.html"), fr: read("src/legal/fr.html") };
 const legalPath = (lang) => (LEGAL[lang] ? PREFIX[lang] : "") + "legal/index.html";
 // Bandeau affilié : jeux du même genre, liens de recherche Instant Gaming avec le code d'affiliation.
@@ -119,6 +122,19 @@ function tierMap(g) {
   }
   return out;
 }
+// FAQ du planner : réponses calculées depuis les données, avec le balisage FAQPage pour Google.
+function faqOf(g, T, P) {
+  const top = g.levels[g.levels.length - 1], best = (k) => g.items.filter((i) => i.kind === k && i.stats[top].damage != null).sort((a, b) => b.stats[top].damage - a.stats[top].damage)[0].name;
+  const byId = Object.fromEntries(g.items.map((i) => [i.id, i])), early = (g.presets.find((p) => p.stage === "early" && p.focus === "power") || g.presets[0]).ids.map((id) => byId[id].name);
+  const nb = g.items.filter((i) => i.kind === "blade").length, ne = g.items.length - nb;
+  const vars = { game: g.name, blade: best("blade"), edge: best("edge"), w1: early[0], w2: early[1], w3: early[2], w4: early[3], nb, ne, n: g.items.length, ok: g.items.filter((i) => ["agree", "verified"].includes(i.check.state)).length };
+  const links = [[`${P}tier-list/index.html`, T.pg.tierH1], [`${P}builds/early/index.html`, fill(T.pg.buildH1, { stage: T.pg.lower === "1" ? T.stages.early.toLowerCase() : T.stages.early })], [`${P}locations/index.html`, T.pg.locH1], null];
+  const qa = T.faq.items.map(([q, a], i) => ({ q: fill(q, vars), a: fill(a, vars), link: links[i] }));
+  return {
+    html: `<div class="faq">${qa.map((x) => `<details><summary>${esc(x.q)}</summary><p>${esc(x.a)}${x.link ? ` <a href="${x.link[0]}">${esc(x.link[1])} →</a>` : ""}</p></details>`).join("")}</div>`,
+    ld: jsonLd({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: qa.map((x) => ({ "@type": "Question", name: x.q, acceptedAnswer: { "@type": "Answer", text: x.a } })) }),
+  };
+}
 function indexHtml(g, T, weaponHref) {
   const tiers = tierMap(g);
   const cols = [];
@@ -144,7 +160,10 @@ function weaponPage(g, T, L, it, base) {
     return `<li>${esc(fill(T.ui.rankLine, { stat: T.stats[s], k: xs.findIndex((o) => o.id === it.id) + 1, n: xs.length, kinds: T.kindsPlural[it.kind].toLowerCase() }))}</li>`;
   }).join("");
   const card = (o) => `<a class="mini" href="${wHref(o)}">${img(o, "thumbs")}<span>${esc(o.name)}</span><small>${esc(T.types[o.type])}</small></a>`;
-  const same = pool.filter((o) => o.type === it.type && o.id !== it.id);
+  const tier = tierMap(g)[it.id];
+  const dcard = (o) => `<a class="mini" href="${wHref(o)}">${img(o, "thumbs")}<span>${esc(o.name)}</span><small>${o.stats.max.damage != null ? `${esc(T.stats.damage)} ${fmt(o.stats.max.damage)}` : esc(T.types[o.type])}</small></a>`;
+  const same = pool.filter((o) => o.type === it.type && o.id !== it.id).sort((a, b) => (b.stats.max.damage ?? -1) - (a.stats.max.damage ?? -1));
+  const at = pool.indexOf(it), prev = pool[(at - 1 + pool.length) % pool.length], next = pool[(at + 1) % pool.length];
   const pairs = L.pairs(it);
   const src = Object.entries(it.check.sources).filter(([, v]) => g.stats.some((s) => v[s] != null)).map(([n, v]) => `${n} : ` + g.stats.filter((s) => v[s] != null).map((s) => `${T.stats[s].toLowerCase()} ${fmt(v[s])}`).join(", ")).join(" · ");
   const st = L.stateOf(it);
@@ -153,7 +172,7 @@ function weaponPage(g, T, L, it, base) {
 <section class="band"><div class="inner wp">
   <div class="showcase">${img(it) || `<span class="noimg">${esc(T.ui.noImage)}</span>`}</div>
   <div class="sheet">
-    <div class="meta"><span>${esc(T.kinds[it.kind])}</span><span>${esc(T.types[it.type])}</span>${it.rarity ? `<span class="rar-${it.rarity}">${esc(T.rarity[it.rarity])}</span>` : ""}</div>
+    <div class="meta"><span>${esc(T.kinds[it.kind])}</span><span>${esc(T.types[it.type])}</span>${it.rarity ? `<span class="rar-${it.rarity}">${esc(T.rarity[it.rarity])}</span>` : ""}${tier ? `<a class="tier-chip tg-${tier.toLowerCase()}" href="${base}${P}tier-list/index.html#${it.kind}">${esc(fill(T.ui.tier, { t: tier }))}</a>` : ""}</div>
     <h1 style="font-size:clamp(32px,5vw,52px)">${esc(it.name)}</h1>
     <p class="pitch">${esc(L.pitch(it, "base"))}</p>${it.zone ? `\n    <p class="where"><b>${esc(T.ui.whereToFind)} :</b> <a href="${base}${P}locations/index.html#${it.zone.toLowerCase().replace(/[^a-z0-9]+/g, "-")}">${esc(it.zone)}</a> · <a href="${base}${P}builds/${it.stage}/index.html">${esc(T.stages[it.stage])}</a></p>` : ""}${it.temperOf ? `\n    <p class="where"><b>${esc(T.ui.whereToFind)} :</b> <a href="${base}${P}weapons/${it.temperOf}/index.html">${esc(fill(T.pg.temperOf, { name: g.items.find((x) => x.id === it.temperOf).name }))}</a></p>` : ""}
     ${rows ? `<table class="stat-table"><thead><tr><th>${esc(T.ui.statsTitle)}</th><th class="r">${esc(T.levels.base)}</th><th class="r">${esc(T.levels.max)}</th></tr></thead><tbody>${rows}</tbody></table>` : `<p class="trust">${esc(T.ui.noStats)}</p>`}
@@ -163,7 +182,8 @@ function weaponPage(g, T, L, it, base) {
 </div></section>
 ${ranks ? `<section class="wsec band"><div class="inner"><h2>${esc(T.ui.ranksTitle)}</h2><ul class="advice">${ranks}</ul></div></section>` : ""}
 ${pairs.length ? `<section class="wsec band"><div class="inner"><h2>${esc(T.ui.pairs)}</h2><div class="cards">${pairs.map(card).join("")}</div></div></section>` : ""}
-${same.length ? `<section class="wsec band"><div class="inner"><h2>${esc(fill(T.ui.sameType, { type: T.types[it.type].toLowerCase() }))}</h2><div class="cards">${same.map(card).join("")}</div></div></section>` : ""}
+${same.length ? `<section class="wsec band"><div class="inner"><h2>${esc(fill(T.ui.sameType, { type: T.types[it.type].toLowerCase() }))}</h2><div class="cards">${same.map(dcard).join("")}</div></div></section>` : ""}
+<nav class="pn band" aria-label="${esc(T.kindsPlural[it.kind])}"><div class="inner"><a href="${wHref(prev)}" rel="prev"><small>← ${esc(T.ui.prev)}</small>${esc(prev.name)}</a><a href="${wHref(next)}" rel="next"><small>${esc(T.ui.next)} →</small>${esc(next.name)}</a></div></nav>
 </main>`;
 }
 
@@ -183,15 +203,17 @@ for (const f of games) {
 
     // Planner
     const pPath = `${P}index.html`, pBase = depthBase(pPath);
+    const faq = faqOf(g, T, "");
     const head = (title, desc, path, alt) => `<title>${esc(title)}</title>\n<meta name="description" content="${esc(desc)}">\n${headTags(g, path, alt, lang)}\n`;
     const plannerBody = PLANNER
       .replace(/\{\{t\.(\w+)\.(\w+)\}\}/g, (_, a, b) => esc(T[a][b]))
       .replace("{{TITLE}}", esc(meta(T.meta.plannerTitle))).replace("{{DESCRIPTION}}", esc(meta(T.meta.plannerDesc))).replace("{{LEDE}}", esc(meta(T.meta.plannerDesc)))
-      .replace("{{HEAD}}", () => headTags("index.html", lang) + "\n" + jsonLd({ "@context": "https://schema.org", "@type": "WebApplication", name: "Phantom Blade Zero Build Planner", url: absUrl(lang, "index.html"), applicationCategory: "GameApplication", operatingSystem: "Any", inLanguage: T.lang.locale, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, description: meta(T.meta.plannerDesc) }) + "\n" + ogTags(meta(T.meta.plannerTitle), meta(T.meta.plannerDesc), "planner.jpg", "index.html", lang))
+      .replace("{{HEAD}}", () => headTags("index.html", lang) + "\n" + faq.ld + "\n" + jsonLd({ "@context": "https://schema.org", "@type": "WebApplication", name: "Phantom Blade Zero Build Planner", url: absUrl(lang, "index.html"), applicationCategory: "GameApplication", operatingSystem: "Any", inLanguage: T.lang.locale, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, description: meta(T.meta.plannerDesc) }) + "\n" + ogTags(meta(T.meta.plannerTitle), meta(T.meta.plannerDesc), "planner.jpg", "index.html", lang))
       .replace("{{CSS}}", () => CSS)
+      .replace("{{FONTS}}", () => fontCss(pBase))
       .replace("{{HEADER}}", () => sub(header(T, pBase, "index.html", `${pBase}${P}index.html`, g)))
       .replace("{{INDEX}}", () => indexHtml(g, T, (i) => `weapons/${i.id}/index.html`))
-      .replace("{{FOOTER}}", () => footer(T, pBase))
+      .replace("{{FAQ}}", () => faq.html).replace("{{FOOTER}}", () => footer(T, pBase))
       .replace("{{PROMO}}", () => promoBlock(T))
       .replace("{{SUPPORT}}", () => (SITE.support ? `<a class="btn ghost" href="${esc(SITE.support)}" rel="noopener" target="_blank">${esc(T.ui.support)}</a>` : "") + "")
       .replace("{{DATA}}", () => json(g)).replace("{{T}}", () => json(T)).replace("{{LOGIC}}", () => LOGIC)
@@ -209,20 +231,20 @@ for (const f of games) {
       const hd = `<title>${esc(title)}</title>\n<meta name="description" content="${esc(desc)}">\n${headTags(`weapons/${it.id}/index.html`, lang)}\n` +
         ogTags(title, desc, `${it.id}.jpg`, `weapons/${it.id}/index.html`, lang) + "\n" +
         jsonLd({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [[T.ui.home, absUrl(lang, "index.html")], [it.name, absUrl(lang, `weapons/${it.id}/index.html`)]].map(([name, item], i) => ({ "@type": "ListItem", position: i + 1, name, item })) }) + "\n" +
-        `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">\n<style>\n${CSS}</style>\n`;
+        `${fontCss(base)}<style>\n${CSS}</style>\n`;
       put(path, page(T.lang.locale, hd, sub(header(T, base, `weapons/${it.id}/index.html`, `${base}${P}index.html`, g)) + weaponPage(g, T, L, it, base) + promo(T) + footer(T, base)));
     }
 
     // Guides : une page par étape du jeu (loadouts conseillés) et une page « où trouver chaque arme ».
     const STAGES = [...new Set((g.presets || []).map((p) => p.stage))];
-    const FONT_CSS = `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">\n<style>\n${CSS}</style>\n`;
+    const FONT_CSS = (base) => `${fontCss(base)}<style>\n${CSS}</style>\n`;
     const stageName = (s) => (T.pg.lower === "1" ? T.stages[s].toLowerCase() : T.stages[s]);
     const buildH1 = (s) => fill(T.pg.buildH1, { stage: stageName(s) });
     const byId = Object.fromEntries(g.items.map((i) => [i.id, i]));
     const guide = (rel, title, desc, crumb, body) => {
       const path = `${P}${rel}`, base = depthBase(path);
       const hd = `<title>${esc(title)}</title>\n<meta name="description" content="${esc(desc)}">\n${headTags(rel, lang)}\n` + ogTags(title, desc, "planner.jpg", rel, lang) + "\n" +
-        jsonLd({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [[T.ui.home, absUrl(lang, "index.html")], [crumb, absUrl(lang, rel)]].map(([name, item], i) => ({ "@type": "ListItem", position: i + 1, name, item })) }) + "\n" + FONT_CSS;
+        jsonLd({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [[T.ui.home, absUrl(lang, "index.html")], [crumb, absUrl(lang, rel)]].map(([name, item], i) => ({ "@type": "ListItem", position: i + 1, name, item })) }) + "\n" + FONT_CSS(base);
       put(path, page(T.lang.locale, hd, sub(header(T, base, rel, `${base}${P}index.html`, g)) +
         `<nav class="crumbs band"><div class="inner"><a href="${base}${P}index.html">${esc(T.ui.home)}</a> / ${esc(T.pg.guides)} / ${esc(crumb)}</div></nav>\n<main>${body(base)}</main>` + promo(T) + footer(T, base)));
     };
@@ -289,14 +311,14 @@ ${g.kinds.map(kindSec).join("\n")}
       });
     }
   }
-  const FONTS = `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">\n<style>\n${CSS}</style>\n`;
+  const FONTS = (base) => `${fontCss(base)}<style>\n${CSS}</style>\n`;
   for (const lang of Object.keys(LEGAL)) {
     const T = LANGS[lang], path = legalPath(lang), base = depthBase(path);
-    const hd = `<title>${esc(T.footer.legal)} · Phantom Blade Zero Build Planner</title>\n<meta name="robots" content="noindex">\n${FONTS}`;
+    const hd = `<title>${esc(T.footer.legal)} · Phantom Blade Zero Build Planner</title>\n<meta name="robots" content="noindex">\n${FONTS(base)}`;
     files[path] = page(T.lang.locale, hd, sub0(g, header(T, base, "index.html", `${base}${PREFIX[lang]}index.html`, g, "legal")) + `<main class="band"><div class="inner legal">${legalBody(lang, g.updated)}</div></main>` + footer(T, base));
   }
   { const T = LANGS.en, F = LANGS.fr;
-    files["404.html"] = page("en", `<title>${esc(T.notFound.title)} · Phantom Blade Zero Build Planner</title>\n<meta name="robots" content="noindex">\n${FONTS}`,
+    files["404.html"] = page("en", `<title>${esc(T.notFound.title)} · Phantom Blade Zero Build Planner</title>\n<meta name="robots" content="noindex">\n${FONTS("/")}`,
       sub0(g, header(T, "/", "index.html", "/index.html", g, "404")) + `<main class="band"><div class="inner legal nf"><p class="kicker">404</p><h1>${esc(T.notFound.title)}</h1><p>${esc(T.notFound.text)}</p><p><a class="btn" href="/">${esc(T.notFound.back)}</a></p>` +
       (F ? `<p lang="fr" class="trust">${esc(F.notFound.text)} <a href="/fr/">${esc(F.notFound.back)}</a></p>` : "") + `</div></main>` + footer(T, "/")); }
   const frag = files.__fragment; delete files.__fragment;

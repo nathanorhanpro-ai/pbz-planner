@@ -114,7 +114,10 @@
   "seePrice": "Voir le prix",
   "presetsTitle": "Loadouts par étape du jeu",
   "presetsHint": "Armes obtenables à cette étape. Clique pour charger.",
-  "whereToFind": "Où la trouver"
+  "whereToFind": "Où la trouver",
+  "search": "Chercher une arme",
+  "noResult": "Aucune arme trouvée.",
+  "tier": "Rang {t}"
  },
  "pitch": {
   "summon": "Invoque de l'aide ou te soutient directement. {extra}.",
@@ -198,5 +201,26 @@
   "tier": "Tier list",
   "locations": "Emplacements",
   "types": "Types d'armes"
+ },
+ "faq": {
+  "title": "Questions fréquentes",
+  "items": [
+   [
+    "Quelle est la meilleure arme de {game} ?",
+    "D'après les dégâts au niveau max, {blade} est la meilleure lame et {edge} le meilleur Phantom Edge. Ce classement ne tient pas compte de la vitesse ni du style de jeu."
+   ],
+   [
+    "Quel build choisir en début de jeu ?",
+    "{w1}, {w2}, {w3} et {w4} s'obtiennent toutes dans les premières zones et forment un loadout solide."
+   ],
+   [
+    "Combien d'armes y a-t-il dans {game} ?",
+    "Le planner recense {nb} lames et {ne} Phantom Edges, soit {n} armes."
+   ],
+   [
+    "D'où viennent les chiffres ?",
+    "Ils sont recoupés entre plusieurs sources publiques. {ok} armes sur {n} sont confirmées par au moins deux sources, les autres sont signalées sur leur fiche."
+   ]
+  ]
  }
 }

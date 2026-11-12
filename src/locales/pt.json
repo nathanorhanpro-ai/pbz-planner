@@ -114,7 +114,10 @@
   "seePrice": "Ver preço",
   "presetsTitle": "Loadouts por fase do jogo",
   "presetsHint": "Armas que você pode ter nessa fase. Clique para carregar.",
-  "whereToFind": "Onde encontrar"
+  "whereToFind": "Onde encontrar",
+  "search": "Buscar uma arma",
+  "noResult": "Nenhuma arma encontrada.",
+  "tier": "Rank {t}"
  },
  "pitch": {
   "summon": "Invoca ajuda ou te apoia diretamente. {extra}.",
@@ -198,5 +201,26 @@
   "tier": "Tier list",
   "locations": "Localizações",
   "types": "Tipos de arma"
+ },
+ "faq": {
+  "title": "Perguntas frequentes",
+  "items": [
+   [
+    "Qual é a melhor arma de {game}?",
+    "Pelo dano no nível máximo, {blade} é a melhor lâmina e {edge} a melhor Phantom Edge. Essa classificação não considera velocidade nem estilo de jogo."
+   ],
+   [
+    "Qual build usar no início do jogo?",
+    "{w1}, {w2}, {w3} e {w4} são obtidas nas primeiras áreas e formam um loadout sólido."
+   ],
+   [
+    "Quantas armas existem em {game}?",
+    "O planner lista {nb} lâminas e {ne} Phantom Edges, {n} armas no total."
+   ],
+   [
+    "De onde vêm os números?",
+    "Eles são cruzados entre várias fontes públicas. {ok} de {n} armas são confirmadas por pelo menos duas fontes; as demais são sinalizadas na ficha."
+   ]
+  ]
  }
 }

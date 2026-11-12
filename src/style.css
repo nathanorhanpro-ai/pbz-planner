@@ -284,3 +284,14 @@ footer a { color: var(--gold); }
   .lede { font-size: 14px; }
   .dock-lbl { display: none; }
 }
+/* Recherche, FAQ, fiches */
+.search { padding-block: 10px 4px; } .search input { width: min(100%, 320px); padding: 9px 12px; background: var(--bg-2); border: 1px solid var(--line); color: var(--ink); font: inherit; font-size: 15px; border-radius: 2px; }
+.search input:focus { outline: none; border-color: var(--gold); }
+.faq { display: grid; gap: 0; max-width: 820px; } .faq details { border-bottom: 1px solid var(--line); }
+.faq summary { cursor: pointer; padding: 14px 0; font-size: 16px; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+.faq summary::-webkit-details-marker { display: none; } .faq summary::after { content: "+"; color: var(--gold); } .faq details[open] summary::after { content: "–"; }
+.faq p { margin: 0 0 16px; color: var(--muted); max-width: 70ch; } .faq a { color: var(--gold); white-space: nowrap; }
+.tier-chip { border: 1px solid currentColor; padding: 0 8px; text-decoration: none; border-radius: 2px; } .tier-chip.tg-c { color: var(--muted); }
+.pn { border-top: 1px solid var(--line); padding-block: 18px; } .pn .inner { display: flex; justify-content: space-between; gap: 16px; }
+.pn a { display: grid; gap: 2px; color: var(--ink); text-decoration: none; font-family: var(--f-display); font-size: 17px; } .pn a:last-child { text-align: right; }
+.pn a:hover { color: var(--gold); } .pn small { font-family: var(--f-body); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }

@@ -114,7 +114,10 @@
   "seePrice": "See price",
   "presetsTitle": "Loadouts by game stage",
   "presetsHint": "Weapons you can own at that stage. Click to load.",
-  "whereToFind": "Where to find"
+  "whereToFind": "Where to find",
+  "search": "Search a weapon",
+  "noResult": "No weapon found.",
+  "tier": "{t} tier"
  },
  "pitch": {
   "summon": "Summons help or supports you directly. {extra}.",
@@ -198,5 +201,26 @@
   "tier": "Tier list",
   "locations": "Locations",
   "types": "Weapon types"
+ },
+ "faq": {
+  "title": "Frequently asked questions",
+  "items": [
+   [
+    "What is the best weapon in {game}?",
+    "By max-level damage, {blade} is the best blade and {edge} the best Phantom Edge. This ranking ignores speed and playstyle."
+   ],
+   [
+    "Which build should I use early game?",
+    "{w1}, {w2}, {w3} and {w4} are all found in the first areas and make a solid loadout."
+   ],
+   [
+    "How many weapons are there in {game}?",
+    "The planner lists {nb} blades and {ne} Phantom Edges, {n} weapons in total."
+   ],
+   [
+    "Where do the numbers come from?",
+    "They are cross-checked between several public sources. {ok} of {n} weapons are confirmed by at least two sources, the others are flagged on their page."
+   ]
+  ]
  }
 }
