@@ -22,4 +22,4 @@ Site statique bilingue : un planner de loadout + une page par arme, en anglais (
 Chaque arme porte `check.state` (une invocation sans dégâts mais avec ses stats propres compte comme `single`) : `agree` quand au moins deux sources donnent les mêmes chiffres au niveau 1, sinon `single`, `conflict` ou `missing`. Les valeurs de pbz.gg (niveau 1 et niveau max) sont cohérentes : le niveau max vaut environ 6,9 fois le niveau 1.
 
 Astuce : le dossier partagé est lent en écriture. Pour itérer, copie le projet dans un dossier local, lance le build (moins d'une seconde), puis recopie `dist/`.
-- `data/site.json` : `reportUrl` (lien « signaler un chiffre faux », issues GitHub du dépôt), `contact` et `host` (mentions légales), `indexNowKey`. Sur Vercel, `siteUrl` vide est rempli par VERCEL_PROJECT_PRODUCTION_URL.
+- `data/site.json` : `reportUrl` (lien « signaler un chiffre faux », post Reddit ; avec `reportHandle`, post X prérempli), `contact` et `host` (mentions légales), `indexNowKey`. Sur Vercel, `siteUrl` vide est rempli par VERCEL_PROJECT_PRODUCTION_URL.
