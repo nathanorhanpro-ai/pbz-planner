@@ -322,7 +322,10 @@ ${g.kinds.map(kindSec).join("\n")}
       sub0(g, header(T, "/", "index.html", "/index.html", g, "404")) + `<main class="band"><div class="inner legal nf"><p class="kicker">404</p><h1>${esc(T.notFound.title)}</h1><p>${esc(T.notFound.text)}</p><p><a class="btn" href="/">${esc(T.notFound.back)}</a></p>` +
       (F ? `<p lang="fr" class="trust">${esc(F.notFound.text)} <a href="/fr/">${esc(F.notFound.back)}</a></p>` : "") + `</div></main>` + footer(T, "/")); }
   const frag = files.__fragment; delete files.__fragment;
-  for (const [p, html] of Object.entries(files)) { mkdirSync(dirname(join(out, p)), { recursive: true }); writeFileSync(join(out, p), html); }
+  // En ligne, Cloudflare redirige /x/index.html vers /x/ : les liens internes pointent donc directement vers le dossier
+  // (sinon Google signale des « pages avec redirection »). En local (file://), on garde index.html.
+  const clean = process.env.CF_PAGES && !process.env.KEEP_INDEX ? (h) => h.replace(/href="([^"#?:]*?)index\.html(#[^"]*)?"/g, (m, dir, hash) => (dir === "" || dir.endsWith("/") ? `href="${dir || "./"}${hash || ""}"` : m)) : (h) => h;
+  for (const [p, html] of Object.entries(files)) { mkdirSync(dirname(join(out, p)), { recursive: true }); writeFileSync(join(out, p), clean(html)); }
   cpSync(join(root, "assets"), join(out, "assets"), { recursive: true });
   if (existsSync(join(root, "static"))) cpSync(join(root, "static"), out, { recursive: true });
   if (SITE.siteUrl) {
