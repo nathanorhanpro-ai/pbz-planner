@@ -26,7 +26,7 @@
   "Stellar Blade",
   "Rise of the Ronin"
  ],
- "igBanner": true,
+ "igBanner": false,
  "reportUrl": "https://github.com/nathanorhanpro-ai/pbz-planner/issues/new",
  "indexNowKey": "bf10314209878e6557ad25fb927b9f41"
 }
