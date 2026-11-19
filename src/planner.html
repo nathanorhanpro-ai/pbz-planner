@@ -133,7 +133,7 @@
   function renderStage(animate) {
     const it = byId[current];
     $("showcase").innerHTML = `<button type="button" class="nav-arrow prev" data-step="-1" aria-label="${T.ui.prev}">‹</button>` +
-      (it.image ? `<img src="${big(it)}" alt="${esc(it.name)}" class="${animate ? "enter" : ""}">` : `<span class="noimg">${T.ui.noImage}</span>`) +
+      (it.image ? `<img src="${big(it)}" alt="${esc(it.name)}" class="${animate ? "enter" : ""}" fetchpriority="high">` : `<span class="noimg">${T.ui.noImage}</span>`) +
       `<button type="button" class="nav-arrow next" data-step="1" aria-label="${T.ui.next}">›</button>`;
     if (animate) requestAnimationFrame(() => requestAnimationFrame(() => { const im = $("showcase").querySelector("img"); if (im) im.classList.remove("enter"); }));
     const stats = G.stats.filter((s) => S(it)[s] != null).map((s) =>
