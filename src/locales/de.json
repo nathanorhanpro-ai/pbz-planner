@@ -222,5 +222,48 @@
     "Sie werden zwischen mehreren öffentlichen Quellen abgeglichen. {ok} von {n} Waffen sind durch mindestens zwei Quellen bestätigt, die übrigen sind auf ihrer Seite markiert."
    ]
   ]
+ },
+ "det": {
+  "obtainH": "So bekommst du sie",
+  "playH": "So spielst du sie",
+  "boss": "Belohnung für den Sieg über {boss} in {area}.",
+  "spot": " Orientierungspunkt: {spot}.",
+  "story": " Ein Boss der Hauptgeschichte, du kannst ihn nicht verpassen.",
+  "missable": " Achtung: Sie ist verpassbar.",
+  "quest1": " Zugehörige Quest: {quest}.",
+  "rack": "Liegt auf einem Waffenständer in {area}, ganz ohne Kampf.",
+  "after": "Liegt in {area} direkt nach dem Kampf gegen {boss}. Nimm sie mit, bevor du das Gebiet verlässt.",
+  "npc": "Erhalten von {npc} in {area}.",
+  "repair": "Wird von {npc} in {area} für dich repariert.",
+  "treasures": " Bring vorher die {n} Schätze zurück.",
+  "quest": "Belohnung für die Quest {quest} in {area}.",
+  "start": "Startwaffe: ab Kapitel 1 im Inventar.",
+  "prologue": "Startwaffe: du erhältst sie im Prolog.",
+  "temper": "Erhalten durch Soul Tempering von {from} bei {npc} in {area}.",
+  "mats": "Materialien: {mats}.",
+  "unknown": "Unsere Quellen bestätigen noch nicht, wie man sie bekommt. Weißt du es? Melde es.",
+  "upgrade": "Bei Forge (Mandate Outpost, Weeping Creek Valley) bis Stufe 30 aufwertbar.",
+  "temperInto": "Kann per Soul Tempering zu {name} werden.",
+  "lv30": "Werte auf Stufe 30 (Fextralife): Schaden {d}, Deckungsbruch {g}.",
+  "surge": "Power Surge: {name}.",
+  "unblockable": " Kann nicht geblockt werden.",
+  "status": "Statuseffekt: {name}.",
+  "unique": "Einzigartige Fähigkeit: {name}.",
+  "profile": "Profil unter den {kinds}: Schaden {d}, Deckungsbruch {g}.",
+  "dmgLv": [
+   "hoch",
+   "mittel",
+   "niedrig"
+  ],
+  "gbLv": [
+   "hoch",
+   "mittel",
+   "niedrig"
+  ],
+  "skillsH": "Fähigkeiten nach Stufe",
+  "colLevel": "Stufe",
+  "colSkill": "Fähigkeit",
+  "skillsNote": "Fähigkeitsnamen wie in der englischen Spielversion.",
+  "noSkills": "Für diese Waffe sind keine Fähigkeiten verzeichnet."
  }
 }

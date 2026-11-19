@@ -10,6 +10,8 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const read = (p) => readFileSync(join(root, p), "utf8");
 const CSS = read("src/style.css"), PLANNER = read("src/planner.html"), LOGIC = read("src/logic.js");
 const SITE = JSON.parse(read("data/site.json"));
+const DETAILS = existsSync(join(root, "data/weapon-details-2026-11-19.json")) ? JSON.parse(read("data/weapon-details-2026-11-19.json")).weapons : {};
+const FX30 = existsSync(join(root, "data/fextralife-2026-11-11.json")) ? JSON.parse(read("data/fextralife-2026-11-11.json")).weapons : {};
 // Sur Vercel, l'adresse de production est fournie au build : pas besoin de la coder en dur.
 if (!SITE.siteUrl && process.env.VERCEL_PROJECT_PRODUCTION_URL) SITE.siteUrl = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
 if (!SITE.siteUrl && process.env.CF_PAGES && SITE.pagesUrl) SITE.siteUrl = SITE.pagesUrl; // Cloudflare Pages : adresse de production fixe
@@ -145,6 +147,40 @@ function indexHtml(g, T, weaponHref) {
   return `<div class="index-cols">${cols.join("")}</div>`;
 }
 
+function detailsHtml(g, T, L, it, base) {
+  const d = DETAILS[it.id], D = T.det;
+  if (!d || !D) return "";
+  const P = PREFIX[T.lang.code], ob = d.obtain, byId = Object.fromEntries(g.items.map((i) => [i.id, i]));
+  const link = (id) => `<a href="${base}${P}weapons/${id}/index.html">${esc(byId[id].name)}</a>`;
+  const area = ob.area ? `<a href="${base}${P}locations/index.html#${ob.area.toLowerCase().replace(/[^a-z0-9]+/g, "-")}">${esc(ob.area)}</a>` : "";
+  const F = (s, o) => s.replace(/\{(\w+)\}/g, (_, k) => o[k] ?? "");
+  const v = { boss: `<b>${esc(ob.boss || "")}</b>`, npc: `<b>${esc(ob.npc || "")}</b>`, quest: `<b>${esc(ob.quest || "")}</b>`, spot: esc(ob.spot || ""), area, n: ob.treasures, from: ob.frm ? link(ob.frm) : "", mats: (ob.mats || []).map(esc).join(", ") };
+  const E = (s) => esc(s).replace(/\{(\w+)\}/g, "{$1}");
+  let how = F(E(ob.t === "npc" && ob.repair ? D.repair : ob.t === "start" && ob.prologue ? D.prologue : D[ob.t]), v);
+  if (ob.treasures) how += F(E(D.treasures), v);
+  if (ob.spot && ob.t !== "rack") how += F(E(D.spot), v);
+  if (ob.story) how += E(D.story);
+  if (ob.missable) how += E(D.missable);
+  if (ob.quest && ob.t !== "quest") how += F(E(D.quest1), v);
+  const lis = [how];
+  if (ob.mats) lis.push(F(E(D.mats), v));
+  const into = g.items.filter((o) => o.temperOf === it.id);
+  if (into.length) lis.push(F(E(D.temperInto), { name: into.map((o) => link(o.id)).join(", ") }));
+  const fx = FX30[it.id];
+  if (it.stats.max.damage == null && fx && fx.level === 30 && fx.damage != null) lis.push(F(E(D.lv30), { d: L.fmt(fx.damage), g: fx.guardBreak != null ? L.fmt(fx.guardBreak) : "?" }));
+  if (ob.t !== "unknown") lis.push(E(D.upgrade));
+  const play = [];
+  const pool = L.pool(it.kind), lv = (s) => { const xs = pool.filter((o) => o.stats.max[s] != null).sort((a, b) => b.stats.max[s] - a.stats.max[s]); const k = xs.findIndex((o) => o.id === it.id); return k < 0 ? null : k < xs.length / 3 ? 0 : k < (2 * xs.length) / 3 ? 1 : 2; };
+  const ld = lv("damage"), lg = lv("guardBreak");
+  if (ld != null && lg != null) play.push(F(E(D.profile), { kinds: esc(T.kindsPlural[it.kind].toLowerCase()), d: `<b>${esc(D.dmgLv[ld])}</b>`, g: `<b>${esc(D.gbLv[lg])}</b>` }));
+  if (d.surge) play.push(F(E(D.surge), { name: `<b>${esc(d.surge)}</b>` }) + (d.unblockable ? E(D.unblockable) : ""));
+  if (d.status) play.push(F(E(D.status), { name: `<b>${esc(d.status)}</b>` }));
+  if (d.unique) play.push(F(E(D.unique), { name: `<b>${esc(d.unique)}</b>` }));
+  const sk = d.skills.length ? `<h3>${esc(D.skillsH)}</h3><table class="stat-table skills"><thead><tr><th>${esc(D.colLevel)}</th><th>${esc(D.colSkill)}</th></tr></thead><tbody>${d.skills.map(([l, n]) => `<tr><td class="num">${l}</td><td>${esc(n)}</td></tr>`).join("")}</tbody></table><p class="trust">${esc(D.skillsNote)}</p>` : `<p class="trust">${esc(D.noSkills)}</p>`;
+  return `<section class="wsec band det"><div class="inner det-grid"><div><h2>${esc(D.obtainH)}</h2><ul class="advice">${lis.map((x) => `<li>${x}</li>`).join("")}</ul></div><div><h2>${esc(D.playH)}</h2>${play.length ? `<ul class="advice">${play.map((x) => `<li>${x}</li>`).join("")}</ul>` : ""}${sk}</div></div></section>
+`;
+}
+
 function weaponPage(g, T, L, it, base) {
   const fmt = L.fmt, P = PREFIX[T.lang.code];
   const planner = `${base}${P}index.html`;
@@ -180,7 +216,7 @@ function weaponPage(g, T, L, it, base) {
     <div class="equip"><a class="btn" href="${planner}#W-${it.id}">${esc(T.ui.openInPlanner)}</a>${SITE.reportUrl ? `<a class="btn ghost" href="${esc(reportHref(it.name, T.lang.code))}" rel="noopener" target="_blank">${esc(T.ui.report)}</a>` : ""}</div>
   </div>
 </div></section>
-${ranks ? `<section class="wsec band"><div class="inner"><h2>${esc(T.ui.ranksTitle)}</h2><ul class="advice">${ranks}</ul></div></section>` : ""}
+${detailsHtml(g, T, L, it, base)}${ranks ? `<section class="wsec band"><div class="inner"><h2>${esc(T.ui.ranksTitle)}</h2><ul class="advice">${ranks}</ul></div></section>` : ""}
 ${pairs.length ? `<section class="wsec band"><div class="inner"><h2>${esc(T.ui.pairs)}</h2><div class="cards">${pairs.map(card).join("")}</div></div></section>` : ""}
 ${same.length ? `<section class="wsec band"><div class="inner"><h2>${esc(fill(T.ui.sameType, { type: T.types[it.type].toLowerCase() }))}</h2><div class="cards">${same.map(dcard).join("")}</div></div></section>` : ""}
 <nav class="pn band" aria-label="${esc(T.kindsPlural[it.kind])}"><div class="inner"><a href="${wHref(prev)}" rel="prev"><small>← ${esc(T.ui.prev)}</small>${esc(prev.name)}</a><a href="${wHref(next)}" rel="next"><small>${esc(T.ui.next)} →</small>${esc(next.name)}</a></div></nav>
@@ -191,6 +227,7 @@ const games = readdirSync(join(root, "data/games")).filter((f) => f.endsWith(".j
 for (const f of games) {
   const g = JSON.parse(read(`data/games/${f}`));
   validate(g);
+  for (const it of g.items) { const ob = DETAILS[it.id]?.obtain; if (!it.temperOf && ob?.t === "temper" && ob.frm) it.temperOf = ob.frm; }
   const out = join(root, "dist", g.id);
   rmSync(out, { recursive: true, force: true });
   const files = {};

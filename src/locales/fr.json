@@ -222,5 +222,48 @@
     "Ils sont recoupés entre plusieurs sources publiques. {ok} armes sur {n} sont confirmées par au moins deux sources, les autres sont signalées sur leur fiche."
    ]
   ]
+ },
+ "det": {
+  "obtainH": "Comment l'obtenir",
+  "playH": "Comment la jouer",
+  "boss": "Récompense pour avoir vaincu {boss}, à {area}.",
+  "spot": " Repère : {spot}.",
+  "story": " C'est un boss de l'histoire principale, impossible à rater.",
+  "missable": " Attention : elle peut être manquée.",
+  "quest1": " Quête liée : {quest}.",
+  "rack": "Ramassée sur un râtelier d'armes à {area}, sans combat.",
+  "after": "Ramassée à {area} juste après le combat contre {boss}. Pense à la prendre avant de quitter la zone.",
+  "npc": "Donnée par {npc}, à {area}.",
+  "repair": "Remise en état par {npc}, à {area}.",
+  "treasures": " Il faut d'abord lui rapporter ses {n} trésors.",
+  "quest": "Récompense de la quête {quest}, à {area}.",
+  "start": "Arme de départ : elle est dans l'inventaire dès le chapitre 1.",
+  "prologue": "Arme de départ : obtenue pendant le prologue.",
+  "temper": "Obtenue en trempant (Soul Temper) {from} auprès de {npc}, à {area}.",
+  "mats": "Matériaux : {mats}.",
+  "unknown": "Nos sources ne confirment pas encore comment l'obtenir. Tu sais ? Signale-le.",
+  "upgrade": "Elle s'améliore jusqu'au niveau 30 chez Forge (Mandate Outpost, Weeping Creek Valley).",
+  "temperInto": "Peut être trempée en {name}.",
+  "lv30": "Stats au niveau 30 (Fextralife) : dégâts {d}, brise-garde {g}.",
+  "surge": "Attaque spéciale (Power Surge) : {name}.",
+  "unblockable": " Elle est imparable.",
+  "status": "Altération : {name}.",
+  "unique": "Compétence unique : {name}.",
+  "profile": "Profil parmi les {kinds} : dégâts {d}, brise-garde {g}.",
+  "dmgLv": [
+   "élevés",
+   "moyens",
+   "faibles"
+  ],
+  "gbLv": [
+   "élevé",
+   "moyen",
+   "faible"
+  ],
+  "skillsH": "Compétences débloquées par niveau",
+  "colLevel": "Niveau",
+  "colSkill": "Compétence",
+  "skillsNote": "Noms des compétences tels qu'affichés dans la version anglaise du jeu.",
+  "noSkills": "Aucune compétence d'amélioration recensée pour cette arme."
  }
 }

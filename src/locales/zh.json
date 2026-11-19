@@ -222,5 +222,48 @@
     "数据在多个公开来源之间交叉验证。{n} 把武器中有 {ok} 把得到至少两个来源确认，其余会在页面上标注。"
    ]
   ]
+ },
+ "det": {
+  "obtainH": "获取方式",
+  "playH": "玩法",
+  "boss": "在{area}击败{boss}后获得。",
+  "spot": " 地标：{spot}。",
+  "story": " 主线剧情首领，不会错过。",
+  "missable": " 注意：可能错过。",
+  "quest1": " 相关任务：{quest}。",
+  "rack": "在{area}的武器架上拾取，无需战斗。",
+  "after": "在{area}与{boss}战斗后立即拾取，离开区域前记得拿。",
+  "npc": "在{area}由{npc}给予。",
+  "repair": "在{area}由{npc}修复。",
+  "treasures": " 需先归还{n}件宝物。",
+  "quest": "{area}任务「{quest}」的奖励。",
+  "start": "初始武器：第1章起就在背包中。",
+  "prologue": "初始武器：序章中获得。",
+  "temper": "在{area}找{npc}对{from}进行铸魂（Soul Temper）获得。",
+  "mats": "材料：{mats}。",
+  "unknown": "我们的来源尚未确认获取方式。知道的话请反馈。",
+  "upgrade": "可在Forge（Mandate Outpost，Weeping Creek Valley）升级至30级。",
+  "temperInto": "可铸魂为{name}。",
+  "lv30": "30级数值（Fextralife）：伤害{d}，破防{g}。",
+  "surge": "Power Surge：{name}。",
+  "unblockable": " 无法格挡。",
+  "status": "异常状态：{name}。",
+  "unique": "专属技能：{name}。",
+  "profile": "在{kinds}中的定位：伤害{d}，破防{g}。",
+  "dmgLv": [
+   "较高",
+   "中等",
+   "较低"
+  ],
+  "gbLv": [
+   "较高",
+   "中等",
+   "较低"
+  ],
+  "skillsH": "按等级解锁的技能",
+  "colLevel": "等级",
+  "colSkill": "技能",
+  "skillsNote": "技能名称为游戏英文版写法。",
+  "noSkills": "此武器暂无强化技能资料。"
  }
 }

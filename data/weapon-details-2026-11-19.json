@@ -1,0 +1,1481 @@
+{
+ "source": {
+  "fextralife": "https://phantombladezero.wiki.fextralife.com (fetched 2026-11-11)",
+  "gfinity": "gfinityesports.com guides (Shadowless Edge, Blazing Edge, Infernal Rouge)",
+  "allthings.how": "White Serpent and Crimson Viper guide"
+ },
+ "weapons": {
+  "baishan-stormswords": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Yubi No. 21 Swordfighter Puppet",
+    "area": "Mandate Encampment"
+   },
+   "surge": "Baishan Wind-Thunder Slash",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Centered Breath"
+    ],
+    [
+     10,
+     "Elemental Confluence Lv. 1"
+    ],
+    [
+     15,
+     "Wind Infusion"
+    ],
+    [
+     25,
+     "Baishan's Divine Favor"
+    ]
+   ]
+  },
+  "fiend-saws": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Mu Xiaokui, Young Mistress of the Order",
+    "area": "Village of Lu",
+    "quest": "Young Mistress",
+    "missable": true
+   },
+   "surge": "Fiend Form",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Charged Onslaught"
+    ],
+    [
+     15,
+     "Charged Frenzy"
+    ],
+    [
+     25,
+     "Corrosive Severance"
+    ],
+    [
+     30,
+     "Corrosion Burst Lv. 3"
+    ]
+   ]
+  },
+  "parting-hooks": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Soulclaimer Elite Shadow Warden",
+    "area": "Pangzhen",
+    "spot": "Dockside Warehouse"
+   },
+   "surge": "Peerless Hook",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Counter Follow-Up"
+    ],
+    [
+     10,
+     "Poised to Strike Lv. 1"
+    ],
+    [
+     15,
+     "Counteroffensive"
+    ],
+    [
+     25,
+     "Divine Beast Bind"
+    ]
+   ]
+  },
+  "sanguine-twin": {
+   "obtain": {
+    "t": "rack",
+    "area": "Weeping Creek Valley",
+    "spot": "First Meeting with Yu'er"
+   },
+   "surge": "Dual-Blade Flurry",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Chi-Infused Blade"
+    ],
+    [
+     10,
+     "Shadow Execution"
+    ],
+    [
+     15,
+     "Relentless Pursuit"
+    ],
+    [
+     25,
+     "Blades at Will"
+    ]
+   ]
+  },
+  "seamless-death": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Jade-Face",
+    "area": "Mountain of Imprisonment"
+   },
+   "surge": "Reaping Rings",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Charged Flying Ring"
+    ],
+    [
+     10,
+     "Empowered Flying Ring Lv. 1"
+    ],
+    [
+     15,
+     "Phantom Step"
+    ],
+    [
+     25,
+     "Afterimage Feint"
+    ]
+   ]
+  },
+  "shadowless-edge": {
+   "obtain": {
+    "t": "temper",
+    "frm": "sanguine-twin",
+    "npc": "Myst",
+    "area": "Pangzhen",
+    "mats": [
+     "Chaos Fragment I",
+     "Remnant Dust"
+    ]
+   },
+   "surge": "Dual-Blade Flurry",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Chi-Infused Blade"
+    ],
+    [
+     10,
+     "Shadow Execution Lv. 2"
+    ],
+    [
+     15,
+     "Relentless Pursuit"
+    ],
+    [
+     25,
+     "Blades at Will"
+    ],
+    [
+     30,
+     "Shadow Execution Lv. 3"
+    ]
+   ]
+  },
+  "sundering-dual-axes": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Heartpiercer",
+    "area": "Meigu Lake"
+   },
+   "surge": "Tiansha Reaving",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Circling Ambush"
+    ],
+    [
+     10,
+     "Menacing Flow Lv. 1"
+    ],
+    [
+     15,
+     "Baleful Barrage"
+    ],
+    [
+     25,
+     "Heart-Rending Strike"
+    ]
+   ]
+  },
+  "the-ladys-fan": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Meng Hua",
+    "area": "Mount Soulrend"
+   },
+   "surge": "Boundless Blight",
+   "unblockable": false,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "The Lady's Grace"
+    ],
+    [
+     10,
+     "Blight-Fueled Power Lv. 1"
+    ],
+    [
+     15,
+     "Dark Law"
+    ],
+    [
+     25,
+     "Master of the Arcane"
+    ]
+   ]
+  },
+  "white-serpent-and-crimson-viper": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Bai Chilian, Lady of the Twin Serpents",
+    "area": "Crimson Forest",
+    "spot": "Threadbound Great Tree"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": null,
+   "skills": []
+  },
+  "aureate": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Zuo Shang",
+    "area": "Mount Soulrend"
+   },
+   "surge": "Radiant Long Sword Formation",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Strategist: Ranged Assault"
+    ],
+    [
+     10,
+     "A Thousand Blades Lv. 1"
+    ],
+    [
+     15,
+     "Strategist: Formation Breaker"
+    ],
+    [
+     25,
+     "Strategist: Iron Wall"
+    ]
+   ]
+  },
+  "freezing-chaos": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Yucong No. 34 Twisted Puppet",
+    "area": "Mirage Estate"
+   },
+   "surge": "Chaos Erosion",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "10"
+    ],
+    [
+     10,
+     "Bone Deep Lv. 1"
+    ],
+    [
+     15,
+     "Iceberg"
+    ],
+    [
+     25,
+     "Blackflame Whirlwind"
+    ]
+   ]
+  },
+  "infernal-rouge": {
+   "obtain": {
+    "t": "temper",
+    "frm": "sanguine",
+    "npc": "Myst",
+    "area": "Pangzhen",
+    "mats": [
+     "Bastion of Mo Mask",
+     "Remnant Dust ×5,000"
+    ],
+    "quest": "Bloodline Awakening"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": null,
+   "skills": []
+  },
+  "jagged-steel": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Jagged Steel the Frenzied Brute",
+    "area": "Weeping Creek Valley",
+    "spot": "Rushblade Pavilion"
+   },
+   "surge": "Jagged Steel Rampage",
+   "unblockable": true,
+   "status": "Bleed",
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Blood Blade"
+    ],
+    [
+     10,
+     "Relentless Bleed"
+    ],
+    [
+     15,
+     "Blood Blade Charge"
+    ],
+    [
+     25,
+     "Frenzied Blood Blade"
+    ]
+   ]
+  },
+  "sanguine": {
+   "obtain": {
+    "t": "start"
+   },
+   "surge": "Sweeping Blade",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Chi-Infused Blade"
+    ],
+    [
+     10,
+     "Phantom Execution"
+    ],
+    [
+     15,
+     "Drifting Clouds"
+    ],
+    [
+     25,
+     "Flowing Water"
+    ]
+   ]
+  },
+  "soft-snake-sword": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Wu Lengshuang",
+    "area": "Mandate Encampment"
+   },
+   "surge": "Wild Serpent Dance",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Inner Stillness"
+    ],
+    [
+     10,
+     "Redirected Force Lv. 1"
+    ],
+    [
+     15,
+     "Sword Blossom Shield"
+    ],
+    [
+     25,
+     "Serpentine Precision"
+    ]
+   ]
+  },
+  "the-fanatics-broken-blade": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Hua Qianxiao",
+    "area": "Crimson Forest",
+    "spot": "Pangzhen Bridge"
+   },
+   "surge": "Drink Until Dawn",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Boundless Thirst"
+    ],
+    [
+     10,
+     "Drunken Clarity Lv. 1"
+    ],
+    [
+     15,
+     "Drunken Counter"
+    ],
+    [
+     25,
+     "A Strong Drink"
+    ]
+   ]
+  },
+  "tianxuan-bronze-sword": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Master Bi Yuan",
+    "area": "Village of Lu",
+    "story": true
+   },
+   "surge": "Greatness Without Form",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Utmost Emptiness"
+    ],
+    [
+     10,
+     "Calm Mind Lv. 1"
+    ],
+    [
+     15,
+     "Resolute Stillness"
+    ],
+    [
+     25,
+     "All Things Converge"
+    ]
+   ]
+  },
+  "wild-oriole-sword": {
+   "obtain": {
+    "t": "after",
+    "boss": "Mu Xiaokui",
+    "area": "Village of Lu"
+   },
+   "surge": "Oriole Song",
+   "unblockable": false,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Oriole Mark"
+    ],
+    [
+     10,
+     "Potent Mark Lv. 1"
+    ],
+    [
+     15,
+     "Bursting Mark"
+    ],
+    [
+     25,
+     "Lingering Mark"
+    ]
+   ]
+  },
+  "wooden-sanguine": {
+   "obtain": {
+    "t": "start",
+    "prologue": true
+   },
+   "surge": "Wooden Blade Flurry",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": []
+  },
+  "armybreaker": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Cavalrybane",
+    "area": "Pangzhen"
+   },
+   "surge": "Formation Breaking Art",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Mighty Rush"
+    ],
+    [
+     10,
+     "Unstoppable Advance Lv. 1"
+    ],
+    [
+     15,
+     "Irresistble Force"
+    ],
+    [
+     25,
+     "Conquering Slash"
+    ]
+   ]
+  },
+  "blazing-edge": {
+   "obtain": {
+    "t": "temper",
+    "frm": "sanguine-reach",
+    "npc": "Myst",
+    "area": "Pangzhen",
+    "mats": [
+     "Scorching Flames",
+     "Quenched Flaming Grip"
+    ]
+   },
+   "surge": "Longblade Chain Slash",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Whirlwind Slash"
+    ],
+    [
+     10,
+     "Fatal Execution Lv. 2"
+    ],
+    [
+     15,
+     "Sweeping Slash"
+    ],
+    [
+     25,
+     "Tempest Wheel"
+    ],
+    [
+     30,
+     "Fatal Execution Lv. 3"
+    ]
+   ]
+  },
+  "bonesaw": {
+   "obtain": {
+    "t": "boss",
+    "boss": "The Crusher and the Saw",
+    "area": "Mount Soulrend"
+   },
+   "surge": "Savage Finale",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Guard-Break Pursuit"
+    ],
+    [
+     10,
+     "Cruel Advantages Lv. 1"
+    ],
+    [
+     15,
+     "Bloodsaw"
+    ],
+    [
+     25,
+     "Elimination"
+    ]
+   ]
+  },
+  "crescent-blade": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Yuding No. 12 Crescent Blade Puppet",
+    "area": "Mirage Estate"
+   },
+   "surge": "Warm-Wine Qinglong Cleave",
+   "unblockable": false,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Cloud-Sweeing Gale"
+    ],
+    [
+     10,
+     "Fluid Rotation Lv. 1"
+    ],
+    [
+     15,
+     "Formless Qinglong"
+    ],
+    [
+     25,
+     "Unstoppable Force"
+    ]
+   ]
+  },
+  "juggernaut": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Bi Feng, the Giant Saber Commander",
+    "area": "Mountain of Imprisonment"
+   },
+   "surge": "Bandit-Slaying Rampage",
+   "unblockable": false,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Blood-Fed Edge"
+    ],
+    [
+     10,
+     "Sunset-Stained Edge Lv. 1"
+    ],
+    [
+     15,
+     "Restless Wave"
+    ],
+    [
+     25,
+     "Annihilating Slash"
+    ]
+   ]
+  },
+  "outlaw-warblade": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Jing Ye the Outlaw",
+    "area": "Crimson Forest"
+   },
+   "surge": "Bloodthirst Frenzy",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     10,
+     "Unstoppable Lv. 1"
+    ],
+    [
+     15,
+     "Survival Shield"
+    ],
+    [
+     25,
+     "Blood Arrow"
+    ]
+   ]
+  },
+  "sanguine-reach": {
+   "obtain": {
+    "t": "rack",
+    "area": "Weeping Creek Valley",
+    "spot": "Mandate Outpost"
+   },
+   "surge": "Longblade Chain Slash",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Whirlwind Slash"
+    ],
+    [
+     10,
+     "Fatal Execution"
+    ],
+    [
+     15,
+     "Sweeping Slash"
+    ],
+    [
+     25,
+     "Tempest Wheel"
+    ]
+   ]
+  },
+  "scarlet-wraithblade": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Hua, Deadly Betrothed",
+    "area": "Weeping Creek Valley"
+   },
+   "surge": "Rogue Bloomstorm",
+   "unblockable": true,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Scarlet Field"
+    ],
+    [
+     15,
+     "Severed Vows"
+    ],
+    [
+     25,
+     "Netherlit Bloom"
+    ],
+    [
+     30,
+     "Hidden Thorns Lv. 3"
+    ]
+   ]
+  },
+  "whiteshadow": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Blizzard Blademaster",
+    "area": "Mountain of Imprisonment"
+   },
+   "surge": "White Shadow's Frosthowl",
+   "unblockable": false,
+   "status": "Frozen",
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Frost Strike"
+    ],
+    [
+     10,
+     "Piercing Cold Lv. 1"
+    ],
+    [
+     15,
+     "Frost Convergence"
+    ],
+    [
+     25,
+     "Frostspike Finisher"
+    ]
+   ]
+  },
+  "bastion": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Zhou Bi",
+    "area": "Village of Lu",
+    "story": true
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": "Reprisal Shockwave",
+   "skills": [
+    [
+     5,
+     "Shield Rush"
+    ],
+    [
+     10,
+     "Immovable Wall Lv. 1"
+    ],
+    [
+     15,
+     "Shield Glide"
+    ],
+    [
+     25,
+     "Swift Deployment"
+    ]
+   ]
+  },
+  "flaming-mane": {
+   "obtain": {
+    "t": "npc",
+    "npc": "Lei Dang",
+    "area": "Pangzhen",
+    "spot": "Jingyang Hall",
+    "repair": true
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": "Burning Path",
+   "skills": [
+    [
+     5,
+     "Flaming Mane Thrust"
+    ],
+    [
+     10,
+     "Undying Flame Lv. 1"
+    ],
+    [
+     15,
+     "Lionhead Rush"
+    ],
+    [
+     25,
+     "Twin Fireballs"
+    ]
+   ]
+  },
+  "flying-guillotine": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Huangxing",
+    "area": "Mountain of Imprisonment"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": "Reaping",
+   "skills": [
+    [
+     5,
+     "Blood Wheel"
+    ],
+    [
+     10,
+     "Unceasing Bleed Lv. 1"
+    ],
+    [
+     15,
+     "Blood-Wheel Flight"
+    ],
+    [
+     25,
+     "Soul-Seizing Reaping"
+    ]
+   ]
+  },
+  "heartrend-pipa": {
+   "obtain": {
+    "t": "unknown"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": null,
+   "skills": []
+  },
+  "you-loongs-deluge": {
+   "obtain": {
+    "t": "boss",
+    "boss": "You Loong",
+    "area": "Pangzhen"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": "Wet",
+   "unique": "Douse Flames",
+   "skills": [
+    [
+     5,
+     "Water Cannon"
+    ],
+    [
+     10,
+     "Ceaseless Rain Lv. 1"
+    ],
+    [
+     15,
+     "Piercing Jet"
+    ],
+    [
+     25,
+     "Twin Water Cannons"
+    ]
+   ]
+  },
+  "bashpole": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Wan Jun",
+    "area": "Mandate Encampment"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": "Groundbeaker",
+   "skills": [
+    [
+     5,
+     "Skyfull Bash"
+    ],
+    [
+     10,
+     "Forceful Interrupt Lv. 1"
+    ],
+    [
+     15,
+     "Seismic Impact"
+    ],
+    [
+     25,
+     "Follow-Through"
+    ]
+   ]
+  },
+  "dread-axe": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Peng Meng the Axemaster",
+    "area": "Weeping Creek Valley",
+    "spot": "Mandate Outpost"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": "Iron Chain Breaker",
+   "skills": [
+    [
+     5,
+     "Full-Power Charge"
+    ],
+    [
+     10,
+     "Armored Resilience Lv. 1"
+    ],
+    [
+     15,
+     "Rushing Axe"
+    ],
+    [
+     25,
+     "Crushing Force"
+    ]
+   ]
+  },
+  "tiger-cannon": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Lei Dang the Tiger Cannon",
+    "area": "Mirage Estate"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": "Firearm",
+   "skills": [
+    [
+     5,
+     "Tiger Step"
+    ],
+    [
+     10,
+     "Spreading Blaze Lv. 1"
+    ],
+    [
+     15,
+     "Double Roar"
+    ],
+    [
+     25,
+     "Tooth for Tooth"
+    ]
+   ]
+  },
+  "war-wagon": {
+   "obtain": {
+    "t": "npc",
+    "npc": "Old Man Gen",
+    "area": "Meigu Lake",
+    "spot": "Frozen Lake Dock",
+    "quest": "The Journey Home"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Full-Speed Rush"
+    ],
+    [
+     10,
+     "Ironclad Rampage Lv. 1"
+    ],
+    [
+     15,
+     "Crushing Charge"
+    ],
+    [
+     25,
+     "Earthshaking Slam"
+    ]
+   ]
+  },
+  "wolfjaw": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Wu Xuan",
+    "area": "Pangzhen"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Bloodlust"
+    ],
+    [
+     10,
+     "Blood Feast Lv. 1"
+    ],
+    [
+     15,
+     "Full-Power Strike"
+    ],
+    [
+     25,
+     "Heart-Piercing Wolf"
+    ]
+   ]
+  },
+  "fire-meteor": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Blaze Shadow Warden Captain",
+    "area": "Pangzhen"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": "Phosphor Flame",
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Iron Bloom"
+    ],
+    [
+     10,
+     "Heart-Scorching Blaze Lv. 1"
+    ],
+    [
+     15,
+     "Phosphor Explosion"
+    ],
+    [
+     25,
+     "Phosphor Cyclone"
+    ]
+   ]
+  },
+  "hunters-chain-sickle": {
+   "obtain": {
+    "t": "boss",
+    "boss": "The Hunt Sixfold Scythe",
+    "area": "Weeping Creek Valley"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": "Grappling Traverse",
+   "skills": [
+    [
+     5,
+     "Shadow Bound"
+    ],
+    [
+     15,
+     "Chain-Sickle Traverse"
+    ],
+    [
+     25,
+     "Deathcase Cyclone"
+    ],
+    [
+     30,
+     "Relentless Pursuit Lv. 3"
+    ]
+   ]
+  },
+  "ink-cut": {
+   "obtain": {
+    "t": "quest",
+    "quest": "Hero's Lament",
+    "area": "Mountain of Imprisonment"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": "Radiant Wheel",
+   "skills": [
+    [
+     5,
+     "Final Radiance"
+    ],
+    [
+     10,
+     "Lingering Ink Lv. 1"
+    ],
+    [
+     15,
+     "Ink-Forged Blade"
+    ],
+    [
+     25,
+     "Ink Piercer"
+    ]
+   ]
+  },
+  "iron-gauntlets": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Stone Hand Iron Fever",
+    "area": "Crimson Forest"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": "Fist Focus",
+   "skills": [
+    [
+     5,
+     "Masterstroke Fist"
+    ],
+    [
+     15,
+     "Fist Guard"
+    ],
+    [
+     25,
+     "Fury Unleashed"
+    ],
+    [
+     30,
+     "Fist Focus Unbound Lv. 3"
+    ]
+   ]
+  },
+  "thunder-spear": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Chang Hong",
+    "area": "Pangzhen"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": "Ranged Shot",
+   "skills": [
+    [
+     5,
+     "Thunder Spear Thurst"
+    ],
+    [
+     10,
+     "Wrath of Thunder Lv. 1"
+    ],
+    [
+     15,
+     "Reverse Thrust"
+    ],
+    [
+     25,
+     "Thunder Descends"
+    ]
+   ]
+  },
+  "feather-bow": {
+   "obtain": {
+    "t": "quest",
+    "quest": "Purge the Sect",
+    "area": "Weeping Creek Valley",
+    "npc": "Brooding Old Archer"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": "Ranged Shot",
+   "skills": [
+    [
+     5,
+     "Willow Step - Side"
+    ],
+    [
+     15,
+     "Willow Step - Forward"
+    ],
+    [
+     25,
+     "Willow Step - Back"
+    ],
+    [
+     30,
+     "Hundred-Pace Pierce Lv. 3"
+    ]
+   ]
+  },
+  "flying-dagger": {
+   "obtain": {
+    "t": "npc",
+    "npc": "Quick Hand Zhang",
+    "area": "Crimson Forest",
+    "treasures": 3
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": "Poisoned Blades",
+   "unique": "Ranged Shot",
+   "skills": [
+    [
+     5,
+     "Quickhand Step"
+    ],
+    [
+     10,
+     "Unerring Throw Lv. 1"
+    ],
+    [
+     15,
+     "Shadowless Step"
+    ],
+    [
+     25,
+     "Windborne Step"
+    ]
+   ]
+  },
+  "goldblaze": {
+   "obtain": {
+    "t": "npc",
+    "npc": "Quick Hand Zhang",
+    "area": "Pangzhen",
+    "spot": "Zhang's Hideout"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": "Ranged Shot",
+   "skills": [
+    [
+     5,
+     "Firelock Step - Side"
+    ],
+    [
+     15,
+     "Firelock Step Step - Forward"
+    ],
+    [
+     20,
+     "Armor Piercing Rounds Lv. 2"
+    ],
+    [
+     25,
+     "Firelock Step - Back"
+    ]
+   ]
+  },
+  "loong-trident": {
+   "obtain": {
+    "t": "boss",
+    "boss": "You Loong",
+    "area": "Meigu Lake"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": "Wet",
+   "unique": "No Refuge Beneath",
+   "skills": [
+    [
+     5,
+     "Master of the Water"
+    ],
+    [
+     10,
+     "Loong Fang Pierce Lv. 1"
+    ],
+    [
+     15,
+     "Loong Step - Forward"
+    ],
+    [
+     25,
+     "Loong Step - Back"
+    ]
+   ]
+  },
+  "one-eyed-bow": {
+   "obtain": {
+    "t": "boss",
+    "boss": "One-Eyed Archer",
+    "area": "Meigu Lake"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": "Ranged Shot",
+   "skills": [
+    [
+     5,
+     "Death Ray"
+    ],
+    [
+     10,
+     "Piercing Ray Lv. 1"
+    ],
+    [
+     15,
+     "Death Glaze"
+    ],
+    [
+     25,
+     "Thousand-Eyed Gaze"
+    ]
+   ]
+  },
+  "inanis-radiant-fan": {
+   "obtain": {
+    "t": "quest",
+    "quest": "Whence the Weeping",
+    "area": "Mountain of Imprisonment"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Supreme Benediction"
+    ],
+    [
+     10,
+     "Enduring Sanctuary Lv. 1"
+    ],
+    [
+     15,
+     "Quiet Malice"
+    ],
+    [
+     25,
+     "Boundless Sanctuary"
+    ]
+   ]
+  },
+  "kuye-temple-prayer-beads": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Bi Hai of Kuye Temple",
+    "area": "Village of Lu",
+    "story": true
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Golden Body"
+    ],
+    [
+     10,
+     "Enduring Presence Lv. 1"
+    ],
+    [
+     15,
+     "Bronze Formation"
+    ],
+    [
+     25,
+     "Backlash"
+    ]
+   ]
+  },
+  "puppeteers-bell": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Dusk, the Puppeteer",
+    "area": "Village of Lu"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Fortified Shields"
+    ],
+    [
+     10,
+     "Enduring Presence Lv. 1"
+    ],
+    [
+     15,
+     "Counter Guard"
+    ],
+    [
+     25,
+     "Mindless Impact"
+    ]
+   ]
+  },
+  "swordsmans-summon": {
+   "obtain": {
+    "t": "boss",
+    "boss": "Chief Disciple of the Seven-Stars Formation",
+    "area": "Mandate Encampment"
+   },
+   "surge": null,
+   "unblockable": false,
+   "status": null,
+   "unique": null,
+   "skills": [
+    [
+     5,
+     "Sword Wave"
+    ],
+    [
+     10,
+     "Enduring Presence Lv. 1"
+    ],
+    [
+     15,
+     "Lesser Sword Formation"
+    ],
+    [
+     25,
+     "Overwhelming Force"
+    ]
+   ]
+  }
+ }
+}

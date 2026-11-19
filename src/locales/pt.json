@@ -222,5 +222,48 @@
     "Eles são cruzados entre várias fontes públicas. {ok} de {n} armas são confirmadas por pelo menos duas fontes; as demais são sinalizadas na ficha."
    ]
   ]
+ },
+ "det": {
+  "obtainH": "Como conseguir",
+  "playH": "Como jogar",
+  "boss": "Recompensa por derrotar {boss} em {area}.",
+  "spot": " Referência: {spot}.",
+  "story": " É um chefe da história principal, impossível de perder.",
+  "missable": " Atenção: pode ser perdida.",
+  "quest1": " Missão relacionada: {quest}.",
+  "rack": "Pega num suporte de armas em {area}, sem luta.",
+  "after": "Pega em {area} logo após a luta contra {boss}. Pegue antes de sair da área.",
+  "npc": "Dada por {npc} em {area}.",
+  "repair": "Reparada por {npc} em {area}.",
+  "treasures": " Antes, devolva os {n} tesouros.",
+  "quest": "Recompensa da missão {quest} em {area}.",
+  "start": "Arma inicial: está no inventário desde o capítulo 1.",
+  "prologue": "Arma inicial: obtida durante o prólogo.",
+  "temper": "Obtida ao temperar (Soul Temper) {from} com {npc} em {area}.",
+  "mats": "Materiais: {mats}.",
+  "unknown": "Nossas fontes ainda não confirmam como conseguir. Sabe? Reporte.",
+  "upgrade": "Pode ser melhorada até o nível 30 com Forge (Mandate Outpost, Weeping Creek Valley).",
+  "temperInto": "Pode ser temperada em {name}.",
+  "lv30": "Atributos no nível 30 (Fextralife): dano {d}, quebra de guarda {g}.",
+  "surge": "Power Surge: {name}.",
+  "unblockable": " Não pode ser bloqueado.",
+  "status": "Efeito de status: {name}.",
+  "unique": "Habilidade única: {name}.",
+  "profile": "Perfil entre as {kinds}: dano {d}, quebra de guarda {g}.",
+  "dmgLv": [
+   "alto",
+   "médio",
+   "baixo"
+  ],
+  "gbLv": [
+   "alta",
+   "média",
+   "baixa"
+  ],
+  "skillsH": "Habilidades por nível",
+  "colLevel": "Nível",
+  "colSkill": "Habilidade",
+  "skillsNote": "Nomes das habilidades como na versão em inglês do jogo.",
+  "noSkills": "Nenhuma habilidade de melhoria registrada para esta arma."
  }
 }

@@ -222,5 +222,48 @@
     "複数の公開ソースで照合しています。{n}種中{ok}種は2つ以上のソースで確認済みで、それ以外は各ページに表示しています。"
    ]
   ]
+ },
+ "det": {
+  "obtainH": "入手方法",
+  "playH": "使い方",
+  "boss": "{area}で{boss}を倒すと入手。",
+  "spot": " 目印：{spot}。",
+  "story": " メインストーリーのボスなので取り逃しはない。",
+  "missable": " 注意：取り逃しの可能性あり。",
+  "quest1": " 関連クエスト：{quest}。",
+  "rack": "{area}の武器棚から入手。戦闘は不要。",
+  "after": "{area}で{boss}との戦闘直後に入手。エリアを離れる前に拾うこと。",
+  "npc": "{area}で{npc}から入手。",
+  "repair": "{area}で{npc}が修理してくれる。",
+  "treasures": " 先に{n}つの宝を届ける必要がある。",
+  "quest": "{area}のクエスト「{quest}」の報酬。",
+  "start": "初期武器：第1章から所持している。",
+  "prologue": "初期武器：プロローグで入手。",
+  "temper": "{area}の{npc}のもとで{from}を鍛錬（Soul Temper）して入手。",
+  "mats": "素材：{mats}。",
+  "unknown": "入手方法はまだ情報源で確認できていない。知っていたら報告してほしい。",
+  "upgrade": "Forge（Mandate Outpost、Weeping Creek Valley）でレベル30まで強化できる。",
+  "temperInto": "鍛錬で{name}になる。",
+  "lv30": "レベル30の数値（Fextralife）：ダメージ{d}、ガードブレイク{g}。",
+  "surge": "Power Surge：{name}。",
+  "unblockable": " ガード不能。",
+  "status": "状態異常：{name}。",
+  "unique": "固有スキル：{name}。",
+  "profile": "{kinds}の中での特徴：ダメージ{d}、ガードブレイク{g}。",
+  "dmgLv": [
+   "高め",
+   "平均的",
+   "低め"
+  ],
+  "gbLv": [
+   "高め",
+   "平均的",
+   "低め"
+  ],
+  "skillsH": "レベル別の習得スキル",
+  "colLevel": "レベル",
+  "colSkill": "スキル",
+  "skillsNote": "スキル名は英語版ゲームの表記。",
+  "noSkills": "この武器の強化スキルは未掲載。"
  }
 }

@@ -222,5 +222,48 @@
     "Se contrastan entre varias fuentes públicas. {ok} de {n} armas están confirmadas por al menos dos fuentes; las demás se indican en su ficha."
    ]
   ]
+ },
+ "det": {
+  "obtainH": "Cómo conseguirla",
+  "playH": "Cómo jugarla",
+  "boss": "Recompensa por derrotar a {boss} en {area}.",
+  "spot": " Referencia: {spot}.",
+  "story": " Es un jefe de la historia principal, no se puede perder.",
+  "missable": " Cuidado: se puede perder.",
+  "quest1": " Misión relacionada: {quest}.",
+  "rack": "Se recoge de un armero en {area}, sin combate.",
+  "after": "Se recoge en {area} justo después del combate contra {boss}. Cógela antes de salir de la zona.",
+  "npc": "Te la da {npc} en {area}.",
+  "repair": "{npc} la repara en {area}.",
+  "treasures": " Antes debes devolverle sus {n} tesoros.",
+  "quest": "Recompensa de la misión {quest} en {area}.",
+  "start": "Arma inicial: está en el inventario desde el capítulo 1.",
+  "prologue": "Arma inicial: se obtiene durante el prólogo.",
+  "temper": "Se obtiene templando (Soul Temper) {from} con {npc} en {area}.",
+  "mats": "Materiales: {mats}.",
+  "unknown": "Nuestras fuentes aún no confirman cómo conseguirla. ¿Lo sabes? Avísanos.",
+  "upgrade": "Se mejora hasta el nivel 30 con Forge (Mandate Outpost, Weeping Creek Valley).",
+  "temperInto": "Se puede templar en {name}.",
+  "lv30": "Estadísticas a nivel 30 (Fextralife): daño {d}, rotura de guardia {g}.",
+  "surge": "Power Surge: {name}.",
+  "unblockable": " No se puede bloquear.",
+  "status": "Efecto de estado: {name}.",
+  "unique": "Habilidad única: {name}.",
+  "profile": "Perfil entre las {kinds}: daño {d}, rotura de guardia {g}.",
+  "dmgLv": [
+   "alto",
+   "medio",
+   "bajo"
+  ],
+  "gbLv": [
+   "alta",
+   "media",
+   "baja"
+  ],
+  "skillsH": "Habilidades por nivel",
+  "colLevel": "Nivel",
+  "colSkill": "Habilidad",
+  "skillsNote": "Nombres de habilidades tal como aparecen en la versión inglesa del juego.",
+  "noSkills": "No hay habilidades de mejora registradas para esta arma."
  }
 }

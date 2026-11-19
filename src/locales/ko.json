@@ -222,5 +222,48 @@
     "여러 공개 출처를 교차 확인했습니다. {n}종 중 {ok}종은 두 곳 이상에서 확인되었고, 나머지는 각 페이지에 표시되어 있습니다."
    ]
   ]
+ },
+ "det": {
+  "obtainH": "획득 방법",
+  "playH": "운용법",
+  "boss": "{area}에서 {boss} 처치 보상.",
+  "spot": " 위치 기준: {spot}.",
+  "story": " 메인 스토리 보스라 놓칠 수 없다.",
+  "missable": " 주의: 놓칠 수 있다.",
+  "quest1": " 관련 퀘스트: {quest}.",
+  "rack": "{area}의 무기 거치대에서 획득, 전투 불필요.",
+  "after": "{area}에서 {boss}전 직후 획득. 지역을 떠나기 전에 챙길 것.",
+  "npc": "{area}에서 {npc}에게 받는다.",
+  "repair": "{area}에서 {npc}가 수리해 준다.",
+  "treasures": " 먼저 보물 {n}개를 돌려줘야 한다.",
+  "quest": "{area} 퀘스트 {quest} 보상.",
+  "start": "초기 무기: 1장부터 인벤토리에 있다.",
+  "prologue": "초기 무기: 프롤로그에서 획득.",
+  "temper": "{area}의 {npc}에게서 {from}을(를) 단련(Soul Temper)해 획득.",
+  "mats": "재료: {mats}.",
+  "unknown": "획득 방법이 아직 출처에서 확인되지 않았다. 알고 있다면 제보해 달라.",
+  "upgrade": "Forge(Mandate Outpost, Weeping Creek Valley)에서 30레벨까지 강화 가능.",
+  "temperInto": "단련하면 {name}이(가) 된다.",
+  "lv30": "30레벨 수치(Fextralife): 피해량 {d}, 가드 브레이크 {g}.",
+  "surge": "Power Surge: {name}.",
+  "unblockable": " 막을 수 없다.",
+  "status": "상태 이상: {name}.",
+  "unique": "고유 스킬: {name}.",
+  "profile": "{kinds} 중 특징: 피해량 {d}, 가드 브레이크 {g}.",
+  "dmgLv": [
+   "높음",
+   "보통",
+   "낮음"
+  ],
+  "gbLv": [
+   "높음",
+   "보통",
+   "낮음"
+  ],
+  "skillsH": "레벨별 습득 스킬",
+  "colLevel": "레벨",
+  "colSkill": "스킬",
+  "skillsNote": "스킬명은 영어판 게임 표기.",
+  "noSkills": "이 무기의 강화 스킬 정보가 없다."
  }
 }

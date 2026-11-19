@@ -222,5 +222,48 @@
     "They are cross-checked between several public sources. {ok} of {n} weapons are confirmed by at least two sources, the others are flagged on their page."
    ]
   ]
+ },
+ "det": {
+  "obtainH": "How to get it",
+  "playH": "How to play it",
+  "boss": "Reward for defeating {boss} in {area}.",
+  "spot": " Landmark: {spot}.",
+  "story": " A main story boss, so you can't miss it.",
+  "missable": " Careful: it can be missed.",
+  "quest1": " Related quest: {quest}.",
+  "rack": "Picked up from a weapon rack in {area}, no fight needed.",
+  "after": "Picked up in {area} right after the fight against {boss}. Grab it before leaving the area.",
+  "npc": "Given by {npc} in {area}.",
+  "repair": "Repaired for you by {npc} in {area}.",
+  "treasures": " First bring back their {n} treasures.",
+  "quest": "Reward for the quest {quest} in {area}.",
+  "start": "Starting weapon: it is in your inventory from Chapter 1.",
+  "prologue": "Starting weapon: you get it during the prologue.",
+  "temper": "Obtained by Soul Tempering {from} with {npc} in {area}.",
+  "mats": "Materials: {mats}.",
+  "unknown": "Our sources don't confirm how to get it yet. Know the answer? Report it.",
+  "upgrade": "It can be upgraded up to level 30 with Forge (Mandate Outpost, Weeping Creek Valley).",
+  "temperInto": "Can be Soul Tempered into {name}.",
+  "lv30": "Level 30 stats (Fextralife): damage {d}, guard break {g}.",
+  "surge": "Power Surge: {name}.",
+  "unblockable": " It can't be blocked.",
+  "status": "Status effect: {name}.",
+  "unique": "Unique skill: {name}.",
+  "profile": "Profile among {kinds}: {d} damage, {g} guard break.",
+  "dmgLv": [
+   "high",
+   "average",
+   "low"
+  ],
+  "gbLv": [
+   "high",
+   "average",
+   "low"
+  ],
+  "skillsH": "Skills unlocked by level",
+  "colLevel": "Level",
+  "colSkill": "Skill",
+  "skillsNote": "Skill names as shown in the English version of the game.",
+  "noSkills": "No upgrade skills listed for this weapon."
  }
 }
