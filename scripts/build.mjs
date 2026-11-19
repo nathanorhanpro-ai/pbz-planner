@@ -19,6 +19,8 @@ if (!SITE.siteUrl && process.env.CF_PAGES && SITE.pagesUrl) SITE.siteUrl = SITE.
 const ANALYTICS = process.env.CF_PAGES
   ? (SITE.cfBeacon ? `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"${SITE.cfBeacon}"}'></script>\n` : "")
   : `<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>\n<script defer src="/_vercel/insights/script.js"></script>\n`;
+// AdSense : le script affiche aussi le message de consentement configuré dans AdSense (Confidentialité et messages).
+const ADS = process.env.CF_PAGES && SITE.adsense ? `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsense}" crossorigin="anonymous"></script>\n` : "";
 const ORDER = ["en", "fr", "zh", "ja", "ko", "de", "es", "pt", "ru"];
 const LANGS = Object.fromEntries(ORDER.filter((c) => existsSync(join(root, `src/locales/${c}.json`))).map((c) => [c, JSON.parse(read(`src/locales/${c}.json`))]));
 const PREFIX = Object.fromEntries(Object.keys(LANGS).map((c) => [c, c === "en" ? "" : `${c}/`]));
@@ -45,7 +47,7 @@ const ICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewB
 // Polices hébergées sur le site (OFL) : pas d'appel à Google Fonts.
 const FONT_FACES = read("src/fonts.css");
 const fontCss = (base) => `<style>\n${FONT_FACES.replaceAll("%BASE%", base)}</style>\n`;
-const page = (lang, head, body) => `<!doctype html>\n<html lang="${lang}">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n<meta name="theme-color" content="#0b0b0d">\n<link rel="icon" href="${ICON}">\n<link rel="apple-touch-icon" href="/apple-touch-icon.png">\n${ANALYTICS}${head}</head>\n<body>\n${body}\n</body>\n</html>\n`;
+const page = (lang, head, body) => `<!doctype html>\n<html lang="${lang}">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n<meta name="theme-color" content="#0b0b0d">\n<link rel="icon" href="${ICON}">\n<link rel="apple-touch-icon" href="/apple-touch-icon.png">\n${ANALYTICS}${ADS}${head}</head>\n<body>\n${body}\n</body>\n</html>\n`;
 
 // rel : chemin de la page sans préfixe de langue (ex. "index.html", "weapons/x/index.html")
 // Balises de partage (Discord, Reddit, X). Les URL absolues exigent siteUrl.
