@@ -17,7 +17,7 @@
  "redirects": [
   {
    "source": "/(.*)",
-   "destination": "https://pbz-planner.pages.dev/$1",
+   "destination": "https://inkbuilds.com/$1",
    "permanent": true
   }
  ]
