@@ -265,5 +265,14 @@
   "colSkill": "Skill",
   "skillsNote": "Skill names as shown in the English version of the game.",
   "noSkills": "No upgrade skills listed for this weapon."
+ },
+ "bb": {
+  "h": "Best build for {name}",
+  "intro": "A full loadout around {name}, using only weapons you can already own at that point of the game ({stage}).",
+  "main": "The core of the build.",
+  "dmg": "Highest damage of its kind you can have by then.",
+  "gb": "Best guard break to crack defenses, in a different style.",
+  "alt": "A different style, so you can switch when an enemy resists.",
+  "open": "Open this build in the planner"
  }
 }

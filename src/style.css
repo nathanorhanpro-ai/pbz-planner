@@ -299,3 +299,7 @@ footer a { color: var(--gold); }
 .det-grid h3 { margin: 22px 0 8px; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .stat-table.skills td:first-child { display: table-cell; width: 70px; text-align: left; font-variant-numeric: tabular-nums; }
 @media (max-width: 760px) { .det-grid { grid-template-columns: 1fr; } }
+.build-cards { grid-template-columns: repeat(4, 1fr); margin: 14px 0; }
+.build-cards .mini.core { border-color: var(--gold); }
+.build-cards .why { color: var(--ink); opacity: .8; line-height: 1.35; }
+@media (max-width: 560px) { .build-cards { grid-template-columns: repeat(2, 1fr); } }

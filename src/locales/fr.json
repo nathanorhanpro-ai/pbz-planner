@@ -265,5 +265,14 @@
   "colSkill": "Compétence",
   "skillsNote": "Noms des compétences tels qu'affichés dans la version anglaise du jeu.",
   "noSkills": "Aucune compétence d'amélioration recensée pour cette arme."
+ },
+ "bb": {
+  "h": "Meilleur build pour {name}",
+  "intro": "Un loadout complet autour de {name}, uniquement avec des armes que tu peux déjà avoir à ce stade du jeu ({stage}).",
+  "main": "Le cœur du build.",
+  "dmg": "Les plus gros dégâts de sa catégorie disponibles à ce moment-là.",
+  "gb": "Le meilleur brise-garde pour percer les défenses, dans un autre style.",
+  "alt": "Un style différent, pour changer quand un ennemi résiste.",
+  "open": "Ouvrir ce build dans le planner"
  }
 }

@@ -265,5 +265,14 @@
   "colSkill": "Fähigkeit",
   "skillsNote": "Fähigkeitsnamen wie in der englischen Spielversion.",
   "noSkills": "Für diese Waffe sind keine Fähigkeiten verzeichnet."
+ },
+ "bb": {
+  "h": "Bester Build für {name}",
+  "intro": "Ein komplettes Loadout rund um {name}, nur mit Waffen, die du zu diesem Zeitpunkt schon haben kannst ({stage}).",
+  "main": "Das Herzstück des Builds.",
+  "dmg": "Der höchste Schaden seiner Art, den du bis dahin haben kannst.",
+  "gb": "Der beste Deckungsbruch gegen Verteidigung, in einem anderen Stil.",
+  "alt": "Ein anderer Stil, damit du wechseln kannst, wenn ein Gegner widersteht.",
+  "open": "Diesen Build im Planner öffnen"
  }
 }

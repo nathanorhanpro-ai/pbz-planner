@@ -265,5 +265,14 @@
   "colSkill": "Habilidad",
   "skillsNote": "Nombres de habilidades tal como aparecen en la versión inglesa del juego.",
   "noSkills": "No hay habilidades de mejora registradas para esta arma."
+ },
+ "bb": {
+  "h": "Mejor build para {name}",
+  "intro": "Un equipo completo en torno a {name}, solo con armas que ya puedes tener en ese punto del juego ({stage}).",
+  "main": "El núcleo del build.",
+  "dmg": "El mayor daño de su tipo que puedes tener para entonces.",
+  "gb": "La mejor rotura de guardia para abrir defensas, con otro estilo.",
+  "alt": "Un estilo distinto, para cambiar cuando un enemigo resiste.",
+  "open": "Abrir este build en el planner"
  }
 }

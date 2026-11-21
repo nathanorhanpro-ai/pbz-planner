@@ -193,6 +193,24 @@ function detailsHtml(g, T, L, it, base) {
 `;
 }
 
+// Build conseillé autour d'une arme : uniquement des armes disponibles au même stade du jeu ou avant.
+const STAGE_ORDER = { early: 0, mid: 1, late: 2 };
+function bestBuild(g, L, it) {
+  const st = (o) => STAGE_ORDER[o.stage] ?? 2, lim = st(it);
+  const val = (o, s) => o.stats.max[s] ?? o.stats.base[s] ?? (FX30[o.id] && FX30[o.id][s]) ?? -1;
+  const ok = (o) => o.id !== it.id && st(o) <= lim && ["agree", "verified"].includes(L.stateOf(o)) && !o.extra;
+  const best = (kind, s, notType) => g.items.filter((o) => o.kind === kind && ok(o) && o.type !== notType && val(o, s) > 0).sort((a, b) => val(b, s) - val(a, s))[0];
+  const other = it.kind === "blade" ? "edge" : "blade";
+  const mate = best(it.kind, "damage", it.type);
+  const o1 = best(other, "damage");
+  const o2 = o1 && (best(other, "guardBreak", o1.type) || best(other, "damage", o1.type));
+  if (!mate || !o1 || !o2) return null;
+  const picks = [[it, "main"], [mate, "alt"], [o1, "dmg"], [o2, "gb"]];
+  const ids = g.slots.map((s) => picks.filter(([o]) => o.kind === s.kind));
+  const order = [ids[0][0], ids[0][1], ids[2][0], ids[2][1]];
+  return { picks: order, hash: L.hashOf(order.map(([o]) => o.id), g.levels[g.levels.length - 1]) };
+}
+
 function weaponPage(g, T, L, it, base) {
   const fmt = L.fmt, P = PREFIX[T.lang.code];
   const planner = `${base}${P}index.html`;
@@ -228,7 +246,7 @@ function weaponPage(g, T, L, it, base) {
     <div class="equip"><a class="btn" href="${planner}#W-${it.id}">${esc(T.ui.openInPlanner)}</a>${SITE.reportUrl ? `<a class="btn ghost" href="${esc(reportHref(it.name, T.lang.code))}" rel="noopener" target="_blank">${esc(T.ui.report)}</a>` : ""}</div>
   </div>
 </div></section>
-${detailsHtml(g, T, L, it, base)}${ranks ? `<section class="wsec band"><div class="inner"><h2>${esc(T.ui.ranksTitle)}</h2><ul class="advice">${ranks}</ul></div></section>` : ""}
+${detailsHtml(g, T, L, it, base)}${(() => { const b = bestBuild(g, L, it); if (!b || !T.bb) return ""; return `<section class="wsec band"><div class="inner"><h2>${esc(fill(T.bb.h, { name: it.name }))}</h2><p>${esc(fill(T.bb.intro, { name: it.name, stage: T.stages[it.stage || "late"] }))}</p><div class="cards build-cards">${b.picks.map(([o, why]) => `<a class="mini${o.id === it.id ? " core" : ""}" href="${wHref(o)}">${img(o, "thumbs")}<span>${esc(o.name)}</span><small>${esc(T.kinds[o.kind])} · ${esc(T.types[o.type])}</small><small class="why">${esc(T.bb[why])}</small></a>`).join("")}</div><div class="equip"><a class="btn" href="${planner}${b.hash}">${esc(T.bb.open)}</a></div></div></section>`; })()}${ranks ? `<section class="wsec band"><div class="inner"><h2>${esc(T.ui.ranksTitle)}</h2><ul class="advice">${ranks}</ul></div></section>` : ""}
 ${pairs.length ? `<section class="wsec band"><div class="inner"><h2>${esc(T.ui.pairs)}</h2><div class="cards">${pairs.map(card).join("")}</div></div></section>` : ""}
 ${same.length ? `<section class="wsec band"><div class="inner"><h2>${esc(fill(T.ui.sameType, { type: T.types[it.type].toLowerCase() }))}</h2><div class="cards">${same.map(dcard).join("")}</div></div></section>` : ""}
 <nav class="pn band" aria-label="${esc(T.kindsPlural[it.kind])}"><div class="inner"><a href="${wHref(prev)}" rel="prev"><small>← ${esc(T.ui.prev)}</small>${esc(prev.name)}</a><a href="${wHref(next)}" rel="next"><small>${esc(T.ui.next)} →</small>${esc(next.name)}</a></div></nav>
