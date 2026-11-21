@@ -149,8 +149,8 @@
  "meta": {
   "plannerTitle": "{game} ビルドプランナー：武器・ステータス・装備",
   "plannerDesc": "{game} の全武器とファントムエッジをレベル1と最大レベルで比較し、装備を組んで共有しよう。",
-  "weaponTitle": "{name}：{game} の{kind}ステータス（レベル1と最大）",
-  "weaponDesc": "{game} の {name}（{type}・{kind}）：ダメージ {damage}、レベル1と最大レベルのガードブレイクと状態異常、相性のいい装備。"
+  "weaponTitle": "{game} の{name}：入手方法・ステータス・おすすめビルド",
+  "weaponDesc": "{game} の{name}の入手方法：{how} {type}・{kind}、ダメージ {damage}、スキルとおすすめ装備。"
  },
  "notFound": {
   "title": "ページが見つかりません",

@@ -149,8 +149,8 @@
  "meta": {
   "plannerTitle": "Build Planner de {game}: armas, atributos e loadouts",
   "plannerDesc": "Compare todas as armas e Phantom Edges de {game} no nível 1 e no máximo, monte seu loadout e compartilhe.",
-  "weaponTitle": "{name}: atributos da {kind} de {game} (nível 1 e máximo)",
-  "weaponDesc": "{name} ({kind}, {type}) em {game}: dano {damage}, quebra de guarda e status no nível 1 e no máximo, e loadouts em que encaixa."
+  "weaponTitle": "{name} em {game}: como obter, atributos e build",
+  "weaponDesc": "Como obter {name} em {game}: {how} {kind} ({type}), dano {damage}, habilidades e os melhores loadouts."
  },
  "notFound": {
   "title": "Página não encontrada",

@@ -149,6 +149,16 @@ function indexHtml(g, T, weaponHref) {
   return `<div class="index-cols">${cols.join("")}</div>`;
 }
 
+// Phrase courte « comment l'obtenir », en texte brut, pour la meta description.
+function obtainText(g, T, it) {
+  const d = DETAILS[it.id], D = T.det;
+  if (!d || !D || !d.obtain || d.obtain.t === "unknown") return "";
+  const ob = d.obtain, from = ob.frm ? (g.items.find((i) => i.id === ob.frm) || {}).name || "" : "";
+  const v = { boss: ob.boss || "", npc: ob.npc || "", quest: ob.quest || "", spot: ob.spot || "", area: ob.area || "", n: ob.treasures, from };
+  const s = ob.t === "npc" && ob.repair ? D.repair : ob.t === "start" && ob.prologue ? D.prologue : D[ob.t];
+  return s ? s.replace(/\{(\w+)\}/g, (_, k) => v[k] ?? "") : "";
+}
+
 function detailsHtml(g, T, L, it, base) {
   const d = DETAILS[it.id], D = T.det;
   if (!d || !D) return "";
@@ -266,7 +276,8 @@ for (const f of games) {
       const path = `${P}weapons/${it.id}/index.html`, base = depthBase(path);
       const s = it.stats.base;
       const title = fill(T.meta.weaponTitle, { name: it.name, game: g.name, kind: T.kinds[it.kind].toLowerCase() });
-      const desc = fill(T.meta.weaponDesc, { name: it.name, game: g.name, kind: T.kinds[it.kind].toLowerCase(), type: T.types[it.type].toLowerCase(), damage: s.damage != null ? `${L.fmt(s.damage)} → ${L.fmt(it.stats.max.damage)}` : "?" });
+      const desc = fill(T.meta.weaponDesc, { how: obtainText(g, T, it), name: it.name, game: g.name, kind: T.kinds[it.kind].toLowerCase(), type: T.types[it.type].toLowerCase(), damage: s.damage != null && it.stats.max.damage != null ? `${L.fmt(s.damage)} → ${L.fmt(it.stats.max.damage)}` : FX30[it.id] && FX30[it.id].damage != null ? `${L.fmt(FX30[it.id].damage)} (Lv 30)` : s.damage != null ? L.fmt(s.damage) : "?" })
+        .replace(/\s+/g, " ").replace(/([.。!] ?)(\p{Ll})/gu, (_, a, b) => a + b.toUpperCase());
       const hd = `<title>${esc(title)}</title>\n<meta name="description" content="${esc(desc)}">\n${headTags(`weapons/${it.id}/index.html`, lang)}\n` +
         ogTags(title, desc, `${it.id}.jpg`, `weapons/${it.id}/index.html`, lang) + "\n" +
         jsonLd({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [[T.ui.home, absUrl(lang, "index.html")], [it.name, absUrl(lang, `weapons/${it.id}/index.html`)]].map(([name, item], i) => ({ "@type": "ListItem", position: i + 1, name, item })) }) + "\n" +

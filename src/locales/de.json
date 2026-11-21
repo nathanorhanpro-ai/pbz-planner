@@ -149,8 +149,8 @@
  "meta": {
   "plannerTitle": "{game} Build Planner: Waffen, Werte und Loadouts",
   "plannerDesc": "Vergleiche alle Waffen und Phantom Edges aus {game} auf Stufe 1 und Maximalstufe, stell dein Loadout zusammen und teile es.",
-  "weaponTitle": "{name}: Werte der {game}-{kind} auf Stufe 1 und Max",
-  "weaponDesc": "{name} ({type}, {kind}) in {game}: Schaden {damage}, Deckungsbruch und Status auf Stufe 1 und Maximalstufe, dazu passende Loadouts."
+  "weaponTitle": "{name} in {game}: Fundort, Werte und Build",
+  "weaponDesc": "So bekommst du {name} in {game}: {how} {kind} ({type}), Schaden {damage}, Fähigkeiten und die besten Loadouts."
  },
  "notFound": {
   "title": "Seite nicht gefunden",

@@ -149,8 +149,8 @@
  "meta": {
   "plannerTitle": "Planificador de builds de {game}: armas, estadísticas y equipos",
   "plannerDesc": "Compara todas las armas y Phantom Edges de {game} en nivel 1 y nivel máximo, arma tu equipo y compártelo.",
-  "weaponTitle": "{name}: estadísticas de {kind} en {game} (nivel 1 y máximo)",
-  "weaponDesc": "{name} ({kind}, {type}) en {game}: daño {damage}, rotura de guardia y estados en nivel 1 y máximo, y los equipos donde encaja."
+  "weaponTitle": "{name} en {game}: cómo conseguirla, estadísticas y build",
+  "weaponDesc": "Cómo conseguir {name} en {game}: {how} {kind} ({type}), daño {damage}, habilidades y los mejores equipos."
  },
  "notFound": {
   "title": "Página no encontrada",

@@ -149,8 +149,8 @@
  "meta": {
   "plannerTitle": "{game} 配装器：武器、属性与配装",
   "plannerDesc": "对比 {game} 所有武器和魅影兵器在 1 级与满级的属性，搭配并分享你的配装。",
-  "weaponTitle": "{name}：{game} {kind}属性（1 级与满级）",
-  "weaponDesc": "{game} 中的 {name}（{type}{kind}）：伤害 {damage}，1 级与满级的破防和异常状态，以及适合的配装。"
+  "weaponTitle": "{game} {name}：获取方法、属性与配装",
+  "weaponDesc": "{game} {name} 获取方法：{how}{type}{kind}，伤害 {damage}，技能与推荐配装。"
  },
  "notFound": {
   "title": "页面未找到",

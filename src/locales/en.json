@@ -149,8 +149,8 @@
  "meta": {
   "plannerTitle": "{game} Build Planner: weapons, stats and loadouts",
   "plannerDesc": "Compare every {game} weapon and Phantom Edge at level 1 and max level, build your loadout and share it.",
-  "weaponTitle": "{name}: {game} {kind} stats at level 1 and max",
-  "weaponDesc": "{name} ({type} {kind}) in {game}: damage {damage}, guard break and status at level 1 and max level, plus loadouts it fits."
+  "weaponTitle": "{name} in {game}: How to Get It, Stats & Build",
+  "weaponDesc": "How to get {name} in {game}: {how} {type} {kind}, damage {damage}, skills and the best loadouts."
  },
  "notFound": {
   "title": "Page not found",

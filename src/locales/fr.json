@@ -149,8 +149,8 @@
  "meta": {
   "plannerTitle": "{game} Build Planner : armes, stats et loadouts",
   "plannerDesc": "Compare toutes les armes et Phantom Edges de {game} au niveau 1 et au niveau max, compose ton loadout et partage-le.",
-  "weaponTitle": "{name} : stats de la {kind} de {game} (niveau 1 et max)",
-  "weaponDesc": "{name} ({kind}, {type}) dans {game} : dégâts {damage}, brise-garde et statut au niveau 1 et au niveau max, et les loadouts où elle brille."
+  "weaponTitle": "{name} dans {game} : comment l'obtenir, stats et build",
+  "weaponDesc": "Comment obtenir {name} dans {game} : {how} {kind} ({type}), dégâts {damage}, compétences et meilleurs loadouts."
  },
  "notFound": {
   "title": "Page introuvable",

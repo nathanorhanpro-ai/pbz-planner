@@ -149,8 +149,8 @@
  "meta": {
   "plannerTitle": "{game} 빌드 플래너: 무기, 능력치, 장비",
   "plannerDesc": "{game}의 모든 무기와 팬텀 엣지를 레벨 1과 최대 레벨에서 비교하고 장비를 짜서 공유하세요.",
-  "weaponTitle": "{name}: {game} {kind} 능력치 (레벨 1 및 최대)",
-  "weaponDesc": "{game}의 {name}({type} {kind}): 피해 {damage}, 레벨 1과 최대 레벨의 가드 브레이크와 상태 이상, 어울리는 장비."
+  "weaponTitle": "{game} {name}: 획득 방법, 능력치, 빌드",
+  "weaponDesc": "{game} {name} 획득 방법: {how} {type} {kind}, 피해 {damage}, 스킬과 추천 장비."
  },
  "notFound": {
   "title": "페이지를 찾을 수 없습니다",
