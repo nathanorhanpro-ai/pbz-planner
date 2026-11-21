@@ -211,6 +211,28 @@ function bestBuild(g, L, it) {
   return { picks: order, hash: L.hashOf(order.map(([o]) => o.id), g.levels[g.levels.length - 1]) };
 }
 
+// Questions-réponses par arme (affichées + données structurées FAQPage).
+function weaponFaq(g, T, L, it) {
+  const W = T.wfaq; if (!W) return null;
+  const v = { name: it.name, game: g.name, kinds: T.kindsPlural[it.kind] };
+  const qa = [];
+  qa.push([fill(W.q1, v), obtainText(g, T, it)]);
+  const tier = tierMap(g)[it.id], pitch = L.pitch(it, "base");
+  if (it.stats.base.damage != null) qa.push([fill(W.q2, v), tier ? fill(W.a2, { ...v, tier, pitch }) : pitch]);
+  const b = bestBuild(g, L, it);
+  if (b) {
+    const others = b.picks.map(([o]) => o).filter((o) => o.kind !== it.kind), mate = b.picks.map(([o]) => o).find((o) => o.kind === it.kind && o.id !== it.id);
+    qa.push([fill(W.q3, v), fill(W.a3, { ...v, mate: mate.name, o1: others[0].name, o2: others[1].name, other: T.kindsPlural[others[0].kind], stage: T.stages[it.stage || "late"] })]);
+  }
+  const st = (lvl) => g.stats.filter((s) => it.stats[lvl][s] != null).map((s) => `${T.stats[s].toLowerCase()} ${L.fmt(it.stats[lvl][s])}`).join(", ");
+  if (st("max") && st("base")) qa.push([fill(W.q4, v), fill(W.a4, { max: st("max"), base: st("base") })]);
+  const ok = qa.filter(([q, a]) => q && a);
+  return {
+    html: `<section class="wsec band"><div class="inner"><h2>${esc(T.faq.title)}</h2><div class="faq">${ok.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("")}</div></div></section>`,
+    ld: jsonLd({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: ok.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) }),
+  };
+}
+
 function weaponPage(g, T, L, it, base) {
   const fmt = L.fmt, P = PREFIX[T.lang.code];
   const planner = `${base}${P}index.html`;
@@ -249,6 +271,7 @@ function weaponPage(g, T, L, it, base) {
 ${detailsHtml(g, T, L, it, base)}${(() => { const b = bestBuild(g, L, it); if (!b || !T.bb) return ""; return `<section class="wsec band"><div class="inner"><h2>${esc(fill(T.bb.h, { name: it.name }))}</h2><p>${esc(fill(T.bb.intro, { name: it.name, stage: T.stages[it.stage || "late"] }))}</p><div class="cards build-cards">${b.picks.map(([o, why]) => `<a class="mini${o.id === it.id ? " core" : ""}" href="${wHref(o)}">${img(o, "thumbs")}<span>${esc(o.name)}</span><small>${esc(T.kinds[o.kind])} · ${esc(T.types[o.type])}</small><small class="why">${esc(T.bb[why])}</small></a>`).join("")}</div><div class="equip"><a class="btn" href="${planner}${b.hash}">${esc(T.bb.open)}</a></div></div></section>`; })()}${ranks ? `<section class="wsec band"><div class="inner"><h2>${esc(T.ui.ranksTitle)}</h2><ul class="advice">${ranks}</ul></div></section>` : ""}
 ${pairs.length ? `<section class="wsec band"><div class="inner"><h2>${esc(T.ui.pairs)}</h2><div class="cards">${pairs.map(card).join("")}</div></div></section>` : ""}
 ${same.length ? `<section class="wsec band"><div class="inner"><h2>${esc(fill(T.ui.sameType, { type: T.types[it.type].toLowerCase() }))}</h2><div class="cards">${same.map(dcard).join("")}</div></div></section>` : ""}
+${(weaponFaq(g, T, L, it) || { html: "" }).html}
 <nav class="pn band" aria-label="${esc(T.kindsPlural[it.kind])}"><div class="inner"><a href="${wHref(prev)}" rel="prev"><small>← ${esc(T.ui.prev)}</small>${esc(prev.name)}</a><a href="${wHref(next)}" rel="next"><small>${esc(T.ui.next)} →</small>${esc(next.name)}</a></div></nav>
 </main>`;
 }
@@ -297,7 +320,7 @@ for (const f of games) {
       const desc = fill(T.meta.weaponDesc, { how: obtainText(g, T, it), name: it.name, game: g.name, kind: T.kinds[it.kind].toLowerCase(), type: T.types[it.type].toLowerCase(), damage: s.damage != null && it.stats.max.damage != null ? `${L.fmt(s.damage)} → ${L.fmt(it.stats.max.damage)}` : FX30[it.id] && FX30[it.id].damage != null ? `${L.fmt(FX30[it.id].damage)} (Lv 30)` : s.damage != null ? L.fmt(s.damage) : "?" })
         .replace(/\s+/g, " ").replace(/([.。!] ?)(\p{Ll})/gu, (_, a, b) => a + b.toUpperCase());
       const hd = `<title>${esc(title)}</title>\n<meta name="description" content="${esc(desc)}">\n${headTags(`weapons/${it.id}/index.html`, lang)}\n` +
-        ogTags(title, desc, `${it.id}.jpg`, `weapons/${it.id}/index.html`, lang) + "\n" +
+        ogTags(title, desc, `${it.id}.jpg`, `weapons/${it.id}/index.html`, lang) + "\n" + (weaponFaq(g, T, L, it) || { ld: "" }).ld + "\n" +
         jsonLd({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [[T.ui.home, absUrl(lang, "index.html")], [it.name, absUrl(lang, `weapons/${it.id}/index.html`)]].map(([name, item], i) => ({ "@type": "ListItem", position: i + 1, name, item })) }) + "\n" +
         `${fontCss(base)}<style>\n${CSS}</style>\n`;
       put(path, page(T.lang.locale, hd, sub(header(T, base, `weapons/${it.id}/index.html`, `${base}${P}index.html`, g)) + weaponPage(g, T, L, it, base) + promo(T) + footer(T, base)));

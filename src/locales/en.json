@@ -274,5 +274,14 @@
   "gb": "Best guard break to crack defenses, in a different style.",
   "alt": "A different style, so you can switch when an enemy resists.",
   "open": "Open this build in the planner"
+ },
+ "wfaq": {
+  "q1": "How do I get {name} in {game}?",
+  "q2": "Is {name} good in {game}?",
+  "q3": "What is the best build for {name}?",
+  "q4": "What are {name}'s stats at max level?",
+  "a2": "{name} is in the {tier} tier of our {kinds} tier list, ranked by max-level damage. {pitch}",
+  "a3": "Pair it with {mate}, and use {o1} and {o2} as {other}. All of them are available by the {stage} stage of the game.",
+  "a4": "At max level: {max}. At level 1: {base}."
  }
 }

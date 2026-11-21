@@ -274,5 +274,14 @@
   "gb": "La mejor rotura de guardia para abrir defensas, con otro estilo.",
   "alt": "Un estilo distinto, para cambiar cuando un enemigo resiste.",
   "open": "Abrir este build en el planner"
+ },
+ "wfaq": {
+  "q1": "¿Cómo conseguir {name} en {game}?",
+  "q2": "¿Es buena {name} en {game}?",
+  "q3": "¿Cuál es el mejor build para {name}?",
+  "q4": "¿Qué estadísticas tiene {name} a nivel máximo?",
+  "a2": "{name} está en el tier {tier} de nuestra tier list de {kinds}, ordenada por daño a nivel máximo. {pitch}",
+  "a3": "Combínala con {mate} y usa {o1} y {o2} como {other}. Todas están disponibles en la etapa «{stage}» del juego.",
+  "a4": "A nivel máximo: {max}. A nivel 1: {base}."
  }
 }

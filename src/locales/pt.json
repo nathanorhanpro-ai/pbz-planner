@@ -274,5 +274,14 @@
   "gb": "A melhor quebra de guarda para abrir defesas, em outro estilo.",
   "alt": "Um estilo diferente, para trocar quando um inimigo resiste.",
   "open": "Abrir este build no planner"
+ },
+ "wfaq": {
+  "q1": "Como obter {name} em {game}?",
+  "q2": "{name} é boa em {game}?",
+  "q3": "Qual é o melhor build para {name}?",
+  "q4": "Quais são os atributos de {name} no nível máximo?",
+  "a2": "{name} está no tier {tier} da nossa tier list de {kinds}, ordenada pelo dano no nível máximo. {pitch}",
+  "a3": "Combine com {mate} e use {o1} e {o2} como {other}. Todas estão disponíveis na etapa «{stage}» do jogo.",
+  "a4": "No nível máximo: {max}. No nível 1: {base}."
  }
 }

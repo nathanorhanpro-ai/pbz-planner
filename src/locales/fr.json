@@ -274,5 +274,14 @@
   "gb": "Le meilleur brise-garde pour percer les défenses, dans un autre style.",
   "alt": "Un style différent, pour changer quand un ennemi résiste.",
   "open": "Ouvrir ce build dans le planner"
+ },
+ "wfaq": {
+  "q1": "Comment obtenir {name} dans {game} ?",
+  "q2": "{name} est-elle une bonne arme dans {game} ?",
+  "q3": "Quel est le meilleur build pour {name} ?",
+  "q4": "Quelles sont les stats de {name} au niveau max ?",
+  "a2": "{name} est dans le tier {tier} de notre tier list des {kinds}, classée selon les dégâts au niveau max. {pitch}",
+  "a3": "Associe-la à {mate}, et prends {o1} et {o2} comme {other}. Toutes sont disponibles dès le stade « {stage} » du jeu.",
+  "a4": "Au niveau max : {max}. Au niveau 1 : {base}."
  }
 }

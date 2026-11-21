@@ -274,5 +274,14 @@
   "gb": "Der beste Deckungsbruch gegen Verteidigung, in einem anderen Stil.",
   "alt": "Ein anderer Stil, damit du wechseln kannst, wenn ein Gegner widersteht.",
   "open": "Diesen Build im Planner öffnen"
+ },
+ "wfaq": {
+  "q1": "Wie bekomme ich {name} in {game}?",
+  "q2": "Ist {name} in {game} gut?",
+  "q3": "Was ist der beste Build für {name}?",
+  "q4": "Welche Werte hat {name} auf Maximalstufe?",
+  "a2": "{name} liegt in unserer Tier-Liste der {kinds} im {tier}-Tier, sortiert nach Schaden auf Maximalstufe. {pitch}",
+  "a3": "Kombiniere sie mit {mate} und nimm {o1} und {o2} als {other}. Alle sind bis zum Spielabschnitt „{stage}“ verfügbar.",
+  "a4": "Auf Maximalstufe: {max}. Auf Stufe 1: {base}."
  }
 }
